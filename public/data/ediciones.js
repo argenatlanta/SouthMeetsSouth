@@ -1442,7 +1442,6 @@ window.SMS_EDICIONES = [
         nombre: { es: "Consulado General de la República Argentina en Atlanta", en: "Consulate General of Argentina in Atlanta" },
         logo: { es: "img/organizadores/consulado-es.png", en: "img/organizadores/consulado-en.png" },
         logoOscuro: { es: "img/organizadores/consulado-es-oscuro.png", en: "img/organizadores/consulado-en-oscuro.png" },
-        detalle: { es: "Cónsul General Alana Lomónaco Busto", en: "Consul General Alana Lomónaco Busto" },
       },
       {
         nombre: { es: "Cancillería Argentina · DNTEC", en: "Argentine Ministry of Foreign Affairs · DNTEC" },
