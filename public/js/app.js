@@ -646,7 +646,7 @@
     if (!el) return;
     var list = SITIO.recursos || [];
     el.innerHTML = '<div class="grid-2">' + list.map(function (r) {
-      var url = safeUrl(r.url);
+      var url = safeUrl(t(r.url)); // url puede ser una sola o { es, en }
       var inner = "<h3>" + esc(t(r.nombre)) + (url ? " " + ICON.ext : "") + "</h3><p>" + esc(t(r.detalle)) + "</p>";
       return url
         ? '<a class="card resource" href="' + esc(url) + '" target="_blank" rel="noopener">' + inner + "</a>"

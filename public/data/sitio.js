@@ -41,7 +41,10 @@ window.SMS_SITIO = {
     },
     {
       nombre: "Next From Argentina",
-      url: "",
+      url: {
+        es: "https://www.cancilleria.gob.ar/es/nuevas-tecnologias/next-from-argentina",
+        en: "https://www.cancilleria.gob.ar/en/new-technologies/next-from-argentina-en",
+      },
       detalle: {
         es: "Plataforma bilingüe de la Cancillería que reúne la oferta exportable y de inversión de startups y empresas de la economía del conocimiento.",
         en: "Bilingual platform by Argentina’s Foreign Ministry showcasing the export and investment offering of knowledge-economy startups and companies.",

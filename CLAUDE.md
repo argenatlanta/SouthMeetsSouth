@@ -17,7 +17,9 @@ public/                 ← todo lo que se publica (directorio de salida en Clou
   data/ediciones.js     el contenido de cada edición
   img/ediciones/<id>/   fotos de cada edición
   img/empresas/         logos de las empresas (uno por empresa, se reutiliza entre ediciones)
-  img/organizadores/    logos del Consulado y la Cancillería (por idioma, con versión para modo oscuro)
+  img/organizadores/    logos del Consulado, la Embajada y la Cancillería (por idioma, con versión para modo oscuro)
+  img/marca-pais/       trama de ondas del manual de Marca País
+  css/marca-pais.css    paleta, tipografía y trama de Marca País (se carga después de styles.css)
 wrangler.jsonc          config para Cloudflare Workers (si se usa Pages, no se lee)
 ```
 
@@ -44,6 +46,9 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
    que haya dado el Consulado o la empresa (en Drive: «05_Logos_e_imagenes» en 2026, «Logos Definitivos
    2025» en 2025); no bajarlos de la web. Si el logo es blanco o claro, agregar `logoFondo: "oscuro"`. Si en una lista
    alguna empresa tiene logo, las que no tienen muestran sus iniciales.
+8. Diseño: sigue el manual de Marca País 2025 (`css/marca-pais.css`): paleta MPA, Source Sans 3 en títulos y
+   Roboto en el cuerpo, Amarillo solo para acciones y acentos. Tramas solo las del manual, en menos del 50% de
+   la pieza y con módulos de al menos 1/14 del ancho. No usar el logo de Marca País.
 
 ## Esquema de una edición (`public/data/ediciones.js`)
 
