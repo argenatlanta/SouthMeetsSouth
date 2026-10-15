@@ -621,6 +621,20 @@ a.resource:hover { border-color: var(--celeste); text-decoration: none; }
 .organizers { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
 .organizers li { padding: 12px 16px; font-weight: 500; }
 .organizers li small { display: block; color: var(--ink-2); font-weight: 400; }
+.organizers li.with-logo { display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 20px 24px; }
+.org-mark { display: block; }
+.org-mark img { display: block; height: 80px; width: auto; max-width: 100%; }
+.org-mark img.on-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .org-mark img.on-light { display: none; }
+  :root:not([data-theme="light"]) .org-mark img.on-dark { display: block; }
+}
+:root[data-theme="dark"] .org-mark img.on-light { display: none; }
+:root[data-theme="dark"] .org-mark img.on-dark { display: block; }
+@media (max-width: 560px) {
+  .organizers li.with-logo { flex: 1 1 100%; }
+  .org-mark img { height: auto; max-height: 68px; }
+}
 
 .pager { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; padding: 56px 0 72px; }
 .pager a { padding: 18px 20px; text-decoration: none; color: inherit; }

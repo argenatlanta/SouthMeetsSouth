@@ -17,6 +17,7 @@ public/                 ← todo lo que se publica (directorio de salida en Clou
   data/ediciones.js     el contenido de cada edición
   img/ediciones/<id>/   fotos de cada edición
   img/empresas/         logos de las empresas (uno por empresa, se reutiliza entre ediciones)
+  img/organizadores/    logos del Consulado y la Cancillería (por idioma, con versión para modo oscuro)
 wrangler.jsonc          config para Cloudflare Workers (si se usa Pages, no se lee)
 ```
 
@@ -67,7 +68,8 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
   anfitriones: [{ nombre, tipo, detalle?, web?, verificar? }],         // «Nos recibieron»
       // tipo: "asociacion" | "hub" | "universidad" | "empresa" | "camara" | "gobierno" | "otro"
   reuniones: [{ nombre, cargo?, organizacion?, detalle?, verificar? }], // «Con quiénes nos reunimos»
-  organizadores: [{ nombre, detalle? }],
+  organizadores: [{ nombre, detalle?, logo?, logoOscuro? }],
+      // logo y logoOscuro: ruta o { es, en }; si no hay logo se muestra el nombre. El nombre queda como texto alternativo.
   resultados: [{ es, en }],
   galeria: [{ src: "img/ediciones/2025/foto-01.jpg", alt: { es, en }, credito? }],
   prensa: [{ titulo, medio, url, fecha?, idioma: "es" | "en" }],

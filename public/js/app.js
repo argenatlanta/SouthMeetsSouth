@@ -738,6 +738,22 @@
     }).join("") + "</ul>";
   }
 
+  // Organizadores: logo (por idioma y, si hay, versión para modo oscuro) o, si no hay logo, el nombre.
+  function renderOrganizers(list) {
+    return '<ul class="organizers">' + list.map(function (o) {
+      var name = t(o.nombre);
+      var src = safeUrl(t(o.logo));
+      var dark = safeUrl(t(o.logoOscuro));
+      var mark = src
+        ? '<span class="org-mark">' +
+          '<img class="' + (dark ? "on-light" : "") + '" src="' + esc(src) + '" alt="' + esc(name) + '" loading="lazy">' +
+          (dark ? '<img class="on-dark" src="' + esc(dark) + '" alt="' + esc(name) + '" loading="lazy">' : "") +
+          "</span>"
+        : esc(name);
+      return '<li class="card' + (src ? " with-logo" : "") + '">' + mark + (o.detalle ? "<small>" + esc(t(o.detalle)) + "</small>" : "") + "</li>";
+    }).join("") + "</ul>";
+  }
+
   // ───────────────────────── Ficha de empresa («Más información») ─────────────────────────
   function slugify(s) {
     return String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
@@ -900,9 +916,7 @@
     sections.push(["reuniones", ui("sec_meetings"), isEmpty(ed.reuniones) ? null : renderPeople(ed.reuniones), !isNext]);
     sections.push(["resultados", ui("sec_results"), isEmpty(ed.resultados) ? null : '<ul class="results">' + ed.resultados.map(function (r) { return "<li>" + ICON.check + "<span>" + esc(t(r)) + "</span></li>"; }).join("") + "</ul>", !isNext]);
     sections.push(["galeria", ui("sec_gallery"), isEmpty(ed.galeria) ? null : renderGallery(ed.galeria), !isNext]);
-    sections.push(["organizan", ui("sec_organizers"), isEmpty(ed.organizadores) ? null : '<ul class="organizers">' + ed.organizadores.map(function (o) {
-      return '<li class="card">' + esc(t(o.nombre)) + (o.detalle ? "<small>" + esc(t(o.detalle)) + "</small>" : "") + "</li>";
-    }).join("") + "</ul>", false]);
+    sections.push(["organizan", ui("sec_organizers"), isEmpty(ed.organizadores) ? null : renderOrganizers(ed.organizadores), false]);
     sections.push(["prensa", ui("sec_press"), isEmpty(ed.prensa) ? null : renderPress(ed.prensa), false]);
 
     var visible = sections.filter(function (s) { return s[2] || (BORRADOR && s[3]); });

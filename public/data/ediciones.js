@@ -740,9 +740,13 @@ window.SMS_EDICIONES = [
     organizadores: [
       {
         nombre: { es: "Consulado General de la República Argentina en Atlanta", en: "Consulate General of Argentina in Atlanta" },
+        logo: { es: "img/organizadores/consulado-es.png", en: "img/organizadores/consulado-en.png" },
+        logoOscuro: { es: "img/organizadores/consulado-es-oscuro.png", en: "img/organizadores/consulado-en-oscuro.png" },
       },
       {
         nombre: { es: "Cancillería Argentina · DNTEC", en: "Argentine Ministry of Foreign Affairs · DNTEC" },
+        logo: "img/organizadores/cancilleria-en.png",
+        logoOscuro: "img/organizadores/cancilleria-en-oscuro.png",
       },
     ],
     resultados: [],
@@ -1071,10 +1075,16 @@ window.SMS_EDICIONES = [
     organizadores: [
       {
         nombre: { es: "Consulado General de la República Argentina en Atlanta", en: "Consulate General of Argentina in Atlanta" },
+        logo: { es: "img/organizadores/consulado-es.png", en: "img/organizadores/consulado-en.png" },
+        logoOscuro: { es: "img/organizadores/consulado-es-oscuro.png", en: "img/organizadores/consulado-en-oscuro.png" },
         detalle: { es: "Cónsul General Alana Lomónaco Busto", en: "Consul General Alana Lomónaco Busto" },
       },
       { nombre: { es: "Embajada de la República Argentina en los Estados Unidos", en: "Embassy of Argentina in the United States" } },
-      { nombre: { es: "Cancillería Argentina", en: "Argentine Ministry of Foreign Affairs" } },
+      {
+        nombre: { es: "Cancillería Argentina", en: "Argentine Ministry of Foreign Affairs" },
+        logo: "img/organizadores/cancilleria-en.png",
+        logoOscuro: "img/organizadores/cancilleria-en-oscuro.png",
+      },
     ],
     resultados: [
       { es: "Más de 100 reuniones de negocios entre la delegación y empresas de Atlanta.", en: "More than 100 business meetings between the delegation and Atlanta companies." },
@@ -1427,10 +1437,14 @@ window.SMS_EDICIONES = [
     organizadores: [
       {
         nombre: { es: "Consulado General de la República Argentina en Atlanta", en: "Consulate General of Argentina in Atlanta" },
+        logo: { es: "img/organizadores/consulado-es.png", en: "img/organizadores/consulado-en.png" },
+        logoOscuro: { es: "img/organizadores/consulado-es-oscuro.png", en: "img/organizadores/consulado-en-oscuro.png" },
         detalle: { es: "Cónsul General Alana Lomónaco Busto", en: "Consul General Alana Lomónaco Busto" },
       },
       {
         nombre: { es: "Cancillería Argentina · DNTEC", en: "Argentine Ministry of Foreign Affairs · DNTEC" },
+        logo: "img/organizadores/cancilleria-en.png",
+        logoOscuro: "img/organizadores/cancilleria-en-oscuro.png",
       },
     ],
     resultados: [],
