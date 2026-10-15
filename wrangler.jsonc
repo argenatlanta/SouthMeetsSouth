@@ -1,0 +1,11 @@
+// Configuración para publicar en Cloudflare Workers (sitio estático, sin código de servidor).
+// Si el proyecto se crea como Cloudflare Pages, este archivo no se usa: alcanza con
+// indicar "public" como directorio de salida y dejar vacío el comando de build.
+{
+  "name": "southmeetssouth",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}
