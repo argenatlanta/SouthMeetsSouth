@@ -128,6 +128,26 @@ window.SMS_EDICIONES = [
           en: "30+ years accelerating digital transformation for large enterprises: consulting, custom software, data & AI, cloud and managed services.",
         },
         web: "https://www.avenga.com",
+        ficha: {
+          resumen: {
+            es: "Empresa global de ingeniería y consultoría que acelera la transformación digital de grandes empresas con software, datos e inteligencia artificial. En la Argentina tiene sede en Córdoba.",
+            en: "Global engineering and consulting company that accelerates digital transformation for large enterprises through software, data and artificial intelligence. In Argentina, it is based in Córdoba.",
+          },
+          servicios: [
+            { es: "Consultoría y estrategia digital", en: "Digital strategy consulting" },
+            { es: "Desarrollo de software a medida", en: "Custom software development" },
+            { es: "Datos e inteligencia artificial", en: "Data and artificial intelligence" },
+            { es: "Servicios cloud", en: "Cloud services" },
+            { es: "Servicios gestionados de IT", en: "Managed IT services" },
+          ],
+          trayectoria: [
+            { es: "Más de 30 años en el mercado", en: "30+ years in the market" },
+            { es: "Más de 6.000 especialistas y presencia en más de 15 países", en: "6,000+ specialists and a presence in 15+ countries" },
+            { es: "Certificada ISO 27001", en: "ISO 27001 certified" },
+          ],
+          eeuu: { es: "Cuenta con presencia en EE.UU. como parte de su red global de oficinas.", en: "Has a presence in the U.S. as part of its global office network." },
+          clientes: ["ABB", "Allianz", "GSK", "Santander", "Volvo"],
+        },
       },
       {
         nombre: "Borderless Software",
@@ -152,9 +172,11 @@ window.SMS_EDICIONES = [
             { es: "Servicios gestionados de IT", en: "Managed IT services" },
           ],
           trayectoria: [
-            { es: "Oficinas en Atlanta (EE.UU.) y Buenos Aires", en: "Offices in Atlanta (U.S.) and Buenos Aires" },
+            { es: "Más de 20 años de experiencia", en: "20+ years of experience" },
+            { es: "Oficinas en Atlanta y Buenos Aires", en: "Offices in Atlanta and Buenos Aires" },
+            { es: "Miembro de la Cámara de la Industria Argentina del Software (CESSI)", en: "Member of the Argentine Software Industry Chamber (CESSI)" },
           ],
-          eeuu: { es: "Tiene oficina en Atlanta y una línea de atención en EE.UU.", en: "Has an office in Atlanta and a U.S. contact line." },
+          eeuu: { es: "Opera desde Atlanta, con una cartera de clientes activos radicados mayormente en EE.UU.", en: "Operates from Atlanta, with an active client base located mostly in the U.S." },
         },
       },
       {
@@ -181,10 +203,11 @@ window.SMS_EDICIONES = [
             { es: "Automatización de flujos y procesamiento de documentos", en: "Workflow automation and document processing" },
           ],
           trayectoria: [
-            { es: "Más de 19 años en desarrollo de software", en: "19+ years in software development" },
-            { es: "Más de 100 clientes en el mundo", en: "100+ clients worldwide" },
+            { es: "Fundada en 2007, con más de 100 clientes en el mundo", en: "Founded in 2007, with 100+ clients worldwide" },
+            { es: "Certificada ISO 9001:2015", en: "ISO 9001:2015 certified" },
             { es: "Great Place to Work 2026: 4.º mejor lugar para trabajar en tecnología de la Argentina", en: "Great Place to Work 2026: #4 Best Workplace in Technology in Argentina" },
           ],
+          eeuu: { es: "Trabaja con clientes de Norteamérica, con equipos en zona horaria compatible y nivel de inglés B2 garantizado.", en: "Works with North American clients, with teams in a compatible time zone and guaranteed B2-level English." },
           clientes: ["McDonald's", "DAC Group", "Figmu"],
         },
       },
@@ -198,6 +221,25 @@ window.SMS_EDICIONES = [
           en: "Custom software, dedicated teams, IoT and generative AI solutions to accelerate digital transformation.",
         },
         web: "https://www.codefirstlab.com",
+        ficha: {
+          resumen: {
+            es: "Empresa de desarrollo de software con oficina en el área de Atlanta y sede operativa en Mendoza. Desarrolla software a medida, MVPs y soluciones de IA, y amplía los equipos de sus clientes con talento latinoamericano.",
+            en: "Software development company with an office in the Atlanta area and operational headquarters in Mendoza. It builds custom software, MVPs and AI solutions, and extends its clients’ teams with Latin American talent.",
+          },
+          servicios: [
+            { es: "Desarrollo a medida: web, móvil y e-commerce", en: "Custom development: web, mobile and e-commerce" },
+            { es: "Desarrollo rápido de MVPs", en: "Rapid MVP development" },
+            { es: "Desarrollo con LLMs e ingeniería de software con IA", en: "Custom LLM development and AI-powered engineering" },
+            { es: "Software para IoT", en: "IoT software development" },
+            { es: "Transformación digital", en: "Digital transformation" },
+            { es: "Extensión de equipos nearshore y onshore", en: "Nearshore and onshore team extension" },
+          ],
+          trayectoria: [
+            { es: "Oficina en Brookhaven (Georgia) y sede operativa en Mendoza", en: "Office in Brookhaven, Georgia, and operational headquarters in Mendoza" },
+            { es: "Miembro del Polo TIC Mendoza", en: "Member of Polo TIC Mendoza" },
+          ],
+          eeuu: { es: "Tiene oficina en Brookhaven, en el área metropolitana de Atlanta.", en: "Has an office in Brookhaven, in the Atlanta metropolitan area." },
+        },
       },
       {
         nombre: "Digital Beings",
@@ -209,6 +251,25 @@ window.SMS_EDICIONES = [
           en: "Software consulting and development in AI, blockchain, web and mobile apps for clients across industries.",
         },
         web: "https://www.digitalbeings.net",
+        ficha: {
+          resumen: {
+            es: "Empresa de consultoría y desarrollo de software especializada en inteligencia artificial, blockchain, web y apps móviles, que trabaja tanto ampliando los equipos de sus clientes como en proyectos de punta a punta.",
+            en: "Software consulting and development company specialized in artificial intelligence, blockchain, web and mobile apps, working both as an extension of its clients’ teams and on end-to-end projects.",
+          },
+          servicios: [
+            { es: "Soluciones de inteligencia artificial", en: "Artificial intelligence solutions" },
+            { es: "Blockchain y aplicaciones descentralizadas", en: "Blockchain and decentralized applications" },
+            { es: "Desarrollo web, e-commerce y e-learning", en: "Web, e-commerce and e-learning development" },
+            { es: "Apps móviles para iOS y Android", en: "iOS and Android mobile apps" },
+            { es: "Staff augmentation", en: "Staff augmentation" },
+            { es: "Proyectos de punta a punta, del concepto a la operación", en: "End-to-end projects, from concept to operation" },
+          ],
+          trayectoria: [
+            { es: "Proyectos en fintech, seguros, e-commerce y entretenimiento", en: "Projects in fintech, insurance, e-commerce and entertainment" },
+            { es: "Billetera digital sobre la blockchain RSK y pagos en más de 50 criptomonedas para e-commerce", en: "A digital wallet on the RSK blockchain and payments in 50+ cryptocurrencies for e-commerce" },
+          ],
+          clientes: ["Wayni Móvil", "uPay", "Seguro Select", "BrushUpClub", "Zeppelin Solutions", "Gathr Films"],
+        },
       },
       {
         nombre: "HIPCAM",
@@ -220,6 +281,25 @@ window.SMS_EDICIONES = [
           en: "Smart access as a service: access control, virtual concierge and building security on a single platform and app with 24/7 monitoring.",
         },
         web: "https://www.hipcam.com",
+        ficha: {
+          resumen: {
+            es: "Proptech argentina especializada en Smart Access as a Service: control de accesos, portería virtual y seguridad para edificios, operados sobre una sola plataforma, una app y un centro de monitoreo 24/7.",
+            en: "Argentine proptech specialized in Smart Access as a Service: access control, virtual concierge and building security, run on a single platform, one app and a 24/7 monitoring center.",
+          },
+          servicios: [
+            { es: "App para residentes: credencial, intercomunicador y apertura remota", en: "Resident app: credential, intercom and remote door opening" },
+            { es: "Reconocimiento facial e invitaciones con QR o PIN", en: "Facial recognition and QR or PIN guest invitations" },
+            { es: "Portería virtual con centro de monitoreo 24/7", en: "Virtual concierge with a 24/7 monitoring center" },
+            { es: "Plataforma web para administradores", en: "Web platform for property managers" },
+            { es: "Hardware integrado: videoportero, control vehicular y cerraduras inteligentes", en: "Integrated hardware: video doorbell, vehicle access and smart locks" },
+            { es: "Soluciones para industria, retail y sector público", en: "Solutions for industry, retail and the public sector" },
+          ],
+          trayectoria: [
+            { es: "Más de 10 años en el mercado", en: "10+ years in the market" },
+            { es: "Más de 2.600 edificios y 400.000 usuarios activos", en: "2,600+ buildings and 400,000+ active users" },
+            { es: "Presencia en 16 países de Latinoamérica y alianza tecnológica con Hikvision", en: "A presence in 16 Latin American countries and a technology partnership with Hikvision" },
+          ],
+        },
       },
       {
         nombre: "I+DIoT Lab",
@@ -245,9 +325,9 @@ window.SMS_EDICIONES = [
           ],
           trayectoria: [
             { es: "Partner de Zebra Technologies", en: "Zebra Technologies partner" },
-            { es: "Cadenas de retail, comida rápida, cafeterías, tiendas de conveniencia y estaciones de servicio", en: "Retail chains, quick-service restaurants, coffee shops, convenience stores and fuel retail" },
+            { es: "Clientes en cadenas de retail, comida rápida, cafeterías, tiendas de conveniencia y estaciones de servicio", en: "Clients across retail chains, quick-service restaurants, coffee shops, convenience stores and fuel retail" },
           ],
-          eeuu: { es: "Presentó su solución de autogestión en el stand de Zebra Technologies en NRF 2026 (Nueva York, enero de 2026).", en: "Showcased its self-service solution at Zebra Technologies’ booth at NRF 2026 (New York, January 2026)." },
+          eeuu: { es: "Presentó su solución de autogestión en el stand de Zebra Technologies en NRF 2026, en Nueva York.", en: "Showcased its self-service solution at Zebra Technologies’ booth at NRF 2026 in New York." },
           clientes: ["Nike", "Under Armour", "Converse", "Pan American Energy", "Falabella", "Grido"],
         },
       },
@@ -257,14 +337,14 @@ window.SMS_EDICIONES = [
         provincia: "Córdoba",
         sector: { es: "IA y realidad extendida", en: "AI & extended reality" },
         detalle: {
-          es: "Transformación digital con IA generativa, realidad aumentada y virtual, con sede en Metro Atlanta y más de 500 proyectos realizados.",
-          en: "Digital transformation with generative AI, augmented and virtual reality; headquartered in Metro Atlanta with 500+ projects delivered.",
+          es: "IA aplicada, visión por computadora y tecnologías inmersivas para la industria manufacturera, desde Metro Atlanta. Más de 500 proyectos de realidad aumentada y virtual.",
+          en: "Practical AI, computer vision and immersive technologies for manufacturers, from Metro Atlanta. 500+ AR/VR projects delivered.",
         },
-        web: "https://www.igs.com.ar",
+        web: "https://igsmanufacturing.com/",
         ficha: {
           resumen: {
-            es: "A través de IGS Manufacturing, con sede en Alpharetta (Metro Atlanta), ayuda a fabricantes a reducir paradas, mejorar la calidad, optimizar la producción y capacitar al personal de planta con IA aplicada, visión por computadora y tecnologías inmersivas.",
-            en: "Through IGS Manufacturing, based in Alpharetta (Metro Atlanta), it helps manufacturers reduce downtime, improve quality, optimize production and train frontline workers using practical AI, computer vision and immersive technologies.",
+            es: "A través de IGS Manufacturing, su división para la industria con sede en Metro Atlanta, ayuda a fabricantes a reducir paradas, mejorar la calidad, optimizar la producción y capacitar al personal de planta con IA aplicada, visión por computadora y tecnologías inmersivas.",
+            en: "Through IGS Manufacturing, its manufacturing division based in Metro Atlanta, it helps manufacturers reduce downtime, improve quality, optimize production and train frontline workers with practical AI, computer vision and immersive technologies.",
           },
           servicios: [
             { es: "Optimización de procesos con IA", en: "AI process optimization" },
@@ -275,10 +355,10 @@ window.SMS_EDICIONES = [
           ],
           trayectoria: [
             { es: "Más de 500 proyectos de realidad aumentada y virtual", en: "500+ AR/VR projects delivered" },
-            { es: "5 estrellas en Clutch y 2.ª entre las empresas de RV y RA de EE.UU., según la empresa", en: "5-star Clutch reviews and #2 among VR & AR companies in the U.S., per the company" },
+            { es: "Calificación de 5 estrellas en Clutch, donde figura 2.ª entre las empresas de RV y RA de EE.UU.", en: "Rated 5 stars on Clutch, where it ranks #2 among U.S. VR and AR companies" },
             { es: "Equipos en Georgia, Florida, España y Latinoamérica", en: "Teams in Georgia, Florida, Spain and Latin America" },
           ],
-          eeuu: { es: "Pequeña empresa (SBE) con sede en Atlanta. En 2025 fue subadjudicataria de un subsidio de la National Science Foundation (proyecto ENVISION), junto a West Virginia University, Millersville University y el Stroud Water Research Center.", en: "Atlanta-based small business enterprise (SBE). In 2025 it was a sub-awardee of a National Science Foundation grant (ENVISION project), with West Virginia University, Millersville University and the Stroud Water Research Center." },
+          eeuu: { es: "Pequeña empresa (SBE) con sede en Atlanta. En 2025 fue subadjudicataria de un subsidio de la National Science Foundation para el proyecto ENVISION, junto a West Virginia University, Millersville University y el Stroud Water Research Center.", en: "Atlanta-based small business enterprise (SBE). In 2025 it was a sub-awardee of a National Science Foundation grant for the ENVISION project, alongside West Virginia University, Millersville University and the Stroud Water Research Center." },
           clientes: ["Fiat Chrysler", { es: "Banco Mundial", en: "World Bank" }, "Growglide", { es: "Equipos de la MLS", en: "MLS teams" }],
         },
       },
@@ -293,6 +373,25 @@ window.SMS_EDICIONES = [
           en: "Studio that designs, builds and evolves custom digital products with a 100% senior product, UX/UI and engineering team.",
         },
         web: "https://lilastudio.com.ar",
+        ficha: {
+          resumen: {
+            es: "Estudio de software que diseña, desarrolla y evoluciona productos digitales a medida para empresas en crecimiento, con un equipo 100% senior en producto, UX/UI e ingeniería que trabaja integrado a la operación del cliente.",
+            en: "Software studio that designs, builds and evolves custom digital products for growing companies, with a 100% senior team in product, UX/UI and engineering embedded in each client’s operation.",
+          },
+          servicios: [
+            { es: "Productos digitales a medida, del discovery al lanzamiento", en: "Custom digital products, from discovery to launch" },
+            { es: "Diseño de producto y UX/UI", en: "Product and UX/UI design" },
+            { es: "Plataformas multirol con reglas de negocio e integraciones", en: "Multi-role platforms with business rules and integrations" },
+            { es: "Apps fintech centradas en la conversión y la confianza", en: "Fintech apps focused on conversion and user trust" },
+            { es: "Desarrollo acelerado con IA", en: "AI-accelerated delivery" },
+          ],
+          trayectoria: [
+            { es: "Más de 6 años de trayectoria", en: "6+ years in the market" },
+            { es: "35 productos en su portfolio y experiencia en 5 mercados del exterior", en: "35 products in its portfolio and experience in 5 international markets" },
+            { es: "NPS de 9,66 entre sus clientes", en: "Client NPS of 9.66" },
+          ],
+          clientes: ["Welfi", "Propify", "Hudson App"],
+        },
       },
       {
         nombre: "Meta Software",
@@ -306,8 +405,8 @@ window.SMS_EDICIONES = [
         web: "https://www.metaok.com",
         ficha: {
           resumen: {
-            es: "Empresa especializada en tecnologías emergentes y software a medida, que se presenta como socio tecnológico estratégico para aplicaciones de misión crítica, con equipos en la Argentina y España.",
-            en: "Company specialized in emerging technologies and custom software, positioned as a strategic technology partner for mission-critical applications, with teams in Argentina and Spain.",
+            es: "Empresa especializada en tecnologías emergentes y software a medida, socio tecnológico estratégico para aplicaciones de misión crítica, con equipos en la Argentina y España.",
+            en: "Company specialized in emerging technologies and custom software, a strategic technology partner for mission-critical applications, with teams in Argentina and Spain.",
           },
           servicios: [
             { es: "Desarrollo de software de escritorio, web, cloud y móvil", en: "Desktop, web, cloud and mobile development" },
@@ -318,6 +417,7 @@ window.SMS_EDICIONES = [
             { es: "Diseño UI/UX", en: "UI/UX design" },
           ],
           trayectoria: [
+            { es: "Más de 15 años desarrollando software a medida", en: "15+ years building custom software" },
             { es: "Equipos en la Argentina y España", en: "Teams in Argentina and Spain" },
             { es: "Proyectos en salud, producción, entretenimiento y sector público", en: "Projects in healthcare, production, entertainment and the public sector" },
           ],
@@ -334,6 +434,23 @@ window.SMS_EDICIONES = [
           en: "Custom software, automation, integrations and its own SaaS products, based in La Plata.",
         },
         web: "https://novasoftarg.com",
+        ficha: {
+          resumen: {
+            es: "Empresa de software de La Plata que desarrolla software a medida, automatizaciones, integraciones y productos SaaS para empresas.",
+            en: "Software company based in La Plata that builds custom software, automations, integrations and SaaS products for businesses.",
+          },
+          servicios: [
+            { es: "Desarrollo de software a medida", en: "Custom software development" },
+            { es: "Automatización de procesos", en: "Process automation" },
+            { es: "Integraciones y APIs", en: "Integrations and APIs" },
+            { es: "Plataformas SaaS y dashboards", en: "SaaS platforms and dashboards" },
+            { es: "Soporte técnico 24/7", en: "24/7 technical support" },
+          ],
+          trayectoria: [
+            { es: "Productos propios: Rentium, Coreva y Terva", en: "Proprietary products: Rentium, Coreva and Terva" },
+            { es: "Partner de Tiendanube", en: "Tiendanube partner" },
+          ],
+        },
       },
       {
         nombre: "OWL Services",
@@ -359,11 +476,11 @@ window.SMS_EDICIONES = [
             { es: "Diseño electrónico, de PCB y mecánico", en: "Electronics, PCB and mechanical design" },
           ],
           trayectoria: [
-            { es: "Ciclo completo: estrategia, diseño, desarrollo, integración y pruebas", en: "Full-cycle delivery: strategy, design, development, integration and testing" },
+            { es: "Certificada ISO 27001", en: "ISO 27001 certified" },
             { es: "Sistemas en tiempo real: Linux, Zephyr, VxWorks y otros RTOS", en: "Real-time expertise: Linux, Zephyr, VxWorks and other RTOS" },
-            { es: "Aeroespacial y defensa, automotriz, industria y robótica, salud y agtech", en: "Aerospace and defense, automotive, industrial and robotics, medical and agtech" },
+            { es: "Industrias: aeroespacial y defensa, automotriz, industria y robótica, salud y agtech", en: "Industries: aerospace and defense, automotive, industrial and robotics, medical and agtech" },
           ],
-          eeuu: { es: "Desarrolla proyectos en EE.UU., la Argentina, Perú y Brasil.", en: "Delivers projects in the U.S., Argentina, Peru and Brazil." },
+          eeuu: { es: "Con oficina en St. Petersburg (Florida), desarrolla proyectos en EE.UU., la Argentina, Perú y Brasil.", en: "With an office in St. Petersburg, Florida, it delivers projects in the U.S., Argentina, Peru and Brazil." },
         },
       },
       {
@@ -376,6 +493,24 @@ window.SMS_EDICIONES = [
           en: "Startup at the intersection of AI and gaming: 3D environments where real people generate behavioral data to train AI models.",
         },
         web: "https://pleiada.ai",
+        ficha: {
+          resumen: {
+            es: "Startup argentina en el cruce entre la inteligencia artificial y los videojuegos: produce a medida datos de comportamiento humano en entornos 3D para entrenar modelos de IA.",
+            en: "Argentine startup at the intersection of artificial intelligence and video games: it produces custom human-behavior data in 3D environments to train AI models.",
+          },
+          servicios: [
+            { es: "Playgrounds: entornos 3D propios con física real", en: "Playgrounds: proprietary 3D environments with real physics" },
+            { es: "MindSets: escenarios conversacionales con avatares de IA", en: "MindSets: conversational scenarios with AI avatars" },
+            { es: "Producción de datos a demanda con su red de creadores", en: "On-demand data production through its creator network" },
+            { es: "Evaluación de modelos de IA frente a comportamiento humano real", en: "Testing AI models against real human behavior" },
+            { es: "Control de calidad en cuatro etapas, automáticas y humanas", en: "Four-stage quality control, automated and human" },
+          ],
+          trayectoria: [
+            { es: "Fundadores con más de 20 años en gaming y tecnología, con paso por Microsoft, Globant, Tencent y Gameloft", en: "Founders with 20+ years in gaming and technology, including Microsoft, Globant, Tencent and Gameloft" },
+            { es: "Red de 10.000 gamers en 18 países de Latinoamérica", en: "A network of 10,000 gamers across 18 Latin American countries" },
+            { es: "Capacidad para producir miles de horas de datos por semana", en: "Capacity to produce thousands of hours of data per week" },
+          ],
+        },
       },
       {
         nombre: "QKStudio",
@@ -383,8 +518,8 @@ window.SMS_EDICIONES = [
         provincia: "Buenos Aires",
         sector: { es: "Plataformas digitales y UX", en: "Digital platforms & UX" },
         detalle: {
-          es: "Más de 19 años creando plataformas digitales y desarrollos a medida con foco en UX/UI: apps, webapps, e-learning y e-commerce.",
-          en: "19+ years building digital platforms and custom software with a strong UX/UI focus: apps, web apps, e-learning and e-commerce.",
+          es: "19 años creando plataformas digitales y desarrollos a medida con foco en UX/UI: apps, webapps, e-learning y e-commerce.",
+          en: "19 years building digital platforms and custom software with a strong UX/UI focus: apps, web apps, e-learning and e-commerce.",
         },
         web: "https://www.qkstudio.com",
         ficha: {
@@ -405,7 +540,7 @@ window.SMS_EDICIONES = [
             { es: "Google Partner Premier 2026", en: "Google Partner Premier 2026" },
             { es: "Premios: Sello de Buen Diseño argentino (2025 y 2026), Eikon (2024 y 2025) y Sadosky (2015 y 2020)", en: "Awards: Argentine Good Design Seal (2025 and 2026), Eikon (2024 and 2025) and Sadosky (2015 and 2020)" },
           ],
-          eeuu: { es: "Declara presencia en EE.UU.; su portfolio incluye marcas como Citibank, Visa y Western Union.", en: "Reports a presence in the U.S.; its portfolio includes brands such as Citibank, Visa and Western Union." },
+          eeuu: { es: "Con presencia en EE.UU., su portfolio incluye marcas como Citibank, Visa y Western Union.", en: "With a presence in the U.S., its portfolio includes brands such as Citibank, Visa and Western Union." },
           clientes: ["Citibank", "Visa", "Western Union", "Sony", "Nestlé", "McDonald's"],
         },
       },
@@ -421,8 +556,8 @@ window.SMS_EDICIONES = [
         web: "https://www.quadiontech.com",
         ficha: {
           resumen: {
-            es: "Desarrolla software a medida con metodologías ágiles, entregando soluciones de forma incremental. La mayor parte de sus proyectos proviene de empresas de EE.UU.",
-            en: "Builds custom software using agile methodologies to incrementally deliver top-notch solutions. Most of its assignments come from U.S. companies.",
+            es: "Desarrolla software a medida con metodologías ágiles y entregas incrementales, con equipos especializados en plataformas web y móviles.",
+            en: "Builds custom software through agile methodologies and incremental delivery, with teams specialized in web and mobile platforms.",
           },
           servicios: [
             { es: "Desarrollo de software a medida", en: "Custom software development" },
@@ -431,11 +566,11 @@ window.SMS_EDICIONES = [
             { es: "Backend y cloud: .NET, Java, Node.js, Azure y AWS", en: "Backend and cloud: .NET, Java, Node.js, Azure and AWS" },
           ],
           trayectoria: [
-            { es: "Más de 250 proyectos completados", en: "250+ completed projects" },
+            { es: "Desde 2004, más de 250 proyectos completados", en: "250+ projects completed since 2004" },
             { es: "Más de 100 profesionales; el 78% habla inglés", en: "100+ professionals; 78% English-speaking" },
             { es: "Certificada ISO 9001:2015", en: "ISO 9001:2015 certified" },
           ],
-          eeuu: { es: "Más del 70% de sus proyectos provienen de empresas de EE.UU.; tiene una línea de contacto en ese país.", en: "Over 70% of its assignments come from U.S. companies; it has a U.S. contact line." },
+          eeuu: { es: "Más del 70% de sus proyectos son para empresas de EE.UU.", en: "U.S. companies account for over 70% of its engagements." },
         },
       },
       {
@@ -460,9 +595,10 @@ window.SMS_EDICIONES = [
             { es: "Control de calidad con supervisión humana (human-in-the-loop)", en: "Human-in-the-loop (HITL) quality assurance" },
           ],
           trayectoria: [
-            { es: "Socio de laboratorios de I+D y empresas tecnológicas de Europa y América", en: "Partner to R&D labs and tech companies in Europe and the Americas" },
+            { es: "Socio de laboratorios de I+D y empresas tecnológicas que exigen estándares de calidad internacionales", en: "Partner to R&D labs and tech companies that demand export-grade quality standards" },
             { es: "Procesos diseñados según GDPR, HIPAA y los criterios SOC 2 de AICPA", en: "Processes structured around GDPR, HIPAA and AICPA SOC 2 criteria" },
           ],
+          eeuu: { es: "Trabaja para empresas de Europa y América del Norte.", en: "Serves companies in Europe and North America." },
         },
       },
       {
@@ -476,6 +612,27 @@ window.SMS_EDICIONES = [
           en: "Immersive experience studio: immersive rooms, VR and AR, virtual tours and AI-powered creations.",
         },
         web: "https://realidad360.com.ar",
+        ficha: {
+          resumen: {
+            es: "Productora argentina de experiencias inmersivas que diseña, produce y opera de punta a punta salas inmersivas, realidad virtual y aumentada, tours virtuales, pantallas interactivas y contenidos con IA.",
+            en: "Argentine immersive experience studio that designs, produces and runs immersive rooms, virtual and augmented reality, virtual tours, interactive screens and AI-generated content, end to end.",
+          },
+          servicios: [
+            { es: "Salas inmersivas: contenido, proyección, sonido y montaje", en: "Immersive rooms: content, projection, sound and installation" },
+            { es: "Cine y documental 360° con sonido inmersivo", en: "360° film and documentary with immersive sound" },
+            { es: "Realidad virtual para grupos con sistema propio sincronizado", en: "Group VR with a proprietary synchronized system" },
+            { es: "Pantallas interactivas y tótems", en: "Interactive screens and kiosks" },
+            { es: "Realidad aumentada y tours virtuales", en: "Augmented reality and virtual tours" },
+            { es: "Contenidos personalizados con IA", en: "Personalized AI-generated content" },
+          ],
+          trayectoria: [
+            { es: "13 años en el mercado", en: "13 years in the market" },
+            { es: "Obras en más de 25 festivales internacionales, entre ellos Venecia, Sundance, SXSW y Cannes XR", en: "Work shown at 25+ international festivals, including Venice, Sundance, SXSW and Cannes XR" },
+            { es: "Premios en GIFF (2018), Virtuality (2018) y Trends (2017)", en: "Awards at GIFF (2018), Virtuality (2018) and Trends (2017)" },
+          ],
+          eeuu: { es: "En Miami desarrolló el contenido y la supervisión técnica de «Surreal 360: A Salvador Dalí Experience», en Ice Palace Studios, y en Puerto Rico filmó 23 visualizers 360° para Bad Bunny.", en: "In Miami it created the content and technical supervision for “Surreal 360: A Salvador Dalí Experience” at Ice Palace Studios, and in Puerto Rico it filmed 23 360° visualizers for Bad Bunny." },
+          clientes: ["Teatro Colón", { es: "Centro Cultural Recoleta", en: "Recoleta Cultural Center" }, { es: "CAF – Banco de Desarrollo de América Latina y el Caribe", en: "CAF – Development Bank of Latin America and the Caribbean" }, "Bad Bunny", "Banco Galicia", "CONICET"],
+        },
       },
       {
         nombre: "RH Vision",
@@ -500,6 +657,12 @@ window.SMS_EDICIONES = [
             { es: "Consultoría y transformación digital", en: "Consulting and digital transformation" },
             { es: "Staff augmentation, outsourcing y selección de talento IT", en: "Staff augmentation, outsourcing and IT recruiting" },
           ],
+          trayectoria: [
+            { es: "Más de 10 años en staff augmentation", en: "10+ years in staff augmentation" },
+            { es: "Oficinas en Córdoba y St. Petersburg (Florida)", en: "Offices in Córdoba and St. Petersburg, Florida" },
+            { es: "Clientes pymes y grandes empresas en logística, industria, construcción, energías renovables y agroindustria", en: "SME and enterprise clients in logistics, manufacturing, construction, renewable energy and agribusiness" },
+          ],
+          eeuu: { es: "Con oficina en St. Petersburg (Florida), apunta a alianzas de largo plazo con empresas, integradores tecnológicos e instituciones financieras de EE.UU.", en: "With an office in St. Petersburg, Florida, it seeks long-term partnerships with U.S. companies, technology integrators and financial institutions." },
         },
       },
       {
@@ -512,6 +675,27 @@ window.SMS_EDICIONES = [
           en: "Software firm specializing in payments infrastructure and core banking: gateways, card processing, settlement, ACH and APIs.",
         },
         web: "https://www.tecro.dev",
+        ficha: {
+          resumen: {
+            es: "Fábrica de software argentina especializada en infraestructura de pagos y core bancario, que diseña, desarrolla y moderniza plataformas transaccionales críticas para bancos, fintechs, procesadoras de pago y retailers.",
+            en: "Argentine software company specialized in payments infrastructure and core banking, designing, building and modernizing mission-critical transaction platforms for banks, fintechs, payment processors and retailers.",
+          },
+          servicios: [
+            { es: "Gateways y procesamiento de pagos", en: "Payment gateways and processing" },
+            { es: "Autorización de tarjetas, prepago y gift cards", en: "Card authorization, prepaid and gift cards" },
+            { es: "Settlement, ACH y conciliación", en: "Settlement, ACH and reconciliation" },
+            { es: "Seguridad PCI: P2PE, tokenización y HSM", en: "PCI security: P2PE, tokenization and HSM" },
+            { es: "Pagos para retail y estaciones de servicio", en: "Payments for retail and fuel stations" },
+            { es: "APIs sobre core bancario y modernización a microservicios", en: "Core banking APIs and modernization to microservices" },
+          ],
+          trayectoria: [
+            { es: "Más de 15 años de trayectoria", en: "15+ years in the market" },
+            { es: "Plataformas de autorización de 400 TPS con store-and-forward", en: "400 TPS authorization platforms with store-and-forward" },
+            { es: "Miembro de la Cámara Argentina Fintech", en: "Member of the Argentine Fintech Chamber" },
+          ],
+          eeuu: { es: "Desarrolló gateways para grandes cadenas de retail de EE.UU. y soluciones para líderes del sector como InComm Payments.", en: "Has built gateways for major U.S. retail chains and solutions for industry leaders such as InComm Payments." },
+          clientes: ["InComm Payments"],
+        },
       },
       {
         nombre: "TPS",
@@ -541,7 +725,7 @@ window.SMS_EDICIONES = [
             { es: "Certificada ISO 9001:2015", en: "ISO 9001:2015 certified" },
             { es: "Exporta desde 2001", en: "Exporting since 2001" },
           ],
-          eeuu: { es: "Desarrolló soluciones para instituciones financieras y empresas de remesas en EE.UU. y Puerto Rico, con equipos bilingües en horario compatible.", en: "Has delivered solutions for financial institutions and money transfer companies in the U.S. and Puerto Rico, with bilingual teams working U.S.-compatible hours." },
+          eeuu: { es: "Ha desarrollado soluciones para instituciones financieras y empresas de remesas de EE.UU. y Puerto Rico, con equipos bilingües alineados al horario estadounidense.", en: "Has delivered solutions for financial institutions and money transfer companies in the U.S. and Puerto Rico, with bilingual teams aligned to U.S. business hours." },
         },
       },
       {
@@ -554,6 +738,25 @@ window.SMS_EDICIONES = [
           en: "20+ years in cybersecurity and data protection, operating in Argentina, Spain and Latin America.",
         },
         web: "https://uniqs.com.ar",
+        ficha: {
+          resumen: {
+            es: "Empresa con más de 20 años en ciberseguridad, protección de datos y servicios de infraestructura IT, con presencia en la Argentina, España y Latinoamérica.",
+            en: "Company with 20+ years in cybersecurity, data protection and IT infrastructure services, with a presence in Argentina, Spain and Latin America.",
+          },
+          servicios: [
+            { es: "Seguridad informática y protección de datos", en: "IT security and data protection" },
+            { es: "Respaldo, alta disponibilidad y recuperación ante desastres", en: "Backup, high availability and disaster recovery" },
+            { es: "Monitoreo de infraestructura", en: "Infrastructure monitoring" },
+            { es: "Gestión de riesgos y de proyectos", en: "Risk and project management" },
+            { es: "Capacitación y soporte", en: "Training and support" },
+            { es: "Desarrollo y outsourcing de software", en: "Software development and outsourcing" },
+          ],
+          trayectoria: [
+            { es: "Más de 20 años en el mercado", en: "20+ years in the market" },
+            { es: "Certificaciones de fabricantes: Dell, HP y Veeam", en: "Vendor certifications: Dell, HP and Veeam" },
+            { es: "Miembro del Córdoba Technology Cluster", en: "Member of the Córdoba Technology Cluster" },
+          ],
+        },
       },
       {
         nombre: "Wootic",
@@ -583,7 +786,7 @@ window.SMS_EDICIONES = [
             { es: "Más de 150 proyectos entregados", en: "150+ projects delivered" },
             { es: "Más de 60 integrantes", en: "60+ team members" },
           ],
-          eeuu: { es: "Trabajó con organizaciones de EE.UU. como John Deere, AmeriCorps y Housing Navigator Massachusetts.", en: "Has worked with U.S. organizations such as John Deere, AmeriCorps and Housing Navigator Massachusetts." },
+          eeuu: { es: "Ha trabajado con organizaciones estadounidenses como John Deere, AmeriCorps y Housing Navigator Massachusetts.", en: "Has worked with U.S. organizations such as John Deere, AmeriCorps and Housing Navigator Massachusetts." },
           clientes: [{ es: "Gobierno de la Provincia de Córdoba", en: "Government of the Province of Córdoba" }, "John Deere", "SanCor", "Ledesma", { es: "Universidad de Buenos Aires", en: "University of Buenos Aires" }, "AmeriCorps"],
         },
       },

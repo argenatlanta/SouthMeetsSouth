@@ -111,11 +111,6 @@
       ficha_track: "Trayectoria",
       ficha_us: "En Estados Unidos",
       ficha_clients: "Clientes y proyectos destacados",
-      ficha_source: "Información tomada del one-pager que la empresa presentó para la misión {y}.",
-      prior_badge: "Participó en {y}",
-      prior_one: "Participó en la misión {y}",
-      prior_many: "Participó en las misiones {y}",
-      and_word: " y ",
       prev_edition: "Edición anterior",
       next_edition: "Edición siguiente",
       not_found_t: "No encontramos esa edición",
@@ -227,11 +222,6 @@
       ficha_track: "Track record",
       ficha_us: "In the United States",
       ficha_clients: "Selected clients and projects",
-      ficha_source: "Information taken from the one-pager the company submitted for the {y} mission.",
-      prior_badge: "Took part in {y}",
-      prior_one: "Took part in the {y} mission",
-      prior_many: "Took part in the {y} missions",
-      and_word: " and ",
       prev_edition: "Previous edition",
       next_edition: "Next edition",
       not_found_t: "Edition not found",
@@ -727,26 +717,11 @@
     return '<div class="logo' + (o.logoFondo === "oscuro" ? " dark" : "") + '"><img src="' + esc(src) + '" alt="" loading="lazy"></div>';
   }
 
-  // Ediciones anteriores a `ed` en cuya delegación figura la misma empresa (se compara por nombre).
-  function priorEditions(nombre, ed) {
-    var key = String(nombre || "").trim().toLowerCase();
-    return EDICIONES.filter(function (e) {
-      return e !== ed && String(e.inicio || "") < String(ed.inicio || "") && (e.delegacion || []).some(function (o) {
-        return String(o.nombre || "").trim().toLowerCase() === key;
-      });
-    }).map(year).sort();
-  }
-
-  function joinList(list) {
-    return list.length < 2 ? list.join("") : list.slice(0, -1).join(", ") + ui("and_word") + list[list.length - 1];
-  }
-
-  // `ed` solo se pasa para la delegación: habilita el aviso de misiones anteriores y la ficha.
+  // `ed` solo se pasa para la delegación: habilita el botón de la ficha.
   function renderOrgs(list, withKind, ed) {
     var withLogos = list.some(function (o) { return o.logo; });
     return '<ul class="cards">' + list.map(function (o, i) {
       var url = safeUrl(o.web);
-      var prior = ed ? priorEditions(o.nombre, ed) : [];
       var more = ed && o.ficha ? '<button type="button" class="more-info" data-ficha="' + i + '">' + esc(ui("more_info")) + "</button>" : "";
       var web = url ? '<a class="web" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(ui("website")) + " " + ICON.ext + "</a>" : "";
       return (
@@ -756,7 +731,6 @@
         "<h3>" + esc(o.nombre) + verifyTag(o) + "</h3>" +
         (o.sector ? '<span class="sector">' + esc(t(o.sector)) + "</span>" : "") +
         (o.provincia ? '<span class="prov">' + ICON.pin + esc(t(o.provincia)) + "</span>" : "") +
-        (prior.length ? '<span class="prior-badge">' + esc(ui("prior_badge", { y: joinList(prior) })) + "</span>" : "") +
         (o.detalle ? "<p>" + esc(t(o.detalle)) + "</p>" : "") +
         (more || web ? '<div class="org-actions">' + more + web + "</div>" : "") +
         "</li>"
@@ -772,7 +746,6 @@
   function renderFicha(o, ed) {
     var f = o.ficha;
     var url = safeUrl(o.web);
-    var prior = priorEditions(o.nombre, ed);
     function block(title, body) { return body ? '<section class="ficha-block"><h3>' + esc(title) + "</h3>" + body + "</section>" : ""; }
     function list(items) { return isEmpty(items) ? "" : '<ul class="ficha-list">' + items.map(function (x) { return "<li>" + esc(t(x)) + "</li>"; }).join("") + "</ul>"; }
     return (
@@ -781,17 +754,13 @@
       (o.sector ? '<span class="sector">' + esc(t(o.sector)) + "</span>" : "") +
       (o.provincia ? '<span class="prov">' + ICON.pin + esc(t(o.provincia)) + "</span>" : "") +
       "</div></div>" +
-      (prior.length ? '<p class="ficha-prior">' + ICON.check + "<span>" + esc(ui(prior.length > 1 ? "prior_many" : "prior_one", { y: joinList(prior) })) + "</span></p>" : "") +
       block(ui("ficha_about"), f.resumen ? "<p>" + esc(t(f.resumen)) + "</p>" : "") +
       block(ui("ficha_services"), list(f.servicios)) +
       block(ui("ficha_track"), list(f.trayectoria)) +
       block(ui("ficha_us"), f.eeuu ? "<p>" + esc(t(f.eeuu)) + "</p>" : "") +
       block(ui("ficha_clients"), isEmpty(f.clientes) ? "" : '<ul class="chips">' + f.clientes.map(function (c) { return '<li class="chip">' + esc(t(c)) + "</li>"; }).join("") + "</ul>") +
       (isEmpty(f.imagenes) ? "" : renderGallery(f.imagenes)) +
-      '<div class="ficha-foot">' +
-      (url ? '<a class="btn btn-primary" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(ui("website")) + " " + ICON.ext + "</a>" : "") +
-      '<p class="ficha-source">' + esc(ui("ficha_source", { y: year(ed) })) + "</p>" +
-      "</div>"
+      (url ? '<div class="ficha-foot"><a class="btn btn-primary" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(ui("website")) + " " + ICON.ext + "</a></div>" : "")
     );
   }
 

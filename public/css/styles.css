@@ -569,10 +569,6 @@ a.resource:hover { border-color: var(--celeste); text-decoration: none; }
 }
 .more-info:hover { border-color: var(--celeste); }
 .more-info:focus-visible { outline: 2px solid var(--celeste); outline-offset: 2px; }
-.prior-badge {
-  align-self: flex-start; font-size: 12px; font-weight: 700;
-  color: var(--sol-ink); background: var(--sol-soft); border-radius: 999px; padding: 3px 10px;
-}
 .org .prov { display: inline-flex; gap: 5px; align-items: center; color: var(--ink-2); font-size: 13px; }
 .org .logo {
   height: 96px; margin-bottom: 8px; padding: 12px 20px;
@@ -666,11 +662,6 @@ dialog.ficha::backdrop { background: rgba(7, 16, 27, 0.6); }
 .ficha-head h2 { font-size: 24px; line-height: 1.2; margin: 0 0 4px; }
 .ficha-head .sector { display: block; color: var(--celeste-ink); font-size: 14px; font-weight: 600; }
 .ficha-head .prov { display: inline-flex; gap: 5px; align-items: center; margin-top: 2px; color: var(--ink-2); font-size: 13px; }
-.ficha-prior {
-  display: flex; gap: 8px; align-items: center; margin: 18px 0 0; padding: 10px 14px;
-  border-radius: var(--radius-sm); background: var(--sol-soft); color: var(--sol-ink); font-weight: 600; font-size: 15px;
-}
-.ficha-prior svg { flex: none; }
 .ficha-block { margin-top: 22px; }
 .ficha-block h3 {
   margin: 0 0 8px; font-family: var(--font-body); font-size: 13px; font-weight: 700;
@@ -682,7 +673,6 @@ dialog.ficha::backdrop { background: rgba(7, 16, 27, 0.6); }
   display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; justify-content: space-between;
   margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line);
 }
-.ficha-source { max-width: 440px; margin: 0; color: var(--ink-2); font-size: 13px; }
 @media (max-width: 560px) {
   dialog.ficha { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); }
   .ficha-body { padding: 20px 18px; }

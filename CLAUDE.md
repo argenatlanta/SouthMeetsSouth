@@ -88,13 +88,16 @@ internas de la delegación). Las fuentes habituales están en el Google Drive de
 publican solo nombre de la empresa, provincia, web y una descripción breve; nunca datos personales
 (correos, teléfonos, documentos).
 
-**Fichas de empresas («Más información»).** La fuente es el one-pager que cada empresa presentó para la
-misión (Drive del Consulado: «Misión Software AAAA» → «ONE PAGERS»). Reflejar lo que la empresa dice de
-sí misma, sin agregar datos de otras fuentes salvo que el usuario lo pida. Misma estructura y extensión
-parecida para todas: resumen de 1 o 2 oraciones, 4 a 6 servicios, hasta 3 datos de trayectoria, EE.UU. solo
-si la empresa declara clientes o presencia allí, hasta 6 clientes. No publicar datos personales de los
-one-pagers (nombres de contactos, correos, teléfonos, fotos). La participación en misiones anteriores se
-calcula sola comparando el `nombre` entre ediciones: usar siempre el mismo nombre para cada empresa.
+**Fichas de empresas («Más información»).** La fuente principal es el one-pager que cada empresa presentó
+para la misión (Drive del Consulado: «Misión Software AAAA» → «ONE PAGERS»). Si no hay one-pager o es
+escaso, se completa con el formulario de inscripción y el sitio web de la empresa. Reflejar lo que la
+empresa dice de sí misma. En las fichas no se usa `verificar`: lo que haya que confirmar va a un documento
+aparte para el Consulado, ordenado por quién debe verificarlo. Misma estructura y extensión parecida para
+todas: resumen de 1 o 2 oraciones, 4 a 6 servicios, hasta 3 datos de trayectoria, EE.UU. solo si la empresa
+declara clientes o presencia allí, hasta 6 clientes. Tono de sitio institucional y comercial, sin
+expresiones informales. Sin imágenes, sin aviso de la fuente y sin aviso de misiones anteriores. No
+publicar datos personales (nombres de contactos, correos, teléfonos, fotos). Usar siempre el mismo
+`nombre` para cada empresa en todas las ediciones.
 
 Las secciones vacías (`[]`) no se muestran en el sitio publicado. En modo borrador aparecen como
 «Sección a completar».
