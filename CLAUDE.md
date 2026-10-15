@@ -76,7 +76,10 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
   organizadores: [{ nombre, detalle?, logo?, logoOscuro? }],
       // logo y logoOscuro: ruta o { es, en }; si no hay logo se muestra el nombre. El nombre queda como texto alternativo.
   resultados: [{ es, en }],
-  galeria: [{ src: "img/ediciones/2025/foto-01.jpg", alt: { es, en }, credito? }],
+  galeriaCredito: { es, en },             // «Fotos: …» al pie de la galería
+  galeria: [{ titulo: { es, en }, fecha?, hora?, fotos: [{ src, mini, alt: { es, en } }] }],
+      // un grupo por momento de la agenda; src: "img/ediciones/2025/b2b-1.jpg" (hasta 1600 px, sin EXIF),
+      // mini: "…-mini.jpg" (720 × 540, recortada 4:3). Al tocar una foto se abre el visor.
   prensa: [{ titulo, medio, url, fecha?, idioma: "es" | "en" }],
 
   // Solo para estado "proxima":

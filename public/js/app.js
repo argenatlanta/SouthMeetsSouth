@@ -106,6 +106,10 @@
       website: "Sitio web",
       more_info: "Más información",
       close: "Cerrar",
+      photos_by: "Fotos",
+      photo_prev: "Foto anterior",
+      photo_next: "Foto siguiente",
+      photo_of: "{n} de {total}",
       ficha_about: "Qué hace",
       ficha_services: "Servicios",
       ficha_track: "Trayectoria",
@@ -217,6 +221,10 @@
       website: "Website",
       more_info: "More information",
       close: "Close",
+      photos_by: "Photos",
+      photo_prev: "Previous photo",
+      photo_next: "Next photo",
+      photo_of: "{n} of {total}",
       ficha_about: "What they do",
       ficha_services: "Services",
       ficha_track: "Track record",
@@ -357,6 +365,8 @@
     clock: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
     card: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg>',
     spark: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg>',
+    prev: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
+    next: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>',
     close: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',
     plane: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-6-20-6 4 6-4 6zM6 10h8"/></svg>',
   };
@@ -853,6 +863,103 @@
     }).join("") + "</div>";
   }
 
+  // ───────────────────────── Galería por momentos, con visor ─────────────────────────
+  // galeria: [{ titulo, fecha?, hora?, fotos: [{ src, mini?, alt }] }]. Una lista de fotos sueltas
+  // ({ src, alt }) se muestra como un solo grupo sin título.
+  function galleryGroups(ed) {
+    var list = ed.galeria || [];
+    return list.length && !list[0].fotos ? [{ fotos: list }] : list;
+  }
+
+  function galleryPhotos(ed) {
+    var out = [];
+    galleryGroups(ed).forEach(function (g) {
+      (g.fotos || []).forEach(function (f) { if (safeUrl(f.src)) out.push({ foto: f, grupo: g }); });
+    });
+    return out;
+  }
+
+  function renderPhotoGallery(ed) {
+    var i = 0;
+    var groups = galleryGroups(ed).map(function (g) {
+      var fotos = (g.fotos || []).filter(function (f) { return safeUrl(f.src); });
+      var thumbs = fotos.map(function (f) {
+        var html = '<li><button type="button" class="photo" data-foto="' + i + '">' +
+          '<img src="' + esc(safeUrl(f.mini) || safeUrl(f.src)) + '" alt="' + esc(t(f.alt)) + '" loading="lazy" width="720" height="540">' +
+          "</button></li>";
+        i++;
+        return html;
+      }).join("");
+      if (!thumbs) return "";
+      var when = g.fecha ? fmtDate(g.fecha, { weekday: "short", day: "numeric", month: "short" }) + (g.hora ? " · " + g.hora : "") : "";
+      // data-n: cuántas columnas ocupa el grupo (hasta 4), para que los momentos con pocas fotos se acomoden lado a lado.
+      return '<section class="gallery-group" data-n="' + Math.min(fotos.length, 4) + '">' +
+        (g.titulo ? "<h3>" + esc(t(g.titulo)) + (when ? "<small>" + esc(when) + "</small>" : "") + "</h3>" : "") +
+        '<ul class="gallery photos">' + thumbs + "</ul></section>";
+    }).join("");
+    var credit = ed.galeriaCredito ? '<p class="gallery-credit">' + esc(ui("photos_by")) + ": " + esc(t(ed.galeriaCredito)) + "</p>" : "";
+    return '<div class="gallery-groups">' + groups + "</div>" + credit;
+  }
+
+  function lightbox() {
+    var d = document.getElementById("lightbox");
+    if (d) return d;
+    d = document.createElement("dialog");
+    d.id = "lightbox";
+    d.className = "lightbox";
+    d.innerHTML =
+      '<figure><img alt=""><figcaption><span class="lb-text"></span><span class="lb-count"></span></figcaption></figure>' +
+      '<button type="button" class="lb-btn lb-prev" aria-label="' + esc(ui("photo_prev")) + '">' + ICON.prev + "</button>" +
+      '<button type="button" class="lb-btn lb-next" aria-label="' + esc(ui("photo_next")) + '">' + ICON.next + "</button>" +
+      '<button type="button" class="lb-btn lb-close" aria-label="' + esc(ui("close")) + '">' + ICON.close + "</button>";
+    document.body.appendChild(d);
+    // Un clic fuera de la foto y de los botones cierra el visor.
+    d.addEventListener("click", function (e) { if (e.target === d || e.target.tagName === "FIGURE") d.close(); });
+    d.querySelector(".lb-close").addEventListener("click", function () { d.close(); });
+    return d;
+  }
+
+  function bindGallery(ed) {
+    var photos = galleryPhotos(ed);
+    if (!photos.length) return;
+    var d = lightbox();
+    var img = d.querySelector("img"), text = d.querySelector(".lb-text"), count = d.querySelector(".lb-count");
+    var current = 0;
+    function show(n) {
+      current = (n + photos.length) % photos.length;
+      var p = photos[current];
+      img.src = safeUrl(p.foto.src);
+      img.alt = t(p.foto.alt);
+      text.textContent = t(p.foto.alt);
+      count.textContent = (p.grupo.titulo ? t(p.grupo.titulo) + " · " : "") + ui("photo_of", { n: current + 1, total: photos.length });
+      // Precarga la siguiente para que el paso sea inmediato.
+      var next = photos[(current + 1) % photos.length];
+      if (next) { var pre = new Image(); pre.src = safeUrl(next.foto.src); }
+    }
+    d.querySelector(".lb-prev").onclick = function () { show(current - 1); };
+    d.querySelector(".lb-next").onclick = function () { show(current + 1); };
+    d.onkeydown = function (e) {
+      if (e.key === "ArrowLeft") { e.preventDefault(); show(current - 1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); show(current + 1); }
+    };
+    // Deslizar el dedo en el celular pasa de foto.
+    var x0 = null;
+    d.ontouchstart = function (e) { x0 = e.touches[0].clientX; };
+    d.ontouchend = function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+      x0 = null;
+    };
+    document.querySelectorAll("[data-foto]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        show(Number(b.getAttribute("data-foto")));
+        if (!d.open) d.showModal();
+        d.querySelector(".lb-next").focus();
+      });
+    });
+  }
+
   function renderEdition() {
     var main = document.getElementById("main");
     var id = new URLSearchParams(window.location.search).get("id");
@@ -915,7 +1022,7 @@
     sections.push(["anfitriones", ui("sec_hosts"), isEmpty(ed.anfitriones) ? null : renderOrgs(ed.anfitriones, true), !isNext]);
     sections.push(["reuniones", ui("sec_meetings"), isEmpty(ed.reuniones) ? null : renderPeople(ed.reuniones), !isNext]);
     sections.push(["resultados", ui("sec_results"), isEmpty(ed.resultados) ? null : '<ul class="results">' + ed.resultados.map(function (r) { return "<li>" + ICON.check + "<span>" + esc(t(r)) + "</span></li>"; }).join("") + "</ul>", !isNext]);
-    sections.push(["galeria", ui("sec_gallery"), isEmpty(ed.galeria) ? null : renderGallery(ed.galeria), !isNext]);
+    sections.push(["galeria", ui("sec_gallery"), isEmpty(ed.galeria) ? null : renderPhotoGallery(ed), !isNext]);
     sections.push(["organizan", ui("sec_organizers"), isEmpty(ed.organizadores) ? null : renderOrganizers(ed.organizadores), false]);
     sections.push(["prensa", ui("sec_press"), isEmpty(ed.prensa) ? null : renderPress(ed.prensa), false]);
 
@@ -938,6 +1045,7 @@
     main.innerHTML = hero + stats + internal + nav + body + pager;
     setupScrollSpy();
     bindFichas(ed);
+    bindGallery(ed);
   }
 
   function setupScrollSpy() {
