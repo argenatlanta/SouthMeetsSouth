@@ -197,6 +197,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Immersive Global Solutions (IGS)",
+        logo: "img/empresas/immersive-global-solutions.png",
         provincia: "Córdoba",
         sector: { es: "IA y realidad extendida", en: "AI & extended reality" },
         detalle: {
@@ -272,6 +273,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Quadion Technologies",
+        logo: "img/empresas/quadion-technologies.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Software a medida", en: "Custom software development" },
         detalle: {
@@ -499,6 +501,7 @@ window.SMS_EDICIONES = [
     delegacion: [
       {
         nombre: "Borderless Software",
+        logo: "img/empresas/borderless-software.png",
         sector: { es: "Software y consultoría IT", en: "Software & IT consulting" },
         detalle: {
           es: "Desarrollo de software y consultoría IT con oficinas en EE.UU. y Argentina: soluciones a medida, servicios gestionados y staff augmentation.",
@@ -508,6 +511,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Code First Lab",
+        logo: "img/empresas/code-first-lab.png",
         sector: { es: "Software a medida e IA", en: "Custom software & AI" },
         detalle: {
           es: "Software a medida, equipos dedicados, IoT, MVPs y soluciones de IA generativa.",
@@ -517,6 +521,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Darwoft",
+        logo: "img/empresas/darwoft.png",
         sector: { es: "Software para salud", en: "Healthcare software" },
         detalle: {
           es: "Equipo nearshore especializado en soluciones para el sector salud, alineadas con HIPAA y HITRUST.",
@@ -526,6 +531,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Eureka Labs",
+        logo: "img/empresas/eureka-labs.png",
         sector: { es: "Talento tech e IA", en: "Tech talent & AI" },
         detalle: {
           es: "Talento tech, equipos integrados y soluciones de IA a medida para equipos de tecnología de todas las industrias.",
@@ -534,6 +540,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "GOSYS Global",
+        logo: "img/empresas/gosys-global.png",
         sector: { es: "IA para finanzas corporativas", en: "AI for corporate finance" },
         detalle: {
           es: "Planificación integrada de negocios para CFOs de grandes empresas con AITANA, su socio financiero basado en IA.",
@@ -542,6 +549,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "I+DIoT Lab",
+        logo: "img/empresas/id-iot-lab.png",
         sector: { es: "Retail tech e IoT", en: "Retail tech & IoT" },
         detalle: {
           es: "Software, hardware e IoT para digitalizar el retail físico y la industria gastronómica.",
@@ -551,6 +559,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Immersive Global Solutions (IGS)",
+        logo: "img/empresas/immersive-global-solutions.png",
         sector: { es: "IA y realidad extendida", en: "AI & extended reality" },
         detalle: {
           es: "IA (visión por computadora, NLP, IA generativa) y realidad extendida para la industria y la capacitación, con sede en Atlanta.",
@@ -560,6 +569,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Nybble Group",
+        logo: "img/empresas/nybble-group.png",
         sector: { es: "Automatización inteligente", en: "Intelligent automation" },
         detalle: {
           es: "Consultora tecnológica con software a medida y automatización inteligente (BPA, RPA, IA) para fintech, seguros, e-commerce e industria.",
@@ -569,6 +579,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Quadion Technologies",
+        logo: "img/empresas/quadion-technologies.png",
         sector: { es: "Software a medida", en: "Custom software development" },
         detalle: {
           es: "Desarrollo ágil de software con más de 20 años de trayectoria en gobierno, salud, finanzas y medios.",
@@ -578,6 +589,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "RD IT",
+        logo: "img/empresas/rd-it.png",
         sector: { es: "Consultoría IT y SaaS", en: "IT consulting & SaaS" },
         detalle: {
           es: "Consultoría estratégica de IT y HOLO, su plataforma SaaS para la gestión de proveedores y gastos de IT.",
@@ -586,6 +598,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Rooftop",
+        logo: "img/empresas/rooftop.png",
         sector: { es: "Talento tech", en: "Tech talent" },
         detalle: {
           es: "Conecta empresas con desarrolladores de Latinoamérica mediante un sistema de evaluación con IA y personas.",
@@ -594,6 +607,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "The Flock",
+        logo: "img/empresas/the-flock.png",
         sector: { es: "Equipos de software gestionados", en: "Managed software teams" },
         detalle: {
           es: "Equipos de software gestionados y talento on-demand, con una red de más de 13.000 profesionales.",
@@ -602,6 +616,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Wootic",
+        logo: "img/empresas/wootic.png",
         sector: { es: "Software y plataformas digitales", en: "Software & digital platforms" },
         detalle: {
           es: "Más de 15 años desarrollando software a medida y plataformas digitales.",
@@ -884,12 +899,14 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Borderless Software",
+        logo: "img/empresas/borderless-software.png",
         sector: { es: "Software y consultoría IT", en: "Software & IT consulting" },
         detalle: { es: "Software a medida, consultoría, servicios cloud y e-commerce.", en: "Custom software, consulting, cloud services and e-commerce." },
         web: "https://www.borderless-software.com",
       },
       {
         nombre: "Darwoft",
+        logo: "img/empresas/darwoft.png",
         sector: { es: "Software para salud", en: "Healthcare software" },
         detalle: { es: "Soluciones de datos, IA y MVPs para el sector salud.", en: "Data, AI and MVP solutions for healthcare." },
         web: "https://www.darwoft.com",
@@ -919,6 +936,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Immersive Global Solutions (IGS)",
+        logo: "img/empresas/immersive-global-solutions.png",
         sector: { es: "Realidad aumentada, virtual e IA", en: "AR, VR & AI" },
         web: "https://www.igs.com.ar",
       },
@@ -942,17 +960,20 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Nybble Group",
+        logo: "img/empresas/nybble-group.png",
         sector: { es: "Automatización inteligente", en: "Intelligent automation" },
         detalle: { es: "Automatización inteligente de procesos y software a medida.", en: "Intelligent process automation and custom software." },
         web: "https://www.nybblegroup.com",
       },
       {
         nombre: "Quadion Technologies",
+        logo: "img/empresas/quadion-technologies.png",
         sector: { es: "Software a medida", en: "Custom software development" },
         web: "https://www.quadiontech.com",
       },
       {
         nombre: "Wootic",
+        logo: "img/empresas/wootic.png",
         sector: { es: "Software y LegalFinTech", en: "Software & LegalFinTech" },
         web: "https://www.wootic.co",
       },

@@ -40,8 +40,8 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
 6. Fotos: `public/img/ediciones/<id>/`, JPG o WebP, de hasta 1600 px de ancho y unos 400 KB cada una.
    Siempre con `alt` en ambos idiomas.
 7. Logos: `public/img/empresas/<slug>.png`, recortados sin márgenes y de hasta 480 × 160 px. Solo logos
-   que haya dado el Consulado o la empresa (carpeta «05_Logos_e_imagenes» de la misión en Drive); no
-   bajarlos de la web. Si el logo es blanco o claro, agregar `logoFondo: "oscuro"`. Si en una lista
+   que haya dado el Consulado o la empresa (en Drive: «05_Logos_e_imagenes» en 2026, «Logos Definitivos
+   2025» en 2025); no bajarlos de la web. Si el logo es blanco o claro, agregar `logoFondo: "oscuro"`. Si en una lista
    alguna empresa tiene logo, las que no tienen muestran sus iniciales.
 
 ## Esquema de una edición (`public/data/ediciones.js`)
