@@ -1517,7 +1517,46 @@ window.SMS_EDICIONES = [
       },
     ],
     resultados: [],
-    galeria: [],
+    galeriaCredito: { es: "Consulado General de la República Argentina en Atlanta", en: "Consulate General of the Argentine Republic in Atlanta" },
+    galeria: [
+      {
+        titulo: { es: "Metro Atlanta Chamber: doing business y mesa redonda", en: "Metro Atlanta Chamber: doing business and roundtable" },
+        fotos: [
+          { src: "img/ediciones/2024/mac-mesa-redonda.jpg", mini: "img/ediciones/2024/mac-mesa-redonda-mini.jpg", alt: { es: "La Cónsul General en la mesa redonda de la Metro Atlanta Chamber.", en: "The Consul General at the Metro Atlanta Chamber roundtable." } },
+          { src: "img/ediciones/2024/mac-presentacion.jpg", mini: "img/ediciones/2024/mac-presentacion-mini.jpg", alt: { es: "Presentación de la Metro Atlanta Chamber sobre el ecosistema tecnológico de Atlanta.", en: "Metro Atlanta Chamber presentation on Atlanta’s tech ecosystem." } },
+        ],
+      },
+      {
+        titulo: { es: "Argentine Tech & Wine: recepción de networking", en: "Argentine Tech & Wine networking reception" },
+        fotos: [
+          { src: "img/ediciones/2024/recepcion-palabras.jpg", mini: "img/ediciones/2024/recepcion-palabras-mini.jpg", alt: { es: "Palabras de la Cónsul General y de Donnie Beamer, asesor senior de Tecnología de la Ciudad de Atlanta.", en: "Remarks by the Consul General and Donnie Beamer, City of Atlanta Senior Technology Advisor." } },
+          { src: "img/ediciones/2024/recepcion-publico.jpg", mini: "img/ediciones/2024/recepcion-publico-mini.jpg", alt: { es: "Los invitados escuchan las palabras de apertura de la recepción.", en: "Guests listen to the opening remarks at the reception." } },
+          { src: "img/ediciones/2024/recepcion-invitados.jpg", mini: "img/ediciones/2024/recepcion-invitados-mini.jpg", alt: { es: "La Cónsul General con Donnie Beamer y otros invitados.", en: "The Consul General with Donnie Beamer and other guests." } },
+          { src: "img/ediciones/2024/recepcion-laac.jpg", mini: "img/ediciones/2024/recepcion-laac-mini.jpg", alt: { es: "Invitados de LAAC Georgia junto a la Cónsul General.", en: "LAAC Georgia guests with the Consul General." } },
+          { src: "img/ediciones/2024/recepcion-bevington.jpg", mini: "img/ediciones/2024/recepcion-bevington-mini.jpg", alt: { es: "La Cónsul General junto a Rickey Bevington.", en: "The Consul General with Rickey Bevington." } },
+          { src: "img/ediciones/2024/vinos-wofa.jpg", mini: "img/ediciones/2024/vinos-wofa-mini.jpg", alt: { es: "Vinos argentinos de la promoción de Wines of Argentina.", en: "Argentine wines from the Wines of Argentina promotion." } },
+          { src: "img/ediciones/2024/vinos-piattelli.jpg", mini: "img/ediciones/2024/vinos-piattelli-mini.jpg", alt: { es: "Vinos de Piattelli Vineyards en la recepción.", en: "Piattelli Vineyards wines at the reception." } },
+          { src: "img/ediciones/2024/vinos-1.jpg", mini: "img/ediciones/2024/vinos-1-mini.jpg", alt: { es: "Malbec argentino servido en la recepción.", en: "Argentine Malbec served at the reception." } },
+          { src: "img/ediciones/2024/vinos-2.jpg", mini: "img/ediciones/2024/vinos-2-mini.jpg", alt: { es: "Degustación de vinos argentinos durante la recepción.", en: "Argentine wine tasting during the reception." } },
+          { src: "img/ediciones/2024/brindis-1.jpg", mini: "img/ediciones/2024/brindis-1-mini.jpg", alt: { es: "Brindis con vino argentino.", en: "A toast with Argentine wine." } },
+          { src: "img/ediciones/2024/brindis-2.jpg", mini: "img/ediciones/2024/brindis-2-mini.jpg", alt: { es: "Brindis con vino argentino durante la recepción.", en: "A toast with Argentine wine during the reception." } },
+        ],
+      },
+      {
+        titulo: { es: "Encuentro con la Argentine American Chamber of Commerce Southeast", en: "Meeting with the Argentine American Chamber of Commerce Southeast" },
+        fotos: [
+          { src: "img/ediciones/2024/aacc-grupo.jpg", mini: "img/ediciones/2024/aacc-grupo-mini.jpg", alt: { es: "Foto grupal con la Argentine American Chamber of Commerce Southeast en el Consulado General.", en: "Group photo with the Argentine American Chamber of Commerce Southeast at the Consulate General." } },
+        ],
+      },
+      {
+        titulo: { es: "Networking con la Technology Association of Georgia", en: "Networking with the Technology Association of Georgia" },
+        fotos: [
+          { src: "img/ediciones/2024/tag-sala.jpg", mini: "img/ediciones/2024/tag-sala-mini.jpg", alt: { es: "Encuentro de networking con la Technology Association of Georgia.", en: "Networking session with the Technology Association of Georgia." } },
+          { src: "img/ediciones/2024/tag-presentacion.jpg", mini: "img/ediciones/2024/tag-presentacion-mini.jpg", alt: { es: "Presentación de TAG ante la delegación.", en: "TAG presentation to the delegation." } },
+          { src: "img/ediciones/2024/tag-grupo.jpg", mini: "img/ediciones/2024/tag-grupo-mini.jpg", alt: { es: "Foto grupal de la delegación en el encuentro con TAG.", en: "Group photo of the delegation at the TAG networking session." } },
+        ],
+      },
+    ],
     prensa: [
       {
         titulo: "Misión comercial de software en Atlanta",
