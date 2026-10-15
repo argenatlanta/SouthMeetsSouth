@@ -24,14 +24,9 @@ window.SMS_EDICIONES = [
     cuentaRegresiva: { fecha: "2026-11-16", ciudad: "Atlanta" },
     empresas: 22,
     resumen: {
-      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 22 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas con inversores y visitas a empresas locales.",
-      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 22 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, investor roundtables and visits to local companies.",
+      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 22 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
+      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 22 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
     },
-    cifras: [
-      { valor: "22", texto: { es: "empresas argentinas", en: "Argentine companies" } },
-      { valor: "2", texto: { es: "días de agenda en Atlanta", en: "days in Atlanta" } },
-      { valor: "6", texto: { es: "jurisdicciones: CABA y 5 provincias", en: "home regions: Buenos Aires City and 5 provinces" } },
-    ],
     sectores: [
       { es: "Inteligencia artificial", en: "Artificial intelligence" },
       { es: "Ciberseguridad", en: "Cybersecurity" },
@@ -48,60 +43,9 @@ window.SMS_EDICIONES = [
       { es: "Rondas de negocios B2B", en: "B2B business meetings" },
       { es: "Reverse pitch con empresas de Atlanta", en: "Reverse pitch with Atlanta companies" },
       { es: "Encuentros de networking", en: "Networking events" },
-      { es: "Mesas con inversores", en: "VC roundtables" },
+      { es: "Mesas de Soft Landing", en: "Soft Landing roundtables" },
       { es: "Visitas a empresas locales", en: "Visits to local companies" },
-    ],
-    agendaNota: {
-      es: "Agenda provisional, sujeta a cambios.",
-      en: "Provisional agenda, subject to change.",
-    },
-    notaInterna: {
-      es: "Agenda provisional al 14 de octubre de 2026. Solo se publican las actividades abiertas; sedes y participantes a confirmar.",
-      en: "Provisional agenda as of October 14, 2026. Only public-facing activities are listed; venues and participants to be confirmed.",
-    },
-    agenda: [
-      {
-        fecha: "2026-11-16",
-        hora: "11:00–12:30",
-        titulo: { es: "Reverse pitch", en: "Reverse pitch" },
-        detalle: {
-          es: "Empresas de Atlanta presentan sus necesidades y desafíos tecnológicos a la delegación argentina para explorar soluciones y alianzas.",
-          en: "Atlanta companies share their technology needs and challenges with the Argentine delegation to explore solutions and partnerships.",
-        },
-        lugar: "Burr & Forman · 1075 Peachtree St NE, Midtown",
-      },
-      {
-        fecha: "2026-11-16",
-        hora: "14:00–17:30",
-        titulo: { es: "Programa con TAG: apertura, panel y rondas B2B", en: "Program with TAG: opening, panel and B2B meetings" },
-        detalle: {
-          es: "Apertura y panel con referentes de la industria tecnológica local, seguidos de rondas de negocios con empresas de Atlanta.",
-          en: "Opening and panel with local tech industry leaders, followed by B2B meetings with Atlanta companies.",
-        },
-        lugar: "Midtown, Atlanta",
-        verificar: true,
-      },
-      {
-        fecha: "2026-11-16",
-        hora: "18:00–20:00",
-        titulo: { es: "Recepción de networking", en: "Networking reception" },
-        lugar: "Midtown, Atlanta",
-        verificar: true,
-      },
-      {
-        fecha: "2026-11-17",
-        titulo: { es: "Mesa con inversores (VC roundtable)", en: "VC roundtable" },
-        verificar: true,
-      },
-      {
-        fecha: "2026-11-17",
-        titulo: { es: "Visita a una empresa de Atlanta", en: "Company visit in Atlanta" },
-        detalle: {
-          es: "Una empresa local recibe a la delegación para mostrar sus tecnologías, proyectos de innovación y necesidades de negocio.",
-          en: "A local company hosts the delegation to share its technologies, innovation projects and business needs.",
-        },
-        verificar: true,
-      },
+      { es: "Pitch practice", en: "Pitch practice" },
     ],
     convocatoria: {
       estado: "cerrada",
