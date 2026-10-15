@@ -1520,8 +1520,15 @@ window.SMS_EDICIONES = [
     galeriaCredito: { es: "Consulado General de la República Argentina en Atlanta", en: "Consulate General of the Argentine Republic in Atlanta" },
     galeria: [
       {
+        titulo: { es: "Advanced Technology Development Center (ATDC)", en: "Advanced Technology Development Center (ATDC)" },
+        fotos: [
+          { src: "img/ediciones/2024/atdc-grupo.jpg", mini: "img/ediciones/2024/atdc-grupo-mini.jpg", alt: { es: "Foto grupal de la delegación en el ATDC de Georgia Tech.", en: "Group photo of the delegation at Georgia Tech’s ATDC." } },
+        ],
+      },
+      {
         titulo: { es: "Metro Atlanta Chamber: doing business y mesa redonda", en: "Metro Atlanta Chamber: doing business and roundtable" },
         fotos: [
+          { src: "img/ediciones/2024/mac-grupo.jpg", mini: "img/ediciones/2024/mac-grupo-mini.jpg", alt: { es: "Foto grupal de la delegación en la Metro Atlanta Chamber.", en: "Group photo of the delegation at the Metro Atlanta Chamber." } },
           { src: "img/ediciones/2024/mac-mesa-redonda.jpg", mini: "img/ediciones/2024/mac-mesa-redonda-mini.jpg", alt: { es: "La Cónsul General en la mesa redonda de la Metro Atlanta Chamber.", en: "The Consul General at the Metro Atlanta Chamber roundtable." } },
           { src: "img/ediciones/2024/mac-presentacion.jpg", mini: "img/ediciones/2024/mac-presentacion-mini.jpg", alt: { es: "Presentación de la Metro Atlanta Chamber sobre el ecosistema tecnológico de Atlanta.", en: "Metro Atlanta Chamber presentation on Atlanta’s tech ecosystem." } },
         ],
