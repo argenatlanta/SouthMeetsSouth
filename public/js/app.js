@@ -29,8 +29,8 @@
         "Empresas argentinas de software y tecnología viajan a Atlanta para hacer negocios con el ecosistema de innovación del sur de los Estados Unidos. Acá reunimos cada edición de la misión y lo que viene.",
       hero_cta_next: "Ver la próxima misión",
       hero_cta_editions: "Ediciones anteriores",
-      hero_art_title: "Buenos Aires y Atlanta, a latitudes espejo",
-      hero_art_caption: "Dos ciudades del sur, a latitudes espejo y con 1 a 2 horas de diferencia horaria.",
+      hero_art_title: "Argentina y Atlanta, a latitudes espejo",
+      hero_art_caption: "Dos regiones del sur, a latitudes espejo y con 1 a 2 horas de diferencia horaria.",
       equator: "Ecuador",
       countdown_n: "Faltan {n} días para la misión en {city}",
       countdown_1: "Falta 1 día para la misión en {city}",
@@ -69,7 +69,7 @@
       why_title: "El sur de EE.UU. y el sur del continente, cerca",
       why_lead: "Atlanta combina un ecosistema tecnológico en crecimiento con una ubicación ideal para equipos argentinos.",
       why_1_t: "Misma jornada laboral",
-      why_1_p: "Buenos Aires está apenas 1 o 2 horas adelante de Atlanta: los equipos argentinos trabajan en tiempo real con clientes de EE.UU.",
+      why_1_p: "Argentina está apenas 1 o 2 horas adelante de Atlanta: los equipos argentinos trabajan en tiempo real con clientes de EE.UU.",
       why_2_t: "Polo fintech",
       why_2_p: "Georgia es conocida como «Transaction Alley», uno de los mayores centros de procesamiento de pagos de los Estados Unidos.",
       why_3_t: "Ecosistema de innovación",
@@ -133,8 +133,8 @@
         "Argentine software and technology companies travel to Atlanta to do business with the innovation ecosystem of the U.S. South. Here you’ll find every edition of the mission — and what’s next.",
       hero_cta_next: "See the next mission",
       hero_cta_editions: "Past editions",
-      hero_art_title: "Buenos Aires and Atlanta, at mirror latitudes",
-      hero_art_caption: "Two southern cities at mirror latitudes, just 1 to 2 hours apart.",
+      hero_art_title: "Argentina and Atlanta, at mirror latitudes",
+      hero_art_caption: "Two southern regions at mirror latitudes, just 1 to 2 hours apart.",
       equator: "Equator",
       countdown_n: "{n} days until the mission arrives in {city}",
       countdown_1: "1 day until the mission arrives in {city}",
@@ -173,7 +173,7 @@
       why_title: "The U.S. South and the Southern Cone, close together",
       why_lead: "Atlanta pairs a growing tech ecosystem with an ideal location for Argentine teams.",
       why_1_t: "Same working day",
-      why_1_p: "Buenos Aires is just 1–2 hours ahead of Atlanta, so Argentine teams work in real time with U.S. clients.",
+      why_1_p: "Argentina is just 1–2 hours ahead of Atlanta, so Argentine teams work in real time with U.S. clients.",
       why_2_t: "Fintech powerhouse",
       why_2_p: "Georgia is known as “Transaction Alley,” one of the largest payment-processing hubs in the United States.",
       why_3_t: "Innovation ecosystem",
@@ -464,7 +464,7 @@
       '<g font-family="Bricolage Grotesque, Inter, sans-serif" fill="#eaf2fb">' +
       '<text x="158" y="106" text-anchor="end" font-size="20" font-weight="700">Atlanta</text>' +
       '<text x="158" y="124" text-anchor="end" font-size="12" fill="#a9bdd3" font-family="Inter, sans-serif">33°45′ N</text>' +
-      '<text x="225" y="308" text-anchor="end" font-size="20" font-weight="700">Buenos Aires</text>' +
+      '<text x="225" y="308" text-anchor="end" font-size="20" font-weight="700">Argentina</text>' +
       '<text x="225" y="326" text-anchor="end" font-size="12" fill="#a9bdd3" font-family="Inter, sans-serif">34°36′ S</text>' +
       "</g></svg>"
     );
