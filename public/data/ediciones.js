@@ -120,6 +120,7 @@ window.SMS_EDICIONES = [
     delegacion: [
       {
         nombre: "Avenga",
+        logo: "img/empresas/avenga.png",
         provincia: "Córdoba",
         sector: { es: "Transformación digital, datos e IA", en: "Digital transformation, data & AI" },
         detalle: {
@@ -220,6 +221,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Meta Software",
+        logo: "img/empresas/meta-software.png",
         provincia: "Buenos Aires",
         sector: { es: "Software a medida", en: "Custom software" },
         detalle: {
@@ -230,6 +232,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Novasoft",
+        logo: "img/empresas/novasoft.png",
         provincia: "Buenos Aires",
         sector: { es: "Software a medida y SaaS", en: "Custom software & SaaS" },
         detalle: {
@@ -284,6 +287,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "QuantyIA",
+        logo: "img/empresas/quantyia.png",
         provincia: "Buenos Aires",
         sector: { es: "Datos para IA", en: "Data for AI" },
         detalle: {
@@ -306,6 +310,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "RH Vision",
+        logo: "img/empresas/rh-vision.png",
         provincia: "Córdoba",
         sector: { es: "Talento IT y staff augmentation", en: "IT talent & staff augmentation" },
         detalle: {
@@ -338,6 +343,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "UNIQS",
+        logo: "img/empresas/uniqs.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Ciberseguridad", en: "Cybersecurity" },
         detalle: {
