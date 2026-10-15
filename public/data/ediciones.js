@@ -51,6 +51,10 @@ window.SMS_EDICIONES = [
       { es: "Mesas con inversores", en: "VC roundtables" },
       { es: "Visitas a empresas locales", en: "Visits to local companies" },
     ],
+    agendaNota: {
+      es: "Agenda provisional, sujeta a cambios.",
+      en: "Provisional agenda, subject to change.",
+    },
     notaInterna: {
       es: "Agenda provisional al 14 de octubre de 2026. Solo se publican las actividades abiertas; sedes y participantes a confirmar.",
       en: "Provisional agenda as of October 14, 2026. Only public-facing activities are listed; venues and participants to be confirmed.",
@@ -387,10 +391,6 @@ window.SMS_EDICIONES = [
       { es: "Talento y staff augmentation", en: "Talent & staff augmentation" },
       { es: "Software a medida", en: "Custom software" },
     ],
-    notaInterna: {
-      es: "Agenda tomada de la carpeta de la misión (11 de noviembre de 2025). Confirmar cambios de último momento.",
-      en: "Agenda taken from the mission briefing (November 11, 2025). Confirm last-minute changes.",
-    },
     agenda: [
       {
         fecha: "2025-11-17",
@@ -411,7 +411,6 @@ window.SMS_EDICIONES = [
           en: "Conversation moderated by John Yates (Gunderson Dettmer) with investors from Valor Ventures, Laerdal Million Lives Fund, Tech Square Ventures, Knoll Ventures and Circadian Ventures on investment and fundraising in the U.S.",
         },
         lugar: "Atlanta Tech Village · Buckhead",
-        verificar: true,
       },
       {
         fecha: "2025-11-17",
@@ -630,7 +629,6 @@ window.SMS_EDICIONES = [
         tipo: "empresa",
         detalle: { es: "Coorganizó la mesa con inversores.", en: "Co-organized the investors roundtable." },
         web: "https://www.gunder.com",
-        verificar: true,
       },
       {
         nombre: "FinTech Atlanta",
@@ -654,12 +652,12 @@ window.SMS_EDICIONES = [
     reuniones: [
       { nombre: "Larry K. Williams", cargo: { es: "Presidente y CEO", en: "President & CEO" }, organizacion: "Technology Association of Georgia (TAG)" },
       { nombre: "Brian Holloway", cargo: { es: "Principal", en: "Principal" }, organizacion: "Frazier & Deeter · TAG International Business" },
-      { nombre: "John Yates", cargo: { es: "Moderador de la mesa con inversores", en: "Investors roundtable moderator" }, organizacion: "Gunderson Dettmer", verificar: true },
-      { nombre: "Lisa Calhoun", organizacion: "Valor Ventures", verificar: true },
-      { nombre: "Becca Shmukler", organizacion: "Laerdal Million Lives Fund", verificar: true },
-      { nombre: "Scott Lopano", organizacion: "Tech Square Ventures", verificar: true },
-      { nombre: "Andrew Dorman", organizacion: "Knoll Ventures", verificar: true },
-      { nombre: "Steve Hasty", organizacion: "Circadian Ventures", verificar: true },
+      { nombre: "John Yates", cargo: { es: "Moderador de la mesa con inversores", en: "Investors roundtable moderator" }, organizacion: "Gunderson Dettmer" },
+      { nombre: "Lisa Calhoun", organizacion: "Valor Ventures" },
+      { nombre: "Becca Shmukler", organizacion: "Laerdal Million Lives Fund" },
+      { nombre: "Scott Lopano", organizacion: "Tech Square Ventures" },
+      { nombre: "Andrew Dorman", organizacion: "Knoll Ventures" },
+      { nombre: "Steve Hasty", organizacion: "Circadian Ventures" },
     ],
     organizadores: [
       {
@@ -764,7 +762,7 @@ window.SMS_EDICIONES = [
       en: "Organized by the Consulate General in Atlanta with the Foreign Ministry’s DNTEC, ahead of eMerge Americas 2024 in Miami, the mission gave the delegation a 360° view of Metro Atlanta’s tech ecosystem: Georgia Tech and its ATDC incubator, the Metro Atlanta Chamber, the Argentine American Chamber of Commerce Southeast, Atlanta Tech Village and the Technology Association of Georgia, plus conversations with leaders from major corporations in the region.",
     },
     cifras: [
-      { valor: "13", texto: { es: "empresas e instituciones argentinas", en: "Argentine companies and organizations" }, verificar: true },
+      { valor: "13", texto: { es: "empresas e instituciones argentinas", en: "Argentine companies and organizations" } },
       { valor: "2", texto: { es: "jornadas de agenda en Atlanta", en: "days in Atlanta" } },
       { valor: "+10", texto: { es: "organizaciones de Atlanta", en: "Atlanta organizations" } },
     ],
@@ -778,10 +776,6 @@ window.SMS_EDICIONES = [
       { es: "Realidad aumentada y virtual", en: "AR / VR" },
       { es: "Software a medida", en: "Custom software" },
     ],
-    notaInterna: {
-      es: "Agenda y participantes tomados de la carpeta de la misión (abril de 2024). La Cancillería informó 15 empresas; el listado del Consulado registra 13 participantes. Confirmar.",
-      en: "Agenda and participants taken from the mission briefing (April 2024). The Foreign Ministry reported 15 companies; the Consulate’s list shows 13 participants. Confirm.",
-    },
     agenda: [
       {
         fecha: "2024-04-15",

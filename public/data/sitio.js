@@ -5,7 +5,7 @@
 window.SMS_SITIO = {
   // true = muestra el aviso "Versión preliminar" y resalta los datos marcados con `verificar: true`.
   // Pasar a false cuando el contenido esté revisado.
-  borrador: true,
+  borrador: false,
 
   // Fecha de la última actualización del contenido (AAAA-MM-DD). Se muestra en el pie.
   actualizado: "2026-10-15",
@@ -14,7 +14,6 @@ window.SMS_SITIO = {
   // Si `desde` queda vacío (null), la frase no se muestra.
   contexto: {
     desde: 2013,
-    verificar: true,
     texto: {
       es: "El Consulado General en Atlanta organiza misiones de empresas argentinas de software y tecnología desde {desde}. Aquí reunimos las ediciones más recientes.",
       en: "The Consulate General in Atlanta has organized Argentine software and technology missions since {desde}. Here are the most recent editions.",

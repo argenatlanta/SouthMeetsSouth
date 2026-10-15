@@ -787,7 +787,9 @@
 
     if (isNext) {
       var progBody = isEmpty(ed.programa) ? null : '<ul class="program">' + ed.programa.map(function (p) { return "<li>" + esc(t(p)) + "</li>"; }).join("") + "</ul>";
-      if (!isEmpty(ed.agenda)) progBody = (progBody || "") + renderAgenda(ed);
+      if (!isEmpty(ed.agenda)) {
+        progBody = (progBody || "") + (ed.agendaNota ? '<p class="note">' + esc(t(ed.agendaNota)) + "</p>" : "") + renderAgenda(ed);
+      }
       sections.push(["agenda", ui("sec_agenda_next"), progBody, true]);
       var participate = callBox(ed) + hostsBox(ed);
       if (participate) sections.push(["participar", ui("sec_participate"), '<div style="max-width:640px">' + participate + "</div>", false]);

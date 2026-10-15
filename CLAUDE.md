@@ -67,6 +67,7 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
   // Solo para estado "proxima":
   cuentaRegresiva: { fecha, ciudad },     // la cuenta regresiva de la portada
   programa: [{ es, en }],
+  agendaNota: { es, en },               // aviso público, p. ej. «Agenda provisional, sujeta a cambios»
   convocatoria: { estado: "abierta" | "cerrada", cierre, url, nota },
   llamadoAnfitriones: { es, en },         // invitación a empresas de Atlanta
   formularioInteres: "https://…",         // botón «Quiero participar»
