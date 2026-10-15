@@ -365,6 +365,7 @@
     clock: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
     card: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg>',
     spark: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg>',
+    chevron: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>',
     prev: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
     next: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>',
     close: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',
@@ -689,6 +690,24 @@
     return '<section class="ed-section" id="' + id + '" aria-labelledby="' + id + '-t"><h2 id="' + id + '-t">' + esc(title) + "</h2>" + body + "</section>";
   }
 
+  // Sección cerrada por defecto: el título es un botón con una flecha que la despliega.
+  function foldSection(id, title, body) {
+    return '<section class="ed-section fold" id="' + id + '" aria-labelledby="' + id + '-t">' +
+      '<h2 id="' + id + '-t"><button type="button" class="fold-btn" aria-expanded="false" aria-controls="' + id + '-body">' +
+      esc(title) + '<span class="chev" aria-hidden="true">' + ICON.chevron + "</span></button></h2>" +
+      '<div class="fold-body" id="' + id + '-body" hidden>' + body + "</div></section>";
+  }
+
+  function bindFolds() {
+    document.querySelectorAll(".fold-btn").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var open = b.getAttribute("aria-expanded") !== "true";
+        b.setAttribute("aria-expanded", String(open));
+        document.getElementById(b.getAttribute("aria-controls")).hidden = !open;
+      });
+    });
+  }
+
   function emptyBox() { return '<div class="empty">' + esc(ui("empty")) + "</div>"; }
 
   function initials(name) {
@@ -864,7 +883,7 @@
   }
 
   // ───────────────────────── Galería por momentos, con visor ─────────────────────────
-  // galeria: [{ titulo, fecha?, hora?, fotos: [{ src, mini?, alt }] }]. Una lista de fotos sueltas
+  // galeria: [{ titulo, fotos: [{ src, mini?, alt }] }]. Una lista de fotos sueltas
   // ({ src, alt }) se muestra como un solo grupo sin título.
   function galleryGroups(ed) {
     var list = ed.galeria || [];
@@ -891,11 +910,11 @@
         return html;
       }).join("");
       if (!thumbs) return "";
-      var when = g.fecha ? fmtDate(g.fecha, { weekday: "short", day: "numeric", month: "short" }) + (g.hora ? " · " + g.hora : "") : "";
-      // data-n: cuántas columnas ocupa el grupo (hasta 4), para que los momentos con pocas fotos se acomoden lado a lado.
-      return '<section class="gallery-group" data-n="' + Math.min(fotos.length, 4) + '">' +
-        (g.titulo ? "<h3>" + esc(t(g.titulo)) + (when ? "<small>" + esc(when) + "</small>" : "") + "</h3>" : "") +
-        '<ul class="gallery photos">' + thumbs + "</ul></section>";
+      var list = '<ul class="gallery photos">' + thumbs + "</ul>";
+      // Cada momento se despliega con su título; las fotos sueltas, sin título, se muestran directo.
+      return g.titulo
+        ? '<details class="gallery-group"><summary><h3>' + esc(t(g.titulo)) + '</h3><span class="chev" aria-hidden="true">' + ICON.chevron + "</span></summary>" + list + "</details>"
+        : list;
     }).join("");
     var credit = ed.galeriaCredito ? '<p class="gallery-credit">' + esc(ui("photos_by")) + ": " + esc(t(ed.galeriaCredito)) + "</p>" : "";
     return '<div class="gallery-groups">' + groups + "</div>" + credit;
@@ -1022,7 +1041,7 @@
     sections.push(["anfitriones", ui("sec_hosts"), isEmpty(ed.anfitriones) ? null : renderOrgs(ed.anfitriones, true), !isNext]);
     sections.push(["reuniones", ui("sec_meetings"), isEmpty(ed.reuniones) ? null : renderPeople(ed.reuniones), !isNext]);
     sections.push(["resultados", ui("sec_results"), isEmpty(ed.resultados) ? null : '<ul class="results">' + ed.resultados.map(function (r) { return "<li>" + ICON.check + "<span>" + esc(t(r)) + "</span></li>"; }).join("") + "</ul>", !isNext]);
-    sections.push(["galeria", ui("sec_gallery"), isEmpty(ed.galeria) ? null : renderPhotoGallery(ed), !isNext]);
+    sections.push(["galeria", ui("sec_gallery"), isEmpty(ed.galeria) ? null : renderPhotoGallery(ed), !isNext, true]);
     sections.push(["organizan", ui("sec_organizers"), isEmpty(ed.organizadores) ? null : renderOrganizers(ed.organizadores), false]);
     sections.push(["prensa", ui("sec_press"), isEmpty(ed.prensa) ? null : renderPress(ed.prensa), false]);
 
@@ -1032,7 +1051,7 @@
       visible.map(function (s) { return '<li><a href="#' + s[0] + '">' + esc(s[1]) + "</a></li>"; }).join("") +
       "</ul></div></nav>";
 
-    var body = '<div class="container">' + visible.map(function (s) { return section(s[0], s[1], s[2] || emptyBox()); }).join("") + "</div>";
+    var body = '<div class="container">' + visible.map(function (s) { return (s[4] && s[2] ? foldSection : section)(s[0], s[1], s[2] || emptyBox()); }).join("") + "</div>";
 
     // Navegación entre ediciones (cronológica: anterior = más vieja).
     var idx = EDICIONES.indexOf(ed);
@@ -1045,6 +1064,7 @@
     main.innerHTML = hero + stats + internal + nav + body + pager;
     setupScrollSpy();
     bindFichas(ed);
+    bindFolds();
     bindGallery(ed);
   }
 

@@ -825,7 +825,7 @@ window.SMS_EDICIONES = [
       {
         fecha: "2025-11-17",
         hora: "14:00–15:00",
-        titulo: { es: "Keynote del Embajador y fireside chat con TAG", en: "Ambassador keynote and fireside chat with TAG" },
+        titulo: { es: "Keynote del Embajador y fireside chat con Larry K. Williams", en: "Ambassador keynote and fireside chat with Larry K. Williams" },
         detalle: {
           es: "Palabras de apertura de TAG y de la Cónsul General, keynote del Embajador Alec Oxenford, conversación con Larry K. Williams (presidente y CEO de TAG) y presentación de la delegación.",
           en: "Opening remarks by TAG and the Consul General, keynote by Ambassador Alec Oxenford, fireside chat with Larry K. Williams (TAG President & CEO) and a brief presentation by the delegation.",
@@ -1105,30 +1105,26 @@ window.SMS_EDICIONES = [
       },
       {
         titulo: { es: "Pitch practice", en: "Pitch practice" },
-        fecha: "2025-11-17", hora: "10:00–11:00",
         fotos: [
           { src: "img/ediciones/2025/pitch-practice.jpg", mini: "img/ediciones/2025/pitch-practice-mini.jpg", alt: { es: "Una presentación durante el pitch practice.", en: "A presentation during the pitch practice session." } },
         ],
       },
       {
         titulo: { es: "Mesa con inversores", en: "Investors roundtable" },
-        fecha: "2025-11-17", hora: "11:00–12:00",
         fotos: [
           { src: "img/ediciones/2025/mesa-inversores.jpg", mini: "img/ediciones/2025/mesa-inversores-mini.jpg", alt: { es: "Inversores de Atlanta conversan con la delegación en la mesa con inversores.", en: "Atlanta investors speak with the delegation at the investors roundtable." } },
         ],
       },
       {
-        titulo: { es: "Keynote del Embajador y fireside chat con TAG", en: "Ambassador keynote and fireside chat with TAG" },
-        fecha: "2025-11-17", hora: "14:00–15:00",
+        titulo: { es: "Keynote del Embajador y fireside chat con Larry K. Williams", en: "Ambassador keynote and fireside chat with Larry K. Williams" },
         fotos: [
           { src: "img/ediciones/2025/keynote-embajador.jpg", mini: "img/ediciones/2025/keynote-embajador-mini.jpg", alt: { es: "El Embajador durante su keynote.", en: "The Ambassador delivering the keynote." } },
-          { src: "img/ediciones/2025/fireside-chat.jpg", mini: "img/ediciones/2025/fireside-chat-mini.jpg", alt: { es: "Fireside chat con la Technology Association of Georgia (TAG).", en: "Fireside chat with the Technology Association of Georgia (TAG)." } },
+          { src: "img/ediciones/2025/fireside-chat.jpg", mini: "img/ediciones/2025/fireside-chat-mini.jpg", alt: { es: "El fireside chat con Larry K. Williams, presidente y CEO de TAG.", en: "The fireside chat with Larry K. Williams, TAG President & CEO." } },
           { src: "img/ediciones/2025/fireside-chat-publico.jpg", mini: "img/ediciones/2025/fireside-chat-publico-mini.jpg", alt: { es: "El público durante el fireside chat.", en: "The audience during the fireside chat." } },
         ],
       },
       {
         titulo: { es: "Speed meetings B2B y degustación de vinos argentinos", en: "B2B speed meetings and Argentine wine tasting" },
-        fecha: "2025-11-17", hora: "15:00–17:00",
         fotos: [
           { src: "img/ediciones/2025/b2b-1.jpg", mini: "img/ediciones/2025/b2b-1-mini.jpg", alt: { es: "Reuniones B2B entre empresas argentinas y de Atlanta.", en: "B2B meetings between Argentine and Atlanta companies." } },
           { src: "img/ediciones/2025/b2b-2.jpg", mini: "img/ediciones/2025/b2b-2-mini.jpg", alt: { es: "Speed meetings B2B con degustación de vinos argentinos.", en: "B2B speed meetings with an Argentine wine tasting." } },
@@ -1136,14 +1132,12 @@ window.SMS_EDICIONES = [
       },
       {
         titulo: { es: "Recepción de networking con el Embajador", en: "Networking reception with the Ambassador" },
-        fecha: "2025-11-17", hora: "18:00–20:00",
         fotos: [
           { src: "img/ediciones/2025/recepcion-embajador.jpg", mini: "img/ediciones/2025/recepcion-embajador-mini.jpg", alt: { es: "El Embajador habla en la recepción de networking.", en: "The Ambassador speaks at the networking reception." } },
         ],
       },
       {
         titulo: { es: "Reverse pitch con grandes corporaciones", en: "Corporate reverse pitch" },
-        fecha: "2025-11-18", hora: "9:00–11:30",
         fotos: [
           { src: "img/ediciones/2025/reverse-pitch-1.jpg", mini: "img/ediciones/2025/reverse-pitch-1-mini.jpg", alt: { es: "Panel del reverse pitch con grandes corporaciones de Atlanta.", en: "Reverse pitch panel with major Atlanta corporations." } },
           { src: "img/ediciones/2025/reverse-pitch-2.jpg", mini: "img/ediciones/2025/reverse-pitch-2-mini.jpg", alt: { es: "Los panelistas del reverse pitch frente a la delegación.", en: "Reverse pitch panelists addressing the delegation." } },
@@ -1153,7 +1147,6 @@ window.SMS_EDICIONES = [
       },
       {
         titulo: { es: "Almuerzo de networking con NXTMoves y FinTech Atlanta", en: "Networking lunch with NXTMoves and FinTech Atlanta" },
-        fecha: "2025-11-18", hora: "12:00–13:30",
         fotos: [
           { src: "img/ediciones/2025/almuerzo-nxtmoves-1.jpg", mini: "img/ediciones/2025/almuerzo-nxtmoves-1-mini.jpg", alt: { es: "Presentaciones en el almuerzo de networking con NXTMoves y FinTech Atlanta.", en: "Presentations at the networking lunch with NXTMoves and FinTech Atlanta." } },
           { src: "img/ediciones/2025/almuerzo-nxtmoves-2.jpg", mini: "img/ediciones/2025/almuerzo-nxtmoves-2-mini.jpg", alt: { es: "Conversaciones durante el almuerzo de networking.", en: "Conversations during the networking lunch." } },
@@ -1162,7 +1155,6 @@ window.SMS_EDICIONES = [
       },
       {
         titulo: { es: "Visita a Delta TechOps", en: "Visit to Delta TechOps" },
-        fecha: "2025-11-18", hora: "15:00–17:00",
         fotos: [
           { src: "img/ediciones/2025/delta-techops-1.jpg", mini: "img/ediciones/2025/delta-techops-1-mini.jpg", alt: { es: "La delegación junto a un motor de avión en Delta TechOps.", en: "The delegation next to an aircraft engine at Delta TechOps." } },
           { src: "img/ediciones/2025/delta-techops-2.jpg", mini: "img/ediciones/2025/delta-techops-2-mini.jpg", alt: { es: "Foto grupal en el taller de motores de Delta TechOps.", en: "Group photo at the Delta TechOps engine shop." } },

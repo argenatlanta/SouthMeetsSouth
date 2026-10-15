@@ -77,9 +77,10 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
       // logo y logoOscuro: ruta o { es, en }; si no hay logo se muestra el nombre. El nombre queda como texto alternativo.
   resultados: [{ es, en }],
   galeriaCredito: { es, en },             // «Fotos: …» al pie de la galería
-  galeria: [{ titulo: { es, en }, fecha?, hora?, fotos: [{ src, mini, alt: { es, en } }] }],
+  galeria: [{ titulo: { es, en }, fotos: [{ src, mini, alt: { es, en } }] }],
       // un grupo por momento de la agenda; src: "img/ediciones/2025/b2b-1.jpg" (hasta 1600 px, sin EXIF),
-      // mini: "…-mini.jpg" (720 × 540, recortada 4:3). Al tocar una foto se abre el visor.
+      // mini: "…-mini.jpg" (720 × 540, recortada 4:3). La galería y cada momento están plegados por
+      // defecto; al tocar una foto se abre el visor.
   prensa: [{ titulo, medio, url, fecha?, idioma: "es" | "en" }],
 
   // Solo para estado "proxima":
