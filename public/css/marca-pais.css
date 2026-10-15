@@ -1,0 +1,191 @@
+/* South Meets South · versión Marca País (provisional)
+   Paleta, tipografía y reglas de diseño del «Manual de uso de la Marca País Argentina» (2025).
+   Se carga después de styles.css y solo redefine tokens y algunos componentes.
+
+   Paleta principal: MPA Celeste #00C8FF · MPA Blanco #FFFFFF · MPA Azul #0096DC ·
+   MPA Amarillo #FFC800 (solo para acentuar y llamar a la acción) · MPA Azul oscuro #003278.
+   Complementarios (menos del 30% de la pieza): MPA Plata 01 #D1D7DA · 02 #B6C0C6 · 03 #9DA9B1.
+   Tipografía: Source Sans Pro (hoy «Source Sans 3») para títulos y textos cortos; Roboto para el cuerpo.
+   Tramas: solo las del manual (7.2), nunca más del 50% de la pieza y con módulos de al menos
+   1/14 del ancho. Para texto chico se usan Azul oscuro y gris, que cumplen el contraste mínimo. */
+
+:root {
+  --mpa-celeste: #00c8ff;
+  --mpa-azul: #0096dc;
+  --mpa-azul-oscuro: #003278;
+  --mpa-amarillo: #ffc800;
+  --mpa-plata-1: #d1d7da;
+  --mpa-plata-2: #b6c0c6;
+  --mpa-plata-3: #9da9b1;
+
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #ebf9ff;
+  --ink: #26323d;
+  --ink-2: #56636e;
+  --heading: var(--mpa-azul-oscuro);
+  --line: var(--mpa-plata-1);
+  --celeste: var(--mpa-azul);
+  --celeste-ink: var(--mpa-azul-oscuro);
+  --celeste-soft: #e0f6ff;
+  --sol: var(--mpa-amarillo);
+  --sol-ink: #6b5000;
+  --sol-soft: #fff4cc;
+  --navy: var(--mpa-azul-oscuro);
+  --navy-2: #00285f;
+  --on-navy: #ffffff;
+  --on-navy-2: #cdeffd;
+  --shadow: 0 1px 2px rgba(0, 50, 120, 0.06), 0 8px 24px rgba(0, 50, 120, 0.07);
+  --radius: 12px;
+  --font-display: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+  --font-body: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --trama-periodo: calc(100vw / 6); /* dos módulos: cada módulo mide 1/12 del ancho */
+  --trama-alto: calc(var(--trama-periodo) * 1.8848); /* proporción del mosaico: 660 × 1244 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #00142e;
+    --surface: #001e42;
+    --surface-2: #002753;
+    --ink: #e8f3fa;
+    --ink-2: #a9c1d6;
+    --heading: #ffffff;
+    --line: #12406f;
+    --celeste: var(--mpa-celeste);
+    --celeste-ink: #7fe0ff;
+    --celeste-soft: #003562;
+    --sol-ink: #ffd84d;
+    --sol-soft: #3a3000;
+    --navy: #001a3d;
+    --navy-2: #00244f;
+    --on-navy-2: #b9dcf0;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #00142e;
+  --surface: #001e42;
+  --surface-2: #002753;
+  --ink: #e8f3fa;
+  --ink-2: #a9c1d6;
+  --heading: #ffffff;
+  --line: #12406f;
+  --celeste: var(--mpa-celeste);
+  --celeste-ink: #7fe0ff;
+  --celeste-soft: #003562;
+  --sol-ink: #ffd84d;
+  --sol-soft: #3a3000;
+  --navy: #001a3d;
+  --navy-2: #00244f;
+  --on-navy-2: #b9dcf0;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* ───────── Tipografía ───────── */
+body { font-weight: 400; }
+h1, h2, h3 { color: var(--heading); letter-spacing: -0.01em; font-weight: 700; }
+.hero h1, .ed-hero h1, .site-footer h2 { color: var(--on-navy); }
+.hero h1 { font-weight: 700; letter-spacing: -0.02em; }
+.section-head h2 { font-weight: 700; }
+.section-head p, .context, .hero-lead { font-weight: 300; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em;
+  color: var(--heading);
+}
+.eyebrow::before { content: ""; width: 28px; height: 4px; border-radius: 2px; background: var(--mpa-celeste); }
+.hero .eyebrow { color: var(--on-navy-2); }
+.ed-year, .ed-stat strong, .total strong, .edition-year { font-weight: 700; letter-spacing: -0.02em; }
+.edition-year, .total strong { color: var(--mpa-azul); }
+.ed-year { color: var(--mpa-celeste); }
+a { color: var(--celeste-ink); }
+
+/* ───────── Encabezado: blanco, como pide el manual para la etapa de presentación ───────── */
+.site-header {
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  border-bottom: 1px solid var(--line);
+  color: var(--heading);
+}
+.brand { color: var(--heading); font-family: var(--font-display); font-weight: 700; }
+.brand svg [stroke="#74acdf"] { stroke: var(--mpa-celeste); }
+.brand svg [fill="#74acdf"] { fill: var(--mpa-celeste); }
+.brand svg [stroke="#f2b01e"] { stroke: var(--mpa-amarillo); }
+.brand svg [fill="#f2b01e"] { fill: var(--mpa-amarillo); }
+.main-nav a { color: var(--ink-2); }
+.main-nav a:hover { color: var(--heading); background: var(--celeste-soft); }
+.lang-switch { border-color: var(--line); }
+.lang-switch button { color: var(--ink-2); }
+.lang-switch button[aria-pressed="true"] { background: var(--mpa-azul-oscuro); color: #ffffff; }
+.menu-toggle { border-color: var(--line); color: var(--heading); }
+@media (max-width: 860px) {
+  .main-nav { background: var(--surface); border-bottom: 1px solid var(--line); }
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .lang-switch button[aria-pressed="true"] { background: var(--mpa-celeste); color: #001a3d; }
+}
+:root[data-theme="dark"] .lang-switch button[aria-pressed="true"] { background: var(--mpa-celeste); color: #001a3d; }
+
+/* ───────── Hero de la portada y de cada edición: Azul oscuro y trama de ondas ───────── */
+.hero, .ed-hero { background: var(--navy); }
+.hero { padding-bottom: 0; }
+.ed-hero { padding-bottom: 0; }
+.hero::after, .ed-hero::after {
+  content: ""; display: block;
+  /* Una fila completa de la onda celeste (del 82% al 115% del alto del mosaico; las otras filas no se ven) */
+  height: calc(var(--trama-alto) * 0.328);
+  background-color: var(--bg);
+  background-image: url("../img/marca-pais/trama-ondas.png");
+  background-repeat: repeat;
+  background-size: var(--trama-periodo) var(--trama-alto);
+  background-position: center calc(var(--trama-alto) * -0.82);
+}
+.hero::after { margin-top: 64px; }
+.ed-hero::after { margin-top: 48px; }
+@media (min-width: 900px) {
+  .hero::after { margin-top: 96px; }
+  .ed-hero::after { margin-top: 72px; }
+}
+.hero h1 .accent { color: var(--mpa-celeste); }
+.btn-primary { background: var(--mpa-amarillo); color: var(--mpa-azul-oscuro); }
+.btn-primary:hover { background: #ffd633; }
+.btn-ghost { border-color: rgba(255, 255, 255, 0.55); color: #ffffff; }
+.btn-ghost:hover { background: rgba(0, 200, 255, 0.14); }
+.btn-outline { color: var(--heading); }
+.btn-outline:hover { border-color: var(--mpa-azul); }
+.countdown { background: rgba(0, 200, 255, 0.12); border-color: rgba(0, 200, 255, 0.4); }
+.skip-link, .status-badge { color: var(--mpa-azul-oscuro); }
+.ed-when .chip { background: rgba(0, 200, 255, 0.16); color: #ffffff; }
+.status-badge.done { background: rgba(0, 200, 255, 0.2); color: #ffffff; }
+
+/* Gráfico de latitudes con la paleta MPA */
+.hero-art #globe stop:first-child { stop-color: #0a4c9e; }
+.hero-art #globe stop:last-child { stop-color: #00224f; }
+.hero-art [stroke="rgba(116,172,223,.45)"] { stroke: rgba(0, 200, 255, 0.55); }
+.hero-art [stroke="rgba(116,172,223,.22)"] { stroke: rgba(0, 200, 255, 0.25); }
+.hero-art [stroke="rgba(116,172,223,.7)"] { stroke: rgba(0, 200, 255, 0.75); }
+.hero-art [stroke="rgba(116,172,223,.5)"] { stroke: rgba(0, 200, 255, 0.55); }
+.hero-art [stroke="rgba(242,176,30,.35)"] { stroke: rgba(255, 200, 0, 0.4); }
+.hero-art [stroke="rgba(242,176,30,.5)"] { stroke: rgba(255, 200, 0, 0.55); }
+.hero-art [stroke="#f2b01e"] { stroke: var(--mpa-amarillo); }
+.hero-art [fill="#f2b01e"] { fill: var(--mpa-amarillo); }
+.hero-art [fill="#74acdf"] { fill: var(--mpa-celeste); }
+.hero-art [fill="#a9bdd3"] { fill: #cdeffd; }
+.hero-art text { font-family: var(--font-display); }
+
+/* ───────── Componentes ───────── */
+.section + .section { border-top: 0; }
+.section:nth-of-type(even) { background: var(--surface-2); }
+.card { border-color: var(--line); }
+a.card:hover, .org.card:hover, a.resource:hover { border-color: var(--mpa-azul); }
+.chip { color: var(--heading); font-weight: 500; }
+.ed-stat strong { color: var(--mpa-azul); }
+.org .sector { color: var(--mpa-azul-oscuro); }
+.more-info { color: var(--heading); }
+.more-info:hover { border-color: var(--mpa-azul); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .ed-stat strong,
+  :root:not([data-theme="light"]) .org .sector { color: var(--mpa-celeste); }
+}
+:root[data-theme="dark"] .ed-stat strong,
+:root[data-theme="dark"] .org .sector { color: var(--mpa-celeste); }
