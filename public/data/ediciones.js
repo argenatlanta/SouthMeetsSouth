@@ -130,6 +130,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Borderless Software",
+        logo: "img/empresas/borderless-software.png",
         provincia: "Buenos Aires",
         sector: { es: "Software y consultoría IT", en: "Software & IT consulting" },
         detalle: {
@@ -140,6 +141,8 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Clarika",
+        logo: "img/empresas/clarika.png",
+        logoFondo: "oscuro",
         provincia: "Córdoba",
         sector: { es: "Software a medida y staffing", en: "Custom software & tech staffing" },
         detalle: {
@@ -150,6 +153,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Code First Lab",
+        logo: "img/empresas/code-first-lab.png",
         provincia: "Mendoza",
         sector: { es: "Software a medida e IA", en: "Custom software & AI" },
         detalle: {
@@ -160,6 +164,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Digital Beings",
+        logo: "img/empresas/digital-beings.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Software, IA y blockchain", en: "Software, AI & blockchain" },
         detalle: {
@@ -170,6 +175,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "HIPCAM",
+        logo: "img/empresas/hipcam.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "PropTech y seguridad", en: "PropTech & security" },
         detalle: {
@@ -180,6 +186,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "I+DIoT Lab",
+        logo: "img/empresas/id-iot-lab.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Retail tech, IoT e IA", en: "Retail tech, IoT & AI" },
         detalle: {
@@ -200,6 +207,8 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Lila Software Studio",
+        logo: "img/empresas/lila-software-studio.png",
+        logoFondo: "oscuro",
         provincia: "Mendoza",
         sector: { es: "Productos digitales a medida", en: "Custom digital products" },
         detalle: {
@@ -230,6 +239,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "OWL Services",
+        logo: "img/empresas/owl-services.png",
         provincia: "Santa Fe",
         sector: { es: "Sistemas embebidos, IoT y ciberseguridad", en: "Embedded systems, IoT & cybersecurity" },
         detalle: {
@@ -240,6 +250,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Pleiada",
+        logo: "img/empresas/pleiada.png",
         provincia: "Buenos Aires",
         sector: { es: "IA y videojuegos", en: "AI & gaming" },
         detalle: {
@@ -250,6 +261,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "QKStudio",
+        logo: "img/empresas/qkstudio.png",
         provincia: "Buenos Aires",
         sector: { es: "Plataformas digitales y UX", en: "Digital platforms & UX" },
         detalle: {
@@ -280,6 +292,8 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Realidad 360°",
+        logo: "img/empresas/realidad-360.png",
+        logoFondo: "oscuro",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Experiencias inmersivas", en: "Immersive experiences" },
         detalle: {
@@ -300,6 +314,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Tecro",
+        logo: "img/empresas/tecro.png",
         provincia: "La Pampa",
         sector: { es: "Pagos y core bancario", en: "Payments & core banking" },
         detalle: {
@@ -310,6 +325,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "TPS",
+        logo: "img/empresas/tps.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Ingeniería de software y fintech", en: "Software engineering & fintech" },
         detalle: {
@@ -330,6 +346,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Wootic",
+        logo: "img/empresas/wootic.png",
         provincia: "Córdoba",
         sector: { es: "Software, IA y tokenización", en: "Software, AI & tokenization" },
         detalle: {

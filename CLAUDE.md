@@ -16,6 +16,7 @@ public/                 ← todo lo que se publica (directorio de salida en Clou
   data/sitio.js         configuración general: borrador, contacto, recursos, fecha de actualización
   data/ediciones.js     el contenido de cada edición
   img/ediciones/<id>/   fotos de cada edición
+  img/empresas/         logos de las empresas (uno por empresa, se reutiliza entre ediciones)
 wrangler.jsonc          config para Cloudflare Workers (si se usa Pages, no se lee)
 ```
 
@@ -38,6 +39,10 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
    Pasarlo a `false` solo cuando el usuario confirme que el contenido está revisado.
 6. Fotos: `public/img/ediciones/<id>/`, JPG o WebP, de hasta 1600 px de ancho y unos 400 KB cada una.
    Siempre con `alt` en ambos idiomas.
+7. Logos: `public/img/empresas/<slug>.png`, recortados sin márgenes y de hasta 480 × 160 px. Solo logos
+   que haya dado el Consulado o la empresa (carpeta «05_Logos_e_imagenes» de la misión en Drive); no
+   bajarlos de la web. Si el logo es blanco o claro, agregar `logoFondo: "oscuro"`. Si en una lista
+   alguna empresa tiene logo, las que no tienen muestran sus iniciales.
 
 ## Esquema de una edición (`public/data/ediciones.js`)
 
@@ -55,7 +60,8 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
   notaInterna: { es, en },                // origen de los datos; solo se ve en modo borrador
   agenda: [{ fecha?, hora?: "9:00–11:30", titulo, detalle?, lugar?, verificar? }],  // «Lo que hicimos»
   delegacionNota: { es, en },             // nota interna, solo se ve en modo borrador
-  delegacion: [{ nombre, provincia?, sector?, detalle?, web?, verificar? }],  // empresas argentinas
+  delegacion: [{ nombre, logo?, logoFondo?: "oscuro", provincia?, sector?, detalle?, web?, verificar? }],
+      // empresas argentinas; logo: "img/empresas/wootic.png"
   anfitriones: [{ nombre, tipo, detalle?, web?, verificar? }],         // «Nos recibieron»
       // tipo: "asociacion" | "hub" | "universidad" | "empresa" | "camara" | "gobierno" | "otro"
   reuniones: [{ nombre, cargo?, organizacion?, detalle?, verificar? }], // «Con quiénes nos reunimos»

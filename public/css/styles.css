@@ -562,6 +562,18 @@ a.resource:hover { border-color: var(--celeste); text-decoration: none; }
 }
 .org a.web { margin-top: auto; padding-top: 6px; font-size: 14px; font-weight: 600; }
 .org .prov { display: inline-flex; gap: 5px; align-items: center; color: var(--ink-2); font-size: 13px; }
+.org .logo {
+  height: 96px; margin-bottom: 8px; padding: 12px 20px;
+  display: flex; align-items: center; justify-content: center;
+  background: #ffffff; border: 1px solid var(--line); border-radius: var(--radius-sm);
+}
+/* Tope de ancho para que los logos horizontales no dominen frente a los cuadrados. */
+.org .logo img { display: block; max-width: min(100%, 220px); max-height: 100%; width: auto; height: auto; object-fit: contain; }
+.org .logo.dark { background: #121c2a; border-color: #121c2a; }
+.org .logo.none {
+  background: var(--surface-2); color: var(--ink-2);
+  font-family: var(--font-display); font-size: 26px; font-weight: 700; letter-spacing: 0.04em;
+}
 
 .people { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; grid-template-columns: 1fr; }
 @media (min-width: 640px) { .people { grid-template-columns: repeat(2, 1fr); } }

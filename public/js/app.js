@@ -693,11 +693,22 @@
     }).join("") + "</ol>";
   }
 
+  // Logo sobre un fondo fijo (blanco, u oscuro con logoFondo: "oscuro") para que se vea igual en
+  // modo claro y oscuro. alt vacío: el nombre de la empresa ya está debajo, en el título.
+  // Si la lista tiene logos y una empresa no, se muestran sus iniciales para mantener la grilla pareja.
+  function orgLogo(o) {
+    var src = safeUrl(o.logo);
+    if (!src) return '<div class="logo none" aria-hidden="true">' + esc(initials(o.nombre)) + "</div>";
+    return '<div class="logo' + (o.logoFondo === "oscuro" ? " dark" : "") + '"><img src="' + esc(src) + '" alt="" loading="lazy"></div>';
+  }
+
   function renderOrgs(list, withKind) {
+    var withLogos = list.some(function (o) { return o.logo; });
     return '<ul class="cards">' + list.map(function (o) {
       var url = safeUrl(o.web);
       return (
         '<li class="card org' + verifyClass(o) + '">' +
+        (withLogos ? orgLogo(o) : "") +
         (withKind ? '<span class="kind">' + esc(ui("kind_" + (o.tipo || "otro"))) + "</span>" : "") +
         "<h3>" + esc(o.nombre) + verifyTag(o) + "</h3>" +
         (o.sector ? '<span class="sector">' + esc(t(o.sector)) + "</span>" : "") +
