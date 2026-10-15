@@ -24,7 +24,7 @@
       menu: "Menú",
       draft_banner: "Versión preliminar · El contenido está en revisión y puede cambiar.",
       verify: "a verificar",
-      hero_eyebrow: "Misión de Software y Tecnología · Argentina → Atlanta",
+      hero_eyebrow: "Conectando los ecosistemas tecnológicos de Georgia y la Argentina",
       hero_lead:
         "Empresas argentinas de software y tecnología viajan a Atlanta para hacer negocios con el ecosistema de innovación del sur de los Estados Unidos. Acá reunimos cada edición de la misión y lo que viene.",
       hero_cta_next: "Ver la próxima misión",
@@ -39,25 +39,30 @@
       next_eyebrow: "Próxima misión",
       next_title: "Lo que viene",
       next_none: "Pronto anunciaremos la próxima edición.",
-      itinerary: "Itinerario",
+      itinerary: "En Atlanta",
+      other_legs_next: "La misión continúa luego en {cities}.",
+      other_legs_past: "La misión continuó luego en {cities}.",
       program: "Programa previsto",
       sectors: "Sectores",
       call_title: "Convocatoria para empresas argentinas",
       call_open: "Inscripción abierta",
       call_closed: "Inscripción cerrada",
       call_open_until: "Hasta el {date}.",
-      call_closed_on: "Cerró el {date}. La delegación está en conformación.",
+      call_closed_on: "Cerró el {date}.",
       call_link: "Ver convocatoria oficial",
       hosts_title: "Empresas e instituciones de Atlanta",
       contact_btn: "Contactar al Consulado",
       see_details: "Ver detalle",
+      see_delegation: "Conocer la delegación",
+      interest_form: "Quiero participar",
       past_eyebrow: "Ediciones anteriores",
       past_title: "Lo que construimos en cada misión",
       past_lead:
         "Actividades, reuniones, empresas de la delegación y las instituciones que nos recibieron en cada edición.",
-      total_editions: "ediciones en Atlanta",
-      total_since: "primera misión",
+      total_editions: "ediciones recientes",
+      total_since: "primera misión a Atlanta",
       total_companies: "empresas argentinas",
+      total_companies_editions: "empresas argentinas en esas ediciones",
       companies_n: "{n} empresas",
       view_edition: "Ver edición",
       why_eyebrow: "Por qué Atlanta",
@@ -123,7 +128,7 @@
       menu: "Menu",
       draft_banner: "Preview version · Content is under review and may change.",
       verify: "to verify",
-      hero_eyebrow: "Software & Technology Mission · Argentina → Atlanta",
+      hero_eyebrow: "Connecting Georgia’s and Argentina’s Tech Ecosystems",
       hero_lead:
         "Argentine software and technology companies travel to Atlanta to do business with the innovation ecosystem of the U.S. South. Here you’ll find every edition of the mission — and what’s next.",
       hero_cta_next: "See the next mission",
@@ -138,25 +143,30 @@
       next_eyebrow: "Next mission",
       next_title: "What’s next",
       next_none: "The next edition will be announced soon.",
-      itinerary: "Itinerary",
+      itinerary: "In Atlanta",
+      other_legs_next: "The mission then continues to {cities}.",
+      other_legs_past: "The mission then continued to {cities}.",
       program: "Planned program",
       sectors: "Sectors",
       call_title: "Call for Argentine companies",
       call_open: "Applications open",
       call_closed: "Applications closed",
       call_open_until: "Until {date}.",
-      call_closed_on: "Closed on {date}. The delegation is being finalized.",
+      call_closed_on: "Closed on {date}.",
       call_link: "See the official call",
       hosts_title: "Atlanta companies and organizations",
       contact_btn: "Contact the Consulate",
       see_details: "See details",
+      see_delegation: "Meet the delegation",
+      interest_form: "I’m interested",
       past_eyebrow: "Past editions",
       past_title: "What we built on each mission",
       past_lead:
         "Activities, meetings, delegation companies and the organizations that hosted us, edition by edition.",
-      total_editions: "editions in Atlanta",
-      total_since: "first mission",
+      total_editions: "recent editions",
+      total_since: "first mission to Atlanta",
       total_companies: "Argentine companies",
+      total_companies_editions: "Argentine companies in those editions",
       companies_n: "{n} companies",
       view_edition: "View edition",
       why_eyebrow: "Why Atlanta",
@@ -302,9 +312,14 @@
 
   function year(ed) { return String(ed.inicio || "").slice(0, 4) || ed.id; }
 
-  function cities(ed) {
-    if (ed.tramos && ed.tramos.length) return ed.tramos.map(function (x) { return x.ciudad; });
-    return ed.ciudades || [];
+  // El sitio cubre solo la etapa de Atlanta; las otras ciudades de la misión se mencionan en una línea.
+  function otherLegsNote(ed) {
+    var list = (ed.otrasEtapas || []).map(function (o) {
+      var extra = o.inicio ? fmtRange(o.inicio, o.fin, false) : t(o.nota);
+      return o.ciudad + (extra ? " (" + extra + ")" : "");
+    });
+    if (!list.length) return "";
+    return ui(ed.estado === "proxima" ? "other_legs_next" : "other_legs_past", { cities: list.join(", ") });
   }
 
   function verifyTag(item) {
@@ -412,7 +427,7 @@
   }
 
   function countdownText(ed) {
-    var cd = ed.cuentaRegresiva || { fecha: ed.inicio, ciudad: cities(ed)[0] || "Atlanta" };
+    var cd = ed.cuentaRegresiva || { fecha: ed.inicio, ciudad: "Atlanta" };
     var n = daysUntil(cd.fecha);
     if (n == null) return "";
     var city = cd.ciudad || "Atlanta";
@@ -476,12 +491,15 @@
       "</div>";
   }
 
+  function emailButton(cls) {
+    var c = SITIO.contacto || {};
+    return c.email ? '<a class="btn ' + cls + '" href="mailto:' + esc(c.email) + '">' + esc(ui("contact_email")) + "</a>" : "";
+  }
+
   function contactButtons(primaryClass) {
     var c = SITIO.contacto || {};
     var out = [];
-    if (c.email) {
-      out.push('<a class="btn ' + (primaryClass || "btn-primary") + '" href="mailto:' + esc(c.email) + '">' + esc(ui("contact_email")) + "</a>");
-    }
+    if (c.email) out.push(emailButton(primaryClass || "btn-primary"));
     if (safeUrl(c.web)) {
       out.push('<a class="btn ' + (c.email ? "btn-outline" : primaryClass || "btn-primary") + '" href="' + esc(safeUrl(c.web)) + '" target="_blank" rel="noopener">' + esc(ui("contact_web")) + " " + ICON.ext + "</a>");
     }
@@ -511,7 +529,11 @@
   // Llamado a empresas e instituciones de Atlanta para reunirse con la delegación.
   function hostsBox(ed) {
     if (!ed.llamadoAnfitriones) return "";
-    return '<div class="hosts-cta"><p class="label">' + esc(ui("hosts_title")) + "</p><p>" + esc(t(ed.llamadoAnfitriones)) + '</p><div class="hero-actions">' + contactButtons("btn-primary") + "</div></div>";
+    var form = safeUrl(ed.formularioInteres);
+    var buttons = form
+      ? '<a class="btn btn-primary" href="' + esc(form) + '" target="_blank" rel="noopener">' + esc(ui("interest_form")) + " " + ICON.ext + "</a>" + emailButton("btn-outline")
+      : contactButtons("btn-primary");
+    return '<div class="hosts-cta"><p class="label">' + esc(ui("hosts_title")) + "</p><p>" + esc(t(ed.llamadoAnfitriones)) + '</p><div class="hero-actions">' + buttons + "</div></div>";
   }
 
   function renderNext() {
@@ -522,11 +544,10 @@
       el.innerHTML = '<div class="card empty">' + esc(ui("next_none")) + "</div>";
       return;
     }
-    var legs = (ed.tramos && ed.tramos.length ? ed.tramos : cities(ed).map(function (c) { return { ciudad: c, inicio: ed.inicio, fin: ed.fin }; }))
-      .map(function (l) {
-        var atl = /atlanta/i.test(l.ciudad);
-        return '<li class="leg' + (atl ? " is-atlanta" : "") + '"><span class="leg-city">' + esc(l.ciudad) + '</span><span class="leg-dates">' + esc(fmtRange(l.inicio, l.fin)) + "</span></li>";
-      }).join("");
+    var others = otherLegsNote(ed);
+    var legs =
+      '<li class="leg is-atlanta"><span class="leg-city">Atlanta</span><span class="leg-dates">' + esc(fmtRange(ed.inicio, ed.fin)) + "</span></li>" +
+      (typeof ed.empresas === "number" ? '<li class="leg"><span class="leg-city">' + ed.empresas + '</span><span class="leg-dates">' + esc(ui("total_companies")) + "</span></li>" : "");
 
     var program = isEmpty(ed.programa) ? "" :
       '<p class="label">' + esc(ui("program")) + '</p><ul class="program">' +
@@ -545,7 +566,9 @@
       "<h3>" + esc(t(ed.titulo)) + "</h3>" +
       "<p>" + esc(t(ed.resumen)) + "</p>" +
       '<p class="label">' + esc(ui("itinerary")) + '</p><ul class="legs">' + legs + "</ul>" +
+      (others ? '<p class="legs-note">' + esc(others) + "</p>" : "") +
       sectors +
+      (isEmpty(ed.delegacion) ? "" : '<p style="margin:24px 0 0"><a class="btn btn-outline" href="' + esc(edUrl(ed)) + '#delegacion">' + esc(ui("see_delegation")) + ICON.arrow + "</a></p>") +
       "</div>" +
       '<div class="next-side">' + program + call + hosts +
       '<p style="margin:16px 0 0"><a href="' + esc(edUrl(ed)) + '">' + esc(ui("see_details")) + " →</a></p>" +
@@ -557,21 +580,25 @@
     var el = document.getElementById("ediciones-body");
     if (!el) return;
     var past = pastEditions();
-    var atlantaEds = past.filter(function (e) { return cities(e).some(function (c) { return /atlanta/i.test(c); }); });
-    var first = past.length ? year(past[past.length - 1]) : "";
     var known = past.filter(function (e) { return typeof e.empresas === "number"; });
     var totalCompanies = known.reduce(function (s, e) { return s + e.empresas; }, 0);
     var partial = known.length < past.length;
+    var ctx = SITIO.contexto || {};
+    var since = ctx.desde ? String(ctx.desde) : "";
+
+    var context = since && ctx.texto
+      ? '<p class="context' + verifyClass(ctx) + '">' + esc(t(ctx.texto).split("{desde}").join(since)) + verifyTag(ctx) + "</p>"
+      : "";
 
     var totals =
       '<div class="totals">' +
-      '<div class="card total"><strong>' + atlantaEds.length + "</strong><span>" + esc(ui("total_editions")) + "</span></div>" +
-      '<div class="card total"><strong>' + esc(first) + "</strong><span>" + esc(ui("total_since")) + "</span></div>" +
-      (totalCompanies ? '<div class="card total"><strong>' + totalCompanies + (partial ? "+" : "") + "</strong><span>" + esc(ui("total_companies")) + "</span></div>" : "") +
+      (since ? '<div class="card total' + verifyClass(ctx) + '"><strong>' + esc(since) + "</strong><span>" + esc(ui("total_since")) + verifyTag(ctx) + "</span></div>" : "") +
+      '<div class="card total"><strong>' + past.length + "</strong><span>" + esc(ui("total_editions")) + "</span></div>" +
+      (totalCompanies ? '<div class="card total"><strong>' + totalCompanies + (partial ? "+" : "") + "</strong><span>" + esc(ui("total_companies_editions")) + "</span></div>" : "") +
       "</div>";
 
     var cards = past.map(function (ed) {
-      var meta = ["<span>" + esc(fmtRange(ed.inicio, ed.fin)) + "</span>", "<span>" + esc(cities(ed).join(" · ")) + "</span>"];
+      var meta = ["<span>" + esc(fmtRange(ed.inicio, ed.fin)) + "</span>", "<span>Atlanta</span>"];
       if (typeof ed.empresas === "number") meta.push("<span>" + esc(ui("companies_n", { n: ed.empresas })) + "</span>");
       return (
         '<li><a class="card edition-card" href="' + esc(edUrl(ed)) + '">' +
@@ -582,7 +609,7 @@
       );
     }).join("");
 
-    el.innerHTML = totals + '<ul class="editions">' + cards + "</ul>";
+    el.innerHTML = context + totals + '<ul class="editions">' + cards + "</ul>";
   }
 
   function renderWhy() {
@@ -640,14 +667,19 @@
   function emptyBox() { return '<div class="empty">' + esc(ui("empty")) + "</div>"; }
 
   function initials(name) {
-    return String(name || "").split(/\s+/).filter(Boolean).slice(0, 2).map(function (w) { return w[0]; }).join("").toUpperCase();
+    return String(name || "").split(/\s+/).filter(function (w) { return /^[A-Za-zÀ-ÿ]/.test(w); }).slice(0, 2).map(function (w) { return w[0]; }).join("").toUpperCase();
   }
 
   function renderAgenda(ed) {
     var items = ed.agenda || [];
     var dated = items.filter(function (a) { return a.fecha; });
     var undated = items.filter(function (a) { return !a.fecha; });
-    dated.sort(function (a, b) { return (a.fecha + (a.hora || "")).localeCompare(b.fecha + (b.hora || "")); });
+    // Ordena por fecha y hora de inicio ("9:00" va antes que "15:00"); sin hora se respeta el orden de la lista.
+    function timeKey(h) {
+      var m = /^(\d{1,2}):(\d{2})/.exec(h || "");
+      return m ? ("0" + m[1]).slice(-2) + m[2] : "";
+    }
+    dated.sort(function (a, b) { return (a.fecha + timeKey(a.hora)).localeCompare(b.fecha + timeKey(b.hora)); });
     return '<ol class="agenda">' + dated.concat(undated).map(function (a) {
       var when = a.fecha ? fmtDate(a.fecha, { weekday: "short", day: "numeric", month: "short" }) + (a.hora ? " · " + a.hora : "") : ui("during");
       return (
@@ -669,6 +701,7 @@
         (withKind ? '<span class="kind">' + esc(ui("kind_" + (o.tipo || "otro"))) + "</span>" : "") +
         "<h3>" + esc(o.nombre) + verifyTag(o) + "</h3>" +
         (o.sector ? '<span class="sector">' + esc(t(o.sector)) + "</span>" : "") +
+        (o.provincia ? '<span class="prov">' + ICON.pin + esc(t(o.provincia)) + "</span>" : "") +
         (o.detalle ? "<p>" + esc(t(o.detalle)) + "</p>" : "") +
         (url ? '<a class="web" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(ui("website")) + " " + ICON.ext + "</a>" : "") +
         "</li>"
@@ -724,9 +757,7 @@
     var isNext = ed.estado === "proxima";
     document.title = year(ed) + " · " + t(ed.titulo) + " · South Meets South";
 
-    var cityChips = (ed.tramos && ed.tramos.length
-      ? ed.tramos.map(function (l) { return '<span class="chip">' + esc(l.ciudad) + " · " + esc(fmtRange(l.inicio, l.fin, false)) + "</span>"; })
-      : cities(ed).map(function (c) { return '<span class="chip">' + esc(c) + "</span>"; })).join("");
+    var others = otherLegsNote(ed);
 
     var hero =
       '<header class="ed-hero"><div class="container">' +
@@ -734,13 +765,19 @@
       '<div class="ed-year" aria-hidden="true">' + esc(year(ed)) + "</div>" +
       "<h1>" + esc(t(ed.titulo)) + "</h1>" +
       '<div class="ed-when"><span class="status-badge' + (isNext ? "" : " done") + '">' + esc(ui(isNext ? "status_next" : "status_done")) + "</span>" +
-      "<span>" + esc(fmtRange(ed.inicio, ed.fin)) + "</span>" + cityChips + "</div>" +
+      '<span class="chip">Atlanta</span><span>' + esc(fmtRange(ed.inicio, ed.fin)) + "</span></div>" +
+      (others ? '<p class="ed-other">' + esc(others) + "</p>" : "") +
       "</div></header>";
 
     var stats = isEmpty(ed.cifras) ? "" :
       '<div class="container"><div class="ed-stats">' + ed.cifras.map(function (c) {
-        return '<div class="card ed-stat"><strong>' + esc(c.valor) + "</strong><span>" + esc(t(c.texto)) + "</span></div>";
+        return '<div class="card ed-stat' + verifyClass(c) + '"><strong>' + esc(c.valor) + "</strong><span>" + esc(t(c.texto)) + verifyTag(c) + "</span></div>";
       }).join("") + "</div></div>";
+
+    // Nota interna sobre el origen de los datos: solo se ve en modo borrador.
+    var internal = BORRADOR && ed.notaInterna
+      ? '<div class="container"><p class="internal-note">' + esc(t(ed.notaInterna)) + "</p></div>"
+      : "";
 
     // Secciones: [id, título, contenido o null si está vacía, mostrar vacía en borrador]
     var sections = [];
@@ -760,7 +797,8 @@
 
     // La nota de la delegación es interna: solo se ve en modo borrador.
     var delegNote = BORRADOR && ed.delegacionNota ? '<p class="note">' + esc(t(ed.delegacionNota)) + "</p>" : "";
-    sections.push(["delegacion", ui("sec_delegation"), isEmpty(ed.delegacion) ? (delegNote || null) : delegNote + renderOrgs(ed.delegacion, false), !isNext]);
+    var delegTitle = ui("sec_delegation") + (isEmpty(ed.delegacion) ? "" : " · " + ed.delegacion.length);
+    sections.push(["delegacion", delegTitle, isEmpty(ed.delegacion) ? (delegNote || null) : delegNote + renderOrgs(ed.delegacion, false), !isNext]);
     sections.push(["anfitriones", ui("sec_hosts"), isEmpty(ed.anfitriones) ? null : renderOrgs(ed.anfitriones, true), !isNext]);
     sections.push(["reuniones", ui("sec_meetings"), isEmpty(ed.reuniones) ? null : renderPeople(ed.reuniones), !isNext]);
     sections.push(["resultados", ui("sec_results"), isEmpty(ed.resultados) ? null : '<ul class="results">' + ed.resultados.map(function (r) { return "<li>" + ICON.check + "<span>" + esc(t(r)) + "</span></li>"; }).join("") + "</ul>", !isNext]);
@@ -786,7 +824,7 @@
       (newer ? '<a class="card next-link" href="' + esc(edUrl(newer)) + '"><small>' + esc(ui("next_edition")) + " →</small><strong>" + esc(year(newer)) + "</strong></a>" : "") +
       "</nav></div>";
 
-    main.innerHTML = hero + stats + nav + body + pager;
+    main.innerHTML = hero + stats + internal + nav + body + pager;
     setupScrollSpy();
   }
 

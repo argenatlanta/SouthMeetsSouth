@@ -10,15 +10,25 @@ window.SMS_SITIO = {
   // Fecha de la última actualización del contenido (AAAA-MM-DD). Se muestra en el pie.
   actualizado: "2026-10-15",
 
+  // Texto de contexto de la sección «Ediciones». {desde} se reemplaza por el año.
+  // Si `desde` queda vacío (null), la frase no se muestra.
+  contexto: {
+    desde: 2013,
+    verificar: true,
+    texto: {
+      es: "El Consulado General en Atlanta organiza misiones de empresas argentinas de software y tecnología desde {desde}. Aquí reunimos las ediciones más recientes.",
+      en: "The Consulate General in Atlanta has organized Argentine software and technology missions since {desde}. Here are the most recent editions.",
+    },
+  },
+
   contacto: {
     organismo: {
       es: "Consulado General de la República Argentina en Atlanta",
       en: "Consulate General of the Argentine Republic in Atlanta",
     },
-    // Completar con el correo de la sección comercial. Si queda vacío, se muestra solo el sitio web.
-    email: "",
+    email: "comercial_catla@mrecic.gov.ar",
     web: "https://catla.cancilleria.gob.ar",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/company/argenatlanta/",
   },
 
   recursos: [

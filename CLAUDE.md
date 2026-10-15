@@ -21,6 +21,10 @@ wrangler.jsonc          config para Cloudflare Workers (si se usa Pages, no se l
 
 No hay build ni dependencias. El contenido se edita casi siempre en `public/data/ediciones.js`.
 
+**Alcance:** el sitio cubre solo la etapa de **Atlanta** de cada misión (agenda, empresas, anfitriones).
+Las otras ciudades se mencionan en una línea (`otrasEtapas`). Se publican las ediciones desde 2024; el
+texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las misiones.
+
 ## Reglas
 
 1. **No inventar datos.** Nombres de empresas, personas, cargos, cifras, fechas y lugares salen del
@@ -42,19 +46,19 @@ No hay build ni dependencias. El contenido se edita casi siempre en `public/data
   id: "2025",                       // también es el ?id= de la URL
   estado: "realizada",              // "realizada" | "proxima"
   titulo: { es, en },
-  inicio: "2025-11-17", fin: "2025-11-20",
-  tramos: [{ ciudad, inicio, fin }],      // opcional: fechas por ciudad
-  ciudades: ["Atlanta", "Austin"],        // si no hay tramos
+  inicio: "2025-11-17", fin: "2025-11-18",     // fechas de la etapa Atlanta
+  otrasEtapas: [{ ciudad, inicio?, fin?, nota? }],  // otras ciudades: solo se mencionan
   empresas: 13,                           // opcional, número: suma en los totales de la portada
   resumen: { es, en },
-  cifras: [{ valor: "+100", texto: { es, en } }],
+  cifras: [{ valor: "+100", texto: { es, en }, verificar? }],
   sectores: ["Fintech", { es: "Videojuegos", en: "Video games" }],
-  agenda: [{ fecha?, hora?, titulo, detalle?, lugar?, verificar? }],   // "Lo que hicimos"
+  notaInterna: { es, en },                // origen de los datos; solo se ve en modo borrador
+  agenda: [{ fecha?, hora?: "9:00–11:30", titulo, detalle?, lugar?, verificar? }],  // «Lo que hicimos»
   delegacionNota: { es, en },             // nota interna, solo se ve en modo borrador
-  delegacion: [{ nombre, sector?, detalle?, web?, verificar? }],       // empresas argentinas
-  anfitriones: [{ nombre, tipo, detalle?, web?, verificar? }],         // "Nos recibieron"
+  delegacion: [{ nombre, provincia?, sector?, detalle?, web?, verificar? }],  // empresas argentinas
+  anfitriones: [{ nombre, tipo, detalle?, web?, verificar? }],         // «Nos recibieron»
       // tipo: "asociacion" | "hub" | "universidad" | "empresa" | "camara" | "gobierno" | "otro"
-  reuniones: [{ nombre, cargo?, organizacion?, detalle?, verificar? }], // "Con quiénes nos reunimos"
+  reuniones: [{ nombre, cargo?, organizacion?, detalle?, verificar? }], // «Con quiénes nos reunimos»
   organizadores: [{ nombre, detalle? }],
   resultados: [{ es, en }],
   galeria: [{ src: "img/ediciones/2025/foto-01.jpg", alt: { es, en }, credito? }],
@@ -64,9 +68,16 @@ No hay build ni dependencias. El contenido se edita casi siempre en `public/data
   cuentaRegresiva: { fecha, ciudad },     // la cuenta regresiva de la portada
   programa: [{ es, en }],
   convocatoria: { estado: "abierta" | "cerrada", cierre, url, nota },
-  llamadoAnfitriones: { es, en },
+  llamadoAnfitriones: { es, en },         // invitación a empresas de Atlanta
+  formularioInteres: "https://…",         // botón «Quiero participar»
 }
 ```
+
+En la agenda de una misión próxima solo van las actividades abiertas al público local (no reuniones
+internas de la delegación). Las fuentes habituales están en el Google Drive del Consulado (carpetas
+«Misión Software AAAA»): agenda, listado de inscriptos y carpeta de la misión. De los listados se
+publican solo nombre de la empresa, provincia, web y una descripción breve; nunca datos personales
+(correos, teléfonos, documentos).
 
 Las secciones vacías (`[]`) no se muestran en el sitio publicado. En modo borrador aparecen como
 «Sección a completar».
