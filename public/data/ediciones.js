@@ -1535,11 +1535,8 @@ window.SMS_EDICIONES = [
           { src: "img/ediciones/2024/recepcion-laac.jpg", mini: "img/ediciones/2024/recepcion-laac-mini.jpg", alt: { es: "Invitados de LAAC Georgia junto a la Cónsul General.", en: "LAAC Georgia guests with the Consul General." } },
           { src: "img/ediciones/2024/recepcion-bevington.jpg", mini: "img/ediciones/2024/recepcion-bevington-mini.jpg", alt: { es: "La Cónsul General junto a Rickey Bevington.", en: "The Consul General with Rickey Bevington." } },
           { src: "img/ediciones/2024/vinos-wofa.jpg", mini: "img/ediciones/2024/vinos-wofa-mini.jpg", alt: { es: "Vinos argentinos de la promoción de Wines of Argentina.", en: "Argentine wines from the Wines of Argentina promotion." } },
-          { src: "img/ediciones/2024/vinos-piattelli.jpg", mini: "img/ediciones/2024/vinos-piattelli-mini.jpg", alt: { es: "Vinos de Piattelli Vineyards en la recepción.", en: "Piattelli Vineyards wines at the reception." } },
           { src: "img/ediciones/2024/vinos-1.jpg", mini: "img/ediciones/2024/vinos-1-mini.jpg", alt: { es: "Malbec argentino servido en la recepción.", en: "Argentine Malbec served at the reception." } },
           { src: "img/ediciones/2024/vinos-2.jpg", mini: "img/ediciones/2024/vinos-2-mini.jpg", alt: { es: "Degustación de vinos argentinos durante la recepción.", en: "Argentine wine tasting during the reception." } },
-          { src: "img/ediciones/2024/brindis-1.jpg", mini: "img/ediciones/2024/brindis-1-mini.jpg", alt: { es: "Brindis con vino argentino.", en: "A toast with Argentine wine." } },
-          { src: "img/ediciones/2024/brindis-2.jpg", mini: "img/ediciones/2024/brindis-2-mini.jpg", alt: { es: "Brindis con vino argentino durante la recepción.", en: "A toast with Argentine wine during the reception." } },
         ],
       },
       {
