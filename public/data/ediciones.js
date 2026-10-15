@@ -540,7 +540,7 @@ window.SMS_EDICIONES = [
             { es: "Google Partner Premier 2026", en: "Google Partner Premier 2026" },
             { es: "Premios: Sello de Buen Diseño argentino (2025 y 2026), Eikon (2024 y 2025) y Sadosky (2015 y 2020)", en: "Awards: Argentine Good Design Seal (2025 and 2026), Eikon (2024 and 2025) and Sadosky (2015 and 2020)" },
           ],
-          eeuu: { es: "Con presencia en EE.UU., su portfolio incluye marcas como Citibank, Visa y Western Union.", en: "With a presence in the U.S., its portfolio includes brands such as Citibank, Visa and Western Union." },
+          eeuu: { es: "Tiene presencia en EE.UU.; entre las marcas de su portfolio figuran Citibank, Visa y Western Union.", en: "It has a presence in the U.S.; brands in its portfolio include Citibank, Visa and Western Union." },
           clientes: ["Citibank", "Visa", "Western Union", "Sony", "Nestlé", "McDonald's"],
         },
       },
@@ -631,7 +631,7 @@ window.SMS_EDICIONES = [
             { es: "Premios en GIFF (2018), Virtuality (2018) y Trends (2017)", en: "Awards at GIFF (2018), Virtuality (2018) and Trends (2017)" },
           ],
           eeuu: { es: "En Miami desarrolló el contenido y la supervisión técnica de «Surreal 360: A Salvador Dalí Experience», en Ice Palace Studios, y en Puerto Rico filmó 23 visualizers 360° para Bad Bunny.", en: "In Miami it created the content and technical supervision for “Surreal 360: A Salvador Dalí Experience” at Ice Palace Studios, and in Puerto Rico it filmed 23 360° visualizers for Bad Bunny." },
-          clientes: ["Teatro Colón", { es: "Centro Cultural Recoleta", en: "Recoleta Cultural Center" }, { es: "CAF – Banco de Desarrollo de América Latina y el Caribe", en: "CAF – Development Bank of Latin America and the Caribbean" }, "Bad Bunny", "Banco Galicia", "CONICET"],
+          clientes: ["FIBA", { es: "CAF – Banco de Desarrollo de América Latina y el Caribe", en: "CAF – Development Bank of Latin America and the Caribbean" }, "Bad Bunny", "CONICET", { es: "Ministerio de Cultura de la Nación", en: "Argentina’s Ministry of Culture" }, "Banco Galicia"],
         },
       },
       {
