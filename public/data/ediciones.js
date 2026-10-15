@@ -139,6 +139,23 @@ window.SMS_EDICIONES = [
           en: "Software development and IT consulting based in Atlanta and Buenos Aires; its flagship product is AI voice agents for call centers.",
         },
         web: "https://www.borderless-software.com",
+        ficha: {
+          resumen: {
+            es: "Empresa de software nearshore con oficinas en Atlanta y Buenos Aires. Desarrolla software a medida y ofrece Loqui CX, una plataforma de contact center con IA que atiende por WhatsApp, voz y web.",
+            en: "Nearshore software company with offices in Atlanta and Buenos Aires. It builds custom software and offers Loqui CX, an AI-powered contact center platform that engages customers on WhatsApp, voice and web.",
+          },
+          servicios: [
+            { es: "IA conversacional para WhatsApp, voz y web", en: "Conversational AI for WhatsApp, voice and web" },
+            { es: "Loqui CX: agentes de IA y copiloto para operadores", en: "Loqui CX: AI agents and agent copilot" },
+            { es: "Desarrollo de software a medida", en: "Custom software development" },
+            { es: "Staff augmentation", en: "Staff augmentation" },
+            { es: "Servicios gestionados de IT", en: "Managed IT services" },
+          ],
+          trayectoria: [
+            { es: "Oficinas en Atlanta (EE.UU.) y Buenos Aires", en: "Offices in Atlanta (U.S.) and Buenos Aires" },
+          ],
+          eeuu: { es: "Tiene oficina en Atlanta y una línea de atención en EE.UU.", en: "Has an office in Atlanta and a U.S. contact line." },
+        },
       },
       {
         nombre: "Clarika",
@@ -151,6 +168,25 @@ window.SMS_EDICIONES = [
           en: "Since 2007, custom software development and tech staffing for clients in Argentina, Latin America and North America. ISO 9001:2015 certified.",
         },
         web: "https://www.clarikagroup.com",
+        ficha: {
+          resumen: {
+            es: "Empresa de ingeniería de software que construye sistemas con IA integrados a la operación de sus clientes, con la ingeniería, la seguridad y el soporte necesarios para sostenerlos en el tiempo.",
+            en: "Software engineering company that builds AI-powered systems integrated into its clients’ operations, with the engineering, security and support to keep them running over time.",
+          },
+          servicios: [
+            { es: "Software a medida, de la arquitectura a producción", en: "Custom software, from architecture to production" },
+            { es: "Apps web y móviles, y reemplazo de sistemas heredados", en: "Web and mobile apps, and legacy system replacement" },
+            { es: "Staff augmentation con desarrolladores senior", en: "Staff augmentation with senior developers" },
+            { es: "Agentes de IA y copilotos conectados a los datos (RAG)", en: "AI agents and copilots connected to data (RAG)" },
+            { es: "Automatización de flujos y procesamiento de documentos", en: "Workflow automation and document processing" },
+          ],
+          trayectoria: [
+            { es: "Más de 19 años en desarrollo de software", en: "19+ years in software development" },
+            { es: "Más de 100 clientes en el mundo", en: "100+ clients worldwide" },
+            { es: "Great Place to Work 2026: 4.º mejor lugar para trabajar en tecnología de la Argentina", en: "Great Place to Work 2026: #4 Best Workplace in Technology in Argentina" },
+          ],
+          clientes: ["McDonald's", "DAC Group", "Figmu"],
+        },
       },
       {
         nombre: "Code First Lab",
@@ -195,6 +231,25 @@ window.SMS_EDICIONES = [
           en: "Hardware, software, IoT and AI to digitize physical retail: self-service kiosks, store operations and smart pickup.",
         },
         web: "https://www.idiotlab.io",
+        ficha: {
+          resumen: {
+            es: "Empresa argentina que diseña e implementa soluciones integradas de hardware, software, IoT e IA para el retail físico, conectando la experiencia del cliente con la operación de la tienda.",
+            en: "Argentina-based company that designs and deploys integrated hardware, software, IoT and AI solutions for physical retail, connecting customer interactions with store operations.",
+          },
+          servicios: [
+            { es: "Kioscos de autogestión y pedidos digitales", en: "Self-service kiosks and digital ordering" },
+            { es: "Operación de tienda: tablets para el personal y gestión de filas", en: "Store operations: staff tablets and queue management" },
+            { es: "Retiro inteligente: lockers y click-and-collect", en: "Smart pickup: lockers and click-and-collect" },
+            { es: "Soluciones Fast-Fit para tiendas de calzado", en: "Fast-Fit solutions for footwear retail" },
+            { es: "Datos e IA sobre la actividad en la tienda", en: "In-store data and AI" },
+          ],
+          trayectoria: [
+            { es: "Partner de Zebra Technologies", en: "Zebra Technologies partner" },
+            { es: "Cadenas de retail, comida rápida, cafeterías, tiendas de conveniencia y estaciones de servicio", en: "Retail chains, quick-service restaurants, coffee shops, convenience stores and fuel retail" },
+          ],
+          eeuu: { es: "Presentó su solución de autogestión en el stand de Zebra Technologies en NRF 2026 (Nueva York, enero de 2026).", en: "Showcased its self-service solution at Zebra Technologies’ booth at NRF 2026 (New York, January 2026)." },
+          clientes: ["Nike", "Under Armour", "Converse", "Pan American Energy", "Falabella", "Grido"],
+        },
       },
       {
         nombre: "Immersive Global Solutions (IGS)",
@@ -206,6 +261,26 @@ window.SMS_EDICIONES = [
           en: "Digital transformation with generative AI, augmented and virtual reality; headquartered in Metro Atlanta with 500+ projects delivered.",
         },
         web: "https://www.igs.com.ar",
+        ficha: {
+          resumen: {
+            es: "A través de IGS Manufacturing, con sede en Alpharetta (Metro Atlanta), ayuda a fabricantes a reducir paradas, mejorar la calidad, optimizar la producción y capacitar al personal de planta con IA aplicada, visión por computadora y tecnologías inmersivas.",
+            en: "Through IGS Manufacturing, based in Alpharetta (Metro Atlanta), it helps manufacturers reduce downtime, improve quality, optimize production and train frontline workers using practical AI, computer vision and immersive technologies.",
+          },
+          servicios: [
+            { es: "Optimización de procesos con IA", en: "AI process optimization" },
+            { es: "Visión por computadora para control de calidad", en: "Computer vision for quality inspection" },
+            { es: "Capacitación y soporte remoto con 3D, realidad aumentada y virtual", en: "3D, AR and VR training and remote support" },
+            { es: "Asistentes de IA privados sobre ERP, procedimientos y documentos", en: "Private AI assistants for ERP data, procedures and documents" },
+            { es: "Staff augmentation en IA y realidad extendida", en: "AI and XR staff augmentation" },
+          ],
+          trayectoria: [
+            { es: "Más de 500 proyectos de realidad aumentada y virtual", en: "500+ AR/VR projects delivered" },
+            { es: "5 estrellas en Clutch y 2.ª entre las empresas de RV y RA de EE.UU., según la empresa", en: "5-star Clutch reviews and #2 among VR & AR companies in the U.S., per the company" },
+            { es: "Equipos en Georgia, Florida, España y Latinoamérica", en: "Teams in Georgia, Florida, Spain and Latin America" },
+          ],
+          eeuu: { es: "Pequeña empresa (SBE) con sede en Atlanta. En 2025 fue subadjudicataria de un subsidio de la National Science Foundation (proyecto ENVISION), junto a West Virginia University, Millersville University y el Stroud Water Research Center.", en: "Atlanta-based small business enterprise (SBE). In 2025 it was a sub-awardee of a National Science Foundation grant (ENVISION project), with West Virginia University, Millersville University and the Stroud Water Research Center." },
+          clientes: ["Fiat Chrysler", { es: "Banco Mundial", en: "World Bank" }, "Growglide", { es: "Equipos de la MLS", en: "MLS teams" }],
+        },
       },
       {
         nombre: "Lila Software Studio",
@@ -229,6 +304,25 @@ window.SMS_EDICIONES = [
           en: "15+ years developing custom software, with proprietary products and clients abroad.",
         },
         web: "https://www.metaok.com",
+        ficha: {
+          resumen: {
+            es: "Empresa especializada en tecnologías emergentes y software a medida, que se presenta como socio tecnológico estratégico para aplicaciones de misión crítica, con equipos en la Argentina y España.",
+            en: "Company specialized in emerging technologies and custom software, positioned as a strategic technology partner for mission-critical applications, with teams in Argentina and Spain.",
+          },
+          servicios: [
+            { es: "Desarrollo de software de escritorio, web, cloud y móvil", en: "Desktop, web, cloud and mobile development" },
+            { es: "Outsourcing y equipos dedicados", en: "Outsourcing and dedicated teams" },
+            { es: "Staff augmentation", en: "Staff augmentation" },
+            { es: "Ciencia de datos e IA: big data, BI y machine learning", en: "Data science and AI: big data, BI and machine learning" },
+            { es: "Infraestructura, DevOps y servicios de IT", en: "Infrastructure, DevOps and IT services" },
+            { es: "Diseño UI/UX", en: "UI/UX design" },
+          ],
+          trayectoria: [
+            { es: "Equipos en la Argentina y España", en: "Teams in Argentina and Spain" },
+            { es: "Proyectos en salud, producción, entretenimiento y sector público", en: "Projects in healthcare, production, entertainment and the public sector" },
+          ],
+          clientes: ["Grifols", "OPKO Health Europe", "Telecom", { es: "Hospital Garrahan", en: "Garrahan Children’s Hospital" }, "Boca Juniors", { es: "Municipalidad de Trenque Lauquen", en: "Municipality of Trenque Lauquen" }],
+        },
       },
       {
         nombre: "Novasoft",
@@ -251,6 +345,26 @@ window.SMS_EDICIONES = [
           en: "Embedded systems and mission-critical software, with clients in Latin America, North America, Europe and the Middle East.",
         },
         web: "https://www.owl-services.com",
+        ficha: {
+          resumen: {
+            es: "Socio de ingeniería y tecnología especializado en firmware, sistemas embebidos, programación de sistemas, conectividad, ciberseguridad y software a medida, que convierte desafíos complejos de hardware y software en soluciones confiables y listas para producción.",
+            en: "Engineering and technology partner specialized in firmware, embedded systems, system programming, connectivity, cybersecurity and custom software, turning complex hardware-software challenges into reliable, production-ready solutions.",
+          },
+          servicios: [
+            { es: "Sistemas embebidos, firmware e IA en el borde", en: "Embedded systems, firmware and edge AI" },
+            { es: "Programación de sistemas: kernel, drivers y bootloaders", en: "System programming: kernel, drivers and bootloaders" },
+            { es: "Middleware y conectividad: BLE, Wi-Fi, celular y LPWAN", en: "Middleware and connectivity: BLE, Wi-Fi, cellular and LPWAN" },
+            { es: "Ciberseguridad a nivel de dispositivo", en: "Device-level cybersecurity" },
+            { es: "DevOps y software a medida", en: "DevOps and custom software" },
+            { es: "Diseño electrónico, de PCB y mecánico", en: "Electronics, PCB and mechanical design" },
+          ],
+          trayectoria: [
+            { es: "Ciclo completo: estrategia, diseño, desarrollo, integración y pruebas", en: "Full-cycle delivery: strategy, design, development, integration and testing" },
+            { es: "Sistemas en tiempo real: Linux, Zephyr, VxWorks y otros RTOS", en: "Real-time expertise: Linux, Zephyr, VxWorks and other RTOS" },
+            { es: "Aeroespacial y defensa, automotriz, industria y robótica, salud y agtech", en: "Aerospace and defense, automotive, industrial and robotics, medical and agtech" },
+          ],
+          eeuu: { es: "Desarrolla proyectos en EE.UU., la Argentina, Perú y Brasil.", en: "Delivers projects in the U.S., Argentina, Peru and Brazil." },
+        },
       },
       {
         nombre: "Pleiada",
@@ -273,6 +387,27 @@ window.SMS_EDICIONES = [
           en: "19+ years building digital platforms and custom software with a strong UX/UI focus: apps, web apps, e-learning and e-commerce.",
         },
         web: "https://www.qkstudio.com",
+        ficha: {
+          resumen: {
+            es: "Con 19 años de experiencia, crea plataformas digitales y software a medida con un fuerte foco en UI/UX, creatividad y funcionalidad. Tiene presencia en la Argentina, Latinoamérica, EE.UU. y España.",
+            en: "With 19 years of experience, it creates digital platforms and custom software with a strong focus on UI/UX, creativity and functionality. It has a presence in Argentina, Latin America, the U.S. and Spain.",
+          },
+          servicios: [
+            { es: "Apps web y software a medida", en: "Web apps and custom software" },
+            { es: "Apps móviles: Android, iOS, React Native e IoT", en: "Mobile apps: Android, iOS, React Native and IoT" },
+            { es: "Sitios corporativos, e-commerce y e-learning", en: "Corporate websites, e-commerce and e-learning" },
+            { es: "Marca y contenidos", en: "Brand and content" },
+            { es: "Investigación y diseño UX/UI", en: "UX/UI research and design" },
+            { es: "Marketing digital", en: "Digital marketing" },
+          ],
+          trayectoria: [
+            { es: "19 años de experiencia", en: "19 years of experience" },
+            { es: "Google Partner Premier 2026", en: "Google Partner Premier 2026" },
+            { es: "Premios: Sello de Buen Diseño argentino (2025 y 2026), Eikon (2024 y 2025) y Sadosky (2015 y 2020)", en: "Awards: Argentine Good Design Seal (2025 and 2026), Eikon (2024 and 2025) and Sadosky (2015 and 2020)" },
+          ],
+          eeuu: { es: "Declara presencia en EE.UU.; su portfolio incluye marcas como Citibank, Visa y Western Union.", en: "Reports a presence in the U.S.; its portfolio includes brands such as Citibank, Visa and Western Union." },
+          clientes: ["Citibank", "Visa", "Western Union", "Sony", "Nestlé", "McDonald's"],
+        },
       },
       {
         nombre: "Quadion Technologies",
@@ -284,6 +419,24 @@ window.SMS_EDICIONES = [
           en: "20+ years building custom software for international clients. ISO 9001:2015 certified.",
         },
         web: "https://www.quadiontech.com",
+        ficha: {
+          resumen: {
+            es: "Desarrolla software a medida con metodologías ágiles, entregando soluciones de forma incremental. La mayor parte de sus proyectos proviene de empresas de EE.UU.",
+            en: "Builds custom software using agile methodologies to incrementally deliver top-notch solutions. Most of its assignments come from U.S. companies.",
+          },
+          servicios: [
+            { es: "Desarrollo de software a medida", en: "Custom software development" },
+            { es: "Desarrollo nearshore", en: "Nearshore software development" },
+            { es: "Apps web y móviles: Angular, React, iOS y Android", en: "Web and mobile apps: Angular, React, iOS and Android" },
+            { es: "Backend y cloud: .NET, Java, Node.js, Azure y AWS", en: "Backend and cloud: .NET, Java, Node.js, Azure and AWS" },
+          ],
+          trayectoria: [
+            { es: "Más de 250 proyectos completados", en: "250+ completed projects" },
+            { es: "Más de 100 profesionales; el 78% habla inglés", en: "100+ professionals; 78% English-speaking" },
+            { es: "Certificada ISO 9001:2015", en: "ISO 9001:2015 certified" },
+          ],
+          eeuu: { es: "Más del 70% de sus proyectos provienen de empresas de EE.UU.; tiene una línea de contacto en ese país.", en: "Over 70% of its assignments come from U.S. companies; it has a U.S. contact line." },
+        },
       },
       {
         nombre: "QuantyIA",
@@ -295,6 +448,22 @@ window.SMS_EDICIONES = [
           en: "Human-led data labeling for AI projects in automotive, industrial, healthcare and perception systems.",
         },
         web: "https://quantyia.ar",
+        ficha: {
+          resumen: {
+            es: "Empresa argentina especializada en curaduría y validación de datos de alta precisión para sistemas de IA, en áreas donde la exactitud y el contexto son críticos: automotriz, control de calidad industrial y salud.",
+            en: "Argentine company specialized in high-precision data curation and validation for AI systems in areas where accuracy and context are critical: automotive, industrial quality control and healthcare.",
+          },
+          servicios: [
+            { es: "Anotación de datos para percepción automotriz y ADAS", en: "Data annotation for automotive perception and ADAS" },
+            { es: "Datasets para detección de defectos en manufactura", en: "Defect-detection datasets for manufacturing" },
+            { es: "Imágenes diagnósticas y datos clínicos", en: "Diagnostic imaging and clinical data" },
+            { es: "Control de calidad con supervisión humana (human-in-the-loop)", en: "Human-in-the-loop (HITL) quality assurance" },
+          ],
+          trayectoria: [
+            { es: "Socio de laboratorios de I+D y empresas tecnológicas de Europa y América", en: "Partner to R&D labs and tech companies in Europe and the Americas" },
+            { es: "Procesos diseñados según GDPR, HIPAA y los criterios SOC 2 de AICPA", en: "Processes structured around GDPR, HIPAA and AICPA SOC 2 criteria" },
+          ],
+        },
       },
       {
         nombre: "Realidad 360°",
@@ -318,6 +487,20 @@ window.SMS_EDICIONES = [
           en: "Staff augmentation, tech outsourcing and IT recruiting in software, AI, automation, cybersecurity and robotics.",
         },
         web: "https://www.rhvision.org",
+        ficha: {
+          resumen: {
+            es: "Firma argentina de tecnología y servicios profesionales especializada en diseñar e implementar soluciones de transformación digital, que combina ingeniería de software, inteligencia artificial y talento IT.",
+            en: "Argentina-based technology and professional services firm specialized in designing and implementing digital transformation solutions, combining software engineering, artificial intelligence and IT talent.",
+          },
+          servicios: [
+            { es: "Desarrollo de software a medida", en: "Custom software development" },
+            { es: "IA y automatización de procesos", en: "AI and process automation" },
+            { es: "Ciberseguridad", en: "Cybersecurity" },
+            { es: "Robótica aplicada: plataformas autónomas y robots cuadrúpedos", en: "Applied robotics: autonomous platforms and quadruped robots" },
+            { es: "Consultoría y transformación digital", en: "Consulting and digital transformation" },
+            { es: "Staff augmentation, outsourcing y selección de talento IT", en: "Staff augmentation, outsourcing and IT recruiting" },
+          ],
+        },
       },
       {
         nombre: "Tecro",
@@ -336,10 +519,30 @@ window.SMS_EDICIONES = [
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Ingeniería de software y fintech", en: "Software engineering & fintech" },
         detalle: {
-          es: "Más de 30 años en soluciones de software a gran escala, con experiencia en banca digital y pagos. Certificada ISO 9001:2015.",
-          en: "30+ years delivering large-scale software solutions, with deep experience in digital banking and payments. ISO 9001:2015 certified.",
+          es: "35 años en proyectos de software de gran escala, con experiencia en banca, pagos y remesas. Certificada ISO 9001:2015.",
+          en: "35 years delivering large-scale software projects, with deep experience in banking, payments and remittances. ISO 9001:2015 certified.",
         },
         web: "https://www.tpssa.com.ar",
+        ficha: {
+          resumen: {
+            es: "Socio de ingeniería nearshore para sistemas de misión crítica, con 35 años en proyectos tecnológicos de gran escala y foco en seguridad, cumplimiento regulatorio, alta disponibilidad y continuidad del negocio.",
+            en: "Nearshore engineering partner for mission-critical systems, with 35 years delivering large-scale technology projects and a focus on security, regulatory compliance, high availability and business continuity.",
+          },
+          servicios: [
+            { es: "Plataformas de banca, pagos y remesas", en: "Banking, payments and remittance platforms" },
+            { es: "Desarrollo de software de punta a punta", en: "End-to-end software development" },
+            { es: "Staff augmentation y equipos ágiles dedicados", en: "Staff augmentation and dedicated agile teams" },
+            { es: "QA y automatización de pruebas", en: "QA and test automation" },
+            { es: "Integración y modernización de sistemas heredados", en: "Integration and legacy modernization" },
+            { es: "Microsoft Dynamics 365, Power Platform y automatización con IA", en: "Microsoft Dynamics 365, Power Platform and AI automation" },
+          ],
+          trayectoria: [
+            { es: "35 años de experiencia", en: "35 years of experience" },
+            { es: "Certificada ISO 9001:2015", en: "ISO 9001:2015 certified" },
+            { es: "Exporta desde 2001", en: "Exporting since 2001" },
+          ],
+          eeuu: { es: "Desarrolló soluciones para instituciones financieras y empresas de remesas en EE.UU. y Puerto Rico, con equipos bilingües en horario compatible.", en: "Has delivered solutions for financial institutions and money transfer companies in the U.S. and Puerto Rico, with bilingual teams working U.S.-compatible hours." },
+        },
       },
       {
         nombre: "UNIQS",
@@ -356,12 +559,33 @@ window.SMS_EDICIONES = [
         nombre: "Wootic",
         logo: "img/empresas/wootic.png",
         provincia: "Córdoba",
-        sector: { es: "Software, IA y tokenización", en: "Software, AI & tokenization" },
+        sector: { es: "Tecnología, negocio y datos", en: "Technology, business & data" },
         detalle: {
-          es: "Tecnología, ingeniería y consultoría: soluciones digitales, automatización, IA, datos y blockchain/tokenización.",
-          en: "Technology, engineering and consulting: digital solutions, automation, AI, data and blockchain/tokenization.",
+          es: "Diseña, valida y construye soluciones que integran tecnología, negocio, datos y estructuración legal y financiera.",
+          en: "Designs, validates and builds solutions that bring together technology, business, data and legal-financial structuring.",
         },
         web: "https://www.wootic.co",
+        ficha: {
+          resumen: {
+            es: "Empresa argentina de tecnología e innovación que acompaña a organizaciones desde la identificación de oportunidades hasta el diseño, el desarrollo y la implementación de soluciones, integrando tecnología, negocio, datos y estructuración legal y financiera.",
+            en: "Argentine technology and innovation company that supports organizations from opportunity identification through solution design, development and implementation, bringing together technology, business, data and legal-financial structuring.",
+          },
+          servicios: [
+            { es: "Diseño de negocio y de producto", en: "Business and product design" },
+            { es: "Estructuración legal y financiera", en: "Legal and financial structuring" },
+            { es: "Datos y analítica", en: "Data and analytics" },
+            { es: "Software a medida", en: "Custom software" },
+            { es: "Inteligencia artificial y automatización", en: "Artificial intelligence and automation" },
+            { es: "Cloud e integraciones", en: "Cloud and integrations" },
+          ],
+          trayectoria: [
+            { es: "Más de 80 clientes", en: "80+ clients" },
+            { es: "Más de 150 proyectos entregados", en: "150+ projects delivered" },
+            { es: "Más de 60 integrantes", en: "60+ team members" },
+          ],
+          eeuu: { es: "Trabajó con organizaciones de EE.UU. como John Deere, AmeriCorps y Housing Navigator Massachusetts.", en: "Has worked with U.S. organizations such as John Deere, AmeriCorps and Housing Navigator Massachusetts." },
+          clientes: [{ es: "Gobierno de la Provincia de Córdoba", en: "Government of the Province of Córdoba" }, "John Deere", "SanCor", "Ledesma", { es: "Universidad de Buenos Aires", en: "University of Buenos Aires" }, "AmeriCorps"],
+        },
       },
     ],
     anfitriones: [],

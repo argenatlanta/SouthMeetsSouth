@@ -104,6 +104,18 @@
       empty: "Sección a completar.",
       during: "Durante la misión",
       website: "Sitio web",
+      more_info: "Más información",
+      close: "Cerrar",
+      ficha_about: "Qué hace",
+      ficha_services: "Servicios",
+      ficha_track: "Trayectoria",
+      ficha_us: "En Estados Unidos",
+      ficha_clients: "Clientes y proyectos destacados",
+      ficha_source: "Información tomada del one-pager que la empresa presentó para la misión {y}.",
+      prior_badge: "Participó en {y}",
+      prior_one: "Participó en la misión {y}",
+      prior_many: "Participó en las misiones {y}",
+      and_word: " y ",
       prev_edition: "Edición anterior",
       next_edition: "Edición siguiente",
       not_found_t: "No encontramos esa edición",
@@ -208,6 +220,18 @@
       empty: "Section to be completed.",
       during: "During the mission",
       website: "Website",
+      more_info: "More information",
+      close: "Close",
+      ficha_about: "What they do",
+      ficha_services: "Services",
+      ficha_track: "Track record",
+      ficha_us: "In the United States",
+      ficha_clients: "Selected clients and projects",
+      ficha_source: "Information taken from the one-pager the company submitted for the {y} mission.",
+      prior_badge: "Took part in {y}",
+      prior_one: "Took part in the {y} mission",
+      prior_many: "Took part in the {y} missions",
+      and_word: " and ",
       prev_edition: "Previous edition",
       next_edition: "Next edition",
       not_found_t: "Edition not found",
@@ -343,6 +367,7 @@
     clock: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
     card: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg>',
     spark: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg>',
+    close: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',
     plane: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-6-20-6 4 6-4 6zM6 10h8"/></svg>',
   };
 
@@ -702,10 +727,28 @@
     return '<div class="logo' + (o.logoFondo === "oscuro" ? " dark" : "") + '"><img src="' + esc(src) + '" alt="" loading="lazy"></div>';
   }
 
-  function renderOrgs(list, withKind) {
+  // Ediciones anteriores a `ed` en cuya delegación figura la misma empresa (se compara por nombre).
+  function priorEditions(nombre, ed) {
+    var key = String(nombre || "").trim().toLowerCase();
+    return EDICIONES.filter(function (e) {
+      return e !== ed && String(e.inicio || "") < String(ed.inicio || "") && (e.delegacion || []).some(function (o) {
+        return String(o.nombre || "").trim().toLowerCase() === key;
+      });
+    }).map(year).sort();
+  }
+
+  function joinList(list) {
+    return list.length < 2 ? list.join("") : list.slice(0, -1).join(", ") + ui("and_word") + list[list.length - 1];
+  }
+
+  // `ed` solo se pasa para la delegación: habilita el aviso de misiones anteriores y la ficha.
+  function renderOrgs(list, withKind, ed) {
     var withLogos = list.some(function (o) { return o.logo; });
-    return '<ul class="cards">' + list.map(function (o) {
+    return '<ul class="cards">' + list.map(function (o, i) {
       var url = safeUrl(o.web);
+      var prior = ed ? priorEditions(o.nombre, ed) : [];
+      var more = ed && o.ficha ? '<button type="button" class="more-info" data-ficha="' + i + '">' + esc(ui("more_info")) + "</button>" : "";
+      var web = url ? '<a class="web" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(ui("website")) + " " + ICON.ext + "</a>" : "";
       return (
         '<li class="card org' + verifyClass(o) + '">' +
         (withLogos ? orgLogo(o) : "") +
@@ -713,11 +756,83 @@
         "<h3>" + esc(o.nombre) + verifyTag(o) + "</h3>" +
         (o.sector ? '<span class="sector">' + esc(t(o.sector)) + "</span>" : "") +
         (o.provincia ? '<span class="prov">' + ICON.pin + esc(t(o.provincia)) + "</span>" : "") +
+        (prior.length ? '<span class="prior-badge">' + esc(ui("prior_badge", { y: joinList(prior) })) + "</span>" : "") +
         (o.detalle ? "<p>" + esc(t(o.detalle)) + "</p>" : "") +
-        (url ? '<a class="web" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(ui("website")) + " " + ICON.ext + "</a>" : "") +
+        (more || web ? '<div class="org-actions">' + more + web + "</div>" : "") +
         "</li>"
       );
     }).join("") + "</ul>";
+  }
+
+  // ───────────────────────── Ficha de empresa («Más información») ─────────────────────────
+  function slugify(s) {
+    return String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  }
+
+  function renderFicha(o, ed) {
+    var f = o.ficha;
+    var url = safeUrl(o.web);
+    var prior = priorEditions(o.nombre, ed);
+    function block(title, body) { return body ? '<section class="ficha-block"><h3>' + esc(title) + "</h3>" + body + "</section>" : ""; }
+    function list(items) { return isEmpty(items) ? "" : '<ul class="ficha-list">' + items.map(function (x) { return "<li>" + esc(t(x)) + "</li>"; }).join("") + "</ul>"; }
+    return (
+      '<div class="ficha-head">' + orgLogo(o) + "<div>" +
+      '<h2 id="ficha-title">' + esc(o.nombre) + "</h2>" +
+      (o.sector ? '<span class="sector">' + esc(t(o.sector)) + "</span>" : "") +
+      (o.provincia ? '<span class="prov">' + ICON.pin + esc(t(o.provincia)) + "</span>" : "") +
+      "</div></div>" +
+      (prior.length ? '<p class="ficha-prior">' + ICON.check + "<span>" + esc(ui(prior.length > 1 ? "prior_many" : "prior_one", { y: joinList(prior) })) + "</span></p>" : "") +
+      block(ui("ficha_about"), f.resumen ? "<p>" + esc(t(f.resumen)) + "</p>" : "") +
+      block(ui("ficha_services"), list(f.servicios)) +
+      block(ui("ficha_track"), list(f.trayectoria)) +
+      block(ui("ficha_us"), f.eeuu ? "<p>" + esc(t(f.eeuu)) + "</p>" : "") +
+      block(ui("ficha_clients"), isEmpty(f.clientes) ? "" : '<ul class="chips">' + f.clientes.map(function (c) { return '<li class="chip">' + esc(t(c)) + "</li>"; }).join("") + "</ul>") +
+      (isEmpty(f.imagenes) ? "" : renderGallery(f.imagenes)) +
+      '<div class="ficha-foot">' +
+      (url ? '<a class="btn btn-primary" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(ui("website")) + " " + ICON.ext + "</a>" : "") +
+      '<p class="ficha-source">' + esc(ui("ficha_source", { y: year(ed) })) + "</p>" +
+      "</div>"
+    );
+  }
+
+  function fichaDialog() {
+    var d = document.getElementById("ficha-dialog");
+    if (d) return d;
+    d = document.createElement("dialog");
+    d.id = "ficha-dialog";
+    d.className = "ficha";
+    d.setAttribute("aria-labelledby", "ficha-title");
+    document.body.appendChild(d);
+    // Un clic fuera del contenido (sobre el fondo) cierra la ficha.
+    d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+    d.addEventListener("close", function () {
+      if (window.location.hash.indexOf("#empresa-") === 0) {
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+    });
+    return d;
+  }
+
+  function openFicha(o, ed) {
+    var d = fichaDialog();
+    d.innerHTML =
+      '<button type="button" class="ficha-close" aria-label="' + esc(ui("close")) + '">' + ICON.close + "</button>" +
+      '<div class="ficha-body">' + renderFicha(o, ed) + "</div>";
+    d.querySelector(".ficha-close").addEventListener("click", function () { d.close(); });
+    if (!d.open) d.showModal();
+    d.scrollTop = 0;
+    // El enlace #empresa-<nombre> permite compartir la ficha abierta.
+    window.history.replaceState(null, "", window.location.pathname + window.location.search + "#empresa-" + slugify(o.nombre));
+  }
+
+  function bindFichas(ed) {
+    var list = ed.delegacion || [];
+    document.querySelectorAll("[data-ficha]").forEach(function (b) {
+      b.addEventListener("click", function () { openFicha(list[Number(b.getAttribute("data-ficha"))], ed); });
+    });
+    var m = /^#empresa-(.+)$/.exec(window.location.hash);
+    var o = m && list.filter(function (x) { return x.ficha && slugify(x.nombre) === m[1]; })[0];
+    if (o) openFicha(o, ed);
   }
 
   function renderPeople(list) {
@@ -811,7 +926,7 @@
     // La nota de la delegación es interna: solo se ve en modo borrador.
     var delegNote = BORRADOR && ed.delegacionNota ? '<p class="note">' + esc(t(ed.delegacionNota)) + "</p>" : "";
     var delegTitle = ui("sec_delegation") + (isEmpty(ed.delegacion) ? "" : " · " + ed.delegacion.length);
-    sections.push(["delegacion", delegTitle, isEmpty(ed.delegacion) ? (delegNote || null) : delegNote + renderOrgs(ed.delegacion, false), !isNext]);
+    sections.push(["delegacion", delegTitle, isEmpty(ed.delegacion) ? (delegNote || null) : delegNote + renderOrgs(ed.delegacion, false, ed), !isNext]);
     sections.push(["anfitriones", ui("sec_hosts"), isEmpty(ed.anfitriones) ? null : renderOrgs(ed.anfitriones, true), !isNext]);
     sections.push(["reuniones", ui("sec_meetings"), isEmpty(ed.reuniones) ? null : renderPeople(ed.reuniones), !isNext]);
     sections.push(["resultados", ui("sec_results"), isEmpty(ed.resultados) ? null : '<ul class="results">' + ed.resultados.map(function (r) { return "<li>" + ICON.check + "<span>" + esc(t(r)) + "</span></li>"; }).join("") + "</ul>", !isNext]);
@@ -839,6 +954,7 @@
 
     main.innerHTML = hero + stats + internal + nav + body + pager;
     setupScrollSpy();
+    bindFichas(ed);
   }
 
   function setupScrollSpy() {

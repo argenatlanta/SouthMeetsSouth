@@ -60,8 +60,10 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
   notaInterna: { es, en },                // origen de los datos; solo se ve en modo borrador
   agenda: [{ fecha?, hora?: "9:00–11:30", titulo, detalle?, lugar?, verificar? }],  // «Lo que hicimos»
   delegacionNota: { es, en },             // nota interna, solo se ve en modo borrador
-  delegacion: [{ nombre, logo?, logoFondo?: "oscuro", provincia?, sector?, detalle?, web?, verificar? }],
+  delegacion: [{ nombre, logo?, logoFondo?: "oscuro", provincia?, sector?, detalle?, web?, ficha?, verificar? }],
       // empresas argentinas; logo: "img/empresas/wootic.png"
+      // ficha (botón «Más información»): { resumen, servicios: [{es,en}], trayectoria: [{es,en}],
+      //   eeuu?: {es,en}, clientes?: ["Nombre" | {es,en}], imagenes?: [{ src, alt: {es,en} }] }
   anfitriones: [{ nombre, tipo, detalle?, web?, verificar? }],         // «Nos recibieron»
       // tipo: "asociacion" | "hub" | "universidad" | "empresa" | "camara" | "gobierno" | "otro"
   reuniones: [{ nombre, cargo?, organizacion?, detalle?, verificar? }], // «Con quiénes nos reunimos»
@@ -85,6 +87,14 @@ internas de la delegación). Las fuentes habituales están en el Google Drive de
 «Misión Software AAAA»): agenda, listado de inscriptos y carpeta de la misión. De los listados se
 publican solo nombre de la empresa, provincia, web y una descripción breve; nunca datos personales
 (correos, teléfonos, documentos).
+
+**Fichas de empresas («Más información»).** La fuente es el one-pager que cada empresa presentó para la
+misión (Drive del Consulado: «Misión Software AAAA» → «ONE PAGERS»). Reflejar lo que la empresa dice de
+sí misma, sin agregar datos de otras fuentes salvo que el usuario lo pida. Misma estructura y extensión
+parecida para todas: resumen de 1 o 2 oraciones, 4 a 6 servicios, hasta 3 datos de trayectoria, EE.UU. solo
+si la empresa declara clientes o presencia allí, hasta 6 clientes. No publicar datos personales de los
+one-pagers (nombres de contactos, correos, teléfonos, fotos). La participación en misiones anteriores se
+calcula sola comparando el `nombre` entre ediciones: usar siempre el mismo nombre para cada empresa.
 
 Las secciones vacías (`[]`) no se muestran en el sitio publicado. En modo borrador aparecen como
 «Sección a completar».
