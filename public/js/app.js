@@ -17,9 +17,10 @@
     es: {
       skip: "Ir al contenido",
       nav_next: "Próxima misión",
+      nav_mission: "Misión {year}",
       nav_argentina: "Por qué Argentina",
       nav_editions: "Ediciones",
-      nav_why: "Por qué Atlanta",
+      nav_why: "Sobre Georgia",
       nav_resources: "Recursos",
       nav_contact: "Contacto",
       menu: "Menú",
@@ -64,7 +65,7 @@
       total_companies_editions: "empresas argentinas en esas ediciones",
       companies_n: "{n} empresas",
       view_edition: "Ver edición",
-      why_title: "El sur de EE.UU. y el sur del continente, cerca",
+      why_title: "Sobre Georgia",
       why_lead: "Atlanta combina un ecosistema tecnológico en crecimiento con una ubicación ideal para equipos argentinos.",
       why_1_t: "Misma jornada laboral",
       why_1_p: "Argentina está apenas 1 o 2 horas adelante de Atlanta: los equipos argentinos trabajan en tiempo real con clientes de EE.UU.",
@@ -128,9 +129,10 @@
     en: {
       skip: "Skip to content",
       nav_next: "Next mission",
+      nav_mission: "{year} mission",
       nav_argentina: "Why Argentina",
       nav_editions: "Past editions",
-      nav_why: "Why Atlanta",
+      nav_why: "About Georgia",
       nav_resources: "Resources",
       nav_contact: "Contact",
       menu: "Menu",
@@ -175,7 +177,7 @@
       total_companies_editions: "Argentine companies in those editions",
       companies_n: "{n} companies",
       view_edition: "View edition",
-      why_title: "The U.S. South and the Southern Cone, close together",
+      why_title: "About Georgia",
       why_lead: "Atlanta pairs a growing tech ecosystem with an ideal location for Argentine teams.",
       why_1_t: "Same working day",
       why_1_p: "Argentina is just 1–2 hours ahead of Atlanta, so Argentine teams work in real time with U.S. clients.",
@@ -327,13 +329,34 @@
   function year(ed) { return String(ed.inicio || "").slice(0, 4) || ed.id; }
 
   // El sitio cubre solo la etapa de Atlanta; las otras ciudades de la misión se mencionan en una línea.
+  // Devuelve HTML (ya escapado): «La misión continúa luego en Chicago los días 18 y 19 de noviembre.»
+  // y, si la etapa tiene contacto, un enlace por correo al consulado de esa ciudad.
   function otherLegsNote(ed) {
-    var list = (ed.otrasEtapas || []).map(function (o) {
-      var extra = o.inicio ? fmtRange(o.inicio, o.fin, false) : t(o.nota);
-      return o.ciudad + (extra ? " (" + extra + ")" : "");
+    var legs = ed.otrasEtapas || [];
+    if (!legs.length) return "";
+    var list = legs.map(function (o) {
+      if (o.inicio) return esc(o.ciudad) + " " + esc(datesPhrase(o.inicio, o.fin));
+      var nota = t(o.nota);
+      return esc(o.ciudad) + (nota ? " (" + esc(nota) + ")" : "");
     });
-    if (!list.length) return "";
-    return ui(ed.estado === "proxima" ? "other_legs_next" : "other_legs_past", { cities: list.join(", ") });
+    var contacts = legs.filter(function (o) { return o.contacto && o.contacto.email; }).map(function (o) {
+      return '<a href="mailto:' + esc(o.contacto.email) + '">' + esc(t(o.contacto.texto)) + "</a>";
+    });
+    return esc(ui(ed.estado === "proxima" ? "other_legs_next" : "other_legs_past")).split("{cities}").join(list.join(", ")) +
+      (contacts.length ? " " + contacts.join(" ") : "");
+  }
+
+  // «los días 18 y 19 de noviembre», «del 18 al 21 de noviembre» / «on November 18 – 19».
+  function datesPhrase(a, b) {
+    var d1 = parseDate(a), d2 = parseDate(b || a);
+    if (!d1) return "";
+    if (lang === "en") return "on " + fmtRange(a, b, false);
+    var month = new Intl.DateTimeFormat("es-AR", { month: "long" });
+    if (!d2 || d1.getTime() === d2.getTime()) return "el " + d1.getDate() + " de " + month.format(d1);
+    if (d1.getMonth() === d2.getMonth() && d1.getFullYear() === d2.getFullYear()) {
+      return (d2.getDate() - d1.getDate() === 1 ? "los días " + d1.getDate() + " y " : "del " + d1.getDate() + " al ") + d2.getDate() + " de " + month.format(d2);
+    }
+    return "del " + d1.getDate() + " de " + month.format(d1) + " al " + d2.getDate() + " de " + month.format(d2);
   }
 
   function verifyTag(item) {
@@ -375,6 +398,9 @@
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       el.textContent = ui(el.getAttribute("data-i18n"));
     });
+    // El ítem del menú lleva el año de la próxima misión («Misión 2026»); sin misión anunciada, «Próxima misión».
+    var nx = nextEdition();
+    if (nx) document.querySelectorAll('[data-i18n="nav_next"]').forEach(function (el) { el.textContent = ui("nav_mission", { year: year(nx) }); });
     document.querySelectorAll(".lang-switch button").forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === lang));
     });
@@ -594,7 +620,7 @@
       "<h3>" + esc(t(ed.titulo)) + "</h3>" +
       "<p>" + esc(t(ed.resumen)) + "</p>" +
       '<p class="label">' + esc(ui("itinerary")) + "</p>" + when +
-      (others ? '<p class="legs-note">' + esc(others) + "</p>" : "") +
+      (others ? '<p class="legs-note">' + others + "</p>" : "") +
       sectors +
       (isEmpty(ed.delegacion) ? "" : '<p class="next-actions"><a class="btn btn-outline" href="' + esc(edUrl(ed)) + '#delegacion">' + esc(ui("see_delegation")) + ICON.arrow + "</a></p>") +
       "</div>" +
@@ -898,6 +924,7 @@
   function renderFicha(o, ed) {
     var f = o.ficha;
     var url = safeUrl(o.web);
+    var li = safeUrl(o.linkedin);
     function block(title, body) { return body ? '<section class="ficha-block"><h3>' + esc(title) + "</h3>" + body + "</section>" : ""; }
     function list(items) { return isEmpty(items) ? "" : '<ul class="ficha-list">' + items.map(function (x) { return "<li>" + esc(t(x)) + "</li>"; }).join("") + "</ul>"; }
     return (
@@ -912,7 +939,10 @@
       block(ui("ficha_us"), f.eeuu ? "<p>" + esc(t(f.eeuu)) + "</p>" : "") +
       block(ui("ficha_clients"), isEmpty(f.clientes) ? "" : '<ul class="chips">' + f.clientes.map(function (c) { return '<li class="chip">' + esc(t(c)) + "</li>"; }).join("") + "</ul>") +
       (isEmpty(f.imagenes) ? "" : renderGallery(f.imagenes)) +
-      (url ? '<div class="ficha-foot"><a class="btn btn-primary" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(ui("website")) + " " + ICON.ext + "</a></div>" : "")
+      (url || li ? '<div class="ficha-foot">' +
+        (url ? '<a class="btn btn-primary" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(ui("website")) + " " + ICON.ext + "</a>" : "") +
+        (li ? '<a class="btn btn-outline" href="' + esc(li) + '" target="_blank" rel="noopener">LinkedIn ' + ICON.ext + "</a>" : "") +
+        "</div>" : "")
     );
   }
 
@@ -969,11 +999,17 @@
     }).join("") + "</ul>";
   }
 
+  // Cada nota lleva una miniatura de la página a la que lleva (imagen: "img/prensa/…", 480 × 270).
+  // Sin imagen, un recuadro con el nombre del medio mantiene la lista alineada.
   function renderPress(list) {
     return '<ul class="press">' + list.map(function (p) {
       var url = safeUrl(p.url);
+      var img = safeUrl(p.imagen);
       var meta = [p.medio, p.fecha ? fmtDate(p.fecha) : ""].filter(Boolean).join(" · ");
-      var inner = '<div><div class="t">' + esc(t(p.titulo)) + '</div><div class="m">' + esc(meta) + "</div></div>" +
+      var thumb = img
+        ? '<img class="press-thumb" src="' + esc(img) + '" alt="" loading="lazy" width="480" height="270">'
+        : '<span class="press-thumb none" aria-hidden="true">' + esc(String(p.medio || "").split(" · ")[0]) + "</span>";
+      var inner = thumb + '<div class="press-text"><div class="t">' + esc(t(p.titulo)) + '</div><div class="m">' + esc(meta) + "</div></div>" +
         (p.idioma ? '<span class="lang-badge">' + esc(String(p.idioma).toUpperCase()) + "</span>" : "");
       return "<li>" + (url ? '<a class="card" href="' + esc(url) + '" target="_blank" rel="noopener">' + inner + "</a>" : '<div class="card">' + inner + "</div>") + "</li>";
     }).join("") + "</ul>";
@@ -1162,7 +1198,7 @@
       "<h1>" + esc(t(ed.titulo)) + "</h1>" +
       '<div class="ed-when"><span class="status-badge' + (isNext ? "" : " done") + '">' + esc(ui(isNext ? "status_next" : "status_done")) + "</span>" +
       '<span class="chip">Atlanta</span><span>' + esc(fmtRange(ed.inicio, ed.fin)) + "</span></div>" +
-      (others ? '<p class="ed-other">' + esc(others) + "</p>" : "") +
+      (others ? '<p class="ed-other">' + others + "</p>" : "") +
       "</div></header>";
 
     var figures = isEmpty(ed.cifras) ? "" :

@@ -20,7 +20,12 @@ window.SMS_EDICIONES = [
     },
     inicio: "2026-11-16",
     fin: "2026-11-17",
-    otrasEtapas: [{ ciudad: "Chicago", inicio: "2026-11-18", fin: "2026-11-19" }],
+    otrasEtapas: [
+      {
+        ciudad: "Chicago", inicio: "2026-11-18", fin: "2026-11-19",
+        contacto: { texto: { es: "Comuníquese con el Consulado General en Chicago", en: "Contact the Consulate General in Chicago" }, email: "argentradechicago@mrecic.gov.ar" },
+      },
+    ],
     cuentaRegresiva: { fecha: "2026-11-16", ciudad: "Atlanta" },
     empresas: 22,
     resumen: {
@@ -35,8 +40,6 @@ window.SMS_EDICIONES = [
       "HealthTech",
       { es: "IoT e ingeniería", en: "IoT & engineering" },
       { es: "Retail y e-commerce", en: "Retail & e-commerce" },
-      { es: "Aeroespacial", en: "Aerospace" },
-      { es: "Videojuegos", en: "Gaming" },
       "Software",
     ],
     programa: [
@@ -72,6 +75,7 @@ window.SMS_EDICIONES = [
           en: "30+ years accelerating digital transformation for large enterprises: consulting, custom software, data & AI, cloud and managed services.",
         },
         web: "https://www.avenga.com",
+        linkedin: "https://www.linkedin.com/company/avenga/",
         ficha: {
           resumen: {
             es: "Empresa global de ingeniería y consultoría que acelera la transformación digital de grandes empresas con software, datos e inteligencia artificial. En la Argentina tiene sede en Córdoba.",
@@ -103,6 +107,7 @@ window.SMS_EDICIONES = [
           en: "Software development and IT consulting based in Atlanta and Buenos Aires; its flagship product is AI voice agents for call centers.",
         },
         web: "https://www.borderless-software.com",
+        linkedin: "https://www.linkedin.com/company/borderless-software/",
         ficha: {
           resumen: {
             es: "Empresa de software nearshore con oficinas en Atlanta y Buenos Aires. Desarrolla software a medida y ofrece Loqui CX, una plataforma de contact center con IA que atiende por WhatsApp, voz y web.",
@@ -134,6 +139,7 @@ window.SMS_EDICIONES = [
           en: "Since 2007, custom software development and tech staffing for clients in Argentina, Latin America and North America. ISO 9001:2015 certified.",
         },
         web: "https://www.clarikagroup.com",
+        linkedin: "https://www.linkedin.com/company/clarikagroup/",
         ficha: {
           resumen: {
             es: "Empresa de ingeniería de software que construye sistemas con IA integrados a la operación de sus clientes, con la ingeniería, la seguridad y el soporte necesarios para sostenerlos en el tiempo.",
@@ -165,6 +171,7 @@ window.SMS_EDICIONES = [
           en: "Custom software, dedicated teams, IoT and generative AI solutions to accelerate digital transformation.",
         },
         web: "https://www.codefirstlab.com",
+        linkedin: "https://www.linkedin.com/company/code-first-lab/",
         ficha: {
           resumen: {
             es: "Empresa de desarrollo de software con oficina en el área de Atlanta y sede operativa en Mendoza. Desarrolla software a medida, MVPs y soluciones de IA, y amplía los equipos de sus clientes con talento latinoamericano.",
@@ -225,6 +232,7 @@ window.SMS_EDICIONES = [
           en: "Smart access as a service: access control, virtual concierge and building security on a single platform and app with 24/7 monitoring.",
         },
         web: "https://www.hipcam.com",
+        linkedin: "https://www.linkedin.com/company/hipcamlatam/",
         ficha: {
           resumen: {
             es: "Proptech argentina especializada en Smart Access as a Service: control de accesos, portería virtual y seguridad para edificios, operados sobre una sola plataforma, una app y un centro de monitoreo 24/7.",
@@ -255,6 +263,7 @@ window.SMS_EDICIONES = [
           en: "Hardware, software, IoT and AI to digitize physical retail: self-service kiosks, store operations and smart pickup.",
         },
         web: "https://www.idiotlab.io",
+        linkedin: "https://www.linkedin.com/company/idiot-lab/",
         ficha: {
           resumen: {
             es: "Empresa argentina que diseña e implementa soluciones integradas de hardware, software, IoT e IA para el retail físico, conectando la experiencia del cliente con la operación de la tienda.",
@@ -285,6 +294,7 @@ window.SMS_EDICIONES = [
           en: "Practical AI, computer vision and immersive technologies for manufacturers, from Metro Atlanta. 500+ AR/VR projects delivered.",
         },
         web: "https://igsmanufacturing.com/",
+        linkedin: "https://www.linkedin.com/company/immersiveglobalsolutions/",
         ficha: {
           resumen: {
             es: "A través de IGS Manufacturing, su división para la industria con sede en Metro Atlanta, ayuda a fabricantes a reducir paradas, mejorar la calidad, optimizar la producción y capacitar al personal de planta con IA aplicada, visión por computadora y tecnologías inmersivas.",
@@ -317,6 +327,7 @@ window.SMS_EDICIONES = [
           en: "Studio that designs, builds and evolves custom digital products with a 100% senior product, UX/UI and engineering team.",
         },
         web: "https://lilastudio.com.ar",
+        linkedin: "https://www.linkedin.com/company/lila-software/",
         ficha: {
           resumen: {
             es: "Estudio de software que diseña, desarrolla y evoluciona productos digitales a medida para empresas en crecimiento, con un equipo 100% senior en producto, UX/UI e ingeniería que trabaja integrado a la operación del cliente.",
@@ -406,6 +417,7 @@ window.SMS_EDICIONES = [
           en: "Embedded systems and mission-critical software, with clients in Latin America, North America, Europe and the Middle East.",
         },
         web: "https://www.owl-services.com",
+        linkedin: "https://www.linkedin.com/company/owl-services-llc/",
         ficha: {
           resumen: {
             es: "Socio de ingeniería y tecnología especializado en firmware, sistemas embebidos, programación de sistemas, conectividad, ciberseguridad y software a medida, que convierte desafíos complejos de hardware y software en soluciones confiables y listas para producción.",
@@ -466,6 +478,7 @@ window.SMS_EDICIONES = [
           en: "19 years building digital platforms and custom software with a strong UX/UI focus: apps, web apps, e-learning and e-commerce.",
         },
         web: "https://www.qkstudio.com",
+        linkedin: "https://www.linkedin.com/company/qkstudio/",
         ficha: {
           resumen: {
             es: "Con 19 años de experiencia, crea plataformas digitales y software a medida con un fuerte foco en UI/UX, creatividad y funcionalidad. Tiene presencia en la Argentina, Latinoamérica, EE.UU. y España.",
@@ -498,6 +511,7 @@ window.SMS_EDICIONES = [
           en: "20+ years building custom software for international clients. ISO 9001:2015 certified.",
         },
         web: "https://www.quadiontech.com",
+        linkedin: "https://www.linkedin.com/company/quadiontech/",
         ficha: {
           resumen: {
             es: "Desarrolla software a medida con metodologías ágiles y entregas incrementales, con equipos especializados en plataformas web y móviles.",
@@ -527,6 +541,7 @@ window.SMS_EDICIONES = [
           en: "Human-led data labeling for AI projects in automotive, industrial, healthcare and perception systems.",
         },
         web: "https://quantyia.ar",
+        linkedin: "https://www.linkedin.com/company/quantyia-srl/",
         ficha: {
           resumen: {
             es: "Empresa argentina especializada en curaduría y validación de datos de alta precisión para sistemas de IA, en áreas donde la exactitud y el contexto son críticos: automotriz, control de calidad industrial y salud.",
@@ -556,6 +571,7 @@ window.SMS_EDICIONES = [
           en: "Immersive experience studio: immersive rooms, VR and AR, virtual tours and AI-powered creations.",
         },
         web: "https://realidad360.com.ar",
+        linkedin: "https://www.linkedin.com/company/realidad360argentina/",
         ficha: {
           resumen: {
             es: "Productora argentina de experiencias inmersivas que diseña, produce y opera de punta a punta salas inmersivas, realidad virtual y aumentada, tours virtuales, pantallas interactivas y contenidos con IA.",
@@ -588,6 +604,7 @@ window.SMS_EDICIONES = [
           en: "Staff augmentation, tech outsourcing and IT recruiting in software, AI, automation, cybersecurity and robotics.",
         },
         web: "https://www.rhvision.org",
+        linkedin: "https://www.linkedin.com/company/rh-vision-latam/",
         ficha: {
           resumen: {
             es: "Firma argentina de tecnología y servicios profesionales especializada en diseñar e implementar soluciones de transformación digital, que combina ingeniería de software, inteligencia artificial y talento IT.",
@@ -619,6 +636,7 @@ window.SMS_EDICIONES = [
           en: "Software firm specializing in payments infrastructure and core banking: gateways, card processing, settlement, ACH and APIs.",
         },
         web: "https://www.tecro.dev",
+        linkedin: "https://www.linkedin.com/company/tecrodev/",
         ficha: {
           resumen: {
             es: "Fábrica de software argentina especializada en infraestructura de pagos y core bancario, que diseña, desarrolla y moderniza plataformas transaccionales críticas para bancos, fintechs, procesadoras de pago y retailers.",
@@ -682,6 +700,7 @@ window.SMS_EDICIONES = [
           en: "20+ years in cybersecurity and data protection, operating in Argentina, Spain and Latin America.",
         },
         web: "https://uniqs.com.ar",
+        linkedin: "https://www.linkedin.com/company/uniqs/",
         ficha: {
           resumen: {
             es: "Empresa con más de 20 años en ciberseguridad, protección de datos y servicios de infraestructura IT, con presencia en la Argentina, España y Latinoamérica.",
@@ -712,6 +731,7 @@ window.SMS_EDICIONES = [
           en: "Designs, validates and builds solutions that bring together technology, business, data and legal-financial structuring.",
         },
         web: "https://www.wootic.co",
+        linkedin: "https://www.linkedin.com/company/wootic/",
         ficha: {
           resumen: {
             es: "Empresa argentina de tecnología e innovación que acompaña a organizaciones desde la identificación de oportunidades hasta el diseño, el desarrollo y la implementación de soluciones, integrando tecnología, negocio, datos y estructuración legal y financiera.",
@@ -747,6 +767,10 @@ window.SMS_EDICIONES = [
         nombre: { es: "Cancillería Argentina · DNTEC", en: "Argentine Ministry of Foreign Affairs · DNTEC" },
         logo: { es: "img/organizadores/cancilleria-es.png", en: "img/organizadores/cancilleria-en.png" },
         logoOscuro: { es: "img/organizadores/cancilleria-es-oscuro.png", en: "img/organizadores/cancilleria-en-oscuro.png" },
+        detalle: {
+          es: "Dirección de Promoción de Exportaciones de Servicios Basados en el Conocimiento, Industrias Creativas, Turismo y Deportes",
+          en: "Directorate of Export Promotion for Knowledge-Based Services, Creative Industries, Tourism and Sports",
+        },
       },
     ],
     resultados: [],
@@ -1586,6 +1610,7 @@ window.SMS_EDICIONES = [
         titulo: "Argentina Promotes Business and Technology in Atlanta",
         medio: "Argentina Delivers",
         url: "https://argentinadelivers.com/argentina-promotes-business-and-technology-in-atlanta/",
+        imagen: "img/prensa/2024-argentina-delivers.jpg",
         idioma: "en",
       },
     ],

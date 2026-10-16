@@ -17,6 +17,7 @@ public/                 ← todo lo que se publica (directorio de salida en Clou
   data/ediciones.js     el contenido de cada edición
   img/ediciones/<id>/   fotos de cada edición
   img/empresas/         logos de las empresas (uno por empresa, se reutiliza entre ediciones)
+  img/prensa/           miniaturas de las notas de prensa (480 × 270)
   img/organizadores/    logos del Consulado, la Embajada y la Cancillería (por idioma, con versión para modo oscuro)
   img/marca-pais/       trama de ondas del manual de Marca País
   css/marca-pais.css    paleta, tipografía y trama de Marca País (se carga después de styles.css)
@@ -65,7 +66,8 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
   estado: "realizada",              // "realizada" | "proxima"
   titulo: { es, en },
   inicio: "2025-11-17", fin: "2025-11-18",     // fechas de la etapa Atlanta
-  otrasEtapas: [{ ciudad, inicio?, fin?, nota? }],  // otras ciudades: solo se mencionan
+  otrasEtapas: [{ ciudad, inicio?, fin?, nota?, contacto?: { texto: { es, en }, email } }],
+      // otras ciudades: solo se mencionan; contacto agrega un enlace mailto (solo correos institucionales)
   empresas: 13,                           // opcional, número: suma en los totales de la portada
   resumen: { es, en },
   cifras: [{ valor: "+100", texto: { es, en }, verificar? }],
@@ -73,8 +75,9 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
   notaInterna: { es, en },                // origen de los datos; solo se ve en modo borrador
   agenda: [{ fecha?, hora?: "9:00–11:30", titulo, detalle?, lugar?, verificar? }],  // «Lo que hicimos»
   delegacionNota: { es, en },             // nota interna, solo se ve en modo borrador
-  delegacion: [{ nombre, logo?, logoFondo?: "oscuro", provincia?, sector?, detalle?, web?, ficha?, verificar? }],
+  delegacion: [{ nombre, logo?, logoFondo?: "oscuro", provincia?, sector?, detalle?, web?, linkedin?, ficha?, verificar? }],
       // empresas argentinas; logo: "img/empresas/wootic.png"
+      // linkedin: "https://www.linkedin.com/company/<slug>/", solo si la página existe; botón junto a «Sitio web» en la ficha
       // ficha (botón «Más información»): { resumen, servicios: [{es,en}], trayectoria: [{es,en}],
       //   eeuu?: {es,en}, clientes?: ["Nombre" | {es,en}], imagenes?: [{ src, alt: {es,en} }] }
   anfitriones: [{ nombre, tipo, detalle?, web?, verificar? }],         // «Nos recibieron»
@@ -88,7 +91,9 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
       // un grupo por momento de la agenda; src: "img/ediciones/2025/b2b-1.jpg" (hasta 1600 px, sin EXIF),
       // mini: "…-mini.jpg" (720 × 540, recortada 4:3). La galería y cada momento están plegados por
       // defecto; al tocar una foto se abre el visor.
-  prensa: [{ titulo, medio, url, fecha?, idioma: "es" | "en" }],
+  prensa: [{ titulo, medio, url, fecha?, idioma: "es" | "en", imagen? }],
+      // imagen: miniatura de la nota, "img/prensa/<id>-<medio>.jpg" (480 × 270, de la og:image de la página);
+      // sin imagen se muestra el nombre del medio
 
   // Solo para estado "proxima":
   cuentaRegresiva: { fecha, ciudad },     // la cuenta regresiva de la portada
