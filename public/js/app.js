@@ -55,6 +55,7 @@
       contact_btn: "Contactar al Consulado",
       see_details: "Ver detalle",
       see_delegation: "Conocer la delegación",
+      find_fit: "Encontrar la empresa indicada",
       interest_form: "Quiero participar",
       past_title: "Lo que construimos en cada misión",
       past_lead:
@@ -102,6 +103,16 @@
       during: "Durante la misión",
       website: "Sitio web",
       more_info: "Más información",
+      finder_search: "Buscar por palabra clave",
+      finder_search_ph: "Por ejemplo: pagos, React, salud",
+      finder_more: "Más filtros",
+      finder_clear: "Limpiar filtros",
+      finder_all: "Se muestran las {total} empresas de la delegación.",
+      finder_ranked: "Resultados: {n} de {total} empresas, ordenadas por coincidencia.",
+      finder_filtered: "Resultados: {n} de {total} empresas.",
+      finder_empty: "Ninguna empresa cumple con todo lo que eligió. Pruebe quitar algún requisito o la palabra clave.",
+      fit_all: "Coincide en todo",
+      fit_some: "Coincide en {n} de {m}",
       close: "Cerrar",
       photos_by: "Fotos",
       photo_prev: "Foto anterior",
@@ -167,6 +178,7 @@
       contact_btn: "Contact the Consulate",
       see_details: "See details",
       see_delegation: "Meet the delegation",
+      find_fit: "Find your best fit",
       interest_form: "I’m interested",
       past_title: "What we built on each mission",
       past_lead:
@@ -214,6 +226,16 @@
       during: "During the mission",
       website: "Website",
       more_info: "More information",
+      finder_search: "Search by keyword",
+      finder_search_ph: "e.g., payments, React, healthcare",
+      finder_more: "More filters",
+      finder_clear: "Clear filters",
+      finder_all: "Showing all {total} delegation companies.",
+      finder_ranked: "Results: {n} of {total} companies, sorted by best fit.",
+      finder_filtered: "Results: {n} of {total} companies.",
+      finder_empty: "No company meets everything you chose. Try removing a must-have or the keyword.",
+      fit_all: "Matches everything",
+      fit_some: "Matches {n} of {m}",
       close: "Close",
       photos_by: "Photos",
       photo_prev: "Previous photo",
@@ -381,6 +403,8 @@
   function isEmpty(list) { return !list || !list.length; }
 
   var ICON = {
+    tick: '<svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>',
+    search: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>',
     back: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
     arrow: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
     ext: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>',
@@ -622,7 +646,8 @@
       '<p class="label">' + esc(ui("itinerary")) + "</p>" + when +
       (others ? '<p class="legs-note">' + others + "</p>" : "") +
       sectors +
-      (isEmpty(ed.delegacion) ? "" : '<p class="next-actions"><a class="btn btn-outline" href="' + esc(edUrl(ed)) + '#delegacion">' + esc(ui("see_delegation")) + ICON.arrow + "</a></p>") +
+      (isEmpty(ed.delegacion) ? "" : '<p class="next-actions"><a class="btn btn-outline" href="' + esc(edUrl(ed)) + '#delegacion">' + esc(ui("see_delegation")) + ICON.arrow + "</a>" +
+        (hasFinder(ed) ? '<a class="btn btn-outline" href="' + esc(edUrl(ed)) + '#buscador">' + ICON.search + esc(ui("find_fit")) + "</a>" : "") + "</p>") +
       "</div>" +
       '<div class="next-side">' + program + call + hosts +
       '<p class="next-more"><a class="link-arrow" href="' + esc(edUrl(ed)) + '">' + esc(ui("see_details")) + ICON.arrow + "</a></p>" +
@@ -892,12 +917,13 @@
       var more = ed && o.ficha ? '<button type="button" class="more-info" data-ficha="' + i + '">' + esc(ui("more_info")) + "</button>" : "";
       var web = url ? '<a class="web" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(ui("website")) + " " + ICON.ext + "</a>" : "";
       return (
-        '<li class="card org' + verifyClass(o) + '">' +
+        '<li class="card org' + verifyClass(o) + '"' + (ed ? ' data-idx="' + i + '"' : "") + ">" +
         (withLogos ? orgLogo(o) : "") +
         (withKind ? '<span class="kind">' + esc(ui("kind_" + (o.tipo || "otro"))) + "</span>" : "") +
         "<h3>" + esc(o.nombre) + verifyTag(o) + "</h3>" +
         (o.sector ? '<span class="sector">' + esc(t(o.sector)) + "</span>" : "") +
         (o.provincia ? '<span class="prov">' + ICON.pin + esc(t(o.provincia)) + "</span>" : "") +
+        (ed && o.perfil ? '<p class="fit" hidden></p>' : "") +
         (o.detalle ? "<p>" + esc(t(o.detalle)) + "</p>" : "") +
         (more || web ? '<div class="org-actions">' + more + web + "</div>" : "") +
         "</li>"
@@ -919,6 +945,165 @@
         : esc(name);
       return '<li class="card' + (src ? " with-logo" : "") + '">' + mark + (o.detalle ? "<small>" + esc(t(o.detalle)) + "</small>" : "") + "</li>";
     }).join("") + "</ul>";
+  }
+
+  // ───────────────────────── Buscador de la delegación ─────────────────────────
+  // Las opciones están en SITIO.buscador; cada empresa declara las suyas en `perfil`. Las opciones
+  // elegidas suman `peso` puntos por coincidencia y ordenan la lista; los grupos `obligatorio` y la
+  // palabra clave filtran. La búsqueda queda en la URL para poder compartirla.
+  function hasFinder(ed) {
+    var b = SITIO.buscador;
+    return !!(b && !isEmpty(b.grupos) && (ed.delegacion || []).some(function (o) { return o.perfil; }));
+  }
+
+  function finderParams() {
+    var params = new URLSearchParams(window.location.search);
+    var st = { q: params.get("q") || "" };
+    SITIO.buscador.grupos.forEach(function (g) {
+      var valid = g.opciones.map(function (o) { return o.id; });
+      st[g.id] = (params.get(g.id) || "").split(",").filter(function (v) { return valid.indexOf(v) > -1; });
+    });
+    return st;
+  }
+
+  function renderFinder(ed) {
+    var b = SITIO.buscador;
+    var st = finderParams();
+    function group(g) {
+      var gid = "fg-" + g.id;
+      return '<div class="finder-group" role="group" aria-labelledby="' + gid + '"><p class="finder-label" id="' + gid + '">' + esc(t(g.titulo)) + "</p>" +
+        '<div class="finder-opts">' + g.opciones.map(function (o) {
+          var on = st[g.id].indexOf(o.id) > -1;
+          return '<button type="button" class="opt" data-g="' + esc(g.id) + '" data-v="' + esc(o.id) + '" aria-pressed="' + on + '">' + ICON.tick + "<span>" + esc(t(o)) + "</span></button>";
+        }).join("") + "</div></div>";
+    }
+    // Los dos primeros grupos quedan a la vista; el resto, en «Más filtros».
+    var main = b.grupos.slice(0, 2), extra = b.grupos.slice(2);
+    var extraOn = extra.some(function (g) { return st[g.id].length; });
+    return '<div class="finder" id="buscador">' +
+      "<h3>" + esc(t(b.titulo)) + "</h3>" +
+      (b.bajada ? '<p class="finder-lead">' + esc(t(b.bajada)) + "</p>" : "") +
+      '<div class="finder-search"><label for="finder-q">' + esc(ui("finder_search")) + "</label>" +
+      '<span class="finder-input">' + ICON.search + '<input type="search" id="finder-q" autocomplete="off" placeholder="' + esc(ui("finder_search_ph")) + '" value="' + esc(st.q) + '"></span></div>' +
+      main.map(group).join("") +
+      (extra.length ? '<details class="finder-more"' + (extraOn ? " open" : "") + "><summary>" + ICON.chevron + "<span>" + esc(ui("finder_more")) + '</span><span class="finder-more-n"></span></summary>' + extra.map(group).join("") + "</details>" : "") +
+      '<div class="finder-status"><p id="finder-result" aria-live="polite"></p><button type="button" class="finder-clear" hidden>' + esc(ui("finder_clear")) + "</button></div>" +
+      "</div>";
+  }
+
+  function normText(s) {
+    return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  }
+
+  // Texto de búsqueda de cada empresa, en los dos idiomas.
+  function haystack(o) {
+    var parts = [o.nombre, o.provincia];
+    function add(v) {
+      if (!v) return;
+      if (typeof v === "string") parts.push(v);
+      else if (Array.isArray(v)) v.forEach(add);
+      else { parts.push(v.es); parts.push(v.en); }
+    }
+    add(o.sector); add(o.detalle);
+    var f = o.ficha || {};
+    add(f.resumen); add(f.servicios); add(f.trayectoria); add(f.eeuu); add(f.clientes);
+    var p = o.perfil || {};
+    SITIO.buscador.grupos.forEach(function (g) {
+      g.opciones.forEach(function (op) { if ((p[g.id] || []).indexOf(op.id) > -1) add(op); });
+    });
+    return normText(parts.join(" "));
+  }
+
+  function bindFinder(ed) {
+    var box = document.getElementById("buscador");
+    if (!box) return;
+    var b = SITIO.buscador;
+    var list = ed.delegacion || [];
+    var ul = box.parentNode.querySelector(".cards");
+    var items = Array.prototype.slice.call(ul.children);
+    var texts = list.map(haystack);
+    var input = box.querySelector("#finder-q");
+    var result = box.querySelector("#finder-result");
+    var clear = box.querySelector(".finder-clear");
+    var empty = box.parentNode.querySelector(".finder-empty");
+    var moreN = box.querySelector(".finder-more-n");
+    var extra = b.grupos.slice(2);
+    var st = finderParams();
+    var labels = {};
+    b.grupos.forEach(function (g) { g.opciones.forEach(function (o) { labels[g.id + ":" + o.id] = t(o); }); });
+
+    function saveUrl() {
+      var url = new URL(window.location.href);
+      b.grupos.forEach(function (g) {
+        if (st[g.id].length) url.searchParams.set(g.id, st[g.id].join(","));
+        else url.searchParams.delete(g.id);
+      });
+      if (st.q.trim()) url.searchParams.set("q", st.q.trim());
+      else url.searchParams.delete("q");
+      window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+    }
+
+    function apply() {
+      var soft = b.grupos.filter(function (g) { return !g.obligatorio; });
+      var chosen = soft.reduce(function (n, g) { return n + st[g.id].length; }, 0);
+      var words = normText(st.q).split(/\s+/).filter(Boolean);
+      var rows = list.map(function (o, i) {
+        var p = o.perfil || {};
+        var ok = b.grupos.every(function (g) {
+          return !g.obligatorio || st[g.id].every(function (v) { return (p[g.id] || []).indexOf(v) > -1; });
+        }) && words.every(function (w) { return texts[i].indexOf(w) > -1; });
+        var score = 0, hits = [];
+        soft.forEach(function (g) {
+          st[g.id].forEach(function (v) {
+            if ((p[g.id] || []).indexOf(v) > -1) { score += g.peso || 1; hits.push(labels[g.id + ":" + v]); }
+          });
+        });
+        return { i: i, show: ok && (!chosen || score > 0), score: score, hits: hits };
+      });
+      var order = rows.slice();
+      if (chosen) order.sort(function (a, z) { return z.score - a.score || z.hits.length - a.hits.length || a.i - z.i; });
+      order.forEach(function (r) {
+        var li = items[r.i];
+        ul.appendChild(li);
+        li.hidden = !r.show;
+        var fit = li.querySelector(".fit");
+        if (!fit) return;
+        fit.hidden = !(chosen && r.show);
+        if (fit.hidden) { fit.innerHTML = ""; return; }
+        var full = r.hits.length === chosen;
+        fit.className = "fit" + (full ? " full" : "");
+        fit.innerHTML = ICON.tick + "<span><strong>" + esc(full ? ui("fit_all") : ui("fit_some", { n: r.hits.length, m: chosen })) + "</strong> · " + esc(r.hits.join(" · ")) + "</span>";
+      });
+      var shown = rows.filter(function (r) { return r.show; }).length;
+      var any = chosen || words.length || b.grupos.some(function (g) { return st[g.id].length; });
+      result.textContent = !any ? ui("finder_all", { total: list.length }) :
+        ui(chosen ? "finder_ranked" : "finder_filtered", { n: shown, total: list.length });
+      clear.hidden = !any;
+      if (empty) empty.hidden = shown > 0;
+      if (moreN) {
+        var n = extra.reduce(function (k, g) { return k + st[g.id].length; }, 0);
+        moreN.textContent = n ? "(" + n + ")" : "";
+      }
+    }
+
+    box.querySelectorAll(".opt").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var g = btn.getAttribute("data-g"), v = btn.getAttribute("data-v");
+        var k = st[g].indexOf(v);
+        if (k > -1) st[g].splice(k, 1); else st[g].push(v);
+        btn.setAttribute("aria-pressed", String(k === -1));
+        apply(); saveUrl();
+      });
+    });
+    input.addEventListener("input", function () { st.q = input.value; apply(); saveUrl(); });
+    clear.addEventListener("click", function () {
+      b.grupos.forEach(function (g) { st[g.id] = []; });
+      st.q = ""; input.value = "";
+      box.querySelectorAll(".opt").forEach(function (btn) { btn.setAttribute("aria-pressed", "false"); });
+      apply(); saveUrl();
+      input.focus();
+    });
+    apply();
   }
 
   // ───────────────────────── Ficha de empresa («Más información») ─────────────────────────
@@ -1237,7 +1422,10 @@
     // La nota de la delegación es interna: solo se ve en modo borrador.
     var delegNote = BORRADOR && ed.delegacionNota ? '<p class="note">' + esc(t(ed.delegacionNota)) + "</p>" : "";
     var delegTitle = ui("sec_delegation") + (isEmpty(ed.delegacion) ? "" : " · " + ed.delegacion.length);
-    sections.push(["delegacion", delegTitle, isEmpty(ed.delegacion) ? (delegNote || null) : delegNote + renderOrgs(ed.delegacion, false, ed), !isNext]);
+    var delegBody = isEmpty(ed.delegacion) ? (delegNote || null) :
+      delegNote + (hasFinder(ed) ? renderFinder(ed) : "") + renderOrgs(ed.delegacion, false, ed) +
+      (hasFinder(ed) ? '<p class="finder-empty" hidden>' + esc(ui("finder_empty")) + "</p>" : "");
+    sections.push(["delegacion", delegTitle, delegBody, !isNext]);
     sections.push(["anfitriones", ui("sec_hosts"), isEmpty(ed.anfitriones) ? null : renderOrgs(ed.anfitriones, true), !isNext]);
     sections.push(["reuniones", ui("sec_meetings"), isEmpty(ed.reuniones) ? null : renderPeople(ed.reuniones), !isNext]);
     sections.push(["resultados", ui("sec_results"), isEmpty(ed.resultados) ? null : '<ul class="results">' + ed.resultados.map(function (r) { return "<li>" + ICON.check + "<span>" + esc(t(r)) + "</span></li>"; }).join("") + "</ul>", !isNext]);
@@ -1268,6 +1456,7 @@
     setupScrollSpy();
     syncScrollPadding();
     bindFichas(ed);
+    bindFinder(ed);
     bindFolds();
     bindGallery(ed);
   }

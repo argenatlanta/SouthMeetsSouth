@@ -67,6 +67,7 @@ window.SMS_EDICIONES = [
     delegacion: [
       {
         nombre: "Avenga",
+        perfil: { ofrece: ["software", "ia", "datos", "cloud", "consultoria"], industrias: ["finanzas", "salud", "industria", "automotriz"], modalidad: ["proyecto"], requisitos: ["oficina-eeuu", "iso"] },
         logo: "img/empresas/avenga.png",
         provincia: "Córdoba",
         sector: { es: "Transformación digital, datos e IA", en: "Digital transformation, data & AI" },
@@ -99,6 +100,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Borderless Software",
+        perfil: { ofrece: ["software", "ia", "cloud"], industrias: [], modalidad: ["producto", "equipo", "proyecto"], requisitos: ["atlanta", "oficina-eeuu", "clientes-eeuu"] },
         logo: "img/empresas/borderless-software.png",
         provincia: "Buenos Aires",
         sector: { es: "Software y consultoría IT", en: "Software & IT consulting" },
@@ -130,6 +132,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Clarika",
+        perfil: { ofrece: ["software", "apps", "ia", "modernizacion"], industrias: ["retail"], modalidad: ["proyecto", "equipo"], requisitos: ["clientes-eeuu", "iso"] },
         logo: "img/empresas/clarika.png",
         logoFondo: "oscuro",
         provincia: "Córdoba",
@@ -163,6 +166,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Code First Lab",
+        perfil: { ofrece: ["software", "apps", "ia", "iot", "consultoria"], industrias: ["retail"], modalidad: ["proyecto", "equipo"], requisitos: ["atlanta", "oficina-eeuu"] },
         logo: "img/empresas/code-first-lab.png",
         provincia: "Mendoza",
         sector: { es: "Software a medida e IA", en: "Custom software & AI" },
@@ -193,7 +197,44 @@ window.SMS_EDICIONES = [
         },
       },
       {
+        nombre: "CodingIT",
+        perfil: { ofrece: ["software", "apps", "ia", "modernizacion", "ux"], industrias: ["salud", "finanzas", "inmobiliario", "retail"], modalidad: ["proyecto", "equipo"], requisitos: ["oficina-eeuu", "clientes-eeuu"] },
+        logo: "img/empresas/codingit.png",
+        sector: { es: "Desarrollo de software e IA", en: "Software development & AI" },
+        detalle: {
+          es: "Desde 2021, equipos senior de producto e ingeniería en EE.UU., la Argentina y Europa que construyen, modernizan y escalan software para más de 25 clientes en EE.UU.",
+          en: "Since 2021, senior product and engineering teams across the U.S., Argentina and Europe that build, modernize and scale software for 25+ U.S. clients.",
+        },
+        web: "https://codingit.dev",
+        linkedin: "https://www.linkedin.com/company/codingit/",
+        ficha: {
+          resumen: {
+            es: "Socio de ingeniería de software con sede en Austin (Texas) y equipos senior en EE.UU., la Argentina y Europa. Ayuda a las empresas a construir, modernizar y escalar el software del que depende su negocio, con un responsable en EE.UU. a cargo de cada cliente.",
+            en: "Software engineering partner based in Austin, Texas, with senior teams across the U.S., Argentina and Europe. It helps companies build, modernize and scale the software their business depends on, with a U.S.-based lead owning each client relationship.",
+          },
+          servicios: [
+            { es: "Desarrollo de productos digitales, del diseño al lanzamiento y la operación", en: "Product development, from design to launch and day-to-day operation" },
+            { es: "Modernización de sistemas heredados", en: "Legacy system modernization" },
+            { es: "IA en producción: agentes de voz y copilotos integrados", en: "Production AI: voice agents and embedded copilots" },
+            { es: "Apps web, de escritorio y móviles", en: "Web, desktop and mobile apps" },
+            { es: "Diseño de producto y UX/UI", en: "Product design and UX/UI" },
+            { es: "Equipos senior dedicados", en: "Dedicated senior teams" },
+          ],
+          trayectoria: [
+            { es: "Fundada en 2021, con más de 40 personas en cinco países", en: "Founded in 2021, with 40+ people in five countries" },
+            { es: "Más de 25 clientes activos en 8 estados de EE.UU.", en: "25+ active clients across 8 U.S. states" },
+            { es: "Certificada por la SBA como Small Disadvantaged Business y registrada en SAM.gov", en: "SBA-certified Small Disadvantaged Business, registered in SAM.gov" },
+          ],
+          eeuu: {
+            es: "Con oficinas en Austin (Texas) y St. George (Utah), trabaja con clientes de EE.UU. desde su fundación, en sectores como salud, seguros, aviación y construcción.",
+            en: "With offices in Austin, Texas, and St. George, Utah, it has worked with U.S. clients since its founding, in sectors such as healthcare, insurance, aviation and construction.",
+          },
+          clientes: ["BrandBesties", "Maitly", "APFA", "Corrival", "Accuramet", "LandPro"],
+        },
+      },
+      {
         nombre: "Digital Beings",
+        perfil: { ofrece: ["software", "apps", "ia", "pagos"], industrias: ["finanzas", "retail", "educacion", "medios"], modalidad: ["equipo", "proyecto"], requisitos: [] },
         logo: "img/empresas/digital-beings.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Software, IA y blockchain", en: "Software, AI & blockchain" },
@@ -224,6 +265,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "HIPCAM",
+        perfil: { ofrece: ["iot"], industrias: ["inmobiliario", "industria", "retail", "gobierno"], modalidad: ["producto"], requisitos: [] },
         logo: "img/empresas/hipcam.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "PropTech y seguridad", en: "PropTech & security" },
@@ -255,6 +297,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "I+DIoT Lab",
+        perfil: { ofrece: ["iot", "ia", "datos"], industrias: ["retail", "energia"], modalidad: ["producto", "proyecto"], requisitos: [] },
         logo: "img/empresas/id-iot-lab.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Retail tech, IoT e IA", en: "Retail tech, IoT & AI" },
@@ -286,6 +329,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Immersive Global Solutions (IGS)",
+        perfil: { ofrece: ["ia", "inmersivo"], industrias: ["industria", "automotriz", "medios"], modalidad: ["proyecto", "equipo"], requisitos: ["atlanta", "oficina-eeuu", "clientes-eeuu"] },
         logo: "img/empresas/immersive-global-solutions.png",
         provincia: "Córdoba",
         sector: { es: "IA y realidad extendida", en: "AI & extended reality" },
@@ -318,6 +362,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Lila Software Studio",
+        perfil: { ofrece: ["software", "apps", "ux"], industrias: ["finanzas", "inmobiliario"], modalidad: ["proyecto", "equipo"], requisitos: [] },
         logo: "img/empresas/lila-software-studio.png",
         logoFondo: "oscuro",
         provincia: "Mendoza",
@@ -350,6 +395,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Meta Software",
+        perfil: { ofrece: ["software", "apps", "datos", "ia", "cloud", "ux"], industrias: ["salud", "medios", "gobierno", "industria"], modalidad: ["equipo", "proyecto"], requisitos: [] },
         logo: "img/empresas/meta-software.png",
         provincia: "Buenos Aires",
         sector: { es: "Software a medida", en: "Custom software" },
@@ -381,6 +427,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Novasoft",
+        perfil: { ofrece: ["software", "ia"], industrias: ["retail"], modalidad: ["proyecto", "producto"], requisitos: [] },
         logo: "img/empresas/novasoft.png",
         provincia: "Buenos Aires",
         sector: { es: "Software a medida y SaaS", en: "Custom software & SaaS" },
@@ -409,6 +456,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "OWL Services",
+        perfil: { ofrece: ["iot", "ciberseguridad", "software", "cloud", "ia"], industrias: ["industria", "automotriz", "salud", "energia"], modalidad: ["proyecto"], requisitos: ["oficina-eeuu", "clientes-eeuu", "iso"] },
         logo: "img/empresas/owl-services.png",
         provincia: "Santa Fe",
         sector: { es: "Sistemas embebidos, IoT y ciberseguridad", en: "Embedded systems, IoT & cybersecurity" },
@@ -440,36 +488,8 @@ window.SMS_EDICIONES = [
         },
       },
       {
-        nombre: "Pleiada",
-        logo: "img/empresas/pleiada.png",
-        provincia: "Buenos Aires",
-        sector: { es: "IA y videojuegos", en: "AI & gaming" },
-        detalle: {
-          es: "Startup en el cruce entre IA y videojuegos: entornos 3D donde personas reales generan datos de comportamiento para entrenar modelos de IA.",
-          en: "Startup at the intersection of AI and gaming: 3D environments where real people generate behavioral data to train AI models.",
-        },
-        web: "https://pleiada.ai",
-        ficha: {
-          resumen: {
-            es: "Startup argentina en el cruce entre la inteligencia artificial y los videojuegos: produce a medida datos de comportamiento humano en entornos 3D para entrenar modelos de IA.",
-            en: "Argentine startup at the intersection of artificial intelligence and video games: it produces custom human-behavior data in 3D environments to train AI models.",
-          },
-          servicios: [
-            { es: "Playgrounds: entornos 3D propios con física real", en: "Playgrounds: proprietary 3D environments with real physics" },
-            { es: "MindSets: escenarios conversacionales con avatares de IA", en: "MindSets: conversational scenarios with AI avatars" },
-            { es: "Producción de datos a demanda con su red de creadores", en: "On-demand data production through its creator network" },
-            { es: "Evaluación de modelos de IA frente a comportamiento humano real", en: "Testing AI models against real human behavior" },
-            { es: "Control de calidad en cuatro etapas, automáticas y humanas", en: "Four-stage quality control, automated and human" },
-          ],
-          trayectoria: [
-            { es: "Fundadores con más de 20 años en gaming y tecnología, con paso por Microsoft, Globant, Tencent y Gameloft", en: "Founders with 20+ years in gaming and technology, including Microsoft, Globant, Tencent and Gameloft" },
-            { es: "Red de 10.000 gamers en 18 países de Latinoamérica", en: "A network of 10,000 gamers across 18 Latin American countries" },
-            { es: "Capacidad para producir miles de horas de datos por semana", en: "Capacity to produce thousands of hours of data per week" },
-          ],
-        },
-      },
-      {
         nombre: "QKStudio",
+        perfil: { ofrece: ["apps", "software", "ux"], industrias: ["finanzas", "retail", "medios", "educacion"], modalidad: ["proyecto"], requisitos: ["clientes-eeuu"] },
         logo: "img/empresas/qkstudio.png",
         provincia: "Buenos Aires",
         sector: { es: "Plataformas digitales y UX", en: "Digital platforms & UX" },
@@ -503,6 +523,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Quadion Technologies",
+        perfil: { ofrece: ["software", "apps", "cloud"], industrias: [], modalidad: ["proyecto", "equipo"], requisitos: ["clientes-eeuu", "iso"] },
         logo: "img/empresas/quadion-technologies.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Software a medida", en: "Custom software development" },
@@ -533,6 +554,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "QuantyIA",
+        perfil: { ofrece: ["datos", "ia"], industrias: ["automotriz", "industria", "salud"], modalidad: ["proyecto"], requisitos: ["clientes-eeuu"] },
         logo: "img/empresas/quantyia.png",
         provincia: "Buenos Aires",
         sector: { es: "Datos para IA", en: "Data for AI" },
@@ -562,6 +584,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Realidad 360°",
+        perfil: { ofrece: ["inmersivo"], industrias: ["medios", "gobierno"], modalidad: ["proyecto"], requisitos: ["clientes-eeuu"] },
         logo: "img/empresas/realidad-360.png",
         logoFondo: "oscuro",
         provincia: "Ciudad de Buenos Aires",
@@ -596,6 +619,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "RH Vision",
+        perfil: { ofrece: ["software", "ia", "ciberseguridad", "iot", "consultoria"], industrias: ["industria", "energia", "inmobiliario"], modalidad: ["equipo", "proyecto"], requisitos: ["oficina-eeuu"] },
         logo: "img/empresas/rh-vision.png",
         provincia: "Córdoba",
         sector: { es: "Talento IT y staff augmentation", en: "IT talent & staff augmentation" },
@@ -628,6 +652,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Tecro",
+        perfil: { ofrece: ["pagos", "software", "modernizacion"], industrias: ["finanzas", "retail"], modalidad: ["proyecto"], requisitos: ["clientes-eeuu"] },
         logo: "img/empresas/tecro.png",
         provincia: "La Pampa",
         sector: { es: "Pagos y core bancario", en: "Payments & core banking" },
@@ -661,6 +686,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "TPS",
+        perfil: { ofrece: ["pagos", "software", "modernizacion", "ia"], industrias: ["finanzas"], modalidad: ["proyecto", "equipo"], requisitos: ["clientes-eeuu", "iso"] },
         logo: "img/empresas/tps.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Ingeniería de software y fintech", en: "Software engineering & fintech" },
@@ -692,6 +718,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "UNIQS",
+        perfil: { ofrece: ["ciberseguridad", "cloud", "software", "consultoria"], industrias: [], modalidad: ["proyecto", "equipo"], requisitos: [] },
         logo: "img/empresas/uniqs.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Ciberseguridad", en: "Cybersecurity" },
@@ -723,6 +750,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Wootic",
+        perfil: { ofrece: ["consultoria", "datos", "software", "ia", "cloud"], industrias: ["gobierno", "energia", "educacion"], modalidad: ["proyecto"], requisitos: ["clientes-eeuu"] },
         logo: "img/empresas/wootic.png",
         provincia: "Córdoba",
         sector: { es: "Tecnología, negocio y datos", en: "Technology, business & data" },

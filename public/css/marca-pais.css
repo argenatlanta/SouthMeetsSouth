@@ -150,6 +150,12 @@ a { color: var(--celeste-ink); }
   :root:not([data-theme="light"]) .lang-switch button[aria-pressed="true"] { background: var(--mpa-celeste); color: #001a3d; }
 }
 :root[data-theme="dark"] .lang-switch button[aria-pressed="true"] { background: var(--mpa-celeste); color: #001a3d; }
+/* Opciones elegidas del buscador: igual que el selector de idioma. */
+.opt[aria-pressed="true"] { background: var(--mpa-azul-oscuro); border-color: var(--mpa-azul-oscuro); color: #ffffff; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .opt[aria-pressed="true"] { background: var(--mpa-celeste); border-color: var(--mpa-celeste); color: #001a3d; }
+}
+:root[data-theme="dark"] .opt[aria-pressed="true"] { background: var(--mpa-celeste); border-color: var(--mpa-celeste); color: #001a3d; }
 
 /* ───────── Hero de la portada y de cada edición: Azul oscuro y trama de ondas ───────── */
 .hero, .ed-hero { background: var(--navy); }

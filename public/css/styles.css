@@ -360,7 +360,7 @@ p { text-wrap: pretty; }
 .next-dates { font-family: var(--font-display); font-weight: 700; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.2; color: var(--celeste-ink); }
 .next-count { color: var(--ink-2); font-size: 16px; }
 .next-count strong { color: var(--ink); }
-.next-main .next-actions { margin: 32px 0 0; }
+.next-main .next-actions { margin: 32px 0 0; display: flex; flex-wrap: wrap; gap: 12px; }
 .next-main .next-actions .btn { padding: 16px 28px; font-size: 18px; gap: 10px; border-radius: 12px; }
 .next-main .next-actions .btn svg { width: 20px; height: 20px; }
 .next-more { margin: 20px 0 0; }
@@ -572,6 +572,71 @@ a.resource:hover { border-color: var(--celeste); text-decoration: none; }
 }
 .more-info:hover { border-color: var(--celeste); }
 .org .prov { display: inline-flex; gap: 5px; align-items: center; color: var(--ink-2); font-size: 13px; }
+
+/* ───────── Buscador de la delegación ───────── */
+/* Panel liso arriba de la lista: no es una tarjeta, así las empresas no quedan dentro de otra. */
+.finder { margin: 0 0 24px; padding-top: 24px; border-top: 1px solid var(--line); }
+.finder h3 { font-size: clamp(22px, 2.6vw, 28px); font-weight: 700; margin: 0 0 6px; }
+.finder-lead { margin: 0 0 20px; color: var(--ink-2); max-width: 62ch; }
+.finder-search label, .finder-label {
+  display: block; margin: 0 0 8px; font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--ink);
+}
+.finder-input { position: relative; display: block; max-width: 560px; }
+.finder-input svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--ink-2); pointer-events: none; }
+.finder-input input {
+  width: 100%; min-height: 48px; padding: 10px 14px 10px 42px;
+  font: inherit; font-size: 16px; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+}
+.finder-input input::placeholder { color: var(--ink-2); opacity: 1; }
+.finder-input input:hover { border-color: var(--celeste); }
+.finder-group { margin-top: 22px; }
+.finder-opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 8px 14px;
+  font-family: var(--font-display); font-size: 15px; font-weight: 600; line-height: 1.2; text-align: left;
+  color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+}
+.opt:hover { border-color: var(--celeste); }
+.opt .tick { display: none; flex: none; }
+.opt[aria-pressed="true"] { color: #ffffff; background: var(--navy); border-color: var(--navy); }
+.opt[aria-pressed="true"] .tick { display: block; }
+.finder-more { margin-top: 22px; }
+.finder-more > summary {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 40px; cursor: pointer; list-style: none;
+  font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--celeste-ink);
+}
+.finder-more > summary::-webkit-details-marker { display: none; }
+.finder-more > summary svg { transition: transform 200ms var(--ease-out); }
+.finder-more[open] > summary svg { transform: rotate(180deg); }
+.finder-more .finder-group:first-of-type { margin-top: 10px; }
+.finder-status {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px;
+  margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line);
+}
+.finder-status p { margin: 0; font-weight: 600; color: var(--ink); }
+.finder-clear {
+  min-height: 40px; padding: 0; font: inherit; font-weight: 600; color: var(--celeste-ink);
+  background: none; border: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer;
+}
+.cards > li[hidden], .finder-empty[hidden] { display: none; }
+.finder-empty { margin: 8px 0 0; color: var(--ink-2); }
+/* Por qué coincide cada empresa. */
+.org p.fit { display: flex; gap: 6px; align-items: flex-start; margin: 4px 0 2px; font-size: 14px; color: var(--ink); }
+.org p.fit .tick { flex: none; margin-top: 2px; color: var(--celeste-ink); }
+.org p.fit strong { color: var(--celeste-ink); }
+.org p.fit[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) { .finder-more > summary svg { transition: none; } }
+/* En el celular, cada grupo ocupa dos filas que se deslizan de costado, de borde a borde. */
+@media (max-width: 560px) {
+  .finder-opts {
+    display: grid; grid-auto-flow: column; grid-template-rows: repeat(2, auto); justify-content: start;
+    gap: 8px; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none;
+    margin-inline: calc(-1 * var(--gutter)); padding: 2px var(--gutter) 6px; scroll-padding-inline: var(--gutter);
+  }
+  .finder-opts::-webkit-scrollbar { display: none; }
+  .opt { min-height: 44px; white-space: nowrap; }
+}
 .org .logo {
   height: 96px; margin-bottom: 8px; padding: 12px 20px;
   display: flex; align-items: center; justify-content: center;

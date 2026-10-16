@@ -137,6 +137,72 @@ window.SMS_SITIO = {
     },
   },
 
+  // Buscador de la delegación («Encuentre la empresa indicada»): se muestra en la edición cuyas empresas
+  // tienen `perfil`. Cada grupo suma `peso` puntos por opción que coincide; los grupos con `obligatorio`
+  // no suman: dejan solo las empresas que cumplen todas las opciones elegidas.
+  buscador: {
+    titulo: { es: "Encuentre la empresa indicada", en: "Find your best fit" },
+    bajada: {
+      es: "Elija lo que necesita su empresa y le mostramos qué empresas de la delegación se ajustan mejor, y por qué.",
+      en: "Tell us what your company needs and we’ll show you which delegation companies fit best, and why.",
+    },
+    grupos: [
+      {
+        id: "ofrece", peso: 3,
+        titulo: { es: "¿Qué necesita?", en: "What do you need?" },
+        opciones: [
+          { id: "software", es: "Software a medida", en: "Custom software" },
+          { id: "apps", es: "Apps web y móviles", en: "Web & mobile apps" },
+          { id: "ia", es: "IA y automatización", en: "AI & automation" },
+          { id: "datos", es: "Datos y analítica", en: "Data & analytics" },
+          { id: "cloud", es: "Cloud, DevOps e infraestructura", en: "Cloud, DevOps & infrastructure" },
+          { id: "ciberseguridad", es: "Ciberseguridad", en: "Cybersecurity" },
+          { id: "pagos", es: "Pagos y fintech", en: "Payments & fintech" },
+          { id: "iot", es: "IoT, hardware y robótica", en: "IoT, hardware & robotics" },
+          { id: "ux", es: "Diseño de producto y UX/UI", en: "Product design & UX/UI" },
+          { id: "inmersivo", es: "Realidad aumentada y virtual", en: "AR & VR" },
+          { id: "modernizacion", es: "Modernización de sistemas heredados", en: "Legacy modernization" },
+          { id: "consultoria", es: "Consultoría y transformación digital", en: "Consulting & digital transformation" },
+        ],
+      },
+      {
+        id: "industrias", peso: 2,
+        titulo: { es: "¿En qué industria está su empresa?", en: "What industry are you in?" },
+        opciones: [
+          { id: "finanzas", es: "Banca, seguros y fintech", en: "Banking, insurance & fintech" },
+          { id: "retail", es: "Retail, consumo y e-commerce", en: "Retail, consumer goods & e-commerce" },
+          { id: "salud", es: "Salud", en: "Healthcare" },
+          { id: "industria", es: "Manufactura, industria y logística", en: "Manufacturing, industrial & logistics" },
+          { id: "automotriz", es: "Automotriz", en: "Automotive" },
+          { id: "energia", es: "Energía y agroindustria", en: "Energy & agribusiness" },
+          { id: "inmobiliario", es: "Real estate y construcción", en: "Real estate & construction" },
+          { id: "gobierno", es: "Sector público", en: "Public sector" },
+          { id: "educacion", es: "Educación", en: "Education" },
+          { id: "medios", es: "Medios, entretenimiento y deportes", en: "Media, entertainment & sports" },
+        ],
+      },
+      {
+        id: "modalidad", peso: 1,
+        titulo: { es: "¿Cómo prefiere trabajar?", en: "How would you like to work?" },
+        opciones: [
+          { id: "equipo", es: "Sumar un equipo dedicado", en: "Add a dedicated team" },
+          { id: "proyecto", es: "Encargar un proyecto", en: "Outsource a project" },
+          { id: "producto", es: "Usar un producto ya desarrollado", en: "Use a ready-made product" },
+        ],
+      },
+      {
+        id: "requisitos", obligatorio: true,
+        titulo: { es: "Requisitos", en: "Must-haves" },
+        opciones: [
+          { id: "atlanta", es: "Oficina en el área de Atlanta", en: "Office in metro Atlanta" },
+          { id: "oficina-eeuu", es: "Oficina en EE.UU.", en: "U.S. office" },
+          { id: "clientes-eeuu", es: "Clientes en EE.UU.", en: "U.S. clients" },
+          { id: "iso", es: "Certificación ISO", en: "ISO certified" },
+        ],
+      },
+    ],
+  },
+
   recursos: [
     {
       nombre: "Argentina Delivers",
