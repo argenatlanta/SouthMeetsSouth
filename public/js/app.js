@@ -26,7 +26,7 @@
       menu: "Menú",
       draft_banner: "Versión preliminar · El contenido está en revisión y puede cambiar.",
       verify: "a verificar",
-      hero_tagline: "Conectando los ecosistemas tecnológicos de Georgia y la Argentina",
+      hero_tagline: "Conectando los ecosistemas tecnológicos de la Argentina y del Sudeste de EE.UU.",
       hero_lead:
         "Empresas argentinas de software y tecnología viajan a Atlanta para hacer negocios con el ecosistema de innovación del sur de los Estados Unidos. Acá reunimos cada edición de la misión y lo que viene.",
       hero_cta_next: "Ver la próxima misión",
@@ -66,7 +66,7 @@
       companies_n: "{n} empresas",
       view_edition: "Ver edición",
       why_title: "Sobre Georgia",
-      why_lead: "Atlanta combina un ecosistema tecnológico en crecimiento con una ubicación ideal para equipos argentinos.",
+      why_lead: "Un estado favorable a los negocios y un polo tecnológico en crecimiento: Georgia y su capital, Atlanta, son una base natural para las empresas argentinas que buscan llegar al Sudeste de los Estados Unidos.",
       why_1_t: "Misma jornada laboral",
       why_1_p: "Argentina está apenas 1 o 2 horas adelante de Atlanta: los equipos argentinos trabajan en tiempo real con clientes de EE.UU.",
       why_2_t: "Polo fintech",
@@ -138,7 +138,7 @@
       menu: "Menu",
       draft_banner: "Preview version · Content is under review and may change.",
       verify: "to verify",
-      hero_tagline: "Connecting Georgia’s and Argentina’s Tech Ecosystems",
+      hero_tagline: "Connecting Argentina’s and US Southeast Tech Ecosystems",
       hero_lead:
         "Argentine software and technology companies travel to Atlanta to do business with the innovation ecosystem of the U.S. South. Here you’ll find every edition of the mission — and what’s next.",
       hero_cta_next: "See the next mission",
@@ -178,7 +178,7 @@
       companies_n: "{n} companies",
       view_edition: "View edition",
       why_title: "About Georgia",
-      why_lead: "Atlanta pairs a growing tech ecosystem with an ideal location for Argentine teams.",
+      why_lead: "A pro-business state with a growing tech hub: Georgia and its capital, Atlanta, are a natural base for Argentine companies looking to reach the U.S. Southeast.",
       why_1_t: "Same working day",
       why_1_p: "Argentina is just 1–2 hours ahead of Atlanta, so Argentine teams work in real time with U.S. clients.",
       why_2_t: "Fintech powerhouse",
@@ -725,10 +725,15 @@
   function renderWhy() {
     var el = document.getElementById("atlanta-body");
     if (!el) return;
+    var g = SITIO.sobreGeorgia || {};
     var items = [1, 2, 3, 4];
-    el.innerHTML = '<ul class="why-list">' + items.map(function (n) {
+    var figures = isEmpty(g.cifras) ? "" : stats(g.cifras.map(function (c) {
+      return { valor: c.valor, texto: c.texto, item: c };
+    }), "stats-4");
+    el.innerHTML = figures + '<ul class="why-list">' + items.map(function (n) {
       return '<li class="why"><h3>' + esc(ui("why_" + n + "_t")) + "</h3><p>" + esc(ui("why_" + n + "_p")) + "</p></li>";
-    }).join("") + "</ul>";
+    }).join("") + "</ul>" +
+      (g.fuentes ? '<p class="ar-sources">' + esc(t(g.fuentes)) + "</p>" : "");
   }
 
   function renderResources() {

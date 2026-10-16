@@ -121,6 +121,22 @@ window.SMS_SITIO = {
     fuentesUrl: "https://cessi.org.ar",
   },
 
+  // «Sobre Georgia»: cifras del Redbook anual de la Georgia Chamber of Commerce (páginas «Highlights» y
+  // «Georgia Economic Overview»). Actualizarlas cuando salga la edición siguiente. Los textos sobre Atlanta
+  // están en js/app.js (why_1 a why_4).
+  sobreGeorgia: {
+    cifras: [
+      { valor: { es: "12 años", en: "12 years" }, texto: { es: "seguidos como el mejor estado de EE.UU. para hacer negocios", en: "in a row as the top state in the nation for business" } },
+      { valor: { es: "USD 26.300 M", en: "US$26.3B" }, texto: { es: "en inversiones, con 23.000 nuevos empleos en el sector privado", en: "in investment, with 23,000 new private-sector jobs" } },
+      { valor: { es: "5.º", en: "5th" }, texto: { es: "del país en solicitudes para crear nuevas empresas", en: "in the nation for new business applications" } },
+      { valor: { es: "+58.850", en: "+58,850" }, texto: { es: "empleos en servicios profesionales, científicos y técnicos en los últimos cinco años", en: "jobs in professional, scientific and technical services over the last five years" } },
+    ],
+    fuentes: {
+      es: "Fuente de las cifras: Georgia Chamber of Commerce, «2026 Economic Competitiveness Redbook».",
+      en: "Source of figures: Georgia Chamber of Commerce, “2026 Economic Competitiveness Redbook.”",
+    },
+  },
+
   recursos: [
     {
       nombre: "Argentina Delivers",

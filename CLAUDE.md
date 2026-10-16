@@ -8,12 +8,12 @@ actualiza el sitio en producción.
 
 ```
 public/                 ← todo lo que se publica (directorio de salida en Cloudflare)
-  index.html            portada: próxima misión, ediciones, por qué Atlanta, recursos, contacto
+  index.html            portada: próxima misión, por qué Argentina, ediciones, sobre Georgia, recursos, contacto
   edicion.html          detalle de una edición: edicion.html?id=2025
   404.html
   css/styles.css        estilos (tokens de color en :root, modo oscuro incluido)
   js/app.js             renderizado + textos fijos de la interfaz (objeto UI, en es y en)
-  data/sitio.js         configuración general: borrador, contacto, recursos, «Por qué Argentina», fecha de actualización
+  data/sitio.js         configuración general: borrador, contacto, recursos, «Por qué Argentina», «Sobre Georgia», fecha de actualización
   data/ediciones.js     el contenido de cada edición
   img/ediciones/<id>/   fotos de cada edición
   img/empresas/         logos de las empresas (uno por empresa, se reutiliza entre ediciones)
@@ -126,6 +126,11 @@ publicar datos personales (nombres de contactos, correos, teléfonos, fotos). Us
 conocen el sector. Cifras de la CESSI («Why Argentina» y la página «Argentina Tech Hub NY») y del reporte anual
 del OPSSI; se usan siempre las más recientes y se actualizan cuando sale un reporte nuevo. Los datos públicos que
 no salen de la CESSI llevan `verificar: true`. Las fuentes se citan al pie de la sección.
+
+**«Sobre Georgia»** (`sobreGeorgia` en `sitio.js`): sección breve de la portada para que las empresas argentinas
+conozcan la región. Cuatro cifras del «Economic Competitiveness Redbook» anual de la Georgia Chamber of Commerce
+(páginas «Highlights» y «Georgia Economic Overview»), con la fuente al pie; se actualizan con cada edición nueva.
+Los cuatro textos sobre Atlanta y la bajada están en `js/app.js` (`why_*`). No es el foco del sitio: no alargarla.
 
 Las secciones vacías (`[]`) no se muestran en el sitio publicado. En modo borrador aparecen como
 «Sección a completar».

@@ -828,6 +828,25 @@ dialog.ficha:not([open])::backdrop { opacity: 0; }
   .stats.stats-3 .stat { flex-direction: column-reverse; align-items: flex-start; gap: 6px; }
 }
 
+/* ───────── Sobre Georgia ───────── */
+/* Cuatro cifras: dos columnas en tableta, cuatro en escritorio, renglones en el celular. */
+.stats.stats-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 48px; }
+.stats.stats-4 .stat + .stat { border-left: 0; padding-left: 0; }
+.stats.stats-4 .stat:nth-child(n + 3) { border-top: 1px solid var(--line); }
+.stats.stats-4 .stat:nth-child(2n) { border-left: 1px solid var(--line); padding-left: 24px; }
+.stats.stats-4 .stat dd { font-size: clamp(32px, 3.6vw, 40px); }
+@media (min-width: 1000px) {
+  .stats.stats-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .stats.stats-4 .stat:nth-child(n) { border-top: 0; }
+  .stats.stats-4 .stat + .stat { border-left: 1px solid var(--line); padding-left: 24px; }
+}
+@media (max-width: 560px) {
+  .stats.stats-4 { grid-template-columns: 1fr; }
+  .stats.stats-4 .stat:nth-child(n) { border-left: 0; padding-left: 0; }
+  .stats.stats-4 .stat + .stat { border-top: 1px solid var(--line); }
+  .stats.stats-4 .stat { flex-direction: column-reverse; align-items: flex-start; gap: 6px; }
+}
+
 .ar-block { margin-top: 64px; }
 @media (min-width: 900px) { .ar-block { margin-top: 80px; } }
 .ar-title { font-size: clamp(22px, 2.6vw, 28px); font-weight: 700; margin: 0 0 8px; }
