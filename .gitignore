@@ -3,3 +3,7 @@ Thumbs.db
 node_modules/
 .wrangler/
 .dev.vars
+
+# Impeccable: el motor (21 MB) se descarga solo cuando falta; los hooks quedan locales
+.claude/skills/impeccable/scripts/bin/
+.claude/settings.local.json

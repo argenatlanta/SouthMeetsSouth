@@ -21,6 +21,8 @@ public/                 ← todo lo que se publica (directorio de salida en Clou
   img/marca-pais/       trama de ondas del manual de Marca País
   css/marca-pais.css    paleta, tipografía y trama de Marca País (se carga después de styles.css)
 wrangler.jsonc          config para Cloudflare Workers (si se usa Pages, no se lee)
+.claude/                skill de diseño Impeccable y sus agentes (no se publica). El motor se descarga
+                        solo y no se versiona; los hooks son locales. Telemetría apagada en settings.json.
 ```
 
 No hay build ni dependencias. El contenido se edita casi siempre en `public/data/ediciones.js`.
