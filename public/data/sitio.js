@@ -8,7 +8,7 @@ window.SMS_SITIO = {
   borrador: false,
 
   // Fecha de la última actualización del contenido (AAAA-MM-DD). Se muestra en el pie.
-  actualizado: "2026-10-15",
+  actualizado: "2026-10-16",
 
   // Texto de contexto de la sección «Ediciones». {desde} se reemplaza por el año.
   // Si `desde` queda vacío (null), la frase no se muestra.
@@ -28,6 +28,97 @@ window.SMS_SITIO = {
     email: "comercial_catla@mrecic.gov.ar",
     web: "https://catla.cancilleria.gob.ar",
     linkedin: "https://www.linkedin.com/company/argenatlanta/",
+  },
+
+  // Sección «Por qué Argentina» de la portada, pensada para empresas de Atlanta que no conocen el
+  // sector. Fuentes: CESSI, «Why Argentina» (2025) y página «Argentina Tech Hub NY» (2026); reporte
+  // OPSSI-CESSI de abril de 2026 (datos de 2025). Se usan las cifras más recientes. Los datos con
+  // `verificar: true` salen de fuentes públicas y no de la CESSI: confirmarlos antes de quitar la marca.
+  porQueArgentina: {
+    titulo: { es: "Por qué Argentina", en: "Why Argentina" },
+    bajada: {
+      es: "La Argentina es el primer exportador de software de América Latina, y casi la mitad de esas ventas va a los Estados Unidos. Sus equipos ya trabajan con clientes estadounidenses, en inglés, en el mismo día laboral y con afinidad cultural.",
+      en: "Argentina is Latin America’s leading software exporter, and nearly half of those exports go to the United States. Argentine teams already work with U.S. clients, in English, on the same working day and with a shared business culture.",
+    },
+    cifras: [
+      { valor: { es: "1.º", en: "#1" }, texto: { es: "exportador de software de América Latina", en: "software exporter in Latin America" } },
+      { valor: { es: "USD 2.651 M", en: "US$2.65B" }, texto: { es: "en exportaciones de software en 2025, récord histórico", en: "in software exports in 2025, an all-time high" } },
+      { valor: { es: "49 %", en: "49%" }, texto: { es: "de esas exportaciones va a los Estados Unidos", en: "of those exports go to the United States" } },
+      { valor: { es: "155.000+", en: "155,000+" }, texto: { es: "empleos registrados en la industria del software", en: "registered jobs in the software industry" } },
+      { valor: { es: "1.º", en: "#1" }, texto: { es: "en dominio del inglés en América Latina (28.º en el mundo)", en: "in English proficiency in Latin America (28th worldwide)" } },
+      { valor: { es: "+14", en: "14+" }, texto: { es: "unicornios tecnológicos nacidos en la Argentina", en: "tech unicorns born in Argentina" } },
+    ],
+    ofreceTitulo: { es: "Qué ofrece", en: "What Argentina offers" },
+    ofrece: [
+      {
+        titulo: { es: "Talento en cantidad y calidad", en: "Deep, skilled talent" },
+        texto: { es: "Más de 140.000 graduados en carreras tecnológicas y más de 5.000 empresas de servicios basados en el conocimiento.", en: "More than 140,000 graduates in tech degrees and over 5,000 knowledge-based services companies." },
+      },
+      {
+        titulo: { es: "Inglés y experiencia internacional", en: "English and global experience" },
+        texto: { es: "El mejor nivel de inglés de América Latina y años de trabajo en equipos bilingües con clientes de los Estados Unidos y Europa.", en: "Latin America’s highest English proficiency and years of experience in bilingual teams serving clients in the U.S. and Europe." },
+      },
+      {
+        titulo: { es: "El mismo día laboral", en: "The same working day" },
+        texto: { es: "Entre 1 y 2 horas de diferencia con Atlanta: reuniones, revisiones y entregas en tiempo real.", en: "Just 1 to 2 hours ahead of Atlanta: meetings, reviews and releases happen in real time." },
+      },
+      {
+        titulo: { es: "Calidad respaldada por ley", en: "Quality backed by law" },
+        texto: { es: "Políticas de Estado para el sector desde 2004. Hoy, las empresas de la Ley de Economía del Conocimiento deben exportar, invertir en I+D, capacitar a su personal y certificar normas de calidad.", en: "Government support for the industry since 2004. Today, companies under the Knowledge Economy Law must export, invest in R&D, train their staff and hold quality certifications." },
+      },
+      {
+        titulo: { es: "Costo eficiente, sin resignar calidad", en: "Cost-effective, not cut-rate" },
+        texto: { es: "Costos competitivos en perfiles semisenior y senior, con mejor retorno de la inversión.", en: "Competitive costs for mid-level and senior profiles, with a better return on investment." },
+      },
+      {
+        titulo: { es: "Talento en todo el país", en: "Talent nationwide" },
+        texto: { es: "Más de 40 polos y clusters tecnológicos, de Córdoba y Mendoza a Rosario, Tandil y Bariloche.", en: "More than 40 tech hubs and clusters, from Córdoba and Mendoza to Rosario, Tandil and Bariloche." },
+      },
+    ],
+    empresasTitulo: { es: "Nacidas en la Argentina", en: "Born in Argentina" },
+    empresasNota: { es: "Algunos de los unicornios tecnológicos argentinos. Es probable que ya uses alguno.", en: "A few of Argentina’s tech unicorns. Chances are you already use one." },
+    empresas: [
+      { nombre: "Mercado Libre", texto: { es: "Comercio electrónico, pagos y logística. La primera startup argentina en superar los USD 1.000 millones de valor; cotiza en Nasdaq.", en: "E-commerce, payments and logistics. The first Argentine startup valued at over US$1 billion; listed on Nasdaq." }, verificar: true },
+      { nombre: "Globant", texto: { es: "Transformación digital para empresas de todo el mundo, con más de 29.000 profesionales en 33 países. Cotiza en la Bolsa de Nueva York.", en: "Digital transformation for companies worldwide, with 29,000+ professionals in 33 countries. Listed on the New York Stock Exchange." }, verificar: true },
+      { nombre: "Auth0", texto: { es: "Inicio de sesión y gestión de identidades digitales. Okta la compró en 2021 por USD 6.500 millones.", en: "Login and digital identity management. Acquired by Okta in 2021 for US$6.5 billion." }, verificar: true },
+      { nombre: "Vercel", texto: { es: "La plataforma detrás de Next.js, para crear y publicar sitios y aplicaciones web.", en: "The platform behind Next.js, used to build and ship websites and web apps." }, verificar: true },
+      { nombre: "Ualá", texto: { es: "Billetera virtual y servicios financieros con más de 6 millones de usuarios en América Latina.", en: "Digital wallet and financial services with 6 million+ users across Latin America." } },
+      { nombre: "Despegar", texto: { es: "La plataforma de viajes líder de América Latina.", en: "Latin America’s leading travel platform." } },
+      { nombre: "Tiendanube", texto: { es: "Tiendas en línea que se crean en pocos pasos, para emprendedores y pymes de América Latina.", en: "Online stores built in a few steps, for entrepreneurs and small businesses across Latin America." } },
+      { nombre: "Mural", texto: { es: "Pizarras digitales para el trabajo colaborativo.", en: "Digital whiteboards for collaborative work." } },
+      { nombre: "Satellogic", texto: { es: "Soluciones satelitales e información geoespacial.", en: "Satellite solutions and geospatial information." } },
+      { nombre: "Technisys", texto: { es: "Plataforma de servicios financieros para bancos y fintech.", en: "Digital banking platform for banks and fintech companies." } },
+      { nombre: "Aleph", texto: { es: "Herramientas para el comercio digital.", en: "Tools for digital commerce." } },
+    ],
+    verticalesTitulo: { es: "Dónde exporta más", en: "Top export verticals" },
+    verticalesNota: { es: "Exportaciones de software por vertical, 2024", en: "Software exports by vertical, 2024" },
+    verticales: [
+      { nombre: { es: "Servicios financieros", en: "Financial services" }, valor: 32, destacada: true },
+      { nombre: { es: "Software y servicios", en: "Software & services" }, valor: 14 },
+      { nombre: "Gov-tech", valor: 10 },
+      { nombre: { es: "Telecomunicaciones", en: "Telecommunications" }, valor: 9 },
+      { nombre: { es: "Comercio y retail", en: "Commerce & retail" }, valor: 9 },
+      { nombre: "HealthTech", valor: 8 },
+      { nombre: { es: "Otras (logística, agro, gaming, educación)", en: "Other (logistics, agtech, gaming, edtech)" }, valor: 18 },
+    ],
+    verticalesRemate: {
+      es: "Los servicios financieros encabezan la lista: la Argentina habla el idioma de Transaction Alley.",
+      en: "Financial services top the list: Argentina speaks Transaction Alley’s language.",
+    },
+    datosTitulo: { es: "¿Sabías que…?", en: "Did you know?" },
+    datos: [
+      { destacado: { es: "1 de cada 6 dólares", en: "1 in every 6 dollars" }, texto: { es: "que la Argentina exporta en servicios viene del software.", en: "of Argentina’s service exports comes from software." } },
+      { destacado: { es: "68 %", en: "68%" }, texto: { es: "creció el empleo en software en diez años, frente al 0,6 % del empleo privado en general.", en: "growth in software jobs over ten years, versus 0.6% for private-sector employment overall." } },
+      { destacado: { es: "El doble", en: "Twice as much" }, texto: { es: "exporta hoy el software argentino que hace diez años.", en: "Argentine software is exported today as ten years ago." } },
+      { destacado: { es: "35 %", en: "35%" }, texto: { es: "de quienes trabajan en la industria del software son mujeres.", en: "of the software industry’s workforce are women." } },
+      { destacado: { es: "5 premios Nobel", en: "5 Nobel laureates" }, texto: { es: "tiene la Argentina, tres de ellos en ciencias.", en: "have come from Argentina, three of them in the sciences." }, verificar: true },
+      { destacado: { es: "Vuelos directos", en: "Nonstop flights" }, texto: { es: "unen Atlanta y Buenos Aires.", en: "connect Atlanta and Buenos Aires." }, verificar: true },
+    ],
+    fuentes: {
+      es: "Fuentes: CESSI, «Why Argentina» (2025) y «Argentina Tech Hub NY» (2026); OPSSI-CESSI, reporte sobre el sector de software y servicios informáticos (abril de 2026), con datos del INDEC y del Ministerio de Capital Humano; EF English Proficiency Index.",
+      en: "Sources: CESSI, “Why Argentina” (2025) and “Argentina Tech Hub NY” (2026); OPSSI-CESSI report on Argentina’s software and IT services industry (April 2026), based on INDEC and Ministry of Human Capital data; EF English Proficiency Index.",
+    },
+    fuentesUrl: "https://cessi.org.ar",
   },
 
   recursos: [

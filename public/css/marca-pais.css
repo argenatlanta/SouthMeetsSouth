@@ -143,7 +143,7 @@ a { color: var(--celeste-ink); }
 .lang-switch button[aria-pressed="true"] { background: var(--mpa-azul-oscuro); color: #ffffff; }
 .lang-switch button:not([aria-pressed="true"]):hover { color: var(--heading); background: var(--celeste-soft); }
 .menu-toggle { border-color: var(--line); color: var(--heading); }
-@media (max-width: 860px) {
+@media (max-width: 1100px) {
   .main-nav { background: var(--surface); border-bottom: 1px solid var(--line); }
 }
 @media (prefers-color-scheme: dark) {
@@ -221,3 +221,12 @@ a.card:hover, .org.card:hover, a.resource:hover { border-color: var(--mpa-azul);
 :root[data-theme="dark"] .next-dates,
 :root[data-theme="dark"] .edition-year,
 :root[data-theme="dark"] .org .sector { color: var(--mpa-celeste); }
+
+/* «Por qué Argentina»: barras en Plata y la vertical destacada en Azul (Celeste en modo oscuro). */
+:root { --bar: var(--mpa-plata-3); --bar-accent: var(--mpa-azul); }
+.ar-facts strong { color: var(--mpa-celeste); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bar: #5e7590; --bar-accent: var(--mpa-celeste); }
+}
+:root[data-theme="dark"] { --bar: #5e7590; --bar-accent: var(--mpa-celeste); }
+

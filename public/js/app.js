@@ -17,6 +17,7 @@
     es: {
       skip: "Ir al contenido",
       nav_next: "Próxima misión",
+      nav_argentina: "Por qué Argentina",
       nav_editions: "Ediciones",
       nav_why: "Por qué Atlanta",
       nav_resources: "Recursos",
@@ -127,6 +128,7 @@
     en: {
       skip: "Skip to content",
       nav_next: "Next mission",
+      nav_argentina: "Why Argentina",
       nav_editions: "Past editions",
       nav_why: "Why Atlanta",
       nav_resources: "Resources",
@@ -342,9 +344,10 @@
   }
 
   // Cifras en fila (portada y página de edición): [{ valor, texto, item? }]; item lleva `verificar`.
-  function stats(list) {
-    return '<dl class="stats">' + list.filter(Boolean).map(function (s) {
-      return '<div class="stat' + verifyClass(s.item) + '"><dt>' + esc(s.texto) + verifyTag(s.item) + "</dt><dd>" + esc(s.valor) + "</dd></div>";
+  // valor y texto pueden ser bilingües. cls agrega una clase a la grilla (p. ej. "stats-3").
+  function stats(list, cls) {
+    return '<dl class="stats' + (cls ? " " + cls : "") + '">' + list.filter(Boolean).map(function (s) {
+      return '<div class="stat' + verifyClass(s.item) + '"><dt>' + esc(t(s.texto)) + verifyTag(s.item) + "</dt><dd>" + esc(t(s.valor)) + "</dd></div>";
     }).join("") + "</dl>";
   }
 
@@ -637,6 +640,62 @@
     el.innerHTML = context + totals + '<ul class="editions">' + cards + "</ul>";
   }
 
+  // «Por qué Argentina»: cifras, qué ofrece, empresas nacidas en el país, exportaciones por
+  // vertical y datos que sorprenden. El contenido vive en data/sitio.js (porQueArgentina).
+  function renderArgentina() {
+    var sec = document.getElementById("argentina");
+    var el = document.getElementById("argentina-body");
+    var a = SITIO.porQueArgentina;
+    if (!sec || !el) return;
+    sec.hidden = !a;
+    if (!a) return;
+
+    var head = '<div class="section-head"><h2>' + esc(t(a.titulo)) + "</h2>" + (a.bajada ? "<p>" + esc(t(a.bajada)) + "</p>" : "") + "</div>";
+
+    var figures = isEmpty(a.cifras) ? "" : stats(a.cifras.map(function (c) {
+      return { valor: c.valor, texto: c.texto, item: c };
+    }), "stats-3");
+
+    var offers = isEmpty(a.ofrece) ? "" :
+      '<div class="ar-block"><h3 class="ar-title">' + esc(t(a.ofreceTitulo)) + '</h3><ul class="why-list cols-3">' +
+      a.ofrece.map(function (o) { return '<li class="why"><h4>' + esc(t(o.titulo)) + "</h4><p>" + esc(t(o.texto)) + "</p></li>"; }).join("") +
+      "</ul></div>";
+
+    var companies = isEmpty(a.empresas) ? "" :
+      '<div class="ar-block"><h3 class="ar-title">' + esc(t(a.empresasTitulo)) + "</h3>" +
+      (a.empresasNota ? '<p class="ar-note">' + esc(t(a.empresasNota)) + "</p>" : "") +
+      '<ul class="ar-companies">' + a.empresas.map(function (c) {
+        return '<li class="' + verifyClass(c).trim() + '"><strong>' + esc(c.nombre) + verifyTag(c) + "</strong><p>" + esc(t(c.texto)) + "</p></li>";
+      }).join("") + "</ul></div>";
+
+    // Barras horizontales: una sola serie, la vertical destacada en color y el resto en gris.
+    // Cada barra lleva su valor escrito, así el dato no depende del color ni del largo.
+    var max = Math.max.apply(null, (a.verticales || []).map(function (v) { return v.valor; }).concat([1]));
+    var chart = isEmpty(a.verticales) ? "" :
+      '<div class="ar-chart"><h3 class="ar-title">' + esc(t(a.verticalesTitulo)) + "</h3>" +
+      (a.verticalesNota ? '<p class="ar-note">' + esc(t(a.verticalesNota)) + "</p>" : "") +
+      '<ul class="bars">' + a.verticales.map(function (v) {
+        var pct = (lang === "es" ? String(v.valor) + " %" : String(v.valor) + "%");
+        // El valor va en la punta de la barra; la barra ocupa una fracción del espacio que le deja.
+        return '<li class="' + (v.destacada ? "is-accent" : "") + '"><span class="bar-label">' + esc(t(v.nombre)) + "</span>" +
+          '<span class="bar-track"><span class="bar" aria-hidden="true" style="--f:' + (v.valor / max).toFixed(3) + '"></span>' +
+          '<span class="bar-value">' + esc(pct) + "</span></span></li>";
+      }).join("") + "</ul>" +
+      (a.verticalesRemate ? '<p class="ar-punch">' + esc(t(a.verticalesRemate)) + "</p>" : "") + "</div>";
+
+    var facts = isEmpty(a.datos) ? "" :
+      '<div class="ar-facts"><h3 class="ar-title">' + esc(t(a.datosTitulo)) + '</h3><ul>' + a.datos.map(function (d) {
+        return '<li class="' + verifyClass(d).trim() + '"><strong>' + esc(t(d.destacado)) + "</strong> " + esc(t(d.texto)) + verifyTag(d) + "</li>";
+      }).join("") + "</ul></div>";
+
+    var src = safeUrl(a.fuentesUrl);
+    var sources = a.fuentes ? '<p class="ar-sources">' + esc(t(a.fuentes)) +
+      (src ? ' <a href="' + esc(src) + '" target="_blank" rel="noopener">cessi.org.ar ' + ICON.ext + "</a>" : "") + "</p>" : "";
+
+    el.innerHTML = head + figures + offers + companies +
+      (chart || facts ? '<div class="ar-block ar-split">' + chart + facts + "</div>" : "") + sources;
+  }
+
   function renderWhy() {
     var el = document.getElementById("atlanta-body");
     if (!el) return;
@@ -673,6 +732,7 @@
     document.title = ui("page_title_home");
     renderHero();
     renderNext();
+    renderArgentina();
     renderPast();
     renderWhy();
     renderResources();

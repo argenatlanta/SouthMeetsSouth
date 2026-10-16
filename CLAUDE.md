@@ -13,7 +13,7 @@ public/                 ← todo lo que se publica (directorio de salida en Clou
   404.html
   css/styles.css        estilos (tokens de color en :root, modo oscuro incluido)
   js/app.js             renderizado + textos fijos de la interfaz (objeto UI, en es y en)
-  data/sitio.js         configuración general: borrador, contacto, recursos, fecha de actualización
+  data/sitio.js         configuración general: borrador, contacto, recursos, «Por qué Argentina», fecha de actualización
   data/ediciones.js     el contenido de cada edición
   img/ediciones/<id>/   fotos de cada edición
   img/empresas/         logos de las empresas (uno por empresa, se reutiliza entre ediciones)
@@ -116,6 +116,11 @@ declara clientes o presencia allí, hasta 6 clientes. Tono de sitio instituciona
 expresiones informales. Sin imágenes, sin aviso de la fuente y sin aviso de misiones anteriores. No
 publicar datos personales (nombres de contactos, correos, teléfonos, fotos). Usar siempre el mismo
 `nombre` para cada empresa en todas las ediciones.
+
+**«Por qué Argentina»** (`porQueArgentina` en `sitio.js`): sección de la portada para empresas de Atlanta que no
+conocen el sector. Cifras de la CESSI («Why Argentina» y la página «Argentina Tech Hub NY») y del reporte anual
+del OPSSI; se usan siempre las más recientes y se actualizan cuando sale un reporte nuevo. Los datos públicos que
+no salen de la CESSI llevan `verificar: true`. Las fuentes se citan al pie de la sección.
 
 Las secciones vacías (`[]`) no se muestran en el sitio publicado. En modo borrador aparecen como
 «Sección a completar».
