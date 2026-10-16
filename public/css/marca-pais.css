@@ -205,9 +205,9 @@ a { color: var(--celeste-ink); }
 a.card:hover, .org.card:hover, a.resource:hover { border-color: var(--mpa-azul); }
 .chip { color: var(--heading); }
 .org .sector { color: var(--mpa-azul-oscuro); }
-/* Inscripción abierta: Amarillo como acento de acción. Logos blancos: sobre Azul oscuro. */
+/* Inscripción abierta: Amarillo como acento de acción.
+   Los logos de las empresas no se tocan: son diseños propios y conservan su fondo (styles.css). */
 .pill-open { background: var(--mpa-amarillo); color: var(--mpa-azul-oscuro); }
-.org .logo.dark, .ficha-head .logo.dark { background: var(--mpa-azul-oscuro); border-color: var(--mpa-azul-oscuro); }
 .why::before { background: var(--mpa-celeste); }
 .more-info { color: var(--heading); }
 .more-info:hover { border-color: var(--mpa-azul); }

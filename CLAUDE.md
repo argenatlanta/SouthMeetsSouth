@@ -47,7 +47,8 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
 7. Logos: `public/img/empresas/<slug>.png`, recortados sin márgenes y de hasta 480 × 160 px. Solo logos
    que haya dado el Consulado o la empresa (en Drive: «05_Logos_e_imagenes» en 2026, «Logos Definitivos
    2025» en 2025); no bajarlos de la web. Si el logo es blanco o claro, agregar `logoFondo: "oscuro"`. Si en una lista
-   alguna empresa tiene logo, las que no tienen muestran sus iniciales.
+   alguna empresa tiene logo, las que no tienen muestran sus iniciales. Los logos de las empresas son diseños
+   propios: no cambiar sus colores ni su fondo (blanco, o #121c2a con `logoFondo: "oscuro"`), tampoco por Marca País.
 8. Diseño: sigue el manual de Marca País 2025 (`css/marca-pais.css`): paleta MPA, Source Sans 3 en títulos y
    textos cortos (botones, menú, etiquetas, chips) y Roboto en el cuerpo, Amarillo solo para acciones y acentos.
    Tramas solo las del manual, en menos del 50% de la pieza y con módulos de al menos 1/14 del ancho. No usar
