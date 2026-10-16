@@ -49,8 +49,10 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
    2025» en 2025); no bajarlos de la web. Si el logo es blanco o claro, agregar `logoFondo: "oscuro"`. Si en una lista
    alguna empresa tiene logo, las que no tienen muestran sus iniciales.
 8. Diseño: sigue el manual de Marca País 2025 (`css/marca-pais.css`): paleta MPA, Source Sans 3 en títulos y
-   Roboto en el cuerpo, Amarillo solo para acciones y acentos. Tramas solo las del manual, en menos del 50% de
-   la pieza y con módulos de al menos 1/14 del ancho. No usar el logo de Marca País.
+   textos cortos (botones, menú, etiquetas, chips) y Roboto en el cuerpo, Amarillo solo para acciones y acentos.
+   Tramas solo las del manual, en menos del 50% de la pieza y con módulos de al menos 1/14 del ancho. No usar
+   el logo de Marca País. Sin etiquetas pequeñas sobre los títulos de sección ni tarjetas dentro de tarjetas.
+   El foco del teclado va en Azul oscuro sobre fondos claros y en Amarillo sobre Azul oscuro.
 
 ## Esquema de una edición (`public/data/ediciones.js`)
 

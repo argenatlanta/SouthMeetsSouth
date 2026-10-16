@@ -41,6 +41,7 @@
   --font-body: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
   --trama-periodo: calc(100vw / 6); /* dos módulos: cada módulo mide 1/12 del ancho */
   --trama-alto: calc(var(--trama-periodo) * 1.8848); /* proporción del mosaico: 660 × 1244 */
+  --focus: var(--mpa-azul-oscuro);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -61,6 +62,7 @@
     --navy-2: #00244f;
     --on-navy-2: #b9dcf0;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+    --focus: var(--mpa-amarillo);
   }
 }
 :root[data-theme="dark"] {
@@ -80,7 +82,12 @@
   --navy-2: #00244f;
   --on-navy-2: #b9dcf0;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+  --focus: var(--mpa-amarillo);
 }
+
+/* Sobre Azul oscuro el foco va en Amarillo; sobre fondos claros, en Azul oscuro (el Amarillo no llega a 3:1). */
+.hero, .ed-hero, .site-footer, dialog.lightbox { --focus: var(--mpa-amarillo); }
+::selection { background: color-mix(in srgb, var(--mpa-celeste) 30%, transparent); }
 
 /* ───────── Tipografía ───────── */
 body { font-weight: 400; }
@@ -88,18 +95,35 @@ h1, h2, h3 { color: var(--heading); letter-spacing: -0.01em; font-weight: 700; }
 .hero h1, .ed-hero h1, .site-footer h2 { color: var(--on-navy); }
 .hero h1 { font-weight: 700; letter-spacing: -0.02em; }
 .section-head h2 { font-weight: 700; }
-.section-head p, .context, .hero-lead { font-weight: 300; }
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: var(--font-display); font-weight: 700; letter-spacing: 0.1em;
-  color: var(--heading);
-}
-.eyebrow::before { content: ""; width: 28px; height: 4px; border-radius: 2px; background: var(--mpa-celeste); }
-.hero .eyebrow { color: var(--on-navy-2); }
-.ed-year, .ed-stat strong, .total strong, .edition-year { font-weight: 700; letter-spacing: -0.02em; }
-.edition-year, .total strong { color: var(--mpa-azul); }
+/* El cuerpo en Roboto Regular; Light solo en la bajada del hero, grande y sobre Azul oscuro. */
+.hero-lead { font-weight: 300; }
+.hero-tagline { color: var(--on-navy-2); }
+.ed-year, .stat dd, .edition-year { font-weight: 700; letter-spacing: -0.02em; }
+.edition-year, .stat dd, .next-dates { color: var(--mpa-azul); }
 .ed-year { color: var(--mpa-celeste); }
 a { color: var(--celeste-ink); }
+
+/* Textos cortos (botones, menú, etiquetas, chips) en Source Sans 3, como pide el manual. */
+.btn, .main-nav a, .lang-switch button, .menu-toggle, .label, .chip, .status-badge, .call-status .pill,
+.org .kind, .lang-badge, .more-info, .org a.web, .ed-nav a, .back-link, .edition-go, .link-arrow,
+.countdown, .pager small, .call a, .gallery-credit, .agenda-when, .org .sector, .ficha-head .sector {
+  font-family: var(--font-display);
+}
+.btn { font-size: 16px; font-weight: 700; }
+.main-nav a { font-size: 16px; font-weight: 600; }
+.ed-nav a { font-size: 15px; font-weight: 600; }
+.back-link, .edition-go, .link-arrow, .more-info, .org a.web, .call a { font-size: 16px; font-weight: 700; }
+.lang-switch button { font-size: 14px; font-weight: 700; }
+.label { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; }
+.chip { font-size: 15px; font-weight: 600; }
+.countdown { font-size: 15px; font-weight: 600; }
+.agenda-when { font-size: 16px; font-weight: 700; }
+.org .sector, .ficha-head .sector { font-size: 15px; font-weight: 700; }
+/* Títulos de tarjetas y de la agenda: también Source Sans 3. */
+.agenda h3, .org h3, .ficha-block h3 { font-family: var(--font-display); letter-spacing: 0; }
+.agenda h3 { font-size: 20px; font-weight: 700; }
+.org h3 { font-size: 19px; }
+.ficha-block h3 { font-size: 14px; letter-spacing: 0.1em; }
 
 /* ───────── Encabezado: blanco, como pide el manual para la etapa de presentación ───────── */
 .site-header {
@@ -117,6 +141,7 @@ a { color: var(--celeste-ink); }
 .lang-switch { border-color: var(--line); }
 .lang-switch button { color: var(--ink-2); }
 .lang-switch button[aria-pressed="true"] { background: var(--mpa-azul-oscuro); color: #ffffff; }
+.lang-switch button:not([aria-pressed="true"]):hover { color: var(--heading); background: var(--celeste-soft); }
 .menu-toggle { border-color: var(--line); color: var(--heading); }
 @media (max-width: 860px) {
   .main-nav { background: var(--surface); border-bottom: 1px solid var(--line); }
@@ -178,14 +203,21 @@ a { color: var(--celeste-ink); }
 .section:nth-of-type(even) { background: var(--surface-2); }
 .card { border-color: var(--line); }
 a.card:hover, .org.card:hover, a.resource:hover { border-color: var(--mpa-azul); }
-.chip { color: var(--heading); font-weight: 500; }
-.ed-stat strong { color: var(--mpa-azul); }
+.chip { color: var(--heading); }
 .org .sector { color: var(--mpa-azul-oscuro); }
+/* Inscripción abierta: Amarillo como acento de acción. Logos blancos: sobre Azul oscuro. */
+.pill-open { background: var(--mpa-amarillo); color: var(--mpa-azul-oscuro); }
+.org .logo.dark, .ficha-head .logo.dark { background: var(--mpa-azul-oscuro); border-color: var(--mpa-azul-oscuro); }
+.why::before { background: var(--mpa-celeste); }
 .more-info { color: var(--heading); }
 .more-info:hover { border-color: var(--mpa-azul); }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .ed-stat strong,
+  :root:not([data-theme="light"]) .stat dd,
+  :root:not([data-theme="light"]) .next-dates,
+  :root:not([data-theme="light"]) .edition-year,
   :root:not([data-theme="light"]) .org .sector { color: var(--mpa-celeste); }
 }
-:root[data-theme="dark"] .ed-stat strong,
+:root[data-theme="dark"] .stat dd,
+:root[data-theme="dark"] .next-dates,
+:root[data-theme="dark"] .edition-year,
 :root[data-theme="dark"] .org .sector { color: var(--mpa-celeste); }

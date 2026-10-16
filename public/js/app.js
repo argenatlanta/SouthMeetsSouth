@@ -24,7 +24,7 @@
       menu: "Menú",
       draft_banner: "Versión preliminar · El contenido está en revisión y puede cambiar.",
       verify: "a verificar",
-      hero_eyebrow: "Conectando los ecosistemas tecnológicos de Georgia y la Argentina",
+      hero_tagline: "Conectando los ecosistemas tecnológicos de Georgia y la Argentina",
       hero_lead:
         "Empresas argentinas de software y tecnología viajan a Atlanta para hacer negocios con el ecosistema de innovación del sur de los Estados Unidos. Acá reunimos cada edición de la misión y lo que viene.",
       hero_cta_next: "Ver la próxima misión",
@@ -36,7 +36,6 @@
       countdown_1: "Falta 1 día para la misión en {city}",
       countdown_0: "Hoy comienza la misión en {city}",
       countdown_live: "Misión en curso",
-      next_eyebrow: "Próxima misión",
       next_title: "Lo que viene",
       next_none: "Pronto anunciaremos la próxima edición.",
       itinerary: "En Atlanta",
@@ -55,7 +54,6 @@
       see_details: "Ver detalle",
       see_delegation: "Conocer la delegación",
       interest_form: "Quiero participar",
-      past_eyebrow: "Ediciones anteriores",
       past_title: "Lo que construimos en cada misión",
       past_lead:
         "Actividades, reuniones, empresas de la delegación y las instituciones que nos recibieron en cada edición.",
@@ -65,7 +63,6 @@
       total_companies_editions: "empresas argentinas en esas ediciones",
       companies_n: "{n} empresas",
       view_edition: "Ver edición",
-      why_eyebrow: "Por qué Atlanta",
       why_title: "El sur de EE.UU. y el sur del continente, cerca",
       why_lead: "Atlanta combina un ecosistema tecnológico en crecimiento con una ubicación ideal para equipos argentinos.",
       why_1_t: "Misma jornada laboral",
@@ -76,9 +73,7 @@
       why_3_p: "Georgia Tech y su incubadora ATDC, Atlanta Tech Village y la Technology Association of Georgia impulsan una comunidad tecnológica en crecimiento.",
       why_4_t: "Puerta de entrada",
       why_4_p: "El aeropuerto Hartsfield-Jackson, uno de los más transitados del mundo, conecta Atlanta con todo Estados Unidos.",
-      resources_eyebrow: "Recursos",
       resources_title: "Para seguir conectados",
-      contact_eyebrow: "Contacto",
       contact_title: "Hablemos",
       contact_lead:
         "Para sumarse a una próxima misión, recibir a la delegación en Atlanta o proponer actividades, comuníquese con el Consulado.",
@@ -87,7 +82,7 @@
       contact_linkedin: "LinkedIn",
       footer_tagline: "South Meets South · Misión de Software y Tecnología Argentina → Atlanta",
       footer_updated: "Actualizado: {date}",
-      back: "← Todas las ediciones",
+      back: "Todas las ediciones",
       status_next: "Próxima",
       status_done: "Realizada",
       sec_summary: "Resumen",
@@ -139,7 +134,7 @@
       menu: "Menu",
       draft_banner: "Preview version · Content is under review and may change.",
       verify: "to verify",
-      hero_eyebrow: "Connecting Georgia’s and Argentina’s Tech Ecosystems",
+      hero_tagline: "Connecting Georgia’s and Argentina’s Tech Ecosystems",
       hero_lead:
         "Argentine software and technology companies travel to Atlanta to do business with the innovation ecosystem of the U.S. South. Here you’ll find every edition of the mission — and what’s next.",
       hero_cta_next: "See the next mission",
@@ -151,7 +146,6 @@
       countdown_1: "1 day until the mission arrives in {city}",
       countdown_0: "The mission arrives in {city} today",
       countdown_live: "Mission in progress",
-      next_eyebrow: "Next mission",
       next_title: "What’s next",
       next_none: "The next edition will be announced soon.",
       itinerary: "In Atlanta",
@@ -170,7 +164,6 @@
       see_details: "See details",
       see_delegation: "Meet the delegation",
       interest_form: "I’m interested",
-      past_eyebrow: "Past editions",
       past_title: "What we built on each mission",
       past_lead:
         "Activities, meetings, delegation companies and the organizations that hosted us, edition by edition.",
@@ -180,7 +173,6 @@
       total_companies_editions: "Argentine companies in those editions",
       companies_n: "{n} companies",
       view_edition: "View edition",
-      why_eyebrow: "Why Atlanta",
       why_title: "The U.S. South and the Southern Cone, close together",
       why_lead: "Atlanta pairs a growing tech ecosystem with an ideal location for Argentine teams.",
       why_1_t: "Same working day",
@@ -191,9 +183,7 @@
       why_3_p: "Georgia Tech and its ATDC incubator, Atlanta Tech Village and the Technology Association of Georgia power a growing tech community.",
       why_4_t: "Gateway city",
       why_4_p: "Hartsfield-Jackson, one of the world’s busiest airports, connects Atlanta with the entire United States.",
-      resources_eyebrow: "Resources",
       resources_title: "Stay connected",
-      contact_eyebrow: "Contact",
       contact_title: "Let’s talk",
       contact_lead:
         "To join an upcoming mission, host the delegation in Atlanta or propose activities, please contact the Consulate.",
@@ -202,7 +192,7 @@
       contact_linkedin: "LinkedIn",
       footer_tagline: "South Meets South · Argentina → Atlanta Software & Technology Mission",
       footer_updated: "Updated: {date}",
-      back: "← All editions",
+      back: "All editions",
       status_next: "Upcoming",
       status_done: "Completed",
       sec_summary: "Overview",
@@ -351,6 +341,13 @@
     return BORRADOR && item && item.verificar ? " needs-verify" : "";
   }
 
+  // Cifras en fila (portada y página de edición): [{ valor, texto, item? }]; item lleva `verificar`.
+  function stats(list) {
+    return '<dl class="stats">' + list.filter(Boolean).map(function (s) {
+      return '<div class="stat' + verifyClass(s.item) + '"><dt>' + esc(s.texto) + verifyTag(s.item) + "</dt><dd>" + esc(s.valor) + "</dd></div>";
+    }).join("") + "</dl>";
+  }
+
   function edUrl(ed) {
     return "edicion.html?id=" + encodeURIComponent(ed.id) + (lang === "en" ? "&lang=en" : "");
   }
@@ -358,18 +355,15 @@
   function isEmpty(list) { return !list || !list.length; }
 
   var ICON = {
+    back: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
     arrow: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
     ext: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>',
     pin: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
     check: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>',
-    clock: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
-    card: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg>',
-    spark: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg>',
     chevron: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>',
     prev: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
     next: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>',
     close: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>',
-    plane: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 16l20-6-20-6 4 6-4 6zM6 10h8"/></svg>',
   };
 
   // ───────────────────────── Elementos comunes ─────────────────────────
@@ -416,12 +410,15 @@
       var open = nav.classList.toggle("open");
       btn.setAttribute("aria-expanded", String(open));
     });
-    nav.addEventListener("click", function (e) {
-      if (e.target.closest("a")) {
-        nav.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-      }
-    });
+    function close(focus) {
+      if (!nav.classList.contains("open")) return;
+      nav.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      if (focus) btn.focus();
+    }
+    nav.addEventListener("click", function (e) { if (e.target.closest("a")) close(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(true); });
+    document.addEventListener("click", function (e) { if (!e.target.closest(".main-nav, .menu-toggle")) close(false); });
   }
 
   function setupLangSwitch(render) {
@@ -504,14 +501,14 @@
     el.innerHTML =
       '<div class="container hero-grid">' +
       "<div>" +
-      '<span class="eyebrow">' + esc(ui("hero_eyebrow")) + "</span>" +
       '<h1>South <span class="accent">Meets</span> South</h1>' +
+      '<p class="hero-tagline">' + esc(ui("hero_tagline")) + "</p>" +
       '<p class="hero-lead">' + esc(ui("hero_lead")) + "</p>" +
       '<div class="hero-actions">' +
       (nx ? '<a class="btn btn-primary" href="#proxima">' + esc(ui("hero_cta_next")) + ICON.arrow + "</a>" : "") +
       '<a class="btn btn-ghost" href="#ediciones">' + esc(ui("hero_cta_editions")) + "</a>" +
       "</div>" +
-      (cd ? '<div class="countdown" role="status"><span class="dot" aria-hidden="true"></span>' + esc(cd) + "</div>" : "") +
+      (cd ? '<p class="countdown"><span class="dot" aria-hidden="true"></span>' + esc(cd) + "</p>" : "") +
       "</div>" +
       '<figure class="hero-art">' + heroArt() + "<figcaption>" + esc(ui("hero_art_caption")) + "</figcaption></figure>" +
       "</div>";
@@ -571,9 +568,11 @@
       return;
     }
     var others = otherLegsNote(ed);
-    var legs =
-      '<li class="leg is-atlanta"><span class="leg-city">Atlanta</span><span class="leg-dates">' + esc(fmtRange(ed.inicio, ed.fin)) + "</span></li>" +
-      (typeof ed.empresas === "number" ? '<li class="leg"><span class="leg-city">' + ed.empresas + '</span><span class="leg-dates">' + esc(ui("total_companies")) + "</span></li>" : "");
+    // Fechas de la etapa Atlanta y tamaño de la delegación, sin cajas dentro de la tarjeta.
+    var when =
+      '<div class="next-when"><span class="next-dates">' + esc(fmtRange(ed.inicio, ed.fin)) + "</span>" +
+      (typeof ed.empresas === "number" ? '<span class="next-count"><strong>' + ed.empresas + "</strong> " + esc(ui("total_companies")) + "</span>" : "") +
+      "</div>";
 
     var program = isEmpty(ed.programa) ? "" :
       '<p class="label">' + esc(ui("program")) + '</p><ul class="program">' +
@@ -591,13 +590,13 @@
       '<div class="next-main">' +
       "<h3>" + esc(t(ed.titulo)) + "</h3>" +
       "<p>" + esc(t(ed.resumen)) + "</p>" +
-      '<p class="label">' + esc(ui("itinerary")) + '</p><ul class="legs">' + legs + "</ul>" +
+      '<p class="label">' + esc(ui("itinerary")) + "</p>" + when +
       (others ? '<p class="legs-note">' + esc(others) + "</p>" : "") +
       sectors +
-      (isEmpty(ed.delegacion) ? "" : '<p style="margin:24px 0 0"><a class="btn btn-outline" href="' + esc(edUrl(ed)) + '#delegacion">' + esc(ui("see_delegation")) + ICON.arrow + "</a></p>") +
+      (isEmpty(ed.delegacion) ? "" : '<p class="next-actions"><a class="btn btn-outline" href="' + esc(edUrl(ed)) + '#delegacion">' + esc(ui("see_delegation")) + ICON.arrow + "</a></p>") +
       "</div>" +
       '<div class="next-side">' + program + call + hosts +
-      '<p style="margin:16px 0 0"><a href="' + esc(edUrl(ed)) + '">' + esc(ui("see_details")) + " →</a></p>" +
+      '<p class="next-more"><a class="link-arrow" href="' + esc(edUrl(ed)) + '">' + esc(ui("see_details")) + ICON.arrow + "</a></p>" +
       "</div>" +
       "</article>";
   }
@@ -616,20 +615,20 @@
       ? '<p class="context' + verifyClass(ctx) + '">' + esc(t(ctx.texto).split("{desde}").join(since)) + verifyTag(ctx) + "</p>"
       : "";
 
-    var totals =
-      '<div class="totals">' +
-      (since ? '<div class="card total' + verifyClass(ctx) + '"><strong>' + esc(since) + "</strong><span>" + esc(ui("total_since")) + verifyTag(ctx) + "</span></div>" : "") +
-      '<div class="card total"><strong>' + past.length + "</strong><span>" + esc(ui("total_editions")) + "</span></div>" +
-      (totalCompanies ? '<div class="card total"><strong>' + totalCompanies + (partial ? "+" : "") + "</strong><span>" + esc(ui("total_companies_editions")) + "</span></div>" : "") +
-      "</div>";
+    var totals = stats([
+      since ? { valor: since, texto: ui("total_since"), item: ctx } : null,
+      { valor: past.length, texto: ui("total_editions") },
+      totalCompanies ? { valor: totalCompanies + (partial ? "+" : ""), texto: ui("total_companies_editions") } : null,
+    ]);
 
     var cards = past.map(function (ed) {
-      var meta = ["<span>" + esc(fmtRange(ed.inicio, ed.fin)) + "</span>", "<span>Atlanta</span>"];
-      if (typeof ed.empresas === "number") meta.push("<span>" + esc(ui("companies_n", { n: ed.empresas })) + "</span>");
+      var meta = [fmtRange(ed.inicio, ed.fin), "Atlanta"];
+      if (typeof ed.empresas === "number") meta.push(ui("companies_n", { n: ed.empresas }));
       return (
         '<li><a class="card edition-card" href="' + esc(edUrl(ed)) + '">' +
         '<div class="edition-year">' + esc(year(ed)) + "</div>" +
-        "<div><h3>" + esc(t(ed.titulo)) + '</h3><div class="edition-meta">' + meta.join("") + "</div></div>" +
+        // Espacio duro antes del punto: si la línea se corta, el punto queda al final y no al principio.
+        "<div><h3>" + esc(t(ed.titulo)) + '</h3><p class="edition-meta">' + meta.map(esc).join(" · ") + "</p></div>" +
         '<span class="edition-go">' + esc(ui("view_edition")) + ICON.arrow + "</span>" +
         "</a></li>"
       );
@@ -641,15 +640,10 @@
   function renderWhy() {
     var el = document.getElementById("atlanta-body");
     if (!el) return;
-    var items = [
-      [ICON.clock, "why_1_t", "why_1_p"],
-      [ICON.card, "why_2_t", "why_2_p"],
-      [ICON.spark, "why_3_t", "why_3_p"],
-      [ICON.plane, "why_4_t", "why_4_p"],
-    ];
-    el.innerHTML = '<div class="grid-4">' + items.map(function (i) {
-      return '<div class="card why"><div class="why-icon">' + i[0] + "</div><h3>" + esc(ui(i[1])) + "</h3><p>" + esc(ui(i[2])) + "</p></div>";
-    }).join("") + "</div>";
+    var items = [1, 2, 3, 4];
+    el.innerHTML = '<ul class="why-list">' + items.map(function (n) {
+      return '<li class="why"><h3>' + esc(ui("why_" + n + "_t")) + "</h3><p>" + esc(ui("why_" + n + "_p")) + "</p></li>";
+    }).join("") + "</ul>";
   }
 
   function renderResources() {
@@ -670,7 +664,7 @@
     if (!el) return;
     el.innerHTML =
       '<div class="card contact">' +
-      '<div><span class="eyebrow">' + esc(ui("contact_eyebrow")) + "</span><h2>" + esc(ui("contact_title")) + "</h2><p>" + esc(ui("contact_lead")) + "</p></div>" +
+      "<div><h2>" + esc(ui("contact_title")) + "</h2><p>" + esc(ui("contact_lead")) + "</p></div>" +
       '<div class="contact-links">' + contactButtons("btn-primary") + "</div>" +
       "</div>";
   }
@@ -856,7 +850,7 @@
         '<li class="card person' + verifyClass(p) + '"><span class="avatar" aria-hidden="true">' + esc(initials(p.nombre)) + "</span>" +
         "<div><strong>" + esc(p.nombre) + verifyTag(p) + "</strong>" +
         (role ? "<span>" + esc(role) + "</span>" : "") +
-        (p.detalle ? '<p style="margin:4px 0 0;color:var(--ink-2);font-size:15px">' + esc(t(p.detalle)) + "</p>" : "") +
+        (p.detalle ? "<p>" + esc(t(p.detalle)) + "</p>" : "") +
         "</div></li>"
       );
     }).join("") + "</ul>";
@@ -868,7 +862,7 @@
       var meta = [p.medio, p.fecha ? fmtDate(p.fecha) : ""].filter(Boolean).join(" · ");
       var inner = '<div><div class="t">' + esc(t(p.titulo)) + '</div><div class="m">' + esc(meta) + "</div></div>" +
         (p.idioma ? '<span class="lang-badge">' + esc(String(p.idioma).toUpperCase()) + "</span>" : "");
-      return "<li>" + (url ? '<a class="card" href="' + esc(url) + '" target="_blank" rel="noopener">' + inner + "</a>" : '<div class="card" style="padding:16px 20px">' + inner + "</div>") + "</li>";
+      return "<li>" + (url ? '<a class="card" href="' + esc(url) + '" target="_blank" rel="noopener">' + inner + "</a>" : '<div class="card">' + inner + "</div>") + "</li>";
     }).join("") + "</ul>";
   }
 
@@ -926,8 +920,9 @@
     d = document.createElement("dialog");
     d.id = "lightbox";
     d.className = "lightbox";
+    d.setAttribute("aria-label", ui("sec_gallery"));
     d.innerHTML =
-      '<figure><img alt=""><figcaption><span class="lb-text"></span><span class="lb-count"></span></figcaption></figure>' +
+      '<figure><img alt=""><figcaption><span class="lb-text" aria-hidden="true"></span><span class="lb-count"></span></figcaption></figure>' +
       '<button type="button" class="lb-btn lb-prev" aria-label="' + esc(ui("photo_prev")) + '">' + ICON.prev + "</button>" +
       '<button type="button" class="lb-btn lb-next" aria-label="' + esc(ui("photo_next")) + '">' + ICON.next + "</button>" +
       '<button type="button" class="lb-btn lb-close" aria-label="' + esc(ui("close")) + '">' + ICON.close + "</button>";
@@ -987,7 +982,7 @@
     if (!ed) {
       document.title = ui("not_found_t") + " · South Meets South";
       main.innerHTML =
-        '<div class="container not-found"><h1>' + esc(ui("not_found_t")) + "</h1><p>" + esc(ui("not_found_p")) + '</p><p><a class="btn btn-outline" href="index.html#ediciones">' + esc(ui("back")) + "</a></p></div>";
+        '<div class="container not-found"><h1>' + esc(ui("not_found_t")) + "</h1><p>" + esc(ui("not_found_p")) + '</p><p><a class="btn btn-outline" href="index.html#ediciones">' + ICON.back + esc(ui("back")) + "</a></p></div>";
       return;
     }
 
@@ -998,7 +993,7 @@
 
     var hero =
       '<header class="ed-hero"><div class="container">' +
-      '<a class="back-link" href="index.html' + (lang === "en" ? "?lang=en" : "") + '#ediciones">' + esc(ui("back")) + "</a>" +
+      '<a class="back-link" href="index.html' + (lang === "en" ? "?lang=en" : "") + '#ediciones">' + ICON.back + esc(ui("back")) + "</a>" +
       '<div class="ed-year" aria-hidden="true">' + esc(year(ed)) + "</div>" +
       "<h1>" + esc(t(ed.titulo)) + "</h1>" +
       '<div class="ed-when"><span class="status-badge' + (isNext ? "" : " done") + '">' + esc(ui(isNext ? "status_next" : "status_done")) + "</span>" +
@@ -1006,10 +1001,10 @@
       (others ? '<p class="ed-other">' + esc(others) + "</p>" : "") +
       "</div></header>";
 
-    var stats = isEmpty(ed.cifras) ? "" :
-      '<div class="container"><div class="ed-stats">' + ed.cifras.map(function (c) {
-        return '<div class="card ed-stat' + verifyClass(c) + '"><strong>' + esc(c.valor) + "</strong><span>" + esc(t(c.texto)) + verifyTag(c) + "</span></div>";
-      }).join("") + "</div></div>";
+    var figures = isEmpty(ed.cifras) ? "" :
+      '<div class="container ed-stats">' + stats(ed.cifras.map(function (c) {
+        return { valor: c.valor, texto: t(c.texto), item: c };
+      })) + "</div>";
 
     // Nota interna sobre el origen de los datos: solo se ve en modo borrador.
     var internal = BORRADOR && ed.notaInterna
@@ -1029,7 +1024,7 @@
       }
       sections.push(["agenda", ui("sec_agenda_next"), progBody, true]);
       var participate = callBox(ed) + hostsBox(ed);
-      if (participate) sections.push(["participar", ui("sec_participate"), '<div style="max-width:640px">' + participate + "</div>", false]);
+      if (participate) sections.push(["participar", ui("sec_participate"), '<div class="participate">' + participate + "</div>", false]);
     } else {
       sections.push(["agenda", ui("sec_agenda"), isEmpty(ed.agenda) ? null : renderAgenda(ed), true]);
     }
@@ -1057,16 +1052,30 @@
     var idx = EDICIONES.indexOf(ed);
     var older = EDICIONES[idx + 1], newer = EDICIONES[idx - 1];
     var pager = '<div class="container"><nav class="pager" aria-label="' + esc(ui("nav_editions")) + '">' +
-      (older ? '<a class="card" href="' + esc(edUrl(older)) + '"><small>← ' + esc(ui("prev_edition")) + "</small><strong>" + esc(year(older)) + "</strong></a>" : "<span></span>") +
-      (newer ? '<a class="card next-link" href="' + esc(edUrl(newer)) + '"><small>' + esc(ui("next_edition")) + " →</small><strong>" + esc(year(newer)) + "</strong></a>" : "") +
+      (older ? '<a class="card" href="' + esc(edUrl(older)) + '"><small>' + ICON.back + esc(ui("prev_edition")) + "</small><strong>" + esc(year(older)) + "</strong></a>" : "<span></span>") +
+      (newer ? '<a class="card next-link" href="' + esc(edUrl(newer)) + '"><small>' + esc(ui("next_edition")) + ICON.arrow + "</small><strong>" + esc(year(newer)) + "</strong></a>" : "") +
       "</nav></div>";
 
-    main.innerHTML = hero + stats + internal + nav + body + pager;
+    main.innerHTML = hero + figures + internal + nav + body + pager;
+    // Al cambiar de idioma, el visor se vuelve a crear con los textos nuevos.
+    var oldLightbox = document.getElementById("lightbox");
+    if (oldLightbox) oldLightbox.remove();
     setupScrollSpy();
+    syncScrollPadding();
     bindFichas(ed);
     bindFolds();
     bindGallery(ed);
   }
+
+  // Los anclas de las secciones quedan debajo del encabezado y del menú de secciones, que son fijos
+  // y cuya altura cambia con el idioma y el ancho de pantalla.
+  function syncScrollPadding() {
+    var head = document.querySelector(".site-header");
+    var nav = document.querySelector(".ed-nav");
+    if (!nav) return;
+    document.documentElement.style.scrollPaddingTop = ((head ? head.offsetHeight : 0) + nav.offsetHeight + 16) + "px";
+  }
+  window.addEventListener("resize", syncScrollPadding);
 
   function setupScrollSpy() {
     if (!("IntersectionObserver" in window)) return;
