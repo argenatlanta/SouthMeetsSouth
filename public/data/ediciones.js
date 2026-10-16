@@ -1111,6 +1111,10 @@ window.SMS_EDICIONES = [
         nombre: { es: "Cancillería Argentina", en: "Argentine Ministry of Foreign Affairs" },
         logo: { es: "img/organizadores/cancilleria-es.png", en: "img/organizadores/cancilleria-en.png" },
         logoOscuro: { es: "img/organizadores/cancilleria-es-oscuro.png", en: "img/organizadores/cancilleria-en-oscuro.png" },
+        detalle: {
+          es: "Dirección de Promoción de Exportaciones de Servicios Basados en el Conocimiento, Industrias Creativas, Turismo y Deportes",
+          en: "Directorate of Export Promotion for Knowledge-Based Services, Creative Industries, Tourism and Sports",
+        },
       },
     ],
     resultados: [
@@ -1538,6 +1542,10 @@ window.SMS_EDICIONES = [
         nombre: { es: "Cancillería Argentina · DNTEC", en: "Argentine Ministry of Foreign Affairs · DNTEC" },
         logo: { es: "img/organizadores/cancilleria-es.png", en: "img/organizadores/cancilleria-en.png" },
         logoOscuro: { es: "img/organizadores/cancilleria-es-oscuro.png", en: "img/organizadores/cancilleria-en-oscuro.png" },
+        detalle: {
+          es: "Dirección de Promoción de Exportaciones de Servicios Basados en el Conocimiento, Industrias Creativas, Turismo y Deportes",
+          en: "Directorate of Export Promotion for Knowledge-Based Services, Creative Industries, Tourism and Sports",
+        },
       },
     ],
     resultados: [],
