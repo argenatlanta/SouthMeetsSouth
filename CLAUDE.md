@@ -92,8 +92,9 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
       // mini: "…-mini.jpg" (720 × 540, recortada 4:3). La galería y cada momento están plegados por
       // defecto; al tocar una foto se abre el visor.
   prensa: [{ titulo, medio, url, fecha?, idioma: "es" | "en", imagen? }],
-      // imagen: miniatura de la nota, "img/prensa/<id>-<medio>.jpg" (480 × 270, de la og:image de la página);
-      // sin imagen se muestra el nombre del medio
+      // imagen: miniatura de la nota, "img/prensa/<id>-<medio>.jpg" (480 × 270, de la og:image de la página).
+      // Si la nota no tiene foto útil, el usuario indica cuál usar (p. ej. el logo del medio o de la empresa
+      // de la nota, centrado sobre blanco y sin recortar). Sin imagen se muestra el nombre del medio.
 
   // Solo para estado "proxima":
   cuentaRegresiva: { fecha, ciudad },     // la cuenta regresiva de la portada

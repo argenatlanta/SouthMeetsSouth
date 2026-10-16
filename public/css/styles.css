@@ -700,6 +700,8 @@ dialog.lightbox:not([open]), dialog.lightbox:not([open])::backdrop { opacity: 0;
   flex: none; display: block; width: 136px; height: auto; aspect-ratio: 16 / 9; object-fit: cover;
   border-radius: var(--radius-sm); background: var(--surface-2);
 }
+/* Borde fino: los logos sobre blanco no se pierden en la tarjeta blanca. */
+img.press-thumb { outline: 1px solid var(--line); outline-offset: -1px; }
 .press-thumb.none {
   display: grid; place-items: center; padding: 8px; text-align: center;
   font-family: var(--font-display); font-weight: 700; font-size: 14px; line-height: 1.2; color: var(--ink-2);
