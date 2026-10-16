@@ -684,21 +684,74 @@
     return '<section class="ed-section" id="' + id + '" aria-labelledby="' + id + '-t"><h2 id="' + id + '-t">' + esc(title) + "</h2>" + body + "</section>";
   }
 
+  // ───────────────────────── Movimiento ─────────────────────────
+  // Mismas curvas que --ease-out y --ease-drawer en styles.css.
+  var EASE_OUT = "cubic-bezier(0.23, 1, 0.32, 1)";
+  var EASE_DRAWER = "cubic-bezier(0.32, 0.72, 0, 1)";
+
+  function reducedMotion() {
+    return !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }
+
+  // Abre o cierra un bloque plegable animando alto y opacidad en 200 ms. Si se vuelve a tocar a
+  // mitad de camino, retoma desde la altura en la que está. setShown(true|false) lo muestra u
+  // oculta de verdad (atributo hidden u open); shown dice si hoy está visible (Chrome calcula el
+  // alto del contenido de un <details> cerrado, así que no alcanza con medirlo).
+  // Con movimiento reducido, solo un fundido al abrir.
+  function toggleCollapse(el, open, setShown, shown) {
+    var from = shown ? el.getBoundingClientRect().height : 0;
+    var fromOpacity = from ? Number(getComputedStyle(el).opacity) : 0;
+    if (el._anim) el._anim.cancel();
+    if (open) setShown(true);
+    if (typeof el.animate !== "function") { if (!open) setShown(false); return; }
+    if (reducedMotion()) {
+      if (open) el._anim = el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 200, easing: EASE_OUT });
+      else setShown(false);
+      return;
+    }
+    el.style.overflow = "hidden";
+    var anim = el.animate(
+      [{ height: from + "px", opacity: fromOpacity }, { height: (open ? el.scrollHeight : 0) + "px", opacity: open ? 1 : 0 }],
+      { duration: 200, easing: EASE_OUT }
+    );
+    el._anim = anim;
+    anim.oncancel = function () { el.style.overflow = ""; };
+    anim.onfinish = function () {
+      el.style.overflow = "";
+      el._anim = null;
+      if (!open) setShown(false);
+    };
+  }
+
   // Sección cerrada por defecto: el título es un botón con una flecha que la despliega.
   function foldSection(id, title, body) {
     return '<section class="ed-section fold" id="' + id + '" aria-labelledby="' + id + '-t">' +
       '<h2 id="' + id + '-t"><button type="button" class="fold-btn" aria-expanded="false" aria-controls="' + id + '-body">' +
       esc(title) + '<span class="chev" aria-hidden="true">' + ICON.chevron + "</span></button></h2>" +
-      '<div class="fold-body" id="' + id + '-body" hidden>' + body + "</div></section>";
+      '<div class="fold-body" id="' + id + '-body" hidden><div class="fold-inner">' + body + "</div></div></section>";
   }
 
   function bindFolds() {
     document.querySelectorAll(".fold-btn").forEach(function (b) {
       b.addEventListener("click", function () {
         var open = b.getAttribute("aria-expanded") !== "true";
+        var body = document.getElementById(b.getAttribute("aria-controls"));
         b.setAttribute("aria-expanded", String(open));
-        document.getElementById(b.getAttribute("aria-controls")).hidden = !open;
+        toggleCollapse(body, open, function (shown) { body.hidden = !shown; }, !body.hidden);
       });
+    });
+    // Momentos de la galería (<details>): la flecha gira al instante (clase is-open) y el
+    // contenido se despliega; el atributo open se quita recién cuando termina de cerrarse.
+    document.querySelectorAll("details.gallery-group").forEach(function (d) {
+      var body = d.querySelector(".group-body");
+      d.querySelector("summary").addEventListener("click", function (e) {
+        e.preventDefault();
+        var open = !d.classList.contains("is-open");
+        d.classList.toggle("is-open", open);
+        toggleCollapse(body, open, function (shown) { d.open = shown; }, d.open);
+      });
+      // Si el navegador lo abre por su cuenta (por ejemplo, al buscar texto), la flecha acompaña.
+      d.addEventListener("toggle", function () { if (d.open) d.classList.add("is-open"); });
     });
   }
 
@@ -907,7 +960,7 @@
       var list = '<ul class="gallery photos">' + thumbs + "</ul>";
       // Cada momento se despliega con su título; las fotos sueltas, sin título, se muestran directo.
       return g.titulo
-        ? '<details class="gallery-group"><summary><h3>' + esc(t(g.titulo)) + '</h3><span class="chev" aria-hidden="true">' + ICON.chevron + "</span></summary>" + list + "</details>"
+        ? '<details class="gallery-group"><summary><h3>' + esc(t(g.titulo)) + '</h3><span class="chev" aria-hidden="true">' + ICON.chevron + '</span></summary><div class="group-body">' + list + "</div></details>"
         : list;
     }).join("");
     var credit = ed.galeriaCredito ? '<p class="gallery-credit">' + esc(ui("photos_by")) + ": " + esc(t(ed.galeriaCredito)) + "</p>" : "";
@@ -928,7 +981,10 @@
       '<button type="button" class="lb-btn lb-close" aria-label="' + esc(ui("close")) + '">' + ICON.close + "</button>";
     document.body.appendChild(d);
     // Un clic fuera de la foto y de los botones cierra el visor.
-    d.addEventListener("click", function (e) { if (e.target === d || e.target.tagName === "FIGURE") d.close(); });
+    d.addEventListener("click", function (e) {
+      if (d._dragged) return; // el clic que sigue a un deslizamiento no cierra el visor
+      if (e.target === d || e.target.tagName === "FIGURE") d.close();
+    });
     d.querySelector(".lb-close").addEventListener("click", function () { d.close(); });
     return d;
   }
@@ -940,15 +996,20 @@
     var img = d.querySelector("img"), text = d.querySelector(".lb-text"), count = d.querySelector(".lb-count");
     var current = 0;
     function show(n) {
+      // Las flechas y el teclado cambian de foto al instante: se corta cualquier animación en curso.
+      if (img._anim) { img._anim.cancel(); img._anim = null; }
+      img.style.transform = "";
       current = (n + photos.length) % photos.length;
       var p = photos[current];
       img.src = safeUrl(p.foto.src);
       img.alt = t(p.foto.alt);
       text.textContent = t(p.foto.alt);
       count.textContent = (p.grupo.titulo ? t(p.grupo.titulo) + " · " : "") + ui("photo_of", { n: current + 1, total: photos.length });
-      // Precarga la siguiente para que el paso sea inmediato.
-      var next = photos[(current + 1) % photos.length];
-      if (next) { var pre = new Image(); pre.src = safeUrl(next.foto.src); }
+      // Precarga la siguiente y la anterior para que el paso sea inmediato en ambos sentidos.
+      [1, -1].forEach(function (k) {
+        var near = photos[(current + k + photos.length) % photos.length];
+        if (near) { var pre = new Image(); pre.src = safeUrl(near.foto.src); }
+      });
     }
     d.querySelector(".lb-prev").onclick = function () { show(current - 1); };
     d.querySelector(".lb-next").onclick = function () { show(current + 1); };
@@ -956,15 +1017,58 @@
       if (e.key === "ArrowLeft") { e.preventDefault(); show(current - 1); }
       if (e.key === "ArrowRight") { e.preventDefault(); show(current + 1); }
     };
-    // Deslizar el dedo en el celular pasa de foto.
-    var x0 = null;
-    d.ontouchstart = function (e) { x0 = e.touches[0].clientX; };
-    d.ontouchend = function (e) {
-      if (x0 === null) return;
-      var dx = e.changedTouches[0].clientX - x0;
-      if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
-      x0 = null;
+    // Deslizar con el dedo: la foto acompaña el gesto. Al soltar pasa de foto si se movió más
+    // de 50 px o rápido (más de 0,11 px/ms); si no, vuelve a su lugar. El mouse usa las flechas.
+    var fig = d.querySelector("figure");
+    var drag = null;
+    function slide(dir) {
+      if (reducedMotion() || typeof img.animate !== "function") {
+        show(current + dir);
+        if (typeof img.animate === "function") img._anim = img.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 200, easing: EASE_OUT });
+        return;
+      }
+      // Sale hacia el lado del gesto; la siguiente entra desde el lado opuesto.
+      var out = img.animate(
+        [{ transform: img.style.transform || "translateX(0px)" }, { transform: "translateX(" + (-dir * fig.clientWidth) + "px)" }],
+        { duration: 200, easing: EASE_OUT, fill: "forwards" }
+      );
+      img._anim = out;
+      out.onfinish = function () {
+        show(current + dir);
+        img._anim = img.animate(
+          [{ transform: "translateX(" + dir * 24 + "px)", opacity: 0 }, { transform: "translateX(0px)", opacity: 1 }],
+          { duration: 200, easing: EASE_OUT }
+        );
+      };
+    }
+    function settle(dx) {
+      img.style.transform = "";
+      if (!dx || reducedMotion() || typeof img.animate !== "function") return;
+      img._anim = img.animate([{ transform: "translateX(" + dx + "px)" }, { transform: "translateX(0px)" }], { duration: 300, easing: EASE_DRAWER });
+    }
+    function endDrag(e, cancelled) {
+      if (!drag || e.pointerId !== drag.id) return;
+      var dx = drag.dx, moved = drag.captured;
+      var velocity = Math.abs(dx) / Math.max(1, Date.now() - drag.t);
+      drag = null;
+      if (moved) { d._dragged = true; setTimeout(function () { d._dragged = false; }, 0); }
+      if (!cancelled && moved && (Math.abs(dx) >= 50 || velocity > 0.11)) slide(dx < 0 ? 1 : -1);
+      else settle(dx);
+    }
+    fig.onpointerdown = function (e) {
+      if (e.pointerType === "mouse" || drag) return; // un solo dedo a la vez
+      if (img._anim) { img._anim.cancel(); img._anim = null; }
+      drag = { id: e.pointerId, x: e.clientX, t: Date.now(), dx: 0, captured: false };
     };
+    fig.onpointermove = function (e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      drag.dx = e.clientX - drag.x;
+      // Se toma el gesto recién cuando pasa los 10 px: un toque sobre la foto sigue siendo un toque.
+      if (!drag.captured && Math.abs(drag.dx) > 10) { drag.captured = true; fig.setPointerCapture(e.pointerId); }
+      if (drag.captured && !reducedMotion()) img.style.transform = "translateX(" + drag.dx + "px)";
+    };
+    fig.onpointerup = function (e) { endDrag(e, false); };
+    fig.onpointercancel = function (e) { endDrag(e, true); };
     document.querySelectorAll("[data-foto]").forEach(function (b) {
       b.addEventListener("click", function () {
         show(Number(b.getAttribute("data-foto")));

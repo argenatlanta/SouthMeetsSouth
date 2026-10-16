@@ -25,6 +25,10 @@
   --max: 1120px;
   --gutter: 16px;
   --focus: var(--celeste-ink);
+  /* Curvas de movimiento (también en app.js): salida fuerte, cambio en pantalla, panel tipo iOS. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
   color-scheme: light;
 }
 
@@ -213,8 +217,12 @@ p { text-wrap: pretty; }
     position: absolute; left: 0; right: 0; top: 100%;
     background: var(--navy); border-bottom: 1px solid rgba(116, 172, 223, 0.18);
     display: none;
+    /* Se descubre hacia abajo desde el encabezado, como una persiana; se cierra por el mismo camino. */
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 150ms var(--ease-out), display 150ms allow-discrete;
   }
-  .main-nav.open { display: block; }
+  .main-nav.open { display: block; clip-path: inset(0 0 0 0); transition-duration: 200ms; }
+  @starting-style { .main-nav.open { clip-path: inset(0 0 100% 0); } }
   .main-nav ul { flex-direction: column; padding: 8px var(--gutter) 16px; }
   .main-nav a { padding: 12px; font-size: 16px; }
 }
@@ -269,9 +277,12 @@ p { text-wrap: pretty; }
   padding: 12px 18px; border-radius: 10px;
   font-weight: 600; font-size: 15px; text-decoration: none;
   border: 1px solid transparent; cursor: pointer;
-  transition: transform 0.15s ease, background-color 0.15s ease;
+  transition: transform 160ms var(--ease-out), background-color 150ms ease;
 }
-.btn:hover { transform: translateY(-1px); text-decoration: none; }
+.btn:hover { text-decoration: none; }
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover { transform: translateY(-1px); }
+}
 .btn-primary { background: var(--sol); color: #1d1300; }
 .btn-primary:hover { background: #ffc23a; }
 .btn-ghost { border-color: rgba(116, 172, 223, 0.45); color: var(--on-navy); }
@@ -399,9 +410,12 @@ p { text-wrap: pretty; }
   display: grid; gap: 16px; align-items: center;
   grid-template-columns: 1fr;
   padding: 24px; text-decoration: none; color: inherit;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: border-color 150ms ease, transform 160ms var(--ease-out);
 }
-.edition-card:hover { border-color: var(--celeste); transform: translateY(-2px); text-decoration: none; }
+.edition-card:hover { border-color: var(--celeste); text-decoration: none; }
+@media (hover: hover) and (pointer: fine) {
+  .edition-card:hover { transform: translateY(-2px); }
+}
 @media (min-width: 760px) {
   .edition-card { grid-template-columns: 140px 1fr auto; gap: 28px; padding: 28px 32px; }
 }
@@ -597,12 +611,12 @@ a.resource:hover { border-color: var(--celeste); text-decoration: none; }
   display: inline-flex; align-items: center; gap: 14px; padding: 0; border: 0; background: none;
   font: inherit; color: inherit; letter-spacing: inherit; cursor: pointer; text-align: left;
 }
-.fold-body { margin-top: 20px; }
+.fold-inner { padding-top: 20px; }
 .chev {
   display: inline-grid; place-items: center; flex: none; width: 34px; height: 34px; border-radius: 50%;
-  border: 1px solid var(--line); color: var(--ink-2); transition: transform 0.2s ease, border-color 0.15s ease, color 0.15s ease;
+  border: 1px solid var(--line); color: var(--ink-2); transition: transform 200ms var(--ease-in-out), border-color 150ms ease, color 150ms ease;
 }
-.fold-btn[aria-expanded="true"] .chev, .gallery-group[open] > summary .chev { transform: rotate(180deg); }
+.fold-btn[aria-expanded="true"] .chev, .gallery-group.is-open > summary .chev { transform: rotate(180deg); }
 .fold-btn:hover .chev, .gallery-group > summary:hover .chev { border-color: var(--celeste); color: var(--celeste-ink); }
 .fold-btn:focus-visible, .gallery-group > summary:focus-visible { outline-offset: 4px; border-radius: 6px; }
 .gallery-groups { border-bottom: 1px solid var(--line); }
@@ -620,8 +634,10 @@ a.resource:hover { border-color: var(--celeste); text-decoration: none; }
   display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in;
   border-radius: var(--radius-sm); overflow: hidden;
 }
-.gallery .photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 0; transition: transform 0.25s ease; }
-.gallery .photo:hover img { transform: scale(1.03); }
+.gallery .photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 0; transition: transform 250ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .gallery .photo:hover img { transform: scale(1.03); }
+}
 .gallery-credit { margin: 20px 0 0; font-size: 14px; color: var(--ink-2); }
 @media (max-width: 560px) {
   .gallery.photos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
@@ -634,11 +650,22 @@ dialog.lightbox {
   background: rgba(3, 10, 20, 0.94); color: #ffffff; overflow: hidden;
 }
 dialog.lightbox::backdrop { background: rgba(3, 10, 20, 0.94); }
+dialog.lightbox, dialog.lightbox::backdrop {
+  transition: opacity 200ms var(--ease-out), overlay 200ms allow-discrete, display 200ms allow-discrete;
+}
+dialog.lightbox:not([open]), dialog.lightbox:not([open])::backdrop { opacity: 0; }
+@starting-style {
+  dialog.lightbox[open], dialog.lightbox[open]::backdrop { opacity: 0; }
+}
 .lightbox figure {
   height: 100%; margin: 0; padding: 56px 72px 20px;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  touch-action: pan-y pinch-zoom; /* el gesto horizontal lo maneja el visor */
 }
-.lightbox img { max-width: 100%; max-height: calc(100dvh - 150px); width: auto; height: auto; border-radius: 6px; }
+.lightbox img {
+  max-width: 100%; max-height: calc(100dvh - 150px); width: auto; height: auto; border-radius: 6px;
+  user-select: none; -webkit-user-drag: none;
+}
 .lightbox figcaption { max-width: 900px; text-align: center; font-size: 15px; line-height: 1.5; }
 .lightbox .lb-count { display: block; margin-top: 4px; font-size: 13px; color: #b9cbe0; }
 .lb-btn {
@@ -710,8 +737,20 @@ dialog.ficha {
   background: var(--surface); color: var(--ink);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
   overflow: auto; overscroll-behavior: contain;
+  transition:
+    opacity 250ms var(--ease-out), transform 250ms var(--ease-out),
+    overlay 250ms allow-discrete, display 250ms allow-discrete;
 }
-dialog.ficha::backdrop { background: rgba(7, 16, 27, 0.6); }
+dialog.ficha::backdrop {
+  background: rgba(7, 16, 27, 0.6);
+  transition: opacity 250ms var(--ease-out), overlay 250ms allow-discrete, display 250ms allow-discrete;
+}
+dialog.ficha:not([open]) { opacity: 0; transform: scale(0.96); }
+dialog.ficha:not([open])::backdrop { opacity: 0; }
+@starting-style {
+  dialog.ficha[open] { opacity: 0; transform: scale(0.96); }
+  dialog.ficha[open]::backdrop { opacity: 0; }
+}
 .ficha-close {
   position: sticky; top: 10px; float: right; margin: 10px 10px 0 0; z-index: 1;
   display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
@@ -747,4 +786,46 @@ dialog.ficha::backdrop { background: rgba(7, 16, 27, 0.6); }
   .ficha-body { padding: 20px 18px; }
   .ficha-head { flex-direction: column; align-items: flex-start; gap: 12px; }
   .ficha-head .logo { width: 130px; height: 66px; }
+}
+
+/* ───────── Respuesta al presionar ───────── */
+/* :active es un toque real también en el celular; reemplaza el gris que pinta el navegador. */
+.btn, .more-info, .lb-btn, .ficha-close, .menu-toggle, .lang-switch button, .gallery .photo,
+.edition-card, a.resource, .pager a, .press a.card {
+  -webkit-tap-highlight-color: transparent;
+}
+.more-info, .lb-btn, .ficha-close, .menu-toggle, .lang-switch button, .gallery .photo,
+a.resource, .pager a, .press a.card {
+  transition-property: transform, background-color, border-color, color;
+  transition-duration: 160ms, 150ms, 150ms, 150ms;
+  transition-timing-function: var(--ease-out), ease, ease, ease;
+}
+.btn:active, .more-info:active, .lb-btn:active, .ficha-close:active, .menu-toggle:active,
+.lang-switch button:active, .gallery .photo:active { transform: scale(0.97); }
+.lb-prev:active, .lb-next:active { transform: translateY(-50%) scale(0.97); }
+/* Las tarjetas grandes se hunden menos: a ese ancho, 0,97 se notaría demasiado. */
+.edition-card:active, a.resource:active, .pager a:active, .press a.card:active { transform: scale(0.98); }
+@media (max-width: 560px) {
+  .lb-prev:active, .lb-next:active { transform: scale(0.97); }
+}
+
+/* ───────── Movimiento reducido: menos y más suave, no cero ───────── */
+@media (prefers-reduced-motion: reduce) {
+  /* Sin cambios de tamaño ni de posición: quedan los cambios de color y los fundidos. */
+  .btn:active, .more-info:active, .lb-btn:active, .ficha-close:active, .menu-toggle:active,
+  .lang-switch button:active, .gallery .photo:active, .edition-card:active, a.resource:active,
+  .pager a:active, .press a.card:active, .btn:hover, .edition-card:hover, .gallery .photo:hover img { transform: none; }
+  .lb-prev:active, .lb-next:active { transform: translateY(-50%); }
+  dialog.ficha:not([open]) { transform: none; }
+  @starting-style { dialog.ficha[open] { transform: none; } }
+  .chev { transition-property: border-color, color; }
+}
+@media (prefers-reduced-motion: reduce) and (max-width: 560px) {
+  .lb-prev:active, .lb-next:active { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) and (max-width: 860px) {
+  /* El menú aparece con un fundido en lugar de descubrirse. */
+  .main-nav { clip-path: none; opacity: 0; transition-property: opacity, display; }
+  .main-nav.open { clip-path: none; opacity: 1; }
+  @starting-style { .main-nav.open { clip-path: none; opacity: 0; } }
 }
