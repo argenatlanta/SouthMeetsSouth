@@ -23,6 +23,8 @@ public/                 ← todo lo que se publica (directorio de salida en Clou
 wrangler.jsonc          config para Cloudflare Workers (si se usa Pages, no se lee)
 .claude/                skill de diseño Impeccable y sus agentes (no se publica). El motor se descarga
                         solo y no se versiona; los hooks son locales. Telemetría apagada en settings.json.
+.agents/skills/         skills de diseño y movimiento de emilkowalski/skill (enlazadas en .claude/skills;
+skills-lock.json        versiones instaladas). Se actualizan con `npx skills update`.
 ```
 
 No hay build ni dependencias. El contenido se edita casi siempre en `public/data/ediciones.js`.
