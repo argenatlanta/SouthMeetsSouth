@@ -67,7 +67,7 @@ window.SMS_EDICIONES = [
     delegacion: [
       {
         nombre: "Avenga",
-        perfil: { ofrece: ["software", "ia", "datos", "cloud", "consultoria"], industrias: ["finanzas", "salud", "industria", "automotriz"] },
+        perfil: { ofrece: ["software", "ia", "datos", "cloud", "consultoria", "pagos"], industrias: ["finanzas", "salud", "industria", "automotriz"] },
         logo: "img/empresas/avenga.png",
         provincia: "Córdoba",
         sector: { es: "Transformación digital, datos e IA", en: "Digital transformation, data & AI" },
@@ -100,7 +100,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Borderless Software",
-        perfil: { ofrece: ["software", "ia", "cloud"], industrias: [] },
+        perfil: { ofrece: ["software", "ia", "cloud"], industrias: ["retail"] },
         logo: "img/empresas/borderless-software.png",
         provincia: "Buenos Aires",
         sector: { es: "Software y consultoría IT", en: "Software & IT consulting" },
@@ -132,7 +132,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Clarika",
-        perfil: { ofrece: ["software", "apps", "ia", "modernizacion"], industrias: ["retail"] },
+        perfil: { ofrece: ["software", "apps", "ia", "modernizacion", "consultoria"], industrias: ["retail"] },
         logo: "img/empresas/clarika.png",
         logoFondo: "oscuro",
         provincia: "Córdoba",
@@ -166,7 +166,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Code First Lab",
-        perfil: { ofrece: ["software", "apps", "ia", "iot", "consultoria"], industrias: ["retail"] },
+        perfil: { ofrece: ["software", "apps", "ia", "iot", "consultoria"], industrias: ["retail", "gaming"] },
         logo: "img/empresas/code-first-lab.png",
         provincia: "Mendoza",
         sector: { es: "Software a medida e IA", en: "Custom software & AI" },
@@ -329,7 +329,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Immersive Global Solutions (IGS)",
-        perfil: { ofrece: ["ia", "inmersivo"], industrias: ["industria", "automotriz", "medios"] },
+        perfil: { ofrece: ["ia", "inmersivo"], industrias: ["industria", "automotriz", "medios", "retail"] },
         logo: "img/empresas/immersive-global-solutions.png",
         provincia: "Córdoba",
         sector: { es: "IA y realidad extendida", en: "AI & extended reality" },
@@ -362,7 +362,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Lila Software Studio",
-        perfil: { ofrece: ["software", "apps", "ux"], industrias: ["finanzas", "inmobiliario"] },
+        perfil: { ofrece: ["software", "apps", "ux", "ia", "consultoria", "pagos"], industrias: ["finanzas", "inmobiliario", "retail"] },
         logo: "img/empresas/lila-software-studio.png",
         logoFondo: "oscuro",
         provincia: "Mendoza",
@@ -395,7 +395,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Meta Software",
-        perfil: { ofrece: ["software", "apps", "datos", "ia", "cloud", "ux"], industrias: ["salud", "medios", "gobierno", "industria"] },
+        perfil: { ofrece: ["software", "apps", "datos", "ia", "cloud", "ux", "consultoria"], industrias: ["salud", "medios", "gobierno", "industria", "retail"] },
         logo: "img/empresas/meta-software.png",
         provincia: "Buenos Aires",
         sector: { es: "Software a medida", en: "Custom software" },
@@ -456,7 +456,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "OWL Services",
-        perfil: { ofrece: ["iot", "ciberseguridad", "software", "cloud", "ia"], industrias: ["industria", "automotriz", "salud", "energia"] },
+        perfil: { ofrece: ["iot", "ciberseguridad", "software", "cloud", "ia"], industrias: ["industria", "automotriz", "salud", "energia", "aeroespacial", "gaming"] },
         logo: "img/empresas/owl-services.png",
         provincia: "Santa Fe",
         sector: { es: "Sistemas embebidos, IoT y ciberseguridad", en: "Embedded systems, IoT & cybersecurity" },
@@ -489,7 +489,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "QKStudio",
-        perfil: { ofrece: ["apps", "software", "ux"], industrias: ["finanzas", "retail", "medios", "educacion"] },
+        perfil: { ofrece: ["apps", "software", "ux", "consultoria"], industrias: ["finanzas", "retail", "medios", "educacion"] },
         logo: "img/empresas/qkstudio.png",
         provincia: "Buenos Aires",
         sector: { es: "Plataformas digitales y UX", en: "Digital platforms & UX" },
@@ -523,7 +523,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Quadion Technologies",
-        perfil: { ofrece: ["software", "apps", "cloud"], industrias: [] },
+        perfil: { ofrece: ["software", "apps", "cloud", "ia", "iot", "consultoria", "pagos"], industrias: ["salud", "retail"] },
         logo: "img/empresas/quadion-technologies.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Software a medida", en: "Custom software development" },
@@ -584,7 +584,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Realidad 360°",
-        perfil: { ofrece: ["inmersivo"], industrias: ["medios", "gobierno"] },
+        perfil: { ofrece: ["inmersivo", "ia"], industrias: ["medios", "gobierno"] },
         logo: "img/empresas/realidad-360.png",
         logoFondo: "oscuro",
         provincia: "Ciudad de Buenos Aires",
@@ -652,7 +652,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Tecro",
-        perfil: { ofrece: ["pagos", "software", "modernizacion"], industrias: ["finanzas", "retail"] },
+        perfil: { ofrece: ["pagos", "software", "modernizacion", "ciberseguridad"], industrias: ["finanzas", "retail"] },
         logo: "img/empresas/tecro.png",
         provincia: "La Pampa",
         sector: { es: "Pagos y core bancario", en: "Payments & core banking" },
@@ -686,7 +686,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "TPS",
-        perfil: { ofrece: ["pagos", "software", "modernizacion", "ia"], industrias: ["finanzas"] },
+        perfil: { ofrece: ["pagos", "software", "modernizacion", "ia", "iot"], industrias: ["finanzas"] },
         logo: "img/empresas/tps.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Ingeniería de software y fintech", en: "Software engineering & fintech" },
@@ -750,7 +750,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Wootic",
-        perfil: { ofrece: ["consultoria", "datos", "software", "ia", "cloud"], industrias: ["gobierno", "energia", "educacion"] },
+        perfil: { ofrece: ["consultoria", "datos", "software", "ia", "cloud", "pagos", "legal"], industrias: ["gobierno", "energia", "educacion"] },
         logo: "img/empresas/wootic.png",
         provincia: "Córdoba",
         sector: { es: "Tecnología, negocio y datos", en: "Technology, business & data" },

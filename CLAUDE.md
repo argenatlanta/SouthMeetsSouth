@@ -138,9 +138,13 @@ Los cuatro textos sobre Atlanta y la bajada están en `js/app.js` (`why_*`). No 
 si sus empresas tienen `perfil`. Las opciones (qué necesita e industria) están en `buscador` en `sitio.js`;
 cada empresa marca las suyas en `perfil`. Las opciones elegidas suman puntos: aparece toda empresa que coincida
 en al menos una, ordenadas de mayor a menor coincidencia, y cada tarjeta dice en qué coincide. La palabra clave
-filtra. La búsqueda queda en la URL (`?id=2026&ofrece=ia,pagos`) para compartirla. Las etiquetas salen de lo que
-cada empresa declara en su ficha: una opción solo se marca si la ficha la respalda (un servicio, un cliente o un
-dato de trayectoria). Cada opción debe tener al menos dos empresas; si una queda con menos, sumarla a otra más amplia.
+filtra. La búsqueda queda en la URL (`?id=2026&ofrece=ia,pagos`) para compartirla. Las primeras opciones de cada
+grupo son las verticales oficiales de la misión (Google Sites «MC de Software y Tecnología a Atlanta - Chicago»,
+debajo de «ARGENTINE COMPANIES»), con los mismos nombres que los `sectores`: toda empresa que esa página pone en
+una vertical lleva la opción equivalente (Aerospace y Gaming, solo con esas empresas). Además, una opción se marca
+si la ficha de la empresa la respalda (un servicio, un cliente o un dato de trayectoria). Las opciones propias del
+buscador deben tener al menos dos empresas, salvo las que pida el Consulado (p. ej. «Estructuración legal y
+financiera», de Wootic). Si cambia la página oficial, volver a comparar.
 
 Las secciones vacías (`[]`) no se muestran en el sitio publicado. En modo borrador aparecen como
 «Sección a completar».
