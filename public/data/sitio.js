@@ -8,7 +8,7 @@ window.SMS_SITIO = {
   borrador: false,
 
   // Fecha de la última actualización del contenido (AAAA-MM-DD). Se muestra en el pie.
-  actualizado: "2026-10-16",
+  actualizado: "2026-10-17",
 
   // Texto de contexto de la sección «Ediciones». {desde} se reemplaza por el año.
   // Si `desde` queda vacío (null), la frase no se muestra.
@@ -138,8 +138,7 @@ window.SMS_SITIO = {
   },
 
   // Buscador de la delegación («Encuentre la empresa indicada»): se muestra en la edición cuyas empresas
-  // tienen `perfil`. Cada grupo suma `peso` puntos por opción que coincide; los grupos con `obligatorio`
-  // no suman: dejan solo las empresas que cumplen todas las opciones elegidas.
+  // tienen `perfil`. Cada grupo suma `peso` puntos por opción que coincide y la lista se ordena por puntos.
   buscador: {
     titulo: { es: "Encuentre la empresa indicada", en: "Find your best fit" },
     bajada: {
@@ -179,25 +178,6 @@ window.SMS_SITIO = {
           { id: "gobierno", es: "Sector público", en: "Public sector" },
           { id: "educacion", es: "Educación", en: "Education" },
           { id: "medios", es: "Medios, entretenimiento y deportes", en: "Media, entertainment & sports" },
-        ],
-      },
-      {
-        id: "modalidad", peso: 1,
-        titulo: { es: "¿Cómo prefiere trabajar?", en: "How would you like to work?" },
-        opciones: [
-          { id: "equipo", es: "Sumar un equipo dedicado", en: "Add a dedicated team" },
-          { id: "proyecto", es: "Encargar un proyecto", en: "Outsource a project" },
-          { id: "producto", es: "Usar un producto ya desarrollado", en: "Use a ready-made product" },
-        ],
-      },
-      {
-        id: "requisitos", obligatorio: true,
-        titulo: { es: "Requisitos", en: "Must-haves" },
-        opciones: [
-          { id: "atlanta", es: "Oficina en el área de Atlanta", en: "Office in metro Atlanta" },
-          { id: "oficina-eeuu", es: "Oficina en EE.UU.", en: "U.S. office" },
-          { id: "clientes-eeuu", es: "Clientes en EE.UU.", en: "U.S. clients" },
-          { id: "iso", es: "Certificación ISO", en: "ISO certified" },
         ],
       },
     ],

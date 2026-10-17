@@ -105,12 +105,11 @@
       more_info: "Más información",
       finder_search: "Buscar por palabra clave",
       finder_search_ph: "Por ejemplo: pagos, React, salud",
-      finder_more: "Más filtros",
       finder_clear: "Limpiar filtros",
       finder_all: "Se muestran las {total} empresas de la delegación.",
       finder_ranked: "Resultados: {n} de {total} empresas, ordenadas por coincidencia.",
       finder_filtered: "Resultados: {n} de {total} empresas.",
-      finder_empty: "Ninguna empresa cumple con todo lo que eligió. Pruebe quitar algún requisito o la palabra clave.",
+      finder_empty: "Ninguna empresa coincide con esa búsqueda. Pruebe con otra palabra clave.",
       fit_all: "Coincide en todo",
       fit_some: "Coincide en {n} de {m}",
       close: "Cerrar",
@@ -228,12 +227,11 @@
       more_info: "More information",
       finder_search: "Search by keyword",
       finder_search_ph: "e.g., payments, React, healthcare",
-      finder_more: "More filters",
       finder_clear: "Clear filters",
       finder_all: "Showing all {total} delegation companies.",
       finder_ranked: "Results: {n} of {total} companies, sorted by best fit.",
       finder_filtered: "Results: {n} of {total} companies.",
-      finder_empty: "No company meets everything you chose. Try removing a must-have or the keyword.",
+      finder_empty: "No company matches that search. Try another keyword.",
       fit_all: "Matches everything",
       fit_some: "Matches {n} of {m}",
       close: "Close",
@@ -949,8 +947,8 @@
 
   // ───────────────────────── Buscador de la delegación ─────────────────────────
   // Las opciones están en SITIO.buscador; cada empresa declara las suyas en `perfil`. Las opciones
-  // elegidas suman `peso` puntos por coincidencia y ordenan la lista; los grupos `obligatorio` y la
-  // palabra clave filtran. La búsqueda queda en la URL para poder compartirla.
+  // elegidas suman `peso` puntos por coincidencia y ordenan la lista; la palabra clave filtra.
+  // La búsqueda queda en la URL para poder compartirla.
   function hasFinder(ed) {
     var b = SITIO.buscador;
     return !!(b && !isEmpty(b.grupos) && (ed.delegacion || []).some(function (o) { return o.perfil; }));
@@ -977,16 +975,12 @@
           return '<button type="button" class="opt" data-g="' + esc(g.id) + '" data-v="' + esc(o.id) + '" aria-pressed="' + on + '">' + ICON.tick + "<span>" + esc(t(o)) + "</span></button>";
         }).join("") + "</div></div>";
     }
-    // Los dos primeros grupos quedan a la vista; el resto, en «Más filtros».
-    var main = b.grupos.slice(0, 2), extra = b.grupos.slice(2);
-    var extraOn = extra.some(function (g) { return st[g.id].length; });
     return '<div class="finder" id="buscador">' +
       "<h3>" + esc(t(b.titulo)) + "</h3>" +
       (b.bajada ? '<p class="finder-lead">' + esc(t(b.bajada)) + "</p>" : "") +
       '<div class="finder-search"><label for="finder-q">' + esc(ui("finder_search")) + "</label>" +
       '<span class="finder-input">' + ICON.search + '<input type="search" id="finder-q" autocomplete="off" placeholder="' + esc(ui("finder_search_ph")) + '" value="' + esc(st.q) + '"></span></div>' +
-      main.map(group).join("") +
-      (extra.length ? '<details class="finder-more"' + (extraOn ? " open" : "") + "><summary>" + ICON.chevron + "<span>" + esc(ui("finder_more")) + '</span><span class="finder-more-n"></span></summary>' + extra.map(group).join("") + "</details>" : "") +
+      b.grupos.map(group).join("") +
       '<div class="finder-status"><p id="finder-result" aria-live="polite"></p><button type="button" class="finder-clear" hidden>' + esc(ui("finder_clear")) + "</button></div>" +
       "</div>";
   }
@@ -1026,8 +1020,6 @@
     var result = box.querySelector("#finder-result");
     var clear = box.querySelector(".finder-clear");
     var empty = box.parentNode.querySelector(".finder-empty");
-    var moreN = box.querySelector(".finder-more-n");
-    var extra = b.grupos.slice(2);
     var st = finderParams();
     var labels = {};
     b.grupos.forEach(function (g) { g.opciones.forEach(function (o) { labels[g.id + ":" + o.id] = t(o); }); });
@@ -1044,16 +1036,13 @@
     }
 
     function apply() {
-      var soft = b.grupos.filter(function (g) { return !g.obligatorio; });
-      var chosen = soft.reduce(function (n, g) { return n + st[g.id].length; }, 0);
+      var chosen = b.grupos.reduce(function (n, g) { return n + st[g.id].length; }, 0);
       var words = normText(st.q).split(/\s+/).filter(Boolean);
       var rows = list.map(function (o, i) {
         var p = o.perfil || {};
-        var ok = b.grupos.every(function (g) {
-          return !g.obligatorio || st[g.id].every(function (v) { return (p[g.id] || []).indexOf(v) > -1; });
-        }) && words.every(function (w) { return texts[i].indexOf(w) > -1; });
+        var ok = words.every(function (w) { return texts[i].indexOf(w) > -1; });
         var score = 0, hits = [];
-        soft.forEach(function (g) {
+        b.grupos.forEach(function (g) {
           st[g.id].forEach(function (v) {
             if ((p[g.id] || []).indexOf(v) > -1) { score += g.peso || 1; hits.push(labels[g.id + ":" + v]); }
           });
@@ -1075,15 +1064,11 @@
         fit.innerHTML = ICON.tick + "<span><strong>" + esc(full ? ui("fit_all") : ui("fit_some", { n: r.hits.length, m: chosen })) + "</strong> · " + esc(r.hits.join(" · ")) + "</span>";
       });
       var shown = rows.filter(function (r) { return r.show; }).length;
-      var any = chosen || words.length || b.grupos.some(function (g) { return st[g.id].length; });
+      var any = chosen || words.length;
       result.textContent = !any ? ui("finder_all", { total: list.length }) :
         ui(chosen ? "finder_ranked" : "finder_filtered", { n: shown, total: list.length });
       clear.hidden = !any;
       if (empty) empty.hidden = shown > 0;
-      if (moreN) {
-        var n = extra.reduce(function (k, g) { return k + st[g.id].length; }, 0);
-        moreN.textContent = n ? "(" + n + ")" : "";
-      }
     }
 
     box.querySelectorAll(".opt").forEach(function (btn) {
@@ -1421,11 +1406,10 @@
 
     // La nota de la delegación es interna: solo se ve en modo borrador.
     var delegNote = BORRADOR && ed.delegacionNota ? '<p class="note">' + esc(t(ed.delegacionNota)) + "</p>" : "";
-    var delegTitle = ui("sec_delegation") + (isEmpty(ed.delegacion) ? "" : " · " + ed.delegacion.length);
     var delegBody = isEmpty(ed.delegacion) ? (delegNote || null) :
       delegNote + (hasFinder(ed) ? renderFinder(ed) : "") + renderOrgs(ed.delegacion, false, ed) +
       (hasFinder(ed) ? '<p class="finder-empty" hidden>' + esc(ui("finder_empty")) + "</p>" : "");
-    sections.push(["delegacion", delegTitle, delegBody, !isNext]);
+    sections.push(["delegacion", ui("sec_delegation"), delegBody, !isNext]);
     sections.push(["anfitriones", ui("sec_hosts"), isEmpty(ed.anfitriones) ? null : renderOrgs(ed.anfitriones, true), !isNext]);
     sections.push(["reuniones", ui("sec_meetings"), isEmpty(ed.reuniones) ? null : renderPeople(ed.reuniones), !isNext]);
     sections.push(["resultados", ui("sec_results"), isEmpty(ed.resultados) ? null : '<ul class="results">' + ed.resultados.map(function (r) { return "<li>" + ICON.check + "<span>" + esc(t(r)) + "</span></li>"; }).join("") + "</ul>", !isNext]);

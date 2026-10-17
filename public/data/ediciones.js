@@ -67,7 +67,7 @@ window.SMS_EDICIONES = [
     delegacion: [
       {
         nombre: "Avenga",
-        perfil: { ofrece: ["software", "ia", "datos", "cloud", "consultoria"], industrias: ["finanzas", "salud", "industria", "automotriz"], modalidad: ["proyecto"], requisitos: ["oficina-eeuu", "iso"] },
+        perfil: { ofrece: ["software", "ia", "datos", "cloud", "consultoria"], industrias: ["finanzas", "salud", "industria", "automotriz"] },
         logo: "img/empresas/avenga.png",
         provincia: "Córdoba",
         sector: { es: "Transformación digital, datos e IA", en: "Digital transformation, data & AI" },
@@ -100,7 +100,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Borderless Software",
-        perfil: { ofrece: ["software", "ia", "cloud"], industrias: [], modalidad: ["producto", "equipo", "proyecto"], requisitos: ["atlanta", "oficina-eeuu", "clientes-eeuu"] },
+        perfil: { ofrece: ["software", "ia", "cloud"], industrias: [] },
         logo: "img/empresas/borderless-software.png",
         provincia: "Buenos Aires",
         sector: { es: "Software y consultoría IT", en: "Software & IT consulting" },
@@ -132,7 +132,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Clarika",
-        perfil: { ofrece: ["software", "apps", "ia", "modernizacion"], industrias: ["retail"], modalidad: ["proyecto", "equipo"], requisitos: ["clientes-eeuu", "iso"] },
+        perfil: { ofrece: ["software", "apps", "ia", "modernizacion"], industrias: ["retail"] },
         logo: "img/empresas/clarika.png",
         logoFondo: "oscuro",
         provincia: "Córdoba",
@@ -166,7 +166,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Code First Lab",
-        perfil: { ofrece: ["software", "apps", "ia", "iot", "consultoria"], industrias: ["retail"], modalidad: ["proyecto", "equipo"], requisitos: ["atlanta", "oficina-eeuu"] },
+        perfil: { ofrece: ["software", "apps", "ia", "iot", "consultoria"], industrias: ["retail"] },
         logo: "img/empresas/code-first-lab.png",
         provincia: "Mendoza",
         sector: { es: "Software a medida e IA", en: "Custom software & AI" },
@@ -198,7 +198,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "CodingIT",
-        perfil: { ofrece: ["software", "apps", "ia", "modernizacion", "ux"], industrias: ["salud", "finanzas", "inmobiliario", "retail"], modalidad: ["proyecto", "equipo"], requisitos: ["oficina-eeuu", "clientes-eeuu"] },
+        perfil: { ofrece: ["software", "apps", "ia", "modernizacion", "ux"], industrias: ["salud", "finanzas", "inmobiliario", "retail"] },
         logo: "img/empresas/codingit.png",
         sector: { es: "Desarrollo de software e IA", en: "Software development & AI" },
         detalle: {
@@ -234,7 +234,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Digital Beings",
-        perfil: { ofrece: ["software", "apps", "ia", "pagos"], industrias: ["finanzas", "retail", "educacion", "medios"], modalidad: ["equipo", "proyecto"], requisitos: [] },
+        perfil: { ofrece: ["software", "apps", "ia", "pagos"], industrias: ["finanzas", "retail", "educacion", "medios"] },
         logo: "img/empresas/digital-beings.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Software, IA y blockchain", en: "Software, AI & blockchain" },
@@ -265,7 +265,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "HIPCAM",
-        perfil: { ofrece: ["iot"], industrias: ["inmobiliario", "industria", "retail", "gobierno"], modalidad: ["producto"], requisitos: [] },
+        perfil: { ofrece: ["iot"], industrias: ["inmobiliario", "industria", "retail", "gobierno"] },
         logo: "img/empresas/hipcam.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "PropTech y seguridad", en: "PropTech & security" },
@@ -297,7 +297,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "I+DIoT Lab",
-        perfil: { ofrece: ["iot", "ia", "datos"], industrias: ["retail", "energia"], modalidad: ["producto", "proyecto"], requisitos: [] },
+        perfil: { ofrece: ["iot", "ia", "datos"], industrias: ["retail", "energia"] },
         logo: "img/empresas/id-iot-lab.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Retail tech, IoT e IA", en: "Retail tech, IoT & AI" },
@@ -329,7 +329,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Immersive Global Solutions (IGS)",
-        perfil: { ofrece: ["ia", "inmersivo"], industrias: ["industria", "automotriz", "medios"], modalidad: ["proyecto", "equipo"], requisitos: ["atlanta", "oficina-eeuu", "clientes-eeuu"] },
+        perfil: { ofrece: ["ia", "inmersivo"], industrias: ["industria", "automotriz", "medios"] },
         logo: "img/empresas/immersive-global-solutions.png",
         provincia: "Córdoba",
         sector: { es: "IA y realidad extendida", en: "AI & extended reality" },
@@ -362,7 +362,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Lila Software Studio",
-        perfil: { ofrece: ["software", "apps", "ux"], industrias: ["finanzas", "inmobiliario"], modalidad: ["proyecto", "equipo"], requisitos: [] },
+        perfil: { ofrece: ["software", "apps", "ux"], industrias: ["finanzas", "inmobiliario"] },
         logo: "img/empresas/lila-software-studio.png",
         logoFondo: "oscuro",
         provincia: "Mendoza",
@@ -395,7 +395,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Meta Software",
-        perfil: { ofrece: ["software", "apps", "datos", "ia", "cloud", "ux"], industrias: ["salud", "medios", "gobierno", "industria"], modalidad: ["equipo", "proyecto"], requisitos: [] },
+        perfil: { ofrece: ["software", "apps", "datos", "ia", "cloud", "ux"], industrias: ["salud", "medios", "gobierno", "industria"] },
         logo: "img/empresas/meta-software.png",
         provincia: "Buenos Aires",
         sector: { es: "Software a medida", en: "Custom software" },
@@ -427,7 +427,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Novasoft",
-        perfil: { ofrece: ["software", "ia"], industrias: ["retail"], modalidad: ["proyecto", "producto"], requisitos: [] },
+        perfil: { ofrece: ["software", "ia"], industrias: ["retail"] },
         logo: "img/empresas/novasoft.png",
         provincia: "Buenos Aires",
         sector: { es: "Software a medida y SaaS", en: "Custom software & SaaS" },
@@ -456,7 +456,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "OWL Services",
-        perfil: { ofrece: ["iot", "ciberseguridad", "software", "cloud", "ia"], industrias: ["industria", "automotriz", "salud", "energia"], modalidad: ["proyecto"], requisitos: ["oficina-eeuu", "clientes-eeuu", "iso"] },
+        perfil: { ofrece: ["iot", "ciberseguridad", "software", "cloud", "ia"], industrias: ["industria", "automotriz", "salud", "energia"] },
         logo: "img/empresas/owl-services.png",
         provincia: "Santa Fe",
         sector: { es: "Sistemas embebidos, IoT y ciberseguridad", en: "Embedded systems, IoT & cybersecurity" },
@@ -489,7 +489,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "QKStudio",
-        perfil: { ofrece: ["apps", "software", "ux"], industrias: ["finanzas", "retail", "medios", "educacion"], modalidad: ["proyecto"], requisitos: ["clientes-eeuu"] },
+        perfil: { ofrece: ["apps", "software", "ux"], industrias: ["finanzas", "retail", "medios", "educacion"] },
         logo: "img/empresas/qkstudio.png",
         provincia: "Buenos Aires",
         sector: { es: "Plataformas digitales y UX", en: "Digital platforms & UX" },
@@ -523,7 +523,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Quadion Technologies",
-        perfil: { ofrece: ["software", "apps", "cloud"], industrias: [], modalidad: ["proyecto", "equipo"], requisitos: ["clientes-eeuu", "iso"] },
+        perfil: { ofrece: ["software", "apps", "cloud"], industrias: [] },
         logo: "img/empresas/quadion-technologies.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Software a medida", en: "Custom software development" },
@@ -554,7 +554,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "QuantyIA",
-        perfil: { ofrece: ["datos", "ia"], industrias: ["automotriz", "industria", "salud"], modalidad: ["proyecto"], requisitos: ["clientes-eeuu"] },
+        perfil: { ofrece: ["datos", "ia"], industrias: ["automotriz", "industria", "salud"] },
         logo: "img/empresas/quantyia.png",
         provincia: "Buenos Aires",
         sector: { es: "Datos para IA", en: "Data for AI" },
@@ -584,7 +584,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Realidad 360°",
-        perfil: { ofrece: ["inmersivo"], industrias: ["medios", "gobierno"], modalidad: ["proyecto"], requisitos: ["clientes-eeuu"] },
+        perfil: { ofrece: ["inmersivo"], industrias: ["medios", "gobierno"] },
         logo: "img/empresas/realidad-360.png",
         logoFondo: "oscuro",
         provincia: "Ciudad de Buenos Aires",
@@ -619,7 +619,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "RH Vision",
-        perfil: { ofrece: ["software", "ia", "ciberseguridad", "iot", "consultoria"], industrias: ["industria", "energia", "inmobiliario"], modalidad: ["equipo", "proyecto"], requisitos: ["oficina-eeuu"] },
+        perfil: { ofrece: ["software", "ia", "ciberseguridad", "iot", "consultoria"], industrias: ["industria", "energia", "inmobiliario"] },
         logo: "img/empresas/rh-vision.png",
         provincia: "Córdoba",
         sector: { es: "Talento IT y staff augmentation", en: "IT talent & staff augmentation" },
@@ -652,7 +652,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Tecro",
-        perfil: { ofrece: ["pagos", "software", "modernizacion"], industrias: ["finanzas", "retail"], modalidad: ["proyecto"], requisitos: ["clientes-eeuu"] },
+        perfil: { ofrece: ["pagos", "software", "modernizacion"], industrias: ["finanzas", "retail"] },
         logo: "img/empresas/tecro.png",
         provincia: "La Pampa",
         sector: { es: "Pagos y core bancario", en: "Payments & core banking" },
@@ -686,7 +686,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "TPS",
-        perfil: { ofrece: ["pagos", "software", "modernizacion", "ia"], industrias: ["finanzas"], modalidad: ["proyecto", "equipo"], requisitos: ["clientes-eeuu", "iso"] },
+        perfil: { ofrece: ["pagos", "software", "modernizacion", "ia"], industrias: ["finanzas"] },
         logo: "img/empresas/tps.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Ingeniería de software y fintech", en: "Software engineering & fintech" },
@@ -718,7 +718,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "UNIQS",
-        perfil: { ofrece: ["ciberseguridad", "cloud", "software", "consultoria"], industrias: [], modalidad: ["proyecto", "equipo"], requisitos: [] },
+        perfil: { ofrece: ["ciberseguridad", "cloud", "software", "consultoria"], industrias: [] },
         logo: "img/empresas/uniqs.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Ciberseguridad", en: "Cybersecurity" },
@@ -750,7 +750,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Wootic",
-        perfil: { ofrece: ["consultoria", "datos", "software", "ia", "cloud"], industrias: ["gobierno", "energia", "educacion"], modalidad: ["proyecto"], requisitos: ["clientes-eeuu"] },
+        perfil: { ofrece: ["consultoria", "datos", "software", "ia", "cloud"], industrias: ["gobierno", "energia", "educacion"] },
         logo: "img/empresas/wootic.png",
         provincia: "Córdoba",
         sector: { es: "Tecnología, negocio y datos", en: "Technology, business & data" },

@@ -601,15 +601,6 @@ a.resource:hover { border-color: var(--celeste); text-decoration: none; }
 .opt .tick { display: none; flex: none; }
 .opt[aria-pressed="true"] { color: #ffffff; background: var(--navy); border-color: var(--navy); }
 .opt[aria-pressed="true"] .tick { display: block; }
-.finder-more { margin-top: 22px; }
-.finder-more > summary {
-  display: inline-flex; align-items: center; gap: 6px; min-height: 40px; cursor: pointer; list-style: none;
-  font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--celeste-ink);
-}
-.finder-more > summary::-webkit-details-marker { display: none; }
-.finder-more > summary svg { transition: transform 200ms var(--ease-out); }
-.finder-more[open] > summary svg { transform: rotate(180deg); }
-.finder-more .finder-group:first-of-type { margin-top: 10px; }
 .finder-status {
   display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px;
   margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line);
@@ -626,7 +617,6 @@ a.resource:hover { border-color: var(--celeste); text-decoration: none; }
 .org p.fit .tick { flex: none; margin-top: 2px; color: var(--celeste-ink); }
 .org p.fit strong { color: var(--celeste-ink); }
 .org p.fit[hidden] { display: none; }
-@media (prefers-reduced-motion: reduce) { .finder-more > summary svg { transition: none; } }
 /* En el celular, cada grupo ocupa dos filas que se deslizan de costado, de borde a borde. */
 @media (max-width: 560px) {
   .finder-opts {

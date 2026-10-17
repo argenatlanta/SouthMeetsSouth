@@ -78,8 +78,7 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
   delegacion: [{ nombre, logo?, logoFondo?: "oscuro", provincia?, sector?, detalle?, web?, linkedin?, ficha?, perfil?, verificar? }],
       // empresas argentinas; logo: "img/empresas/wootic.png"
       // linkedin: "https://www.linkedin.com/company/<slug>/", solo si la página existe; botón junto a «Sitio web» en la ficha
-      // perfil (buscador): { ofrece: [...], industrias: [...], modalidad: [...], requisitos: [...] }, con los id de
-      //   las opciones de `buscador` en sitio.js
+      // perfil (buscador): { ofrece: [...], industrias: [...] }, con los id de las opciones de `buscador` en sitio.js
       // ficha (botón «Más información»): { resumen, servicios: [{es,en}], trayectoria: [{es,en}],
       //   eeuu?: {es,en}, clientes?: ["Nombre" | {es,en}], imagenes?: [{ src, alt: {es,en} }] }
   anfitriones: [{ nombre, tipo, detalle?, web?, verificar? }],         // «Nos recibieron»
@@ -136,13 +135,12 @@ conozcan la región. Cuatro cifras del «Economic Competitiveness Redbook» anua
 Los cuatro textos sobre Atlanta y la bajada están en `js/app.js` (`why_*`). No es el foco del sitio: no alargarla.
 
 **Buscador de la delegación («Encuentre la empresa indicada»).** Arriba de la lista de empresas de una edición,
-si sus empresas tienen `perfil`. Las opciones (qué necesita, industria, cómo trabajar y requisitos) están en
-`buscador` en `sitio.js`; cada empresa marca las suyas en `perfil`. Las opciones elegidas suman puntos y ordenan
-la lista; los requisitos y la palabra clave filtran. La búsqueda queda en la URL (`?id=2026&ofrece=ia,pagos`)
-para compartirla. Las etiquetas salen de lo que cada empresa declara en su ficha: una opción solo se marca si
-la ficha la respalda (un servicio, un cliente o un dato de trayectoria). Requisitos: «atlanta» y «oficina-eeuu»
-solo con oficina declarada; «clientes-eeuu» con clientes o proyectos en EE.UU.; «iso» con certificación vigente.
-Cada opción debe tener al menos dos empresas; si una queda con menos, sumarla a otra más amplia.
+si sus empresas tienen `perfil`. Las opciones (qué necesita e industria) están en `buscador` en `sitio.js`;
+cada empresa marca las suyas en `perfil`. Las opciones elegidas suman puntos: aparece toda empresa que coincida
+en al menos una, ordenadas de mayor a menor coincidencia, y cada tarjeta dice en qué coincide. La palabra clave
+filtra. La búsqueda queda en la URL (`?id=2026&ofrece=ia,pagos`) para compartirla. Las etiquetas salen de lo que
+cada empresa declara en su ficha: una opción solo se marca si la ficha la respalda (un servicio, un cliente o un
+dato de trayectoria). Cada opción debe tener al menos dos empresas; si una queda con menos, sumarla a otra más amplia.
 
 Las secciones vacías (`[]`) no se muestran en el sitio publicado. En modo borrador aparecen como
 «Sección a completar».
