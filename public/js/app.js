@@ -920,7 +920,6 @@
         (withKind ? '<span class="kind">' + esc(ui("kind_" + (o.tipo || "otro"))) + "</span>" : "") +
         "<h3>" + esc(o.nombre) + verifyTag(o) + "</h3>" +
         (o.sector ? '<span class="sector">' + esc(t(o.sector)) + "</span>" : "") +
-        (o.provincia ? '<span class="prov">' + ICON.pin + esc(t(o.provincia)) + "</span>" : "") +
         (ed && o.perfil ? '<p class="fit" hidden></p>' : "") +
         (o.detalle ? "<p>" + esc(t(o.detalle)) + "</p>" : "") +
         (more || web ? '<div class="org-actions">' + more + web + "</div>" : "") +
@@ -991,7 +990,7 @@
 
   // Texto de búsqueda de cada empresa, en los dos idiomas.
   function haystack(o) {
-    var parts = [o.nombre, o.provincia];
+    var parts = [o.nombre];
     function add(v) {
       if (!v) return;
       if (typeof v === "string") parts.push(v);
@@ -1106,7 +1105,6 @@
       '<div class="ficha-head">' + orgLogo(o) + "<div>" +
       '<h2 id="ficha-title">' + esc(o.nombre) + "</h2>" +
       (o.sector ? '<span class="sector">' + esc(t(o.sector)) + "</span>" : "") +
-      (o.provincia ? '<span class="prov">' + ICON.pin + esc(t(o.provincia)) + "</span>" : "") +
       "</div></div>" +
       block(ui("ficha_about"), f.resumen ? "<p>" + esc(t(f.resumen)) + "</p>" : "") +
       block(ui("ficha_services"), list(f.servicios)) +

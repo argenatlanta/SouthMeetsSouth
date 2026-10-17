@@ -77,6 +77,7 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
   delegacionNota: { es, en },             // nota interna, solo se ve en modo borrador
   delegacion: [{ nombre, logo?, logoFondo?: "oscuro", provincia?, sector?, detalle?, web?, linkedin?, ficha?, perfil?, verificar? }],
       // empresas argentinas; logo: "img/empresas/wootic.png"
+      // provincia: no se muestra en la tarjeta ni en la ficha; queda como dato (p. ej. para el resumen de la edición)
       // linkedin: "https://www.linkedin.com/company/<slug>/", solo si la página existe; botón junto a «Sitio web» en la ficha
       // perfil (buscador): { ofrece: [...], industrias: [...] }, con los id de las opciones de `buscador` en sitio.js
       // ficha (botón «Más información»): { resumen, servicios: [{es,en}], trayectoria: [{es,en}],
@@ -110,7 +111,7 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
 En la agenda de una misión próxima solo van las actividades abiertas al público local (no reuniones
 internas de la delegación). Las fuentes habituales están en el Google Drive del Consulado (carpetas
 «Misión Software AAAA»): agenda, listado de inscriptos y carpeta de la misión. De los listados se
-publican solo nombre de la empresa, provincia, web y una descripción breve; nunca datos personales
+publican solo nombre de la empresa, web y una descripción breve; nunca datos personales
 (correos, teléfonos, documentos).
 
 **Fichas de empresas («Más información»).** La fuente principal es el one-pager que cada empresa presentó

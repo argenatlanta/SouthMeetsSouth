@@ -571,7 +571,6 @@ a.resource:hover { border-color: var(--celeste); text-decoration: none; }
   border: 1px solid transparent; border-radius: 999px; min-height: 40px; padding: 0 16px; cursor: pointer;
 }
 .more-info:hover { border-color: var(--celeste); }
-.org .prov { display: inline-flex; gap: 5px; align-items: center; color: var(--ink-2); font-size: 13px; }
 
 /* ───────── Buscador de la delegación ───────── */
 /* Panel liso arriba de la lista: no es una tarjeta, así las empresas no quedan dentro de otra. */
@@ -846,7 +845,6 @@ dialog.ficha:not([open])::backdrop { opacity: 0; }
 .ficha-head .logo.none { background: var(--surface-2); color: var(--ink-2); font-family: var(--font-display); font-size: 24px; font-weight: 700; }
 .ficha-head h2 { font-size: 24px; line-height: 1.2; margin: 0 0 4px; }
 .ficha-head .sector { display: block; color: var(--celeste-ink); font-size: 14px; font-weight: 600; }
-.ficha-head .prov { display: inline-flex; gap: 5px; align-items: center; margin-top: 2px; color: var(--ink-2); font-size: 13px; }
 .ficha-block { margin-top: 22px; }
 .ficha-block h3 {
   margin: 0 0 8px; font-family: var(--font-body); font-size: 13px; font-weight: 700;
