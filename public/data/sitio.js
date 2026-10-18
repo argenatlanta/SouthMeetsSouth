@@ -8,7 +8,7 @@ window.SMS_SITIO = {
   borrador: false,
 
   // Fecha de la última actualización del contenido (AAAA-MM-DD). Se muestra en el pie.
-  actualizado: "2026-10-17",
+  actualizado: "2026-10-18",
 
   // Texto de contexto de la sección «Ediciones». {desde} se reemplaza por el año.
   // Si `desde` queda vacío (null), la frase no se muestra.
@@ -193,8 +193,8 @@ window.SMS_SITIO = {
       nombre: "Argentina Delivers",
       url: "https://argentinadelivers.com",
       detalle: {
-        es: "Iniciativa del Consulado General en Atlanta que acerca a empresas de EE.UU. la oferta argentina de servicios basados en el conocimiento y nearshoring.",
-        en: "Consulate General in Atlanta initiative connecting U.S. companies with Argentina’s knowledge-based services and nearshoring providers.",
+        es: "Iniciativa que acerca a empresas de EE.UU. la oferta argentina de servicios basados en el conocimiento y nearshoring.",
+        en: "An initiative connecting U.S. companies with Argentina’s knowledge-based services and nearshoring providers.",
       },
     },
     {
@@ -217,7 +217,7 @@ window.SMS_SITIO = {
       },
     },
     {
-      nombre: { es: "Consulado General en Atlanta", en: "Consulate General in Atlanta" },
+      nombre: { es: "Consulado General de la República Argentina en Atlanta", en: "Consulate General of Argentina in Atlanta" },
       url: "https://catla.cancilleria.gob.ar",
       detalle: {
         es: "Sitio oficial del Consulado General de la República Argentina en Atlanta.",

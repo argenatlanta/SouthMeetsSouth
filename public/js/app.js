@@ -19,7 +19,7 @@
       nav_next: "Próxima misión",
       nav_mission: "Misión {year}",
       nav_argentina: "Por qué Argentina",
-      nav_editions: "Ediciones",
+      nav_editions: "Ediciones anteriores",
       nav_why: "Sobre Georgia",
       nav_resources: "Recursos",
       nav_contact: "Contacto",
