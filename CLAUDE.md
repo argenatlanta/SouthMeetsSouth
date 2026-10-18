@@ -10,6 +10,7 @@ actualiza el sitio en producción.
 public/                 ← todo lo que se publica (directorio de salida en Cloudflare)
   index.html            portada: próxima misión, por qué Argentina, ediciones, sobre Georgia, recursos, contacto
   edicion.html          detalle de una edición: edicion.html?id=2025
+  validar.html          formulario para que cada empresa revise sus etiquetas del buscador (sin enlaces, noindex)
   404.html
   css/styles.css        estilos (tokens de color en :root, modo oscuro incluido)
   js/app.js             renderizado + textos fijos de la interfaz (objeto UI, en es y en)
@@ -146,6 +147,12 @@ una vertical lleva la opción equivalente (Aerospace y Gaming, solo con esas emp
 si la ficha de la empresa la respalda (un servicio, un cliente o un dato de trayectoria). Las opciones propias del
 buscador deben tener al menos dos empresas, salvo las que pida el Consulado (p. ej. «Estructuración legal y
 financiera», de Wootic). Si cambia la página oficial, volver a comparar.
+
+**Validación de etiquetas** (`validar.html?empresa=<slug>`, con el slug del `nombre` como en `#empresa-<slug>`):
+cada empresa ve sus etiquetas marcadas, las corrige y envía la respuesta por correo a `contacto.email` (o la
+copia, si el correo no se abre). La respuesta lista las etiquetas con su id entre corchetes y los cambios
+respecto de lo publicado; con eso se actualiza `perfil` en `ediciones.js`. La página no está enlazada desde el
+sitio y no se indexa. Sin `empresa`, muestra un selector.
 
 Las secciones vacías (`[]`) no se muestran en el sitio publicado. En modo borrador aparecen como
 «Sección a completar».

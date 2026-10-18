@@ -13,6 +13,7 @@
   --sol: #f2b01e;
   --sol-ink: #7a5000;
   --sol-soft: #fdf2d6;
+  --danger: #b3261e;
   --navy: #0b1a2c;
   --navy-2: #12273f;
   --on-navy: #eaf2fb;
@@ -46,6 +47,7 @@
     --sol: #f6b40e;
     --sol-ink: #f7c853;
     --sol-soft: #33290f;
+    --danger: #ff9d94;
     --navy: #07101b;
     --navy-2: #0e1e31;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
@@ -66,6 +68,7 @@
   --sol: #f6b40e;
   --sol-ink: #f7c853;
   --sol-soft: #33290f;
+  --danger: #ff9d94;
   --navy: #07101b;
   --navy-2: #0e1e31;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
@@ -861,6 +864,62 @@ dialog.ficha:not([open])::backdrop { opacity: 0; }
   .ficha-body { padding: 20px 18px; }
   .ficha-head { flex-direction: column; align-items: flex-start; gap: 12px; }
   .ficha-head .logo { width: 130px; height: 66px; }
+}
+
+/* ───────── Validación de etiquetas (validar.html) ───────── */
+.val-lead { margin: 14px 0 0; max-width: 62ch; color: var(--on-navy-2); font-size: 17px; }
+.val { padding-block: 40px 64px; max-width: 880px; }
+.val-form, .val-done { display: grid; gap: 28px; margin-top: 28px; }
+.val-form[hidden], .val-done[hidden], .val-error[hidden] { display: none; }
+.val-field { display: grid; gap: 8px; }
+.val-field label, .val-group legend { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--ink); }
+.val-field select, .val-field input, .val-field textarea, .val-done textarea {
+  width: 100%; max-width: 560px; min-height: 48px; padding: 10px 14px;
+  font: inherit; font-size: 16px; color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 10px;
+}
+.val-field textarea, .val-done textarea { max-width: none; resize: vertical; }
+.val-field select:hover, .val-field input:hover, .val-field textarea:hover { border-color: var(--celeste); }
+.val-field input[aria-invalid="true"] { border-color: var(--danger); }
+.val-error { margin: 0; color: var(--danger); font-size: 15px; font-weight: 600; }
+.val-company { display: flex; gap: 18px; align-items: center; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.val-company .logo {
+  flex: none; width: 150px; height: 76px; padding: 10px 14px; display: flex; align-items: center; justify-content: center;
+  background: #ffffff; border: 1px solid var(--line); border-radius: var(--radius-sm);
+}
+.val-company .logo img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; }
+.val-company .logo.dark { background: #121c2a; border-color: #121c2a; }
+.val-company .logo.none { background: var(--surface-2); color: var(--ink-2); font-family: var(--font-display); font-size: 24px; font-weight: 700; }
+.val-company h2 { font-size: 26px; line-height: 1.2; margin: 0 0 4px; }
+.val-company .sector { display: block; color: var(--celeste-ink); font-size: 15px; font-weight: 700; }
+.val-group { margin: 0; padding: 0; border: 0; min-width: 0; }
+.val-group legend { padding: 0; margin-bottom: 2px; }
+.val-help { margin: 0 0 12px; color: var(--ink-2); font-size: 15px; }
+/* Casillas con forma de opción del buscador; la casilla real queda accesible para el teclado. */
+.check-chip { position: relative; display: inline-flex; }
+.check-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.check-chip span {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 8px 14px; cursor: pointer;
+  font-family: var(--font-display); font-size: 15px; font-weight: 600; line-height: 1.2;
+  color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+}
+.check-chip span:hover { border-color: var(--celeste); }
+.check-chip .tick { display: none; flex: none; }
+.check-chip input:checked + span { color: #ffffff; background: var(--navy); border-color: var(--navy); }
+.check-chip input:checked + span .tick { display: block; }
+.check-chip input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; }
+.val-submit { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; padding-top: 20px; border-top: 1px solid var(--line); }
+.val-summary { margin: 0; flex: 1 1 260px; font-weight: 600; color: var(--ink); }
+.val-done h2 { font-size: clamp(22px, 2.6vw, 28px); margin: 0; }
+.val-done p { margin: 0; color: var(--ink-2); max-width: 62ch; }
+.val-done:focus { outline: none; }
+.val-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.val-see { margin: 40px 0 0; }
+.val-see a { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+@media (max-width: 560px) {
+  .val .finder-opts { display: flex; flex-wrap: wrap; overflow: visible; margin-inline: 0; padding: 0; }
+  .check-chip span { min-height: 44px; }
+  .val-company { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
 
 /* ───────── Por qué Argentina ───────── */

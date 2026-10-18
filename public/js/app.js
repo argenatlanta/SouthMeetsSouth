@@ -112,6 +112,33 @@
       finder_empty: "Ninguna empresa coincide con esa búsqueda. Pruebe con otra palabra clave.",
       fit_all: "Coincide en todo",
       fit_some: "Coincide en {n} de {m}",
+      val_title: "Validación de etiquetas",
+      val_intro: "El buscador «Encuentre la empresa indicada» ayuda a las empresas de Atlanta a encontrar la empresa argentina que mejor se ajusta a lo que necesitan. Estas son las etiquetas con las que hoy aparece su empresa: desmarque las que no correspondan, marque las que falten y envíe la respuesta al Consulado.",
+      val_choose: "Su empresa",
+      val_choose_ph: "Seleccione su empresa",
+      val_offer: "¿Qué ofrece su empresa?",
+      val_industries: "¿En qué industrias tiene experiencia?",
+      val_help: "Marque todas las que correspondan.",
+      val_notes: "¿Falta alguna categoría o quiere aclarar algo? (opcional)",
+      val_name: "Nombre y cargo de quien responde",
+      val_name_err: "Escriba su nombre y cargo para enviar la respuesta.",
+      val_nochanges: "Sin cambios: confirma las etiquetas actuales.",
+      val_changes: "Cambios: {add} agregadas y {del} quitadas.",
+      val_send: "Enviar al Consulado",
+      val_done_t: "Su respuesta está lista",
+      val_done_p: "Se abrió su programa de correo con la respuesta dirigida a {email}. Si no se abrió, copie el texto y envíelo a esa dirección.",
+      val_copy: "Copiar respuesta",
+      val_copied: "Respuesta copiada",
+      val_edit: "Volver a editar",
+      val_see: "Ver el buscador",
+      val_subject: "Validación de etiquetas – {name}",
+      val_m_company: "Empresa",
+      val_m_by: "Respondió",
+      val_m_added: "Agregadas",
+      val_m_removed: "Quitadas",
+      val_m_none: "Sin cambios",
+      val_m_changes: "Cambios respecto de lo publicado",
+      val_m_notes: "Comentarios",
       close: "Cerrar",
       photos_by: "Fotos",
       photo_prev: "Foto anterior",
@@ -234,6 +261,33 @@
       finder_empty: "No company matches that search. Try another keyword.",
       fit_all: "Matches everything",
       fit_some: "Matches {n} of {m}",
+      val_title: "Tag review",
+      val_intro: "The “Find your best fit” search helps Atlanta companies find the Argentine company that best matches what they need. These are the tags your company appears under today: untick any that don’t apply, tick any that are missing and send your answer to the Consulate.",
+      val_choose: "Your company",
+      val_choose_ph: "Select your company",
+      val_offer: "What does your company offer?",
+      val_industries: "Which industries do you have experience in?",
+      val_help: "Tick all that apply.",
+      val_notes: "Is a category missing, or anything to clarify? (optional)",
+      val_name: "Your name and role",
+      val_name_err: "Enter your name and role to send your answer.",
+      val_nochanges: "No changes: you confirm the current tags.",
+      val_changes: "Changes: {add} added and {del} removed.",
+      val_send: "Send to the Consulate",
+      val_done_t: "Your answer is ready",
+      val_done_p: "Your email app opened with the answer addressed to {email}. If it didn’t open, copy the text and send it to that address.",
+      val_copy: "Copy answer",
+      val_copied: "Answer copied",
+      val_edit: "Back to edit",
+      val_see: "See the search",
+      val_subject: "Tag review – {name}",
+      val_m_company: "Company",
+      val_m_by: "Answered by",
+      val_m_added: "Added",
+      val_m_removed: "Removed",
+      val_m_none: "No changes",
+      val_m_changes: "Changes from what is published",
+      val_m_notes: "Comments",
       close: "Close",
       photos_by: "Photos",
       photo_prev: "Previous photo",
@@ -1478,9 +1532,133 @@
   }
 
   // ───────────────────────── Inicio ─────────────────────────
+  // ───────────────────────── Validación de etiquetas (validar.html) ─────────────────────────
+  // Página sin enlaces desde el sitio: cada empresa recibe validar.html?empresa=<slug> y revisa su `perfil`.
+  // La respuesta se envía por correo al Consulado (no hay servidor); también se puede copiar.
+  function renderValidation() {
+    var main = document.getElementById("main");
+    var params = new URLSearchParams(window.location.search);
+    var ed = EDICIONES.filter(function (e) { return e.id === params.get("id"); })[0] || nextEdition() || EDICIONES[0];
+    var b = SITIO.buscador;
+    var list = (ed && ed.delegacion || []).filter(function (o) { return o.perfil; });
+    var slug = params.get("empresa") || "";
+    var o = list.filter(function (x) { return slugify(x.nombre) === slug; })[0];
+    var email = (SITIO.contacto || {}).email || "";
+    document.title = ui("val_title") + (o ? " · " + o.nombre : "") + " · South Meets South";
+
+    var picker = '<div class="val-field"><label for="val-empresa">' + esc(ui("val_choose")) + '</label><select id="val-empresa">' +
+      '<option value="">' + esc(ui("val_choose_ph")) + "</option>" +
+      list.map(function (x) { var v = slugify(x.nombre); return '<option value="' + esc(v) + '"' + (v === slug ? " selected" : "") + ">" + esc(x.nombre) + "</option>"; }).join("") +
+      "</select></div>";
+
+    function group(g, title) {
+      var mine = (o.perfil[g.id] || []);
+      return '<fieldset class="val-group"><legend>' + esc(title) + '</legend><p class="val-help">' + esc(ui("val_help")) + "</p>" +
+        '<div class="finder-opts">' + g.opciones.map(function (op) {
+          var id = "val-" + g.id + "-" + op.id;
+          return '<label class="check-chip" for="' + id + '"><input type="checkbox" id="' + id + '" name="' + esc(g.id) + '" value="' + esc(op.id) + '"' + (mine.indexOf(op.id) > -1 ? " checked" : "") + ">" +
+            "<span>" + ICON.tick + esc(t(op)) + "</span></label>";
+        }).join("") + "</div></fieldset>";
+    }
+    var titles = { ofrece: ui("val_offer"), industrias: ui("val_industries") };
+    var form = !o ? "" :
+      '<form id="val-form" class="val-form" novalidate>' +
+      '<div class="val-company">' + orgLogo(o) + "<div><h2>" + esc(o.nombre) + "</h2>" + (o.sector ? '<span class="sector">' + esc(t(o.sector)) + "</span>" : "") + "</div></div>" +
+      b.grupos.map(function (g) { return group(g, titles[g.id] || t(g.titulo)); }).join("") +
+      '<div class="val-field"><label for="val-notes">' + esc(ui("val_notes")) + '</label><textarea id="val-notes" rows="4"></textarea></div>' +
+      '<div class="val-field"><label for="val-name">' + esc(ui("val_name")) + '</label><input id="val-name" type="text" autocomplete="name" required aria-describedby="val-name-err">' +
+      '<p class="val-error" id="val-name-err" hidden>' + esc(ui("val_name_err")) + "</p></div>" +
+      '<div class="val-submit"><p class="val-summary" id="val-summary" aria-live="polite"></p>' +
+      '<button type="submit" class="btn btn-primary">' + esc(ui("val_send")) + ICON.arrow + "</button></div>" +
+      "</form>" +
+      '<section class="val-done" id="val-done" hidden tabindex="-1" aria-labelledby="val-done-t"><h2 id="val-done-t">' + esc(ui("val_done_t")) + "</h2>" +
+      "<p>" + esc(ui("val_done_p", { email: email })) + "</p>" +
+      '<textarea id="val-text" rows="12" readonly></textarea>' +
+      '<div class="val-actions"><button type="button" class="btn btn-primary" id="val-copy">' + esc(ui("val_copy")) + '</button><button type="button" class="btn btn-outline" id="val-edit">' + esc(ui("val_edit")) + "</button></div></section>";
+
+    main.innerHTML =
+      '<header class="ed-hero"><div class="container"><h1>' + esc(ui("val_title")) + "</h1>" +
+      '<p class="val-lead">' + esc(ui("val_intro")) + "</p></div></header>" +
+      '<div class="container val">' + picker + form +
+      (ed ? '<p class="val-see"><a href="' + esc(edUrl(ed)) + '#buscador">' + esc(ui("val_see")) + " " + ICON.arrow + "</a></p>" : "") + "</div>";
+
+    document.getElementById("val-empresa").addEventListener("change", function (e) {
+      var url = new URL(window.location.href);
+      if (e.target.value) url.searchParams.set("empresa", e.target.value); else url.searchParams.delete("empresa");
+      window.history.replaceState(null, "", url.pathname + url.search);
+      renderValidation();
+    });
+    if (!o) return;
+
+    var f = document.getElementById("val-form");
+    var summary = document.getElementById("val-summary");
+    function label(gid, v) { var op = b.grupos.filter(function (g) { return g.id === gid; })[0].opciones.filter(function (x) { return x.id === v; })[0]; return t(op); }
+    function diff() {
+      var add = [], del = [], chosen = {};
+      b.grupos.forEach(function (g) {
+        var now = Array.prototype.map.call(f.querySelectorAll('input[name="' + g.id + '"]:checked'), function (i) { return i.value; });
+        var before = o.perfil[g.id] || [];
+        chosen[g.id] = now;
+        now.forEach(function (v) { if (before.indexOf(v) < 0) add.push([g.id, v]); });
+        before.forEach(function (v) { if (now.indexOf(v) < 0) del.push([g.id, v]); });
+      });
+      return { add: add, del: del, chosen: chosen };
+    }
+    function showSummary() {
+      var d = diff();
+      summary.textContent = d.add.length || d.del.length ? ui("val_changes", { add: d.add.length, del: d.del.length }) : ui("val_nochanges");
+    }
+    f.addEventListener("change", showSummary);
+    showSummary();
+
+    var nameInput = document.getElementById("val-name");
+    var nameErr = document.getElementById("val-name-err");
+    nameInput.addEventListener("input", function () { if (nameInput.value.trim()) { nameErr.hidden = true; nameInput.removeAttribute("aria-invalid"); } });
+
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!nameInput.value.trim()) { nameErr.hidden = false; nameInput.setAttribute("aria-invalid", "true"); nameInput.focus(); return; }
+      var d = diff();
+      var lines = [ui("val_m_company") + ": " + o.nombre, ui("val_m_by") + ": " + nameInput.value.trim(), ""];
+      b.grupos.forEach(function (g) {
+        lines.push((titles[g.id] || t(g.titulo)));
+        d.chosen[g.id].forEach(function (v) { lines.push("- " + label(g.id, v) + " [" + v + "]"); });
+        if (!d.chosen[g.id].length) lines.push("-");
+        lines.push("");
+      });
+      lines.push(ui("val_m_changes") + ":");
+      if (!d.add.length && !d.del.length) lines.push(ui("val_m_none"));
+      if (d.add.length) lines.push("+ " + ui("val_m_added") + ": " + d.add.map(function (x) { return label(x[0], x[1]); }).join(", "));
+      if (d.del.length) lines.push("- " + ui("val_m_removed") + ": " + d.del.map(function (x) { return label(x[0], x[1]); }).join(", "));
+      var notes = document.getElementById("val-notes").value.trim();
+      if (notes) { lines.push(""); lines.push(ui("val_m_notes") + ":"); lines.push(notes); }
+      var text = lines.join("\n");
+      document.getElementById("val-text").value = text;
+      f.hidden = true;
+      var done = document.getElementById("val-done");
+      done.hidden = false;
+      done.focus();
+      window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(ui("val_subject", { name: o.nombre })) + "&body=" + encodeURIComponent(text);
+    });
+
+    document.getElementById("val-copy").addEventListener("click", function () {
+      var ta = document.getElementById("val-text");
+      var btn = this;
+      function ok() { btn.textContent = ui("val_copied"); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(ta.value).then(ok, function () { ta.select(); });
+      } else { ta.select(); }
+    });
+    document.getElementById("val-edit").addEventListener("click", function () {
+      document.getElementById("val-done").hidden = true;
+      f.hidden = false;
+      nameInput.focus();
+    });
+  }
+
   function init() {
     var page = document.body.getAttribute("data-page");
-    var render = page === "edicion" ? renderEdition : renderHome;
+    var render = page === "edicion" ? renderEdition : page === "validar" ? renderValidation : renderHome;
     applyStaticTexts();
     setupMenu();
     setupLangSwitch(render);
