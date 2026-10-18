@@ -149,7 +149,7 @@ buscador deben tener al menos dos empresas, salvo las que pida el Consulado (p. 
 financiera», de Wootic). Si cambia la página oficial, volver a comparar.
 
 **Validación de etiquetas** (`validar.html?empresa=<slug>`, con el slug del `nombre` como en `#empresa-<slug>`):
-cada empresa ve sus etiquetas marcadas, las corrige y envía la respuesta por correo a `contacto.email` (o la
+cada empresa ve sus etiquetas marcadas, las corrige y envía la respuesta por correo a `buscador.validacionEmail` (o la
 copia, si el correo no se abre). La respuesta lista las etiquetas con su id entre corchetes y los cambios
 respecto de lo publicado; con eso se actualiza `perfil` en `ediciones.js`. La página no está enlazada desde el
 sitio y no se indexa. Sin `empresa`, muestra un selector.

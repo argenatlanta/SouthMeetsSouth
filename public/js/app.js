@@ -1543,7 +1543,7 @@
     var list = (ed && ed.delegacion || []).filter(function (o) { return o.perfil; });
     var slug = params.get("empresa") || "";
     var o = list.filter(function (x) { return slugify(x.nombre) === slug; })[0];
-    var email = (SITIO.contacto || {}).email || "";
+    var email = b.validacionEmail || (SITIO.contacto || {}).email || "";
     document.title = ui("val_title") + (o ? " · " + o.nombre : "") + " · South Meets South";
 
     var picker = '<div class="val-field"><label for="val-empresa">' + esc(ui("val_choose")) + '</label><select id="val-empresa">' +

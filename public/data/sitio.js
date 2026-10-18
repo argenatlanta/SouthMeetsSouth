@@ -140,6 +140,8 @@ window.SMS_SITIO = {
   // Buscador de la delegación («Encuentre la empresa indicada»): se muestra en la edición cuyas empresas
   // tienen `perfil`. Cada grupo suma `peso` puntos por opción que coincide y la lista se ordena por puntos.
   buscador: {
+    // Adonde llegan las respuestas del formulario de validación de etiquetas (validar.html).
+    validacionEmail: "sds@mrecic.gov.ar",
     titulo: { es: "Encuentre la empresa indicada", en: "Find your best fit" },
     bajada: {
       es: "Elija lo que necesita su empresa y le mostramos qué empresas de la delegación se ajustan mejor, y por qué.",
