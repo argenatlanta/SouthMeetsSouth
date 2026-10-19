@@ -100,7 +100,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Borderless Software",
-        perfil: { ofrece: ["software", "ia", "cloud"], industrias: ["retail"] },
+        perfil: { ofrece: ["software", "ia", "cloud", "apps", "ux", "modernizacion", "cx"], industrias: ["retail", "inmobiliario", "finanzas"] },
         logo: "img/empresas/borderless-software.png",
         provincia: "Buenos Aires",
         sector: { es: "Software y consultoría IT", en: "Software & IT consulting" },
@@ -112,12 +112,12 @@ window.SMS_EDICIONES = [
         linkedin: "https://www.linkedin.com/company/borderless-software/",
         ficha: {
           resumen: {
-            es: "Empresa de software nearshore con oficinas en Atlanta y Buenos Aires. Desarrolla software a medida y ofrece Loqui CX, una plataforma de contact center con IA que atiende por WhatsApp, voz y web.",
-            en: "Nearshore software company with offices in Atlanta and Buenos Aires. It builds custom software and offers Loqui CX, an AI-powered contact center platform that engages customers on WhatsApp, voice and web.",
+            es: "Empresa de software nearshore con oficinas en Atlanta y Buenos Aires. Desarrolla software a medida y ofrece Sumac CX, una plataforma de contact center con IA que atiende por WhatsApp, voz y web.",
+            en: "Nearshore software company with offices in Atlanta and Buenos Aires. It builds custom software and offers Sumac CX, an AI-powered contact center platform that engages customers on WhatsApp, voice and web.",
           },
           servicios: [
             { es: "IA conversacional para WhatsApp, voz y web", en: "Conversational AI for WhatsApp, voice and web" },
-            { es: "Loqui CX: agentes de IA y copiloto para operadores", en: "Loqui CX: AI agents and agent copilot" },
+            { es: "Sumac CX: agentes de IA y copiloto para operadores", en: "Sumac CX: AI agents and agent copilot" },
             { es: "Desarrollo de software a medida", en: "Custom software development" },
             { es: "Staff augmentation", en: "Staff augmentation" },
             { es: "Servicios gestionados de IT", en: "Managed IT services" },
@@ -198,7 +198,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "CodingIT",
-        perfil: { ofrece: ["software", "apps", "ia", "modernizacion", "ux"], industrias: ["salud", "finanzas", "inmobiliario", "retail"] },
+        perfil: { ofrece: ["software", "apps", "ia", "modernizacion", "ux", "consultoria"], industrias: ["salud", "finanzas", "inmobiliario", "retail", "industria", "educacion", "medios"] },
         logo: "img/empresas/codingit.png",
         sector: { es: "Desarrollo de software e IA", en: "Software development & AI" },
         detalle: {
@@ -329,7 +329,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Immersive Global Solutions (IGS)",
-        perfil: { ofrece: ["ia", "inmersivo"], industrias: ["industria", "automotriz", "medios", "retail"] },
+        perfil: { ofrece: ["ia", "inmersivo", "software", "iot", "consultoria", "apps", "datos"], industrias: ["industria", "automotriz", "medios", "retail", "aeroespacial", "gobierno", "educacion"] },
         logo: "img/empresas/immersive-global-solutions.png",
         provincia: "Córdoba",
         sector: { es: "IA y realidad extendida", en: "AI & extended reality" },
@@ -456,7 +456,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "OWL Services",
-        perfil: { ofrece: ["iot", "ciberseguridad", "software", "cloud", "ia"], industrias: ["industria", "automotriz", "salud", "energia", "aeroespacial", "gaming"] },
+        perfil: { ofrece: ["iot", "ciberseguridad", "software", "cloud", "ia", "modernizacion"], industrias: ["industria", "automotriz", "salud", "energia", "aeroespacial", "gaming"] },
         logo: "img/empresas/owl-services.png",
         provincia: "Santa Fe",
         sector: { es: "Sistemas embebidos, IoT y ciberseguridad", en: "Embedded systems, IoT & cybersecurity" },
@@ -652,7 +652,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Tecro",
-        perfil: { ofrece: ["pagos", "software", "modernizacion", "ciberseguridad"], industrias: ["finanzas", "retail"] },
+        perfil: { ofrece: ["pagos", "software", "modernizacion", "consultoria", "cloud"], industrias: ["finanzas", "retail"] },
         logo: "img/empresas/tecro.png",
         provincia: "La Pampa",
         sector: { es: "Pagos y core bancario", en: "Payments & core banking" },

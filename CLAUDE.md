@@ -144,10 +144,12 @@ en al menos una, ordenadas de mayor a menor coincidencia, y cada tarjeta dice en
 filtra. La búsqueda queda en la URL (`?id=2026&ofrece=ia,pagos`) para compartirla. Las primeras opciones de cada
 grupo son las verticales oficiales de la misión (Google Sites «MC de Software y Tecnología a Atlanta - Chicago»,
 debajo de «ARGENTINE COMPANIES»), con los mismos nombres que los `sectores`: toda empresa que esa página pone en
-una vertical lleva la opción equivalente (Aerospace y Gaming, solo con esas empresas). Además, una opción se marca
-si la ficha de la empresa la respalda (un servicio, un cliente o un dato de trayectoria). Las opciones propias del
-buscador deben tener al menos dos empresas, salvo las que pida el Consulado (p. ej. «Estructuración legal y
-financiera», de Wootic). Si cambia la página oficial, volver a comparar.
+una vertical lleva la opción equivalente (Aerospace y Gaming parten de esas empresas). Además, una opción se marca
+si la ficha de la empresa la respalda (un servicio, un cliente o un dato de trayectoria). Lo que cada empresa
+valida con el formulario prevalece, aunque quite una vertical de la página oficial (en ese caso, avisar para
+corregirla). Las opciones propias del buscador deben tener al menos dos empresas, salvo las que pida el Consulado
+(p. ej. «Estructuración legal y financiera», de Wootic, y «Experiencia del cliente y contact center», de
+Borderless). Si cambia la página oficial, volver a comparar.
 
 **Lista B2B («Quiero reunirme»).** En la edición próxima con `registroB2B`, cada tarjeta de la delegación y cada
 ficha tienen un botón «Quiero reunirme»; el buscador ofrece sumar de una vez las que coinciden en todo. Una barra

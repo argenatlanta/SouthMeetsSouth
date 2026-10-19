@@ -168,6 +168,7 @@ window.SMS_SITIO = {
           { id: "ux", es: "Diseño de producto y UX/UI", en: "Product design & UX/UI" },
           { id: "inmersivo", es: "Realidad aumentada y virtual", en: "AR & VR" },
           { id: "modernizacion", es: "Modernización de sistemas heredados", en: "Legacy modernization" },
+          { id: "cx", es: "Experiencia del cliente y contact center", en: "Customer experience & contact center" },
           { id: "legal", es: "Estructuración legal y financiera", en: "Legal & financial structuring" },
         ],
       },
