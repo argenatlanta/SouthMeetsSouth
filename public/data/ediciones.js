@@ -489,7 +489,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "QKStudio",
-        perfil: { ofrece: ["apps", "software", "ux", "consultoria"], industrias: ["finanzas", "retail", "medios", "educacion"] },
+        perfil: { ofrece: ["apps", "software", "ux", "consultoria", "ia", "iot", "datos", "modernizacion"], industrias: ["finanzas", "retail", "medios", "educacion", "salud", "industria", "energia", "inmobiliario", "gobierno"] },
         logo: "img/empresas/qkstudio.png",
         provincia: "Buenos Aires",
         sector: { es: "Plataformas digitales y UX", en: "Digital platforms & UX" },
