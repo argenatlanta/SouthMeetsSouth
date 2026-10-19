@@ -21,7 +21,9 @@ public/                 ← todo lo que se publica (directorio de salida en Clou
   img/prensa/           miniaturas de las notas de prensa (480 × 270)
   img/organizadores/    logos del Consulado, la Embajada y la Cancillería (por idioma, con versión para modo oscuro)
   img/marca-pais/       trama de ondas del manual de Marca País
+  img/mailing/<año>/    imágenes de los mailings (logos en placas, apoyos, trama); el sitio no las enlaza
   css/marca-pais.css    paleta, tipografía y trama de Marca País (se carga después de styles.css)
+mailing/                HTML de los mailings para Constant Contact (no se publica; usa las imágenes de img/mailing)
 wrangler.jsonc          config para Cloudflare Workers (si se usa Pages, no se lee)
 .claude/                skill de diseño Impeccable y sus agentes (no se publica). El motor se descarga
                         solo y no se versiona; los hooks son locales. Telemetría apagada en settings.json.
