@@ -103,7 +103,7 @@ img { max-width: 100%; display: block; }
 a { color: var(--celeste-ink); text-underline-offset: 3px; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
-.hero, .ed-hero, .site-footer, dialog.lightbox { --focus: var(--sol); }
+.hero, .ed-hero, .site-footer, dialog.lightbox, .meet-bar { --focus: var(--sol); }
 ::selection { background: color-mix(in srgb, var(--celeste) 32%, transparent); }
 
 h1, h2, h3 {
@@ -877,6 +877,57 @@ dialog.ficha:not([open])::backdrop { opacity: 0; }
   .ficha-body { padding: 20px 18px; }
   .ficha-head { flex-direction: column; align-items: flex-start; gap: 12px; }
   .ficha-head .logo { width: 130px; height: 66px; }
+}
+
+/* ───────── Lista B2B («Quiero reunirme») ───────── */
+.meet-btn {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px;
+  font: inherit; font-size: 14px; font-weight: 600; line-height: 1; cursor: pointer;
+  color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+}
+.meet-btn:hover { border-color: var(--celeste); }
+.meet-btn svg { flex: none; }
+.meet-btn .tick, .meet-btn[aria-pressed="true"] .plus { display: none; }
+.meet-btn[aria-pressed="true"] { color: #ffffff; background: var(--navy); border-color: var(--navy); }
+.meet-btn[aria-pressed="true"] .tick { display: block; }
+.ficha-foot .meet-btn { min-height: 48px; padding: 0 20px; font-size: 16px; }
+.meet-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: var(--navy); color: var(--on-navy);
+  border-top: 1px solid rgba(255, 255, 255, 0.16); box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.18);
+}
+.meet-bar[hidden] { display: none; }
+.meet-bar-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; padding-block: 12px; }
+.meet-bar p { margin: 0; font-family: var(--font-display); font-size: 18px; font-weight: 700; }
+body.has-meet-bar { padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
+.meet-dialog h2 { font-size: clamp(22px, 2.6vw, 28px); line-height: 1.2; margin: 0 48px 8px 0; }
+.meet-intro { margin: 0; color: var(--ink-2); max-width: 62ch; }
+.meet-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.meet-list li {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 4px 4px 4px 14px; border: 1px solid var(--line); border-radius: 10px; font-weight: 600;
+}
+.meet-remove {
+  flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 8px;
+  color: var(--ink-2); background: none; border: 0; cursor: pointer;
+}
+.meet-remove:hover { color: var(--ink); background: var(--surface-2); }
+.meet-remove svg { width: 18px; height: 18px; }
+.meet-empty { margin: 0; color: var(--ink-2); }
+.meet-step { display: grid; gap: 14px; margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); }
+.meet-step > p { margin: 0; max-width: 62ch; }
+.meet-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.meet-actions .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.meet-form { display: grid; gap: 14px; }
+.meet-done { margin: 0; color: var(--ink-2); }
+.meet-text { width: 100%; padding: 10px 14px; font: inherit; font-size: 15px; color: var(--ink); background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; resize: vertical; }
+.meet-done[hidden], .meet-text[hidden], .meet-empty[hidden] { display: none; }
+@media (max-width: 560px) {
+  .meet-bar-inner { padding-block: 10px; }
+  .meet-bar p { font-size: 16px; }
+  .meet-bar .btn { flex: 1 1 auto; justify-content: center; }
+  body.has-meet-bar { padding-bottom: calc(124px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* ───────── Validación de etiquetas (validar.html) ───────── */

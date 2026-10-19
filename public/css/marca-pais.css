@@ -86,7 +86,7 @@
 }
 
 /* Sobre Azul oscuro el foco va en Amarillo; sobre fondos claros, en Azul oscuro (el Amarillo no llega a 3:1). */
-.hero, .ed-hero, .site-footer, dialog.lightbox { --focus: var(--mpa-amarillo); }
+.hero, .ed-hero, .site-footer, dialog.lightbox, .meet-bar { --focus: var(--mpa-amarillo); }
 ::selection { background: color-mix(in srgb, var(--mpa-celeste) 30%, transparent); }
 
 /* ───────── Tipografía ───────── */
@@ -161,6 +161,11 @@ a { color: var(--celeste-ink); }
   :root:not([data-theme="light"]) .check-chip input:checked + span { background: var(--mpa-celeste); border-color: var(--mpa-celeste); color: #001a3d; }
 }
 :root[data-theme="dark"] .check-chip input:checked + span { background: var(--mpa-celeste); border-color: var(--mpa-celeste); color: #001a3d; }
+.meet-btn[aria-pressed="true"] { background: var(--mpa-azul-oscuro); border-color: var(--mpa-azul-oscuro); color: #ffffff; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .meet-btn[aria-pressed="true"] { background: var(--mpa-celeste); border-color: var(--mpa-celeste); color: #001a3d; }
+}
+:root[data-theme="dark"] .meet-btn[aria-pressed="true"] { background: var(--mpa-celeste); border-color: var(--mpa-celeste); color: #001a3d; }
 
 /* ───────── Hero de la portada y de cada edición: Azul oscuro y trama de ondas ───────── */
 .hero, .ed-hero { background: var(--navy); }

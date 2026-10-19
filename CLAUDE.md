@@ -149,6 +149,12 @@ si la ficha de la empresa la respalda (un servicio, un cliente o un dato de tray
 buscador deben tener al menos dos empresas, salvo las que pida el Consulado (p. ej. «Estructuración legal y
 financiera», de Wootic). Si cambia la página oficial, volver a comparar.
 
+**Lista B2B («Quiero reunirme»).** En la edición próxima con `registroB2B`, cada tarjeta de la delegación y cada
+ficha tienen un botón «Quiero reunirme»; el buscador ofrece sumar de una vez las que coinciden en todo. Una barra
+fija muestra la lista y abre un panel para copiarla (y pegarla en la pregunta del registro de Luma sobre las
+empresas con las que quieren conectarse) o enviarla por correo a `buscador.listaEmail`. La lista vive en la URL
+(`?lista=slug1,slug2`) y el texto incluye ese enlace; el sitio no guarda nada.
+
 **Validación de etiquetas** (`validar.html?empresa=<slug>`, con el slug del `nombre` como en `#empresa-<slug>`):
 cada empresa ve sus etiquetas marcadas, las corrige y envía la respuesta por correo a `buscador.validacionEmail` (o la
 copia, si el correo no se abre). La respuesta lista las etiquetas con su id entre corchetes y los cambios

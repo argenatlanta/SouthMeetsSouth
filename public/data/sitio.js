@@ -142,6 +142,8 @@ window.SMS_SITIO = {
   buscador: {
     // Adonde llegan las respuestas del formulario de validación de etiquetas (validar.html).
     validacionEmail: "sds@mrecic.gov.ar",
+    // Adonde llegan las listas «Quiero reunirme» que las empresas de Atlanta envían por correo.
+    listaEmail: "sds@mrecic.gov.ar",
     titulo: { es: "Encuentre la empresa indicada", en: "Find your best fit" },
     bajada: {
       es: "Elija lo que necesita su empresa y le mostramos qué empresas de la delegación se ajustan mejor, y por qué.",

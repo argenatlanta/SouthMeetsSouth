@@ -59,6 +59,39 @@
       interest_form: "Registre su interés en la sesión B2B",
       b2b_note: "Las inscripciones quedan sujetas a confirmación del Consulado.",
       b2b_cta: "¿Quiere reunirse con estas empresas en la sesión B2B?",
+      meet_btn: "Quiero reunirme",
+      meet_bar_one: "Mi lista B2B: 1 empresa",
+      meet_bar: "Mi lista B2B: {n} empresas",
+      meet_bar_label: "Mi lista para la sesión B2B",
+      meet_review: "Revisar y enviar",
+      meet_add_full: "Sumar a mi lista las que coinciden en todo ({n})",
+      meet_added: "{name} se sumó a su lista.",
+      meet_removed: "{name} se quitó de su lista.",
+      meet_title: "Su lista para la sesión B2B",
+      meet_intro: "Estas son las empresas de la delegación con las que le gustaría reunirse. Compártala con el Consulado para que podamos organizar mejor sus reuniones B2B.",
+      meet_searched: "Lo que buscó",
+      meet_companies: "Empresas con las que quiere reunirse",
+      meet_empty: "Su lista está vacía. Use «Quiero reunirme» en las empresas que le interesen.",
+      meet_remove: "Quitar {name} de la lista",
+      meet_step_luma: "Si todavía no se registró, regístrese en la sesión B2B y pegue su lista en la pregunta sobre el tipo de empresas con las que quiere conectarse.",
+      meet_copy: "Copiar mi lista",
+      meet_copied: "Lista copiada",
+      meet_or_mail: "¿Ya se registró o prefiere enviarla por correo? Mándela al Consulado.",
+      meet_company: "Su empresa",
+      meet_name: "Su nombre y cargo",
+      meet_notes: "Comentarios (opcional)",
+      meet_send: "Enviar por correo",
+      meet_err: "Complete su empresa y su nombre para enviar la lista.",
+      meet_done: "Se abrió su programa de correo con la lista dirigida a {email}. Si no se abrió, copie su lista y envíela a esa dirección.",
+      meet_t_head: "Mi lista para la sesión B2B · South Meets South {year}",
+      meet_t_company: "Empresa",
+      meet_t_by: "Contacto",
+      meet_t_needs: "Busca",
+      meet_t_industries: "Industria",
+      meet_t_list: "Empresas argentinas con las que quiero reunirme",
+      meet_t_notes: "Comentarios",
+      meet_t_link: "Enlace a la lista",
+      meet_subject: "Lista B2B – {name}",
       past_title: "Lo que construimos en cada misión",
       past_lead:
         "Actividades, reuniones, empresas de la delegación y las instituciones que nos recibieron en cada edición.",
@@ -210,6 +243,39 @@
       interest_form: "Register your interest in the B2B session",
       b2b_note: "Registrations are subject to confirmation by the Consulate.",
       b2b_cta: "Would you like to meet these companies at the B2B session?",
+      meet_btn: "I’d like to meet",
+      meet_bar_one: "My B2B list: 1 company",
+      meet_bar: "My B2B list: {n} companies",
+      meet_bar_label: "My B2B session list",
+      meet_review: "Review and send",
+      meet_add_full: "Add full matches to my list ({n})",
+      meet_added: "{name} was added to your list.",
+      meet_removed: "{name} was removed from your list.",
+      meet_title: "Your B2B session list",
+      meet_intro: "These are the delegation companies you’d like to meet. Share your list with the Consulate so we can plan your B2B meetings better.",
+      meet_searched: "What you searched for",
+      meet_companies: "Companies you’d like to meet",
+      meet_empty: "Your list is empty. Use “I’d like to meet” on the companies you’re interested in.",
+      meet_remove: "Remove {name} from the list",
+      meet_step_luma: "If you haven’t registered yet, register your interest in the B2B session and paste your list in the question about the kind of companies you’d like to connect with.",
+      meet_copy: "Copy my list",
+      meet_copied: "List copied",
+      meet_or_mail: "Already registered, or prefer email? Send your list to the Consulate.",
+      meet_company: "Your company",
+      meet_name: "Your name and role",
+      meet_notes: "Comments (optional)",
+      meet_send: "Send by email",
+      meet_err: "Enter your company and your name to send the list.",
+      meet_done: "Your email app opened with the list addressed to {email}. If it didn’t open, copy your list and send it to that address.",
+      meet_t_head: "My B2B session list · South Meets South {year}",
+      meet_t_company: "Company",
+      meet_t_by: "Contact",
+      meet_t_needs: "Looking for",
+      meet_t_industries: "Industry",
+      meet_t_list: "Argentine companies I’d like to meet",
+      meet_t_notes: "Comments",
+      meet_t_link: "Link to the list",
+      meet_subject: "B2B list – {name}",
       past_title: "What we built on each mission",
       past_lead:
         "Activities, meetings, delegation companies and the organizations that hosted us, edition by edition.",
@@ -459,6 +525,7 @@
   function isEmpty(list) { return !list || !list.length; }
 
   var ICON = {
+    plus: '<svg class="plus" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
     tick: '<svg class="tick" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>',
     search: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>',
     back: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
@@ -985,7 +1052,7 @@
         (o.sector ? '<span class="sector">' + esc(t(o.sector)) + "</span>" : "") +
         (ed && o.perfil ? '<p class="fit" hidden></p>' : "") +
         (o.detalle ? "<p>" + esc(t(o.detalle)) + "</p>" : "") +
-        (more || web ? '<div class="org-actions">' + more + web + "</div>" : "") +
+        (more || web || (ed && meetEnabled(ed)) ? '<div class="org-actions">' + more + (ed && meetEnabled(ed) ? meetButton(o) : "") + web + "</div>" : "") +
         "</li>"
       );
     }).join("") + "</ul>";
@@ -1044,6 +1111,7 @@
       '<span class="finder-input">' + ICON.search + '<input type="search" id="finder-q" autocomplete="off" placeholder="' + esc(ui("finder_search_ph")) + '" value="' + esc(st.q) + '"></span></div>' +
       b.grupos.map(group).join("") +
       '<div class="finder-status"><p id="finder-result" aria-live="polite"></p><button type="button" class="finder-clear" hidden>' + esc(ui("finder_clear")) + "</button>" +
+      (meetEnabled(ed) ? '<button type="button" class="finder-clear meet-add-full" hidden></button>' : "") +
       (b2bButton(ed) ? '<span class="finder-b2b" hidden>' + b2bButton(ed) + "</span>" : "") + "</div>" +
       "</div>";
   }
@@ -1095,7 +1163,7 @@
       });
       if (st.q.trim()) url.searchParams.set("q", st.q.trim());
       else url.searchParams.delete("q");
-      window.history.replaceState(null, "", url.pathname + url.search + url.hash);
+      window.history.replaceState(null, "", url.pathname + url.search.replace(/%2C/g, ",") + url.hash);
     }
 
     function apply() {
@@ -1131,6 +1199,14 @@
       result.textContent = !any ? ui("finder_all", { total: list.length }) :
         ui(chosen ? "finder_ranked" : "finder_filtered", { n: shown, total: list.length });
       clear.hidden = !any;
+      var addFull = box.querySelector(".meet-add-full");
+      if (addFull) {
+        var full = rows.filter(function (r) { return chosen && r.show && r.hits.length === chosen; }).map(function (r) { return slugify(list[r.i].nombre); });
+        var missing = full.filter(function (x) { return MEET.list.indexOf(x) < 0; });
+        addFull.hidden = !missing.length;
+        addFull.textContent = ui("meet_add_full", { n: missing.length });
+        addFull.onclick = function () { meetAdd(missing); };
+      }
       var b2b = box.querySelector(".finder-b2b");
       if (b2b) b2b.hidden = !any;
       if (empty) empty.hidden = shown > 0;
@@ -1146,6 +1222,7 @@
       });
     });
     input.addEventListener("input", function () { st.q = input.value; apply(); saveUrl(); });
+    MEET.finderApply = apply;
     clear.addEventListener("click", function () {
       b.grupos.forEach(function (g) { st[g.id] = []; });
       st.q = ""; input.value = "";
@@ -1154,6 +1231,196 @@
       input.focus();
     });
     apply();
+  }
+
+  // ───────────────────────── Lista B2B («Quiero reunirme») ─────────────────────────
+  // En la edición próxima con `registroB2B`, cada empresa de la delegación se suma a una lista para la sesión
+  // B2B. La lista vive en la URL (?lista=slug1,slug2), así se puede compartir; el sitio no la guarda.
+  // Se envía pegándola en el registro de Luma o por correo a `buscador.listaEmail`.
+  var MEET = { ed: null, list: [], refresh: null, finderApply: null };
+
+  function meetEnabled(ed) { return !!(ed && ed.estado === "proxima" && safeUrl(ed.registroB2B)); }
+
+  function meetFromUrl(ed) {
+    var valid = (ed.delegacion || []).map(function (o) { return slugify(o.nombre); });
+    return (new URLSearchParams(window.location.search).get("lista") || "").split(",")
+      .filter(function (x, i, a) { return valid.indexOf(x) > -1 && a.indexOf(x) === i; });
+  }
+
+  function meetName(slug) {
+    var o = (MEET.ed.delegacion || []).filter(function (x) { return slugify(x.nombre) === slug; })[0];
+    return o ? o.nombre : slug;
+  }
+
+  function meetButton(o) {
+    var x = slugify(o.nombre);
+    return '<button type="button" class="meet-btn" data-meet="' + esc(x) + '" aria-pressed="' + (MEET.list.indexOf(x) > -1) + '">' +
+      ICON.plus + ICON.tick + "<span>" + esc(ui("meet_btn")) + "</span></button>";
+  }
+
+  function meetSync() {
+    var url = new URL(window.location.href);
+    if (MEET.list.length) url.searchParams.set("lista", MEET.list.join(",")); else url.searchParams.delete("lista");
+    window.history.replaceState(null, "", url.pathname + url.search.replace(/%2C/g, ",") + url.hash);
+    document.querySelectorAll("[data-meet]").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(MEET.list.indexOf(b.getAttribute("data-meet")) > -1));
+    });
+    var bar = document.getElementById("meet-bar");
+    if (bar) {
+      var n = MEET.list.length;
+      bar.hidden = !n;
+      document.body.classList.toggle("has-meet-bar", !!n);
+      bar.querySelector(".meet-count").textContent = n === 1 ? ui("meet_bar_one") : ui("meet_bar", { n: n });
+    }
+    if (MEET.refresh) MEET.refresh();
+    if (MEET.finderApply) MEET.finderApply();
+  }
+
+  function meetSay(msg) {
+    var live = document.getElementById("meet-live");
+    if (live) live.textContent = msg;
+  }
+
+  function meetToggle(x) {
+    var k = MEET.list.indexOf(x);
+    if (k > -1) MEET.list.splice(k, 1); else MEET.list.push(x);
+    meetSync();
+    meetSay(ui(k > -1 ? "meet_removed" : "meet_added", { name: meetName(x) }));
+  }
+
+  function meetAdd(slugs) {
+    slugs.forEach(function (x) { if (MEET.list.indexOf(x) < 0) MEET.list.push(x); });
+    meetSync();
+  }
+
+  function renderMeetBar(ed) {
+    ["meet-bar", "meet-live"].forEach(function (id) { var old = document.getElementById(id); if (old) old.remove(); });
+    document.body.classList.remove("has-meet-bar");
+    if (!meetEnabled(ed)) return;
+    var bar = document.createElement("div");
+    bar.id = "meet-bar";
+    bar.className = "meet-bar";
+    bar.setAttribute("role", "region");
+    bar.setAttribute("aria-label", ui("meet_bar_label"));
+    bar.hidden = true;
+    bar.innerHTML = '<div class="container meet-bar-inner"><p class="meet-count"></p>' +
+      '<button type="button" class="btn btn-primary">' + esc(ui("meet_review")) + ICON.arrow + "</button></div>";
+    bar.querySelector("button").addEventListener("click", openMeet);
+    document.body.appendChild(bar);
+    var live = document.createElement("p");
+    live.id = "meet-live";
+    live.className = "visually-hidden";
+    live.setAttribute("aria-live", "polite");
+    document.body.appendChild(live);
+    meetSync();
+  }
+
+  // Texto que se copia o se envía: lo que buscó, las empresas elegidas y el enlace a la lista.
+  function meetText(extra) {
+    var ed = MEET.ed;
+    var lines = [ui("meet_t_head", { year: year(ed) })];
+    if (extra.company) lines.push(ui("meet_t_company") + ": " + extra.company);
+    if (extra.name) lines.push(ui("meet_t_by") + ": " + extra.name);
+    if (SITIO.buscador && hasFinder(ed)) {
+      var st = finderParams();
+      var keys = { ofrece: "meet_t_needs", industrias: "meet_t_industries" };
+      SITIO.buscador.grupos.forEach(function (g) {
+        var chosen = g.opciones.filter(function (o) { return st[g.id].indexOf(o.id) > -1; }).map(function (o) { return t(o); });
+        if (chosen.length && keys[g.id]) lines.push(ui(keys[g.id]) + ": " + chosen.join(", "));
+      });
+    }
+    lines.push("", ui("meet_t_list") + ":");
+    MEET.list.forEach(function (x) { lines.push("- " + meetName(x)); });
+    if (extra.notes) lines.push("", ui("meet_t_notes") + ":", extra.notes);
+    var url = new URL(window.location.href);
+    url.hash = "delegacion";
+    url.searchParams.delete("lang");
+    lines.push("", ui("meet_t_link") + ": " + url.toString().replace(/%2C/g, ","));
+    return lines.join("\n");
+  }
+
+  function meetDialog() {
+    var d = document.getElementById("meet-dialog");
+    if (d) return d;
+    d = document.createElement("dialog");
+    d.id = "meet-dialog";
+    d.className = "ficha meet-dialog";
+    d.setAttribute("aria-labelledby", "meet-title");
+    document.body.appendChild(d);
+    d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
+    d.addEventListener("close", function () { MEET.refresh = null; });
+    return d;
+  }
+
+  function openMeet() {
+    var ed = MEET.ed;
+    var d = meetDialog();
+    var email = (SITIO.buscador || {}).listaEmail || (SITIO.contacto || {}).email || "";
+    var st = hasFinder(ed) ? finderParams() : null;
+    var searched = !st ? [] : SITIO.buscador.grupos.reduce(function (acc, g) {
+      return acc.concat(g.opciones.filter(function (o) { return st[g.id].indexOf(o.id) > -1; }).map(function (o) { return t(o); }));
+    }, []);
+    d.innerHTML =
+      '<button type="button" class="ficha-close" aria-label="' + esc(ui("close")) + '">' + ICON.close + "</button>" +
+      '<div class="ficha-body">' +
+      '<h2 id="meet-title">' + esc(ui("meet_title")) + '</h2><p class="meet-intro">' + esc(ui("meet_intro")) + "</p>" +
+      (searched.length ? '<section class="ficha-block"><h3>' + esc(ui("meet_searched")) + '</h3><ul class="chips">' + searched.map(function (x) { return '<li class="chip">' + esc(x) + "</li>"; }).join("") + "</ul></section>" : "") +
+      '<section class="ficha-block"><h3>' + esc(ui("meet_companies")) + '</h3><ul class="meet-list"></ul><p class="meet-empty" hidden>' + esc(ui("meet_empty")) + "</p></section>" +
+      '<section class="meet-step"><p>' + esc(ui("meet_step_luma")) + '</p><div class="meet-actions">' +
+      '<button type="button" class="btn btn-outline meet-copy">' + esc(ui("meet_copy")) + "</button>" + b2bButton(ed) + "</div></section>" +
+      '<section class="meet-step"><p><strong>' + esc(ui("meet_or_mail")) + "</strong></p>" +
+      '<form class="meet-form" novalidate>' +
+      '<div class="val-field"><label for="meet-company">' + esc(ui("meet_company")) + '</label><input id="meet-company" type="text" autocomplete="organization" required></div>' +
+      '<div class="val-field"><label for="meet-name">' + esc(ui("meet_name")) + '</label><input id="meet-name" type="text" autocomplete="name" required></div>' +
+      '<div class="val-field"><label for="meet-notes">' + esc(ui("meet_notes")) + '</label><textarea id="meet-notes" rows="3"></textarea></div>' +
+      '<p class="val-error" id="meet-err" hidden>' + esc(ui("meet_err")) + "</p>" +
+      '<div class="meet-actions"><button type="submit" class="btn btn-primary">' + esc(ui("meet_send")) + ICON.arrow + "</button></div>" +
+      "</form>" +
+      '<p class="meet-done" hidden>' + esc(ui("meet_done", { email: email })) + "</p>" +
+      '<textarea class="meet-text" id="meet-text" rows="9" readonly hidden aria-label="' + esc(ui("meet_title")) + '"></textarea>' +
+      "</section></div>";
+
+    var ul = d.querySelector(".meet-list");
+    function drawList() {
+      ul.innerHTML = MEET.list.map(function (x) {
+        return '<li><span>' + esc(meetName(x)) + '</span><button type="button" class="meet-remove" data-remove="' + esc(x) + '" aria-label="' + esc(ui("meet_remove", { name: meetName(x) })) + '">' + ICON.close + "</button></li>";
+      }).join("");
+      d.querySelector(".meet-empty").hidden = MEET.list.length > 0;
+      d.querySelectorAll(".meet-copy, .meet-form button[type=submit]").forEach(function (b) { b.disabled = !MEET.list.length; });
+    }
+    MEET.refresh = drawList;
+    drawList();
+    ul.addEventListener("click", function (e) {
+      var b = e.target.closest("[data-remove]");
+      if (b) { meetToggle(b.getAttribute("data-remove")); var first = ul.querySelector("button"); (first || d.querySelector(".ficha-close")).focus(); }
+    });
+    d.querySelector(".ficha-close").addEventListener("click", function () { d.close(); });
+
+    var textArea = d.querySelector("#meet-text");
+    function showText(text) { textArea.value = text; textArea.hidden = false; }
+    d.querySelector(".meet-copy").addEventListener("click", function () {
+      var btn = this;
+      var text = meetText({});
+      function ok() { btn.textContent = ui("meet_copied"); }
+      function fallback() { showText(text); textArea.select(); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, fallback);
+      else fallback();
+    });
+    var form = d.querySelector(".meet-form");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var company = form.querySelector("#meet-company").value.trim();
+      var name = form.querySelector("#meet-name").value.trim();
+      var err = d.querySelector("#meet-err");
+      if (!company || !name) { err.hidden = false; (company ? form.querySelector("#meet-name") : form.querySelector("#meet-company")).focus(); return; }
+      err.hidden = true;
+      var text = meetText({ company: company, name: name, notes: form.querySelector("#meet-notes").value.trim() });
+      showText(text);
+      d.querySelector(".meet-done").hidden = false;
+      window.location.href = "mailto:" + email + "?subject=" + encodeURIComponent(ui("meet_subject", { name: company })) + "&body=" + encodeURIComponent(text);
+    });
+    if (!d.open) d.showModal();
+    d.scrollTop = 0;
   }
 
   // ───────────────────────── Ficha de empresa («Más información») ─────────────────────────
@@ -1178,9 +1445,10 @@
       block(ui("ficha_us"), f.eeuu ? "<p>" + esc(t(f.eeuu)) + "</p>" : "") +
       block(ui("ficha_clients"), isEmpty(f.clientes) ? "" : '<ul class="chips">' + f.clientes.map(function (c) { return '<li class="chip">' + esc(t(c)) + "</li>"; }).join("") + "</ul>") +
       (isEmpty(f.imagenes) ? "" : renderGallery(f.imagenes)) +
-      (url || li ? '<div class="ficha-foot">' +
+      (url || li || meetEnabled(ed) ? '<div class="ficha-foot">' +
         (url ? '<a class="btn btn-primary" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(ui("website")) + " " + ICON.ext + "</a>" : "") +
         (li ? '<a class="btn btn-outline" href="' + esc(li) + '" target="_blank" rel="noopener">LinkedIn ' + ICON.ext + "</a>" : "") +
+        (meetEnabled(ed) ? meetButton(o) : "") +
         "</div>" : "")
     );
   }
@@ -1504,6 +1772,11 @@
     if (oldLightbox) oldLightbox.remove();
     setupScrollSpy();
     syncScrollPadding();
+    MEET.ed = ed;
+    MEET.list = meetEnabled(ed) ? meetFromUrl(ed) : [];
+    MEET.refresh = null;
+    MEET.finderApply = null;
+    renderMeetBar(ed);
     bindFichas(ed);
     bindFinder(ed);
     bindFolds();
@@ -1671,6 +1944,10 @@
 
   function init() {
     var page = document.body.getAttribute("data-page");
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest && e.target.closest("[data-meet]");
+      if (b && MEET.ed) meetToggle(b.getAttribute("data-meet"));
+    });
     var render = page === "edicion" ? renderEdition : page === "validar" ? renderValidation : renderHome;
     applyStaticTexts();
     setupMenu();
