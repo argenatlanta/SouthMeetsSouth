@@ -60,10 +60,10 @@ window.SMS_EDICIONES = [
       },
     },
     llamadoAnfitriones: {
-      es: "¿Su empresa quiere participar del reverse pitch, recibir a la delegación o reunirse con las empresas argentinas? Escríbanos o complete el formulario de interés.",
-      en: "Would your company like to join the reverse pitch, host the delegation or meet the Argentine companies? Email us or fill out the interest form.",
+      es: "¿Su empresa quiere participar del reverse pitch, recibir a la delegación o reunirse con las empresas argentinas? Escríbanos o registre su interés en la sesión B2B.",
+      en: "Would your company like to join the reverse pitch, host the delegation or meet the Argentine companies? Email us or register your interest in the B2B session.",
     },
-    formularioInteres: "https://docs.google.com/forms/d/e/1FAIpQLScWaJzINNc0kwMQ0tLMI-A77zw04CoOIyE6xpX9SK0Z1t6CMQ/viewform",
+    registroB2B: "https://luma.com/ip6i1z71",
     delegacion: [
       {
         nombre: "Avenga",

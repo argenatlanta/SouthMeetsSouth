@@ -56,7 +56,9 @@
       see_details: "Ver detalle",
       see_delegation: "Conocer la delegación",
       find_fit: "Encontrar la empresa indicada",
-      interest_form: "Quiero participar",
+      interest_form: "Registre su interés en la sesión B2B",
+      b2b_note: "Las inscripciones quedan sujetas a confirmación del Consulado.",
+      b2b_cta: "¿Quiere reunirse con estas empresas en la sesión B2B?",
       past_title: "Lo que construimos en cada misión",
       past_lead:
         "Actividades, reuniones, empresas de la delegación y las instituciones que nos recibieron en cada edición.",
@@ -205,7 +207,9 @@
       see_details: "See details",
       see_delegation: "Meet the delegation",
       find_fit: "Find your best fit",
-      interest_form: "I’m interested",
+      interest_form: "Register your interest in the B2B session",
+      b2b_note: "Registrations are subject to confirmation by the Consulate.",
+      b2b_cta: "Would you like to meet these companies at the B2B session?",
       past_title: "What we built on each mission",
       past_lead:
         "Activities, meetings, delegation companies and the organizations that hosted us, edition by edition.",
@@ -655,13 +659,18 @@
   }
 
   // Llamado a empresas e instituciones de Atlanta para reunirse con la delegación.
+  // Botón de registro a la sesión B2B (Luma): la inscripción queda pendiente hasta que el Consulado la confirma.
+  function b2bButton(ed, cls) {
+    var url = safeUrl(ed.registroB2B);
+    return url ? '<a class="btn ' + (cls || "btn-primary") + '" href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(ui("interest_form")) + " " + ICON.ext + "</a>" : "";
+  }
+
   function hostsBox(ed) {
     if (!ed.llamadoAnfitriones) return "";
-    var form = safeUrl(ed.formularioInteres);
-    var buttons = form
-      ? '<a class="btn btn-primary" href="' + esc(form) + '" target="_blank" rel="noopener">' + esc(ui("interest_form")) + " " + ICON.ext + "</a>" + emailButton("btn-outline")
-      : contactButtons("btn-primary");
-    return '<div class="hosts-cta"><p class="label">' + esc(ui("hosts_title")) + "</p><p>" + esc(t(ed.llamadoAnfitriones)) + '</p><div class="hero-actions">' + buttons + "</div></div>";
+    var b2b = b2bButton(ed);
+    var buttons = b2b ? b2b + emailButton("btn-outline") : contactButtons("btn-primary");
+    return '<div class="hosts-cta"><p class="label">' + esc(ui("hosts_title")) + "</p><p>" + esc(t(ed.llamadoAnfitriones)) + '</p><div class="hero-actions">' + buttons + "</div>" +
+      (b2b ? '<p class="b2b-note">' + esc(ui("b2b_note")) + "</p>" : "") + "</div>";
   }
 
   function renderNext() {
@@ -1034,7 +1043,8 @@
       '<div class="finder-search"><label for="finder-q">' + esc(ui("finder_search")) + "</label>" +
       '<span class="finder-input">' + ICON.search + '<input type="search" id="finder-q" autocomplete="off" placeholder="' + esc(ui("finder_search_ph")) + '" value="' + esc(st.q) + '"></span></div>' +
       b.grupos.map(group).join("") +
-      '<div class="finder-status"><p id="finder-result" aria-live="polite"></p><button type="button" class="finder-clear" hidden>' + esc(ui("finder_clear")) + "</button></div>" +
+      '<div class="finder-status"><p id="finder-result" aria-live="polite"></p><button type="button" class="finder-clear" hidden>' + esc(ui("finder_clear")) + "</button>" +
+      (b2bButton(ed) ? '<span class="finder-b2b" hidden>' + b2bButton(ed) + "</span>" : "") + "</div>" +
       "</div>";
   }
 
@@ -1121,6 +1131,8 @@
       result.textContent = !any ? ui("finder_all", { total: list.length }) :
         ui(chosen ? "finder_ranked" : "finder_filtered", { n: shown, total: list.length });
       clear.hidden = !any;
+      var b2b = box.querySelector(".finder-b2b");
+      if (b2b) b2b.hidden = !any;
       if (empty) empty.hidden = shown > 0;
     }
 
@@ -1460,7 +1472,8 @@
     var delegNote = BORRADOR && ed.delegacionNota ? '<p class="note">' + esc(t(ed.delegacionNota)) + "</p>" : "";
     var delegBody = isEmpty(ed.delegacion) ? (delegNote || null) :
       delegNote + (hasFinder(ed) ? renderFinder(ed) : "") + renderOrgs(ed.delegacion, false, ed) +
-      (hasFinder(ed) ? '<p class="finder-empty" hidden>' + esc(ui("finder_empty")) + "</p>" : "");
+      (hasFinder(ed) ? '<p class="finder-empty" hidden>' + esc(ui("finder_empty")) + "</p>" : "") +
+      (hasFinder(ed) && b2bButton(ed) ? '<div class="b2b-band"><p><strong>' + esc(ui("b2b_cta")) + "</strong> " + esc(ui("b2b_note")) + "</p>" + b2bButton(ed) + "</div>" : "");
     sections.push(["delegacion", ui("sec_delegation"), delegBody, !isNext]);
     sections.push(["anfitriones", ui("sec_hosts"), isEmpty(ed.anfitriones) ? null : renderOrgs(ed.anfitriones, true), !isNext]);
     sections.push(["reuniones", ui("sec_meetings"), isEmpty(ed.reuniones) ? null : renderPeople(ed.reuniones), !isNext]);

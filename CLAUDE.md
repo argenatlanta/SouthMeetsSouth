@@ -105,7 +105,8 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
   agendaNota: { es, en },               // aviso público, p. ej. «Agenda provisional, sujeta a cambios»
   convocatoria: { estado: "abierta" | "cerrada", cierre, url, nota },
   llamadoAnfitriones: { es, en },         // invitación a empresas de Atlanta
-  formularioInteres: "https://…",         // botón «Quiero participar»
+  registroB2B: "https://luma.com/…",     // botón «Registre su interés en la sesión B2B» (Luma: el Consulado
+                                          //   confirma cada inscripción); también aparece en el buscador
 }
 ```
 

@@ -612,7 +612,20 @@ a.resource:hover { border-color: var(--celeste); text-decoration: none; }
   min-height: 40px; padding: 0; font: inherit; font-weight: 600; color: var(--celeste-ink);
   background: none; border: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer;
 }
-.cards > li[hidden], .finder-empty[hidden] { display: none; }
+.cards > li[hidden], .finder-empty[hidden], .finder-b2b[hidden] { display: none; }
+/* Registro a la sesión B2B: junto a los resultados cuando hay una búsqueda y en una franja al final de la lista. */
+.finder-b2b { margin-left: auto; display: inline-flex; }
+.b2b-band {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px;
+  margin-top: 24px; padding: 20px 24px; border-radius: var(--radius); background: var(--celeste-soft);
+}
+.b2b-band p { margin: 0; flex: 1 1 320px; max-width: 62ch; color: var(--ink-2); }
+.b2b-band strong { display: block; margin-bottom: 2px; font-family: var(--font-display); font-size: 19px; color: var(--ink); }
+.b2b-note { margin: 10px 0 0; font-size: 14px; color: var(--ink-2); }
+@media (max-width: 560px) {
+  .finder-b2b { margin-left: 0; width: 100%; }
+  .finder-b2b .btn, .b2b-band .btn { width: 100%; justify-content: center; }
+}
 .finder-empty { margin: 8px 0 0; color: var(--ink-2); }
 /* Por qué coincide cada empresa. */
 .org p.fit { display: flex; gap: 6px; align-items: flex-start; margin: 4px 0 2px; font-size: 14px; color: var(--ink); }
