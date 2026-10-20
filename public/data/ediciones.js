@@ -652,7 +652,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Tecro",
-        perfil: { ofrece: ["pagos", "software", "modernizacion", "consultoria", "cloud"], industrias: ["finanzas", "retail"] },
+        perfil: { ofrece: ["pagos", "software", "modernizacion", "consultoria", "cloud"], industrias: ["finanzas", "retail", "salud"] },
         logo: "img/empresas/tecro.png",
         provincia: "La Pampa",
         sector: { es: "Pagos y core bancario", en: "Payments & core banking" },
