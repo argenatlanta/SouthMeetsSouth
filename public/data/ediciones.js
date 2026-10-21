@@ -523,7 +523,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Quadion Technologies",
-        perfil: { ofrece: ["software", "apps", "cloud", "ia", "iot", "consultoria", "pagos"], industrias: ["salud", "retail"] },
+        perfil: { ofrece: ["software", "apps", "cloud", "ia", "iot", "consultoria", "pagos"], industrias: ["salud", "retail", "finanzas"] },
         logo: "img/empresas/quadion-technologies.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Software a medida", en: "Custom software development" },
@@ -535,11 +535,12 @@ window.SMS_EDICIONES = [
         linkedin: "https://www.linkedin.com/company/quadiontech/",
         ficha: {
           resumen: {
-            es: "Desarrolla software a medida con metodologías ágiles y entregas incrementales, con equipos especializados en plataformas web y móviles.",
-            en: "Builds custom software through agile methodologies and incremental delivery, with teams specialized in web and mobile platforms.",
+            es: "Desarrolla software a medida con metodologías ágiles y entregas incrementales, con equipos especializados en desarrollo asistido por IA.",
+            en: "Builds custom software through agile methodologies and incremental delivery, with teams specialized in AI-assisted development.",
           },
           servicios: [
             { es: "Desarrollo de software a medida", en: "Custom software development" },
+            { es: "Soluciones basadas en IA, automatización inteligente e integración de IA", en: "AI-powered solutions, intelligent automation and AI integration" },
             { es: "Desarrollo nearshore", en: "Nearshore software development" },
             { es: "Apps web y móviles: Angular, React, iOS y Android", en: "Web and mobile apps: Angular, React, iOS and Android" },
             { es: "Backend y cloud: .NET, Java, Node.js, Azure y AWS", en: "Backend and cloud: .NET, Java, Node.js, Azure and AWS" },
@@ -550,6 +551,7 @@ window.SMS_EDICIONES = [
             { es: "Certificada ISO 9001:2015", en: "ISO 9001:2015 certified" },
           ],
           eeuu: { es: "Más del 70% de sus proyectos son para empresas de EE.UU.", en: "U.S. companies account for over 70% of its engagements." },
+          clientes: ["Adswerve", "Banesco", "FIS", "Flight Club", "Home Depot", "Juniper Square"],
         },
       },
       {
