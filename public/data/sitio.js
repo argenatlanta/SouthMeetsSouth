@@ -166,6 +166,8 @@ window.SMS_SITIO = {
           { id: "datos", es: "Datos y analítica", en: "Data & analytics" },
           { id: "cloud", es: "Cloud, DevOps e infraestructura", en: "Cloud, DevOps & infrastructure" },
           { id: "ux", es: "Diseño de producto y UX/UI", en: "Product design & UX/UI" },
+          { id: "web", es: "Sitios web y e-commerce", en: "Websites & e-commerce" },
+          { id: "marketing", es: "Marketing digital, marca y contenidos", en: "Digital marketing, branding & content" },
           { id: "inmersivo", es: "Realidad aumentada y virtual", en: "AR & VR" },
           { id: "modernizacion", es: "Modernización de sistemas heredados", en: "Legacy modernization" },
           { id: "cx", es: "Experiencia del cliente y contact center", en: "Customer experience & contact center" },

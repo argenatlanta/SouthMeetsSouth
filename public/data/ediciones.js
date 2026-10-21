@@ -175,7 +175,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Code First Lab",
-        perfil: { ofrece: ["software", "apps", "ia", "iot", "consultoria"], industrias: ["retail", "gaming"] },
+        perfil: { ofrece: ["software", "apps", "ia", "iot", "consultoria", "web"], industrias: ["retail", "gaming"] },
         logo: "img/empresas/code-first-lab.png",
         provincia: "Mendoza",
         sector: { es: "Software a medida e IA", en: "Custom software & AI" },
@@ -243,7 +243,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Digital Beings",
-        perfil: { ofrece: ["software", "apps", "ia", "pagos"], industrias: ["finanzas", "retail", "educacion", "medios"] },
+        perfil: { ofrece: ["software", "apps", "ia", "pagos", "web"], industrias: ["finanzas", "retail", "educacion", "medios"] },
         logo: "img/empresas/digital-beings.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Software, IA y blockchain", en: "Software, AI & blockchain" },
@@ -498,7 +498,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "QKStudio",
-        perfil: { ofrece: ["apps", "software", "ux", "consultoria", "ia", "iot", "datos", "modernizacion"], industrias: ["finanzas", "retail", "medios", "educacion", "salud", "industria", "energia", "inmobiliario", "gobierno", "consumo"] },
+        perfil: { ofrece: ["apps", "software", "ux", "consultoria", "ia", "iot", "datos", "modernizacion", "web", "marketing"], industrias: ["finanzas", "retail", "medios", "educacion", "salud", "industria", "energia", "inmobiliario", "gobierno", "consumo"] },
         logo: "img/empresas/qkstudio.png",
         provincia: "Buenos Aires",
         sector: { es: "Plataformas digitales y UX", en: "Digital platforms & UX" },
