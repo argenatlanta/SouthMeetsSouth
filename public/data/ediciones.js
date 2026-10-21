@@ -67,35 +67,44 @@ window.SMS_EDICIONES = [
     delegacion: [
       {
         nombre: "Avenga",
-        perfil: { ofrece: ["software", "ia", "datos", "cloud", "consultoria", "pagos"], industrias: ["finanzas", "salud", "industria", "automotriz"] },
+        perfil: {
+          ofrece: ["software", "ia", "ciberseguridad", "iot", "consultoria", "pagos", "apps", "datos", "cloud", "ux", "modernizacion"],
+          industrias: ["salud", "retail", "gaming", "finanzas", "industria", "automotriz", "energia", "gobierno", "medios"],
+        },
         logo: "img/empresas/avenga.png",
         provincia: "Córdoba",
-        sector: { es: "Transformación digital, datos e IA", en: "Digital transformation, data & AI" },
+        sector: { es: "Desarrollo de software asistido por IA y transformación digital", en: "AI-assisted software development & digital transformation" },
         detalle: {
           es: "Más de 30 años acelerando la transformación digital de grandes empresas: consultoría, software a medida, datos e IA, cloud y servicios gestionados.",
           en: "30+ years accelerating digital transformation for large enterprises: consulting, custom software, data & AI, cloud and managed services.",
         },
         web: "https://www.avenga.com",
         linkedin: "https://www.linkedin.com/company/avenga/",
+        // A pedido de la empresa, su ficha tiene más servicios, datos de trayectoria y clientes que el resto.
         ficha: {
           resumen: {
-            es: "Empresa global de ingeniería y consultoría que acelera la transformación digital de grandes empresas con software, datos e inteligencia artificial. En la Argentina tiene sede en Córdoba.",
-            en: "Global engineering and consulting company that accelerates digital transformation for large enterprises through software, data and artificial intelligence. In Argentina, it is based in Córdoba.",
+            es: "Empresa global de ingeniería y consultoría IT con experiencia en desarrollo de software a medida con IA. Combina ingeniería de software, datos, cloud, servicios gestionados y staff augmentation para ayudar a las empresas a acelerar sus entregas, modernizar su ecosistema tecnológico y escalar la adopción de IA.",
+            en: "Global IT engineering and consulting company with expertise in AI custom software development. It combines software engineering, data, cloud, managed services and staff augmentation to help enterprises accelerate delivery, modernize their technology landscape and scale AI adoption.",
           },
           servicios: [
+            { es: "Ciclo de desarrollo de software nativo en IA (AI-Native SDLC)", en: "AI-Native SDLC" },
+            { es: "Back-office con agentes de IA (Agentic Back-Office)", en: "Agentic Back-Office" },
             { es: "Consultoría y estrategia digital", en: "Digital strategy consulting" },
-            { es: "Desarrollo de software a medida", en: "Custom software development" },
-            { es: "Datos e inteligencia artificial", en: "Data and artificial intelligence" },
+            { es: "Desarrollo de software a medida con IA", en: "AI custom software development" },
+            { es: "Ingeniería de datos", en: "Data engineering" },
+            { es: "Machine learning", en: "Machine learning" },
             { es: "Servicios cloud", en: "Cloud services" },
-            { es: "Servicios gestionados de IT", en: "Managed IT services" },
+            { es: "Servicios gestionados", en: "Managed services" },
+            { es: "Staff augmentation", en: "Staff augmentation" },
           ],
           trayectoria: [
-            { es: "Más de 30 años en el mercado", en: "30+ years in the market" },
-            { es: "Más de 6.000 especialistas y presencia en más de 15 países", en: "6,000+ specialists and a presence in 15+ countries" },
-            { es: "Certificada ISO 27001", en: "ISO 27001 certified" },
+            { es: "Más de 30 años de experiencia en la industria", en: "30+ years of industry experience" },
+            { es: "Más de 6.000 especialistas en más de 15 países", en: "6,000+ specialists across 15+ countries" },
+            { es: "Alianzas tecnológicas estratégicas con AWS, Microsoft, Google Cloud y otras", en: "Strategic technology partnerships with AWS, Microsoft, Google Cloud and more" },
+            { es: "ISO 27001, ISO 9001:2015 y SOC 2, entre otras normas y certificaciones", en: "ISO 27001, ISO 9001:2015 and SOC 2, among other standards and certifications" },
           ],
-          eeuu: { es: "Cuenta con presencia en EE.UU. como parte de su red global de oficinas.", en: "Has a presence in the U.S. as part of its global office network." },
-          clientes: ["ABB", "Allianz", "GSK", "Santander", "Volvo"],
+          eeuu: { es: "Atiende a clientes de EE.UU. con presencia local y capacidad de entrega global.", en: "Supports U.S. clients through local presence and global delivery capabilities." },
+          clientes: ["BMW", "Volkswagen", "ABB", "Coca-Cola", "Roche", "Bosch", "Allianz", "GSK", "Santander", "Volvo"],
         },
       },
       {

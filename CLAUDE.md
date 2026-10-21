@@ -124,7 +124,8 @@ escaso, se completa con el formulario de inscripción y el sitio web de la empre
 empresa dice de sí misma. En las fichas no se usa `verificar`: lo que haya que confirmar va a un documento
 aparte para el Consulado, ordenado por quién debe verificarlo. Misma estructura y extensión parecida para
 todas: resumen de 1 o 2 oraciones, 4 a 6 servicios, hasta 3 datos de trayectoria, EE.UU. solo si la empresa
-declara clientes o presencia allí, hasta 6 clientes. Tono de sitio institucional y comercial, sin
+declara clientes o presencia allí, hasta 6 clientes (excepción: Avenga, que pidió 9 servicios, 4 datos de
+trayectoria y 10 clientes). Tono de sitio institucional y comercial, sin
 expresiones informales. Sin imágenes, sin aviso de la fuente y sin aviso de misiones anteriores. No
 publicar datos personales (nombres de contactos, correos, teléfonos, fotos). Usar siempre el mismo
 `nombre` para cada empresa en todas las ediciones.
