@@ -182,6 +182,7 @@ window.SMS_SITIO = {
           { id: "gaming", es: "Videojuegos", en: "Gaming" },
           { id: "finanzas", es: "Banca, seguros y servicios financieros", en: "Banking, insurance & financial services" },
           { id: "industria", es: "Manufactura, industria y logística", en: "Manufacturing, industrial & logistics" },
+          { id: "consumo", es: "Bienes de consumo", en: "Consumer goods" },
           { id: "automotriz", es: "Automotriz", en: "Automotive" },
           { id: "energia", es: "Energía y agroindustria", en: "Energy & agribusiness" },
           { id: "inmobiliario", es: "Real estate y construcción", en: "Real estate & construction" },

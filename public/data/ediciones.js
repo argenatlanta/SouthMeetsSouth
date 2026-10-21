@@ -69,7 +69,7 @@ window.SMS_EDICIONES = [
         nombre: "Avenga",
         perfil: {
           ofrece: ["software", "ia", "ciberseguridad", "iot", "consultoria", "pagos", "apps", "datos", "cloud", "ux", "modernizacion"],
-          industrias: ["salud", "retail", "gaming", "finanzas", "industria", "automotriz", "energia", "gobierno", "medios"],
+          industrias: ["salud", "retail", "gaming", "finanzas", "industria", "automotriz", "energia", "gobierno", "medios", "consumo"],
         },
         logo: "img/empresas/avenga.png",
         provincia: "Córdoba",
@@ -306,7 +306,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "I+DIoT Lab",
-        perfil: { ofrece: ["iot", "ia", "datos"], industrias: ["retail", "energia"] },
+        perfil: { ofrece: ["iot", "ia", "datos"], industrias: ["retail", "energia", "consumo"] },
         logo: "img/empresas/id-iot-lab.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Retail tech, IoT e IA", en: "Retail tech, IoT & AI" },
@@ -498,7 +498,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "QKStudio",
-        perfil: { ofrece: ["apps", "software", "ux", "consultoria", "ia", "iot", "datos", "modernizacion"], industrias: ["finanzas", "retail", "medios", "educacion", "salud", "industria", "energia", "inmobiliario", "gobierno"] },
+        perfil: { ofrece: ["apps", "software", "ux", "consultoria", "ia", "iot", "datos", "modernizacion"], industrias: ["finanzas", "retail", "medios", "educacion", "salud", "industria", "energia", "inmobiliario", "gobierno", "consumo"] },
         logo: "img/empresas/qkstudio.png",
         provincia: "Buenos Aires",
         sector: { es: "Plataformas digitales y UX", en: "Digital platforms & UX" },
@@ -761,7 +761,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Wootic",
-        perfil: { ofrece: ["consultoria", "datos", "software", "ia", "cloud", "pagos", "legal"], industrias: ["gobierno", "energia", "educacion"] },
+        perfil: { ofrece: ["consultoria", "datos", "software", "ia", "cloud", "pagos", "legal"], industrias: ["gobierno", "energia", "educacion", "consumo"] },
         logo: "img/empresas/wootic.png",
         provincia: "Córdoba",
         sector: { es: "Tecnología, negocio y datos", en: "Technology, business & data" },
