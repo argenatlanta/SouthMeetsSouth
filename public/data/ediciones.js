@@ -60,8 +60,8 @@ window.SMS_EDICIONES = [
       },
     },
     llamadoAnfitriones: {
-      es: "¿Su empresa quiere participar del reverse pitch, recibir a la delegación o reunirse con las empresas argentinas? Escríbanos o registre su interés en la sesión B2B.",
-      en: "Would your company like to join the reverse pitch, host the delegation or meet the Argentine companies? Email us or register your interest in the B2B session.",
+      es: "¿Su empresa quiere participar del reverse pitch, recibir a la delegación o reunirse con las empresas argentinas? Escríbanos o regístrese en la sesión B2B.",
+      en: "Would your company like to join the reverse pitch, host the delegation or meet the Argentine companies? Email us or register for the B2B session.",
     },
     registroB2B: "https://luma.com/ip6i1z71",
     delegacion: [
