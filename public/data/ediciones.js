@@ -1465,6 +1465,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "LEAF",
+        logo: "img/empresas/leaf.png",
         sector: { es: "ClimateTech", en: "ClimateTech" },
         detalle: { es: "Plataforma SaaS para gestionar la huella de carbono de empresas.", en: "SaaS platform for corporate carbon footprint management." },
         web: "https://leaf-si.com",
