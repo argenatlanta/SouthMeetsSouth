@@ -1395,6 +1395,7 @@ window.SMS_EDICIONES = [
     delegacion: [
       {
         nombre: "Baquero Translations",
+        logo: "img/empresas/baquero-translations.png",
         sector: { es: "Traducción y localización", en: "Translation & localization" },
         detalle: { es: "Traducción y localización que combina IA y servicio humano.", en: "Translation and localization combining AI and human expertise." },
         web: "https://www.baquerotranslations.com",
@@ -1415,20 +1416,25 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Diproach",
+        logo: "img/empresas/diproach.png",
         sector: { es: "Apps y blockchain", en: "Apps & blockchain" },
         detalle: { es: "Desarrollo de aplicaciones y blockchain, con más de 70 proyectos realizados.", en: "App and blockchain development, with 70+ projects delivered." },
         web: "https://www.diproach.com",
       },
       {
         nombre: "Federación Económica de Catamarca · W3Mine",
+        logo: "img/empresas/federacion-economica-catamarca.png",
         sector: { es: "Trazabilidad minera en blockchain", en: "Blockchain mining traceability" },
         detalle: {
           es: "Plataforma de trazabilidad de minerales sobre blockchain con certificados digitales de impacto ambiental y social.",
           en: "Blockchain-based mineral traceability platform issuing digital certificates of environmental and social impact.",
         },
+        web: "https://federacioneconomicacatamarca.com.ar",
       },
       {
         nombre: "G&L Group",
+        logo: "img/empresas/gyl-group.png",
+        logoFondo: "oscuro",
         sector: { es: "Servicios de tecnología", en: "Technology services" },
         detalle: {
           es: "Servicios de tecnología desde 1994 para banca y finanzas, agro, e-commerce, gobierno y salud.",
@@ -1444,12 +1450,15 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Innovaction · DappsFactory",
+        logo: "img/empresas/innovaction-dappsfactory.png",
+        logoFondo: "oscuro",
         sector: { es: "Blockchain e IA", en: "Blockchain & AI" },
         detalle: { es: "Tokenización de activos, NFTs y agentes de inteligencia artificial.", en: "Asset tokenization, NFTs and AI agents." },
         web: "https://dappsfactory.io",
       },
       {
         nombre: "Khem Labs",
+        logo: "img/empresas/khem-labs.png",
         sector: { es: "Software a medida", en: "Custom software" },
         detalle: { es: "Apps móviles y web, microservicios y desarrollos en blockchain.", en: "Mobile and web apps, microservices and blockchain development." },
         web: "https://khemlabs.com",
