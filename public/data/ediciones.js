@@ -27,10 +27,10 @@ window.SMS_EDICIONES = [
       },
     ],
     cuentaRegresiva: { fecha: "2026-11-16", ciudad: "Atlanta" },
-    empresas: 22,
+    empresas: 21,
     resumen: {
-      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 22 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
-      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 22 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
+      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 21 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
+      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 21 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
     },
     sectores: [
       { es: "Inteligencia artificial", en: "Artificial intelligence" },
@@ -367,39 +367,6 @@ window.SMS_EDICIONES = [
           ],
           eeuu: { es: "Pequeña empresa (SBE) con sede en Atlanta. En 2025 fue subadjudicataria de un subsidio de la National Science Foundation para el proyecto ENVISION, junto a West Virginia University, Millersville University y el Stroud Water Research Center.", en: "Atlanta-based small business enterprise (SBE). In 2025 it was a sub-awardee of a National Science Foundation grant for the ENVISION project, alongside West Virginia University, Millersville University and the Stroud Water Research Center." },
           clientes: ["Fiat Chrysler", { es: "Banco Mundial", en: "World Bank" }, "Growglide", { es: "Equipos de la MLS", en: "MLS teams" }],
-        },
-      },
-      {
-        nombre: "Lila Software Studio",
-        perfil: { ofrece: ["software", "apps", "ux", "ia", "consultoria", "pagos"], industrias: ["finanzas", "inmobiliario", "retail"] },
-        logo: "img/empresas/lila-software-studio.png",
-        logoFondo: "oscuro",
-        provincia: "Mendoza",
-        sector: { es: "Productos digitales a medida", en: "Custom digital products" },
-        detalle: {
-          es: "Estudio que diseña, desarrolla y evoluciona productos digitales a medida, con un equipo 100% senior en producto, UX/UI e ingeniería.",
-          en: "Studio that designs, builds and evolves custom digital products with a 100% senior product, UX/UI and engineering team.",
-        },
-        web: "https://lilastudio.com.ar",
-        linkedin: "https://www.linkedin.com/company/lila-software/",
-        ficha: {
-          resumen: {
-            es: "Estudio de software que diseña, desarrolla y evoluciona productos digitales a medida para empresas en crecimiento, con un equipo 100% senior en producto, UX/UI e ingeniería que trabaja integrado a la operación del cliente.",
-            en: "Software studio that designs, builds and evolves custom digital products for growing companies, with a 100% senior team in product, UX/UI and engineering embedded in each client’s operation.",
-          },
-          servicios: [
-            { es: "Productos digitales a medida, del discovery al lanzamiento", en: "Custom digital products, from discovery to launch" },
-            { es: "Diseño de producto y UX/UI", en: "Product and UX/UI design" },
-            { es: "Plataformas multirol con reglas de negocio e integraciones", en: "Multi-role platforms with business rules and integrations" },
-            { es: "Apps fintech centradas en la conversión y la confianza", en: "Fintech apps focused on conversion and user trust" },
-            { es: "Desarrollo acelerado con IA", en: "AI-accelerated delivery" },
-          ],
-          trayectoria: [
-            { es: "Más de 6 años de trayectoria", en: "6+ years in the market" },
-            { es: "35 productos en su portfolio y experiencia en 5 mercados del exterior", en: "35 products in its portfolio and experience in 5 international markets" },
-            { es: "NPS de 9,66 entre sus clientes", en: "Client NPS of 9.66" },
-          ],
-          clientes: ["Welfi", "Propify", "Hudson App"],
         },
       },
       {

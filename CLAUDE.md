@@ -166,6 +166,10 @@ copia, si el correo no se abre). La respuesta lista las etiquetas con su id entr
 respecto de lo publicado; con eso se actualiza `perfil` en `ediciones.js`. La página no está enlazada desde el
 sitio y no se indexa. Sin `empresa`, muestra un selector.
 
+Si una empresa se baja de la delegación, se quita de `ediciones.js` (y su logo, si no está en otra edición).
+Los enlaces `#empresa-<slug>` que ya circulan (p. ej., en un mailing enviado) llevan a la lista de la delegación;
+no borrar sus imágenes de `img/mailing/`, que el mailing enviado sigue usando.
+
 Las secciones vacías (`[]`) no se muestran en el sitio publicado. En modo borrador aparecen como
 «Sección a completar».
 

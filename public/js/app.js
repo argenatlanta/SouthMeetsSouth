@@ -1491,6 +1491,18 @@
     var m = /^#empresa-(.+)$/.exec(window.location.hash);
     var o = m && list.filter(function (x) { return x.ficha && slugify(x.nombre) === m[1]; })[0];
     if (o) openFicha(o, ed);
+    else if (m) goToDelegation();
+  }
+
+  // Un enlace a la ficha de una empresa que ya no está en la delegación (p. ej., desde un mailing ya
+  // enviado) lleva a la lista de empresas.
+  function goToDelegation() {
+    var sec = document.getElementById("delegacion");
+    if (!sec) return;
+    window.history.replaceState(null, "", window.location.pathname + window.location.search + "#delegacion");
+    function go() { sec.scrollIntoView({ behavior: "instant" }); }
+    go();
+    if (document.readyState !== "complete") window.addEventListener("load", go, { once: true });
   }
 
   function renderPeople(list) {
