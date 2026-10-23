@@ -624,7 +624,9 @@ a.resource:hover { border-color: var(--celeste); text-decoration: none; }
 .b2b-band strong { display: block; margin-bottom: 2px; font-family: var(--font-display); font-size: 19px; color: var(--ink); }
 .b2b-note { margin: 10px 0 0; font-size: 14px; color: var(--ink-2); }
 /* Incentivo del B2B (pasajes de Copa Airlines): el logo del sponsor siempre sobre blanco, como los de las empresas. */
-.perk { display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: start; margin: 0 0 18px; }
+/* El texto rodea el logo y sigue debajo a todo el ancho, para que el botón de registro no quede lejos. */
+.perk { display: flow-root; margin: 0 0 18px; }
+.perk:not(.perk-compact) .perk-logo { float: left; width: 140px; margin: 2px 16px 6px 0; }
 .perk-logo { display: flex; align-items: center; justify-content: center; padding: 10px; background: #ffffff; border: 1px solid var(--line); border-radius: var(--radius-sm); }
 .perk-logo img { display: block; width: 100%; height: auto; }
 .hosts-cta .perk p, .perk-text p { margin: 0; font-size: 15px; color: var(--ink-2); }
@@ -637,8 +639,7 @@ a.resource:hover { border-color: var(--celeste); text-decoration: none; }
 .b2b-band .perk-compact { display: flex; align-items: center; gap: 12px; margin: 12px 0 0; font-size: 15px; color: var(--ink); }
 .perk-compact .perk-logo { flex: none; width: 112px; padding: 6px 8px; }
 @media (max-width: 480px) {
-  .perk { grid-template-columns: 1fr; gap: 10px; }
-  .perk:not(.perk-compact) .perk-logo { width: 150px; }
+  .perk:not(.perk-compact) .perk-logo { float: none; width: 150px; margin: 0 0 10px; }
   .perk-compact .perk-logo { width: 84px; padding: 5px 6px; }
 }
 @media (max-width: 560px) {
