@@ -97,6 +97,8 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
       // un grupo por momento de la agenda; src: "img/ediciones/2025/b2b-1.jpg" (hasta 1600 px, sin EXIF),
       // mini: "…-mini.jpg" (720 × 540, recortada 4:3). La galería y cada momento están plegados por
       // defecto; al tocar una foto se abre el visor.
+  apoyos: [{ nombre, logo, detalle, web, verificar? }],   // «Apoyos» (sponsors), después de «Prensa y documentos»;
+      // logos en img/apoyos/ (sin cambiar colores ni fondo) y una reseña de una o dos oraciones
   prensa: [{ titulo, medio, url, fecha?, idioma: "es" | "en", imagen? }],
       // imagen: miniatura de la nota, "img/prensa/<id>-<medio>.jpg" (480 × 270, de la og:image de la página).
       // Si la nota no tiene foto útil, el usuario indica cuál usar (p. ej. el logo del medio o de la empresa

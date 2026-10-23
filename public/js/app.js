@@ -135,6 +135,7 @@
       sec_results: "Resultados",
       sec_gallery: "Galería",
       sec_press: "Prensa y documentos",
+      sec_sponsors: "Apoyos",
       sec_organizers: "Organizan",
       empty: "Sección a completar.",
       during: "Durante la misión",
@@ -321,6 +322,7 @@
       sec_results: "Results",
       sec_gallery: "Gallery",
       sec_press: "Press & documents",
+      sec_sponsors: "Sponsors",
       sec_organizers: "Organized by",
       empty: "Section to be completed.",
       during: "During the mission",
@@ -1788,6 +1790,7 @@
     sections.push(["galeria", ui("sec_gallery"), isEmpty(ed.galeria) ? null : renderPhotoGallery(ed), !isNext, true]);
     sections.push(["organizan", ui("sec_organizers"), isEmpty(ed.organizadores) ? null : renderOrganizers(ed.organizadores), false]);
     sections.push(["prensa", ui("sec_press"), isEmpty(ed.prensa) ? null : renderPress(ed.prensa), false]);
+    sections.push(["apoyos", ui("sec_sponsors"), isEmpty(ed.apoyos) ? null : renderOrgs(ed.apoyos, false), false]);
 
     var visible = sections.filter(function (s) { return s[2] || (BORRADOR && s[3]); });
 

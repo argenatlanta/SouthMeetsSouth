@@ -64,6 +64,39 @@ window.SMS_EDICIONES = [
       en: "Would your company like to join the reverse pitch, host the delegation or meet the Argentine companies? Email us or register for the B2B session.",
     },
     registroB2B: "https://luma.com/ip6i1z71",
+    // «Apoyos»: sponsors de la edición, con logo y una reseña breve. Las de Frazier & Deeter y TAG salen de sus
+    // sitios web y falta que las confirme el Consulado.
+    apoyos: [
+      {
+        nombre: "Copa Airlines",
+        logo: "img/apoyos/copa-airlines.png",
+        detalle: {
+          es: "Aerolínea panameña, miembro de Star Alliance, que conecta Atlanta con seis destinos en la Argentina a través de su hub en Panamá. Ofrece los dos pasajes a la Argentina para participantes del B2B.",
+          en: "Panama-based Star Alliance airline connecting Atlanta with six destinations in Argentina through its hub in Panama. It provides the two round-trip tickets to Argentina for B2B participants.",
+        },
+        web: "https://www.copaair.com",
+      },
+      {
+        nombre: "Frazier & Deeter",
+        logo: "img/apoyos/frazier-deeter.png",
+        detalle: {
+          es: "Firma de contadores públicos y asesoría con sede en Atlanta, fundada en 1981, que brinda servicios de impuestos, auditoría y consultoría.",
+          en: "Atlanta-headquartered CPA and advisory firm, founded in 1981, providing tax, audit and advisory services.",
+        },
+        web: "https://www.frazierdeeter.com",
+        verificar: true,
+      },
+      {
+        nombre: "TAG International Business",
+        logo: "img/apoyos/tag-international-business.png",
+        detalle: {
+          es: "Sociedad de la Technology Association of Georgia (TAG) que tiende puentes entre la comunidad tecnológica de Georgia y su comunidad de negocios internacionales, junto con consulados y cámaras binacionales.",
+          en: "A Technology Association of Georgia (TAG) society that bridges Georgia’s technology community and its international business community, working with consulates and binational chambers.",
+        },
+        web: "https://www.tagonline.org/societies/international-business/",
+        verificar: true,
+      },
+    ],
     // Incentivo para quienes se registran en la sesión B2B (texto de Luma), con el logo del sponsor.
     incentivo: {
       sponsor: "Copa Airlines",
