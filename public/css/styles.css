@@ -367,6 +367,11 @@ p { text-wrap: pretty; }
 .next-main .next-actions .btn { padding: 16px 28px; font-size: 18px; gap: 10px; border-radius: 12px; }
 .next-main .next-actions .btn svg { width: 20px; height: 20px; }
 .next-more { margin: 20px 0 0; }
+/* Botón a lo ancho hacia la página de la misión. */
+.next-main .next-more-info { margin: 12px 0 0; }
+.next-main .next-more-info .btn { width: 100%; justify-content: center; padding: 16px 28px; font-size: 18px; gap: 10px; border-radius: 12px; text-align: center; }
+@media (max-width: 560px) { .next-main .next-more-info .btn { padding: 14px 20px; } }
+.next-main .next-more-info .btn svg { width: 20px; height: 20px; }
 .link-arrow { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 600; }
 
 .program { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 8px; }

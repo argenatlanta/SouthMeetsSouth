@@ -167,6 +167,16 @@ a { color: var(--celeste-ink); }
 }
 :root[data-theme="dark"] .meet-btn[aria-pressed="true"] { background: var(--mpa-celeste); border-color: var(--mpa-celeste); color: #001a3d; }
 
+/* Botón de navegación destacado: Azul oscuro (Celeste en modo oscuro), sin competir con el Amarillo de las acciones. */
+.btn-solid { background: var(--mpa-azul-oscuro); border-color: var(--mpa-azul-oscuro); color: #ffffff; }
+.btn-solid:hover { background: #00285f; border-color: #00285f; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .btn-solid { background: var(--mpa-celeste); border-color: var(--mpa-celeste); color: #001a3d; }
+  :root:not([data-theme="light"]) .btn-solid:hover { background: #4dd8ff; border-color: #4dd8ff; }
+}
+:root[data-theme="dark"] .btn-solid { background: var(--mpa-celeste); border-color: var(--mpa-celeste); color: #001a3d; }
+:root[data-theme="dark"] .btn-solid:hover { background: #4dd8ff; border-color: #4dd8ff; }
+
 /* ───────── Hero de la portada y de cada edición: Azul oscuro y trama de ondas ───────── */
 .hero, .ed-hero { background: var(--navy); }
 .hero { padding-bottom: 0; }

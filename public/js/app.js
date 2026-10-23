@@ -54,6 +54,7 @@
       hosts_title: "Empresas e instituciones de Atlanta",
       contact_btn: "Contactar al Consulado",
       see_details: "Ver detalle",
+      next_more_info: "Más información sobre la misión {year}",
       see_delegation: "Conocer la delegación",
       find_fit: "Encontrar la empresa indicada",
       interest_form: "Regístrese en la sesión B2B",
@@ -239,6 +240,7 @@
       hosts_title: "Atlanta companies and organizations",
       contact_btn: "Contact the Consulate",
       see_details: "See details",
+      next_more_info: "More information about the {year} mission",
       see_delegation: "Meet the delegation",
       find_fit: "Find your best fit",
       interest_form: "Register for the B2B session",
@@ -564,6 +566,14 @@
     document.querySelectorAll("[data-home-anchor]").forEach(function (a) {
       a.setAttribute("href", home + "#" + a.getAttribute("data-home-anchor"));
     });
+    // «Misión 2026» lleva a la página de la edición, no a la sección de la portada.
+    if (nx) {
+      var onNext = document.body.getAttribute("data-page") === "edicion" && new URLSearchParams(window.location.search).get("id") === nx.id;
+      document.querySelectorAll('[data-home-anchor="proxima"]').forEach(function (a) {
+        a.setAttribute("href", edUrl(nx));
+        if (onNext) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+      });
+    }
     var brand = document.querySelector(".brand");
     if (brand) brand.setAttribute("href", "index.html" + (lang === "en" ? "?lang=en" : ""));
   }
@@ -683,7 +693,7 @@
       '<p class="hero-tagline">' + esc(ui("hero_tagline")) + "</p>" +
       '<p class="hero-lead">' + esc(ui("hero_lead")) + "</p>" +
       '<div class="hero-actions">' +
-      (nx ? '<a class="btn btn-primary" href="#proxima">' + esc(ui("hero_cta_next")) + ICON.arrow + "</a>" : "") +
+      (nx ? '<a class="btn btn-primary" href="' + esc(edUrl(nx)) + '">' + esc(ui("hero_cta_next")) + ICON.arrow + "</a>" : "") +
       '<a class="btn btn-ghost" href="#ediciones">' + esc(ui("hero_cta_editions")) + "</a>" +
       "</div>" +
       (cd ? '<p class="countdown"><span class="dot" aria-hidden="true"></span>' + esc(cd) + "</p>" : "") +
@@ -791,6 +801,7 @@
       sectors +
       (isEmpty(ed.delegacion) ? "" : '<p class="next-actions"><a class="btn btn-outline" href="' + esc(edUrl(ed)) + '#delegacion">' + esc(ui("see_delegation")) + ICON.arrow + "</a>" +
         (hasFinder(ed) ? '<a class="btn btn-outline" href="' + esc(edUrl(ed)) + '#buscador">' + ICON.search + esc(ui("find_fit")) + "</a>" : "") + "</p>") +
+      '<p class="next-more-info"><a class="btn btn-solid" href="' + esc(edUrl(ed)) + '">' + esc(ui("next_more_info", { year: year(ed) })) + ICON.arrow + "</a></p>" +
       "</div>" +
       '<div class="next-side">' + program + call + hosts +
       '<p class="next-more"><a class="link-arrow" href="' + esc(edUrl(ed)) + '">' + esc(ui("see_details")) + ICON.arrow + "</a></p>" +
