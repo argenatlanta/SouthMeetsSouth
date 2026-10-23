@@ -20,6 +20,7 @@ public/                 ← todo lo que se publica (directorio de salida en Clou
   img/empresas/         logos de las empresas (uno por empresa, se reutiliza entre ediciones)
   img/prensa/           miniaturas de las notas de prensa (480 × 270)
   img/organizadores/    logos del Consulado, la Embajada y la Cancillería (por idioma, con versión para modo oscuro)
+  img/apoyos/           logos de los sponsors (p. ej., Copa Airlines en el incentivo del B2B)
   img/marca-pais/       trama de ondas del manual de Marca País
   img/mailing/<año>/    imágenes de los mailings (logos en placas, apoyos, trama); el sitio no las enlaza
   css/marca-pais.css    paleta, tipografía y trama de Marca País (se carga después de styles.css)
@@ -109,6 +110,9 @@ texto de contexto (`contexto` en `sitio.js`) indica desde qué año se hacen las
   llamadoAnfitriones: { es, en },         // invitación a empresas de Atlanta
   registroB2B: "https://luma.com/…",     // botón «Regístrese en la sesión B2B» (Luma: el Consulado
                                           //   confirma cada inscripción); también aparece en el buscador
+  incentivo: { sponsor, logo, titulo, texto, detalle?, corto },
+      // incentivo para registrarse en el B2B (p. ej., los pasajes de Copa Airlines): va en el recuadro del registro
+      // (portada y edición), con «Cómo funciona» plegado; `corto` va en la franja al pie de la lista de empresas
 }
 ```
 

@@ -59,6 +59,7 @@
       interest_form: "Regístrese en la sesión B2B",
       b2b_note: "Las inscripciones quedan sujetas a confirmación del Consulado.",
       b2b_cta: "¿Quiere reunirse con estas empresas en la sesión B2B?",
+      perk_more: "Cómo funciona",
       meet_btn: "Quiero reunirme",
       meet_bar_one: "Mi lista B2B: 1 empresa",
       meet_bar: "Mi lista B2B: {n} empresas",
@@ -243,6 +244,7 @@
       interest_form: "Register for the B2B session",
       b2b_note: "Registrations are subject to confirmation by the Consulate.",
       b2b_cta: "Would you like to meet these companies at the B2B session?",
+      perk_more: "How it works",
       meet_btn: "I’d like to meet",
       meet_bar_one: "My B2B list: 1 company",
       meet_bar: "My B2B list: {n} companies",
@@ -736,8 +738,21 @@
     if (!ed.llamadoAnfitriones) return "";
     var b2b = b2bButton(ed);
     var buttons = b2b ? b2b + emailButton("btn-outline") : contactButtons("btn-primary");
-    return '<div class="hosts-cta"><p class="label">' + esc(ui("hosts_title")) + "</p><p>" + esc(t(ed.llamadoAnfitriones)) + '</p><div class="hero-actions">' + buttons + "</div>" +
+    return '<div class="hosts-cta"><p class="label">' + esc(ui("hosts_title")) + "</p><p>" + esc(t(ed.llamadoAnfitriones)) + "</p>" + incentiveBox(ed) +
+      '<div class="hero-actions">' + buttons + "</div>" +
       (b2b ? '<p class="b2b-note">' + esc(ui("b2b_note")) + "</p>" : "") + "</div>";
+  }
+
+  // Incentivo para registrarse en la sesión B2B (p. ej., los pasajes de Copa Airlines), con el logo del sponsor.
+  // compact: una línea, para la franja al pie de la lista de empresas. Las condiciones quedan plegadas.
+  function incentiveBox(ed, compact) {
+    var inc = ed.incentivo;
+    if (!inc || !b2bButton(ed)) return "";
+    var logo = inc.logo ? '<span class="perk-logo"><img src="' + esc(inc.logo) + '" alt="' + esc(inc.sponsor || "") + '" loading="lazy"></span>' : "";
+    if (compact) return '<p class="perk perk-compact">' + logo + "<span>" + esc(t(inc.corto)) + "</span></p>";
+    return '<div class="perk">' + logo + '<div class="perk-text"><p class="perk-title">' + esc(t(inc.titulo)) + "</p><p>" + esc(t(inc.texto)) + "</p>" +
+      (inc.detalle ? '<details class="perk-more"><summary>' + esc(ui("perk_more")) + "</summary><p>" + esc(t(inc.detalle)) + "</p></details>" : "") +
+      "</div></div>";
   }
 
   function renderNext() {
@@ -1753,7 +1768,8 @@
     var delegBody = isEmpty(ed.delegacion) ? (delegNote || null) :
       delegNote + (hasFinder(ed) ? renderFinder(ed) : "") + renderOrgs(ed.delegacion, false, ed) +
       (hasFinder(ed) ? '<p class="finder-empty" hidden>' + esc(ui("finder_empty")) + "</p>" : "") +
-      (hasFinder(ed) && b2bButton(ed) ? '<div class="b2b-band"><p><strong>' + esc(ui("b2b_cta")) + "</strong> " + esc(ui("b2b_note")) + "</p>" + b2bButton(ed) + "</div>" : "");
+      (hasFinder(ed) && b2bButton(ed) ? '<div class="b2b-band"><div class="b2b-band-text"><p><strong>' + esc(ui("b2b_cta")) + "</strong> " + esc(ui("b2b_note")) + "</p>" +
+        incentiveBox(ed, true) + "</div>" + b2bButton(ed) + "</div>" : "");
     sections.push(["delegacion", ui("sec_delegation"), delegBody, !isNext]);
     sections.push(["anfitriones", ui("sec_hosts"), isEmpty(ed.anfitriones) ? null : renderOrgs(ed.anfitriones, true), !isNext]);
     sections.push(["reuniones", ui("sec_meetings"), isEmpty(ed.reuniones) ? null : renderPeople(ed.reuniones), !isNext]);

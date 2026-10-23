@@ -64,6 +64,24 @@ window.SMS_EDICIONES = [
       en: "Would your company like to join the reverse pitch, host the delegation or meet the Argentine companies? Email us or register for the B2B session.",
     },
     registroB2B: "https://luma.com/ip6i1z71",
+    // Incentivo para quienes se registran en la sesión B2B (texto de Luma), con el logo del sponsor.
+    incentivo: {
+      sponsor: "Copa Airlines",
+      logo: "img/apoyos/copa-airlines.png",
+      titulo: { es: "Esta edición también puede llevarlo a la Argentina", en: "This edition can also take you to Argentina" },
+      texto: {
+        es: "Los participantes del B2B con base en EE.UU. tendrán la oportunidad de ganar uno de dos pasajes de ida y vuelta a la Argentina, cortesía de Copa Airlines, y una agenda de inmersión tecnológica y de negocios a medida.",
+        en: "U.S.-based B2B participants will have the opportunity to win one of two round-trip tickets to Argentina, courtesy of Copa Airlines, and a tailored tech and business immersion agenda.",
+      },
+      detalle: {
+        es: "Es una oportunidad para conocer el ecosistema tecnológico argentino, encontrar posibles socios y ampliar sus horizontes de negocio. La postulación se hace en el evento. Los dos participantes se seleccionarán según su perfil y sus objetivos de negocio. El alojamiento y los demás gastos de viaje no están incluidos. Las bases y los criterios de elegibilidad se anunciarán próximamente.",
+        en: "It’s a chance to explore Argentina’s technology ecosystem, meet potential partners, and expand your business horizons. Apply on-site. The two participants will be selected based on their profiles and business goals. Accommodation and other travel expenses are not included. Full details and eligibility criteria will be announced soon.",
+      },
+      corto: {
+        es: "Además, los participantes con base en EE.UU. pueden ganar uno de dos pasajes a la Argentina, cortesía de Copa Airlines.",
+        en: "Plus, U.S.-based participants can win one of two round-trip tickets to Argentina, courtesy of Copa Airlines.",
+      },
+    },
     delegacion: [
       {
         nombre: "Avenga",
