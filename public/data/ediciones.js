@@ -257,7 +257,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "CodingIT",
-        perfil: { ofrece: ["software", "apps", "ia", "modernizacion", "ux", "consultoria"], industrias: ["salud", "finanzas", "inmobiliario", "retail", "industria", "educacion", "medios"] },
+        perfil: { ofrece: ["software", "apps", "ia", "modernizacion", "ux", "consultoria"], industrias: ["salud", "finanzas", "inmobiliario", "retail", "industria", "educacion", "medios", "legales", "hoteleria"] },
         logo: "img/empresas/codingit.png",
         sector: { es: "Desarrollo de software e IA", en: "Software development & AI" },
         detalle: {
@@ -515,7 +515,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "QKStudio",
-        perfil: { ofrece: ["apps", "software", "ux", "consultoria", "ia", "iot", "datos", "modernizacion", "web", "marketing"], industrias: ["finanzas", "retail", "medios", "educacion", "salud", "industria", "energia", "inmobiliario", "gobierno", "consumo"] },
+        perfil: { ofrece: ["apps", "software", "ux", "consultoria", "ia", "iot", "datos", "modernizacion", "web", "marketing"], industrias: ["finanzas", "retail", "medios", "educacion", "salud", "industria", "energia", "inmobiliario", "gobierno", "consumo", "hoteleria"] },
         logo: "img/empresas/qkstudio.png",
         provincia: "Buenos Aires",
         sector: { es: "Plataformas digitales y UX", en: "Digital platforms & UX" },
