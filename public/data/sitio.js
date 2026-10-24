@@ -191,6 +191,8 @@ window.SMS_SITIO = {
           { id: "gobierno", es: "Sector público", en: "Public sector" },
           { id: "educacion", es: "Educación", en: "Education" },
           { id: "medios", es: "Medios, entretenimiento y deportes", en: "Media, entertainment & sports" },
+          { id: "legales", es: "Servicios legales", en: "Legal services" },
+          { id: "hoteleria", es: "Hotelería y turismo", en: "Hospitality & tourism" },
         ],
       },
     ],
