@@ -226,7 +226,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "Code First Lab",
-        perfil: { ofrece: ["software", "apps", "ia", "iot", "consultoria", "web"], industrias: ["retail", "gaming"] },
+        perfil: { ofrece: ["software", "ia", "iot", "consultoria", "apps", "datos", "cloud", "modernizacion"], industrias: ["salud", "industria", "consumo"] },
         logo: "img/empresas/code-first-lab.png",
         provincia: "Mendoza",
         sector: { es: "Socio de IA a la medida de empresas en crecimiento", en: "Tailored AI partner for growing companies" },
