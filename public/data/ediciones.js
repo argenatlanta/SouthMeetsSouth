@@ -27,10 +27,10 @@ window.SMS_EDICIONES = [
       },
     ],
     cuentaRegresiva: { fecha: "2026-11-16", ciudad: "Atlanta" },
-    empresas: 21,
+    empresas: 20,
     resumen: {
-      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 21 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
-      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 21 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
+      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 20 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
+      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 20 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
     },
     sectores: [
       { es: "Inteligencia artificial", en: "Artificial intelligence" },
@@ -608,41 +608,6 @@ window.SMS_EDICIONES = [
             { es: "Procesos diseñados según GDPR, HIPAA y los criterios SOC 2 de AICPA", en: "Processes structured around GDPR, HIPAA and AICPA SOC 2 criteria" },
           ],
           eeuu: { es: "Trabaja para empresas de Europa y América del Norte.", en: "Serves companies in Europe and North America." },
-        },
-      },
-      {
-        nombre: "Realidad 360°",
-        perfil: { ofrece: ["inmersivo", "ia"], industrias: ["medios", "gobierno"] },
-        logo: "img/empresas/realidad-360.png",
-        logoFondo: "oscuro",
-        provincia: "Ciudad de Buenos Aires",
-        sector: { es: "Experiencias inmersivas", en: "Immersive experiences" },
-        detalle: {
-          es: "Productora de experiencias inmersivas: salas inmersivas, realidad virtual y aumentada, tours virtuales y creaciones con IA.",
-          en: "Immersive experience studio: immersive rooms, VR and AR, virtual tours and AI-powered creations.",
-        },
-        web: "https://realidad360.com.ar",
-        linkedin: "https://www.linkedin.com/company/realidad360argentina/",
-        ficha: {
-          resumen: {
-            es: "Productora argentina de experiencias inmersivas que diseña, produce y opera de punta a punta salas inmersivas, realidad virtual y aumentada, tours virtuales, pantallas interactivas y contenidos con IA.",
-            en: "Argentine immersive experience studio that designs, produces and runs immersive rooms, virtual and augmented reality, virtual tours, interactive screens and AI-generated content, end to end.",
-          },
-          servicios: [
-            { es: "Salas inmersivas: contenido, proyección, sonido y montaje", en: "Immersive rooms: content, projection, sound and installation" },
-            { es: "Cine y documental 360° con sonido inmersivo", en: "360° film and documentary with immersive sound" },
-            { es: "Realidad virtual para grupos con sistema propio sincronizado", en: "Group VR with a proprietary synchronized system" },
-            { es: "Pantallas interactivas y tótems", en: "Interactive screens and kiosks" },
-            { es: "Realidad aumentada y tours virtuales", en: "Augmented reality and virtual tours" },
-            { es: "Contenidos personalizados con IA", en: "Personalized AI-generated content" },
-          ],
-          trayectoria: [
-            { es: "13 años en el mercado", en: "13 years in the market" },
-            { es: "Obras en más de 25 festivales internacionales, entre ellos Venecia, Sundance, SXSW y Cannes XR", en: "Work shown at 25+ international festivals, including Venice, Sundance, SXSW and Cannes XR" },
-            { es: "Premios en GIFF (2018), Virtuality (2018) y Trends (2017)", en: "Awards at GIFF (2018), Virtuality (2018) and Trends (2017)" },
-          ],
-          eeuu: { es: "En Miami desarrolló el contenido y la supervisión técnica de «Surreal 360: A Salvador Dalí Experience», en Ice Palace Studios, y en Puerto Rico filmó 23 visualizers 360° para Bad Bunny.", en: "In Miami it created the content and technical supervision for “Surreal 360: A Salvador Dalí Experience” at Ice Palace Studios, and in Puerto Rico it filmed 23 360° visualizers for Bad Bunny." },
-          clientes: ["FIBA", { es: "CAF – Banco de Desarrollo de América Latina y el Caribe", en: "CAF – Development Bank of Latin America and the Caribbean" }, "Bad Bunny", "CONICET", { es: "Ministerio de Cultura de la Nación", en: "Argentina’s Ministry of Culture" }, "Banco Galicia"],
         },
       },
       {

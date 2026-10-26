@@ -8,7 +8,7 @@ window.SMS_SITIO = {
   borrador: false,
 
   // Fecha de la última actualización del contenido (AAAA-MM-DD). Se muestra en el pie.
-  actualizado: "2026-10-24",
+  actualizado: "2026-10-26",
 
   // Texto de contexto de la sección «Ediciones». {desde} se reemplaza por el año.
   // Si `desde` queda vacío (null), la frase no se muestra.
