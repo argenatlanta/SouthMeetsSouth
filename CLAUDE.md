@@ -158,7 +158,7 @@ si la ficha de la empresa la respalda (un servicio, un cliente o un dato de tray
 valida con el formulario prevalece, aunque quite una vertical de la página oficial (en ese caso, avisar para
 corregirla). Las opciones propias del buscador deben tener al menos dos empresas, salvo las que pida el Consulado
 (p. ej. «Estructuración legal y financiera», de Wootic, «Experiencia del cliente y contact center», de
-Borderless, «Marketing digital, marca y contenidos», de QKStudio, y «Realidad aumentada y virtual», de IGS). Si cambia la página oficial, volver a comparar.
+Borderless, «Realidad aumentada y virtual», de IGS, y «Sitios web y e-commerce», de Digital Beings). Si cambia la página oficial, volver a comparar.
 
 **Lista B2B («Quiero reunirme»).** En la edición próxima con `registroB2B`, cada tarjeta de la delegación y cada
 ficha tienen un botón «Quiero reunirme»; el buscador ofrece sumar de una vez las que coinciden en todo. Una barra

@@ -27,10 +27,10 @@ window.SMS_EDICIONES = [
       },
     ],
     cuentaRegresiva: { fecha: "2026-11-16", ciudad: "Atlanta" },
-    empresas: 19,
+    empresas: 18,
     resumen: {
-      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 19 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
-      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 19 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
+      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 18 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
+      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 18 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
     },
     sectores: [
       { es: "Inteligencia artificial", en: "Artificial intelligence" },
@@ -511,40 +511,6 @@ window.SMS_EDICIONES = [
             { es: "Industrias: aeroespacial y defensa, automotriz, industria y robótica, salud y agtech", en: "Industries: aerospace and defense, automotive, industrial and robotics, medical and agtech" },
           ],
           eeuu: { es: "Con oficina en St. Petersburg (Florida), desarrolla proyectos en EE.UU., la Argentina, Perú y Brasil.", en: "With an office in St. Petersburg, Florida, it delivers projects in the U.S., Argentina, Peru and Brazil." },
-        },
-      },
-      {
-        nombre: "QKStudio",
-        perfil: { ofrece: ["apps", "software", "ux", "consultoria", "ia", "iot", "datos", "modernizacion", "web", "marketing"], industrias: ["finanzas", "retail", "medios", "educacion", "salud", "industria", "energia", "inmobiliario", "gobierno", "consumo", "hoteleria"] },
-        logo: "img/empresas/qkstudio.png",
-        provincia: "Buenos Aires",
-        sector: { es: "Plataformas digitales y UX", en: "Digital platforms & UX" },
-        detalle: {
-          es: "19 años creando plataformas digitales y desarrollos a medida con foco en UX/UI: apps, webapps, e-learning y e-commerce.",
-          en: "19 years building digital platforms and custom software with a strong UX/UI focus: apps, web apps, e-learning and e-commerce.",
-        },
-        web: "https://www.qkstudio.com",
-        linkedin: "https://www.linkedin.com/company/qkstudio/",
-        ficha: {
-          resumen: {
-            es: "Con 19 años de experiencia, crea plataformas digitales y software a medida con un fuerte foco en UI/UX, creatividad y funcionalidad. Tiene presencia en la Argentina, Latinoamérica, EE.UU. y España.",
-            en: "With 19 years of experience, it creates digital platforms and custom software with a strong focus on UI/UX, creativity and functionality. It has a presence in Argentina, Latin America, the U.S. and Spain.",
-          },
-          servicios: [
-            { es: "Apps web y software a medida", en: "Web apps and custom software" },
-            { es: "Apps móviles: Android, iOS, React Native e IoT", en: "Mobile apps: Android, iOS, React Native and IoT" },
-            { es: "Sitios corporativos, e-commerce y e-learning", en: "Corporate websites, e-commerce and e-learning" },
-            { es: "Marca y contenidos", en: "Brand and content" },
-            { es: "Investigación y diseño UX/UI", en: "UX/UI research and design" },
-            { es: "Marketing digital", en: "Digital marketing" },
-          ],
-          trayectoria: [
-            { es: "19 años de experiencia", en: "19 years of experience" },
-            { es: "Google Partner Premier 2026", en: "Google Partner Premier 2026" },
-            { es: "Premios: Sello de Buen Diseño argentino (2025 y 2026), Eikon (2024 y 2025) y Sadosky (2015 y 2020)", en: "Awards: Argentine Good Design Seal (2025 and 2026), Eikon (2024 and 2025) and Sadosky (2015 and 2020)" },
-          ],
-          eeuu: { es: "Tiene presencia en EE.UU.; entre las marcas de su portfolio figuran Citibank, Visa y Western Union.", en: "It has a presence in the U.S.; brands in its portfolio include Citibank, Visa and Western Union." },
-          clientes: ["Citibank", "Visa", "Western Union", "Sony", "Nestlé", "McDonald's"],
         },
       },
       {
