@@ -27,10 +27,10 @@ window.SMS_EDICIONES = [
       },
     ],
     cuentaRegresiva: { fecha: "2026-11-16", ciudad: "Atlanta" },
-    empresas: 20,
+    empresas: 19,
     resumen: {
-      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 20 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
-      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 20 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
+      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 19 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
+      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 19 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
     },
     sectores: [
       { es: "Inteligencia artificial", en: "Artificial intelligence" },
@@ -608,39 +608,6 @@ window.SMS_EDICIONES = [
             { es: "Procesos diseñados según GDPR, HIPAA y los criterios SOC 2 de AICPA", en: "Processes structured around GDPR, HIPAA and AICPA SOC 2 criteria" },
           ],
           eeuu: { es: "Trabaja para empresas de Europa y América del Norte.", en: "Serves companies in Europe and North America." },
-        },
-      },
-      {
-        nombre: "RH Vision",
-        perfil: { ofrece: ["software", "ia", "ciberseguridad", "iot", "consultoria"], industrias: ["industria", "energia", "inmobiliario"] },
-        logo: "img/empresas/rh-vision.png",
-        provincia: "Córdoba",
-        sector: { es: "Talento IT y staff augmentation", en: "IT talent & staff augmentation" },
-        detalle: {
-          es: "Staff augmentation, outsourcing tecnológico y selección de talento IT en software, IA, automatización, ciberseguridad y robótica.",
-          en: "Staff augmentation, tech outsourcing and IT recruiting in software, AI, automation, cybersecurity and robotics.",
-        },
-        web: "https://www.rhvision.org",
-        linkedin: "https://www.linkedin.com/company/rh-vision-latam/",
-        ficha: {
-          resumen: {
-            es: "Firma argentina de tecnología y servicios profesionales especializada en diseñar e implementar soluciones de transformación digital, que combina ingeniería de software, inteligencia artificial y talento IT.",
-            en: "Argentina-based technology and professional services firm specialized in designing and implementing digital transformation solutions, combining software engineering, artificial intelligence and IT talent.",
-          },
-          servicios: [
-            { es: "Desarrollo de software a medida", en: "Custom software development" },
-            { es: "IA y automatización de procesos", en: "AI and process automation" },
-            { es: "Ciberseguridad", en: "Cybersecurity" },
-            { es: "Robótica aplicada: plataformas autónomas y robots cuadrúpedos", en: "Applied robotics: autonomous platforms and quadruped robots" },
-            { es: "Consultoría y transformación digital", en: "Consulting and digital transformation" },
-            { es: "Staff augmentation, outsourcing y selección de talento IT", en: "Staff augmentation, outsourcing and IT recruiting" },
-          ],
-          trayectoria: [
-            { es: "Más de 10 años en staff augmentation", en: "10+ years in staff augmentation" },
-            { es: "Oficinas en Córdoba y St. Petersburg (Florida)", en: "Offices in Córdoba and St. Petersburg, Florida" },
-            { es: "Clientes pymes y grandes empresas en logística, industria, construcción, energías renovables y agroindustria", en: "SME and enterprise clients in logistics, manufacturing, construction, renewable energy and agribusiness" },
-          ],
-          eeuu: { es: "Con oficina en St. Petersburg (Florida), apunta a alianzas de largo plazo con empresas, integradores tecnológicos e instituciones financieras de EE.UU.", en: "With an office in St. Petersburg, Florida, it seeks long-term partnerships with U.S. companies, technology integrators and financial institutions." },
         },
       },
       {
