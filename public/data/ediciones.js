@@ -490,6 +490,7 @@ window.SMS_EDICIONES = [
           en: "Software engineering, AI and business solutions teams that start from the business problem. Five years on the Inc. 5000, with 91% client retention.",
         },
         web: "https://www.nybblegroup.com",
+        linkedin: "https://www.linkedin.com/company/nybble-group/",
         ficha: {
           resumen: {
             es: "Empresa de tecnología con equipos de ingeniería de software y de soluciones de negocio que ayudan a compañías de EE.UU., Canadá y Latinoamérica a construir, modernizar y escalar la tecnología con la que funciona su negocio. Parte del problema del negocio, no de la tecnología, con IA integrada en cada proyecto.",
