@@ -27,10 +27,10 @@ window.SMS_EDICIONES = [
       },
     ],
     cuentaRegresiva: { fecha: "2026-11-16", ciudad: "Atlanta" },
-    empresas: 18,
+    empresas: 19,
     resumen: {
-      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 18 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
-      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 18 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
+      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 19 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
+      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 19 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
     },
     sectores: [
       { es: "Inteligencia artificial", en: "Artificial intelligence" },
@@ -478,6 +478,41 @@ window.SMS_EDICIONES = [
             { es: "Experiencia en operaciones de negocio, e-commerce, administración de propiedades, recursos humanos y coordinación de servicios de campo", en: "Experience in business operations, e-commerce, property management, human resources and field-service coordination" },
             { es: "Desarrolla productos de software propios, en distintas etapas de madurez", en: "Develops proprietary software products at varying stages of maturity" },
           ],
+        },
+      },
+      {
+        nombre: "Nybble Group",
+        perfil: { ofrece: ["software", "ia", "consultoria", "datos"], industrias: ["finanzas", "hoteleria", "industria", "automotriz"] },
+        logo: "img/empresas/nybble-group.png",
+        sector: { es: "Ingeniería de software orientada al negocio", en: "Business-first software engineering" },
+        detalle: {
+          es: "Equipos de ingeniería de software, IA y soluciones de negocio que parten del problema del negocio. Cinco años en el Inc. 5000 y un 91% de retención de clientes.",
+          en: "Software engineering, AI and business solutions teams that start from the business problem. Five years on the Inc. 5000, with 91% client retention.",
+        },
+        web: "https://www.nybblegroup.com",
+        ficha: {
+          resumen: {
+            es: "Empresa de tecnología con equipos de ingeniería de software y de soluciones de negocio que ayudan a compañías de EE.UU., Canadá y Latinoamérica a construir, modernizar y escalar la tecnología con la que funciona su negocio. Parte del problema del negocio, no de la tecnología, con IA integrada en cada proyecto.",
+            en: "Technology company with software engineering and business solutions teams that help companies in the U.S., Canada and Latin America build, modernize and scale the technology their business runs on. It starts from the business problem, not the technology, with AI built into every project.",
+          },
+          servicios: [
+            { es: "Desarrollo de software a medida", en: "Custom software development" },
+            { es: "Equipos de ingeniería potenciados con IA", en: "AI-enabled engineering teams" },
+            { es: "DocuGPT: plataforma de inteligencia documental", en: "DocuGPT: document intelligence platform" },
+            { es: "Automatización inteligente e IA agéntica", en: "Intelligent automation and agentic AI" },
+            { es: "Sistemas ERP, CRM y MRP", en: "ERP, CRM and MRP systems" },
+            { es: "Inteligencia de datos con agentes de IA (Agentic Data Intelligence)", en: "Agentic Data Intelligence" },
+          ],
+          trayectoria: [
+            { es: "Cinco años en la lista Inc. 5000", en: "Five years on the Inc. 5000 list" },
+            { es: "Calificación de 4,8/5 en Clutch; Clutch 1000 (2024)", en: "4.8/5 on Clutch; Clutch 1000 (2024)" },
+            { es: "91% de retención de clientes", en: "91% client retention" },
+          ],
+          eeuu: {
+            es: "Trabaja con empresas de EE.UU. y Canadá en seguros, viajes y hotelería, cuidado de mascotas y fintech, desde una línea global de cruceros hasta aseguradoras de mascotas y especializadas.",
+            en: "Works with U.S. and Canadian companies in insurance, travel & hospitality, petcare and fintech, from a global cruise line to pet and specialty insurers.",
+          },
+          clientes: ["Royal Caribbean", "BOXX Insurance", "Independence Pet Group", "Northstar Life Services", "Stellantis"],
         },
       },
       {
