@@ -8,7 +8,7 @@ window.SMS_SITIO = {
   borrador: false,
 
   // Fecha de la última actualización del contenido (AAAA-MM-DD). Se muestra en el pie.
-  actualizado: "2026-11-02",
+  actualizado: "2026-11-04",
 
   // Texto de contexto de la sección «Ediciones». {desde} se reemplaza por el año.
   // Si `desde` queda vacío (null), la frase no se muestra.
@@ -170,7 +170,6 @@ window.SMS_SITIO = {
           { id: "inmersivo", es: "Realidad aumentada y virtual", en: "AR & VR" },
           { id: "modernizacion", es: "Modernización de sistemas heredados", en: "Legacy modernization" },
           { id: "cx", es: "Experiencia del cliente y contact center", en: "Customer experience & contact center" },
-          { id: "legal", es: "Estructuración legal y financiera", en: "Legal & financial structuring" },
         ],
       },
       {
