@@ -165,8 +165,8 @@ window.SMS_EDICIONES = [
         provincia: "Buenos Aires",
         sector: { es: "Software y consultoría IT", en: "Software & IT consulting" },
         detalle: {
-          es: "Desarrollo de software y consultoría IT con base en Atlanta y Buenos Aires; su producto principal son agentes de voz con IA para call centers.",
-          en: "Software development and IT consulting based in Atlanta and Buenos Aires; its flagship product is AI voice agents for call centers.",
+          es: "Desarrollo de software y consultoría IT con base en Atlanta y Buenos Aires; su producto principal son agentes de voz con IA para call centers y pymes.",
+          en: "Software development and IT consulting based in Atlanta and Buenos Aires; its flagship product is AI voice agents for call centers and SMEs.",
         },
         web: "https://www.borderless-software.com",
         linkedin: "https://www.linkedin.com/company/borderless-software/",
@@ -458,8 +458,8 @@ window.SMS_EDICIONES = [
         provincia: "Buenos Aires",
         sector: { es: "Software a medida e integración de sistemas", en: "Custom software & systems integration" },
         detalle: {
-          es: "Software de negocio a medida, integración de sistemas, automatización de procesos y soporte técnico, desde La Plata; también trabaja en marca blanca para agencias y consultoras.",
-          en: "Custom business software, systems integration, process automation and technical support from La Plata; also white-label delivery for agencies and consultancies.",
+          es: "Software de negocio a medida, integración de sistemas, automatización de procesos y soporte técnico; también trabaja en marca blanca para agencias y consultoras.",
+          en: "Custom business software, systems integration, process automation and technical support; also white-label delivery for agencies and consultancies.",
         },
         web: "https://novasoftarg.com",
         ficha: {
@@ -685,8 +685,8 @@ window.SMS_EDICIONES = [
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Ciberseguridad", en: "Cybersecurity" },
         detalle: {
-          es: "Más de 20 años en ciberseguridad y protección de datos, con presencia en Argentina, España y Latinoamérica.",
-          en: "20+ years in cybersecurity and data protection, operating in Argentina, Spain and Latin America.",
+          es: "Más de 20 años en ciberseguridad y protección de datos, con presencia en Argentina, Europa y Latinoamérica.",
+          en: "20+ years in cybersecurity and data protection, operating in Argentina, Europe and Latin America.",
         },
         web: "https://uniqs.com.ar",
         linkedin: "https://www.linkedin.com/company/uniqs/",
