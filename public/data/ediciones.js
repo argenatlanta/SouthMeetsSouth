@@ -692,8 +692,8 @@ window.SMS_EDICIONES = [
         linkedin: "https://www.linkedin.com/company/uniqs/",
         ficha: {
           resumen: {
-            es: "Empresa con más de 20 años en ciberseguridad, protección de datos y servicios de infraestructura IT, con presencia en la Argentina, España y Latinoamérica.",
-            en: "Company with 20+ years in cybersecurity, data protection and IT infrastructure services, with a presence in Argentina, Spain and Latin America.",
+            es: "Empresa con más de 20 años en ciberseguridad, protección de datos y servicios de infraestructura IT, con presencia en la Argentina, Europa y Latinoamérica.",
+            en: "Company with 20+ years in cybersecurity, data protection and IT infrastructure services, with a presence in Argentina, Europe and Latin America.",
           },
           servicios: [
             { es: "Seguridad informática y protección de datos", en: "IT security and data protection" },
