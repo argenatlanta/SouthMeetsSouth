@@ -27,10 +27,10 @@ window.SMS_EDICIONES = [
       },
     ],
     cuentaRegresiva: { fecha: "2026-11-16", ciudad: "Atlanta" },
-    empresas: 18,
+    empresas: 17,
     resumen: {
-      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 18 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
-      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 18 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
+      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 17 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
+      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 17 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
     },
     sectores: [
       { es: "Inteligencia artificial", en: "Artificial intelligence" },
@@ -452,37 +452,8 @@ window.SMS_EDICIONES = [
         },
       },
       {
-        nombre: "Novasoft",
-        perfil: { ofrece: ["software", "consultoria", "apps", "datos"], industrias: ["retail", "inmobiliario"] },
-        logo: "img/empresas/novasoft.png",
-        provincia: "Buenos Aires",
-        sector: { es: "Software a medida e integración de sistemas", en: "Custom software & systems integration" },
-        detalle: {
-          es: "Software de negocio a medida, integración de sistemas, automatización de procesos y soporte técnico; también trabaja en marca blanca para agencias y consultoras.",
-          en: "Custom business software, systems integration, process automation and technical support; also white-label delivery for agencies and consultancies.",
-        },
-        web: "https://novasoftarg.com",
-        ficha: {
-          resumen: {
-            es: "Empresa de software de La Plata enfocada en resolver problemas concretos de operación: desarrolla aplicaciones de negocio a medida, conecta sistemas existentes, automatiza flujos de trabajo repetitivos y brinda soporte técnico con alcances bien definidos. Para agencias, consultoras e implementadores de ERP, trabaja como subcontratista por proyecto o en marca blanca.",
-            en: "Software company based in La Plata focused on solving specific business operations problems: it develops custom business applications, connects existing systems, automates repetitive workflows and provides technical support under clearly defined scopes. For agencies, consultancies and ERP implementers, it works through scoped subcontracting or white-label delivery.",
-          },
-          servicios: [
-            { es: "Software de negocio a medida: herramientas internas, aplicaciones web, dashboards operativos y sistemas de flujo de trabajo", en: "Custom business software: internal tools, web apps, operational dashboards and workflow systems" },
-            { es: "Integración de APIs y sistemas, incluidos ERP y e-commerce", en: "API and systems integration, including ERP and e-commerce" },
-            { es: "Automatización de procesos y datos: transformación de archivos CSV y Excel, validaciones y manejo de errores", en: "Process automation and data: CSV and Excel transformations, validations and error handling" },
-            { es: "Diagnóstico técnico y mantenimiento: resolución de problemas, correcciones y soporte por contrato", en: "Technical diagnostics and maintenance: troubleshooting, corrective work and contract-based support" },
-            { es: "Subcontratación por proyecto y desarrollo en marca blanca para agencias, consultoras e implementadores de ERP", en: "Scoped subcontracting and white-label delivery for agencies, consultancies and ERP implementers" },
-          ],
-          trayectoria: [
-            { es: "Experiencia en operaciones de negocio, e-commerce, administración de propiedades, recursos humanos y coordinación de servicios de campo", en: "Experience in business operations, e-commerce, property management, human resources and field-service coordination" },
-            { es: "Desarrolla productos de software propios, en distintas etapas de madurez", en: "Develops proprietary software products at varying stages of maturity" },
-          ],
-        },
-      },
-      {
         nombre: "Nybble Group",
-        perfil: { ofrece: ["software", "ia", "consultoria", "datos"], industrias: ["finanzas", "hoteleria", "industria", "automotriz"] },
+        perfil: { ofrece: ["software", "ia", "ciberseguridad", "iot", "consultoria", "pagos", "apps", "datos", "cloud", "ux", "web", "modernizacion", "cx"], industrias: ["retail", "finanzas", "industria", "automotriz", "energia", "inmobiliario", "hoteleria"] },
         logo: "img/empresas/nybble-group.png",
         sector: { es: "Ingeniería de software orientada al negocio", en: "Business-first software engineering" },
         detalle: {
