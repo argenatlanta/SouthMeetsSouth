@@ -27,10 +27,10 @@ window.SMS_EDICIONES = [
       },
     ],
     cuentaRegresiva: { fecha: "2026-11-16", ciudad: "Atlanta" },
-    empresas: 17,
+    empresas: 16,
     resumen: {
-      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 17 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
-      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 17 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
+      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 16 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
+      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 16 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
     },
     sectores: [
       { es: "Inteligencia artificial", en: "Artificial intelligence" },
@@ -427,38 +427,6 @@ window.SMS_EDICIONES = [
           ],
           eeuu: { es: "Pequeña empresa (SBE) con sede en Atlanta. En 2025 fue subadjudicataria de un subsidio de la National Science Foundation para el proyecto ENVISION, junto a West Virginia University, Millersville University y el Stroud Water Research Center.", en: "Atlanta-based small business enterprise (SBE). In 2025 it was a sub-awardee of a National Science Foundation grant for the ENVISION project, alongside West Virginia University, Millersville University and the Stroud Water Research Center." },
           clientes: ["Fiat Chrysler", { es: "Banco Mundial", en: "World Bank" }, "Growglide", { es: "Equipos de la MLS", en: "MLS teams" }],
-        },
-      },
-      {
-        nombre: "Meta Software",
-        perfil: { ofrece: ["software", "apps", "datos", "ia", "cloud", "ux", "consultoria"], industrias: ["salud", "medios", "gobierno", "industria", "retail"] },
-        logo: "img/empresas/meta-software.png",
-        provincia: "Buenos Aires",
-        sector: { es: "Software a medida", en: "Custom software" },
-        detalle: {
-          es: "Más de 15 años desarrollando software a medida, con productos propios y clientes en mercados del exterior.",
-          en: "15+ years developing custom software, with proprietary products and clients abroad.",
-        },
-        web: "https://www.metaok.com",
-        ficha: {
-          resumen: {
-            es: "Empresa especializada en tecnologías emergentes y software a medida, socio tecnológico estratégico para aplicaciones de misión crítica, con equipos en la Argentina y España.",
-            en: "Company specialized in emerging technologies and custom software, a strategic technology partner for mission-critical applications, with teams in Argentina and Spain.",
-          },
-          servicios: [
-            { es: "Desarrollo de software de escritorio, web, cloud y móvil", en: "Desktop, web, cloud and mobile development" },
-            { es: "Outsourcing y equipos dedicados", en: "Outsourcing and dedicated teams" },
-            { es: "Staff augmentation", en: "Staff augmentation" },
-            { es: "Ciencia de datos e IA: big data, BI y machine learning", en: "Data science and AI: big data, BI and machine learning" },
-            { es: "Infraestructura, DevOps y servicios de IT", en: "Infrastructure, DevOps and IT services" },
-            { es: "Diseño UI/UX", en: "UI/UX design" },
-          ],
-          trayectoria: [
-            { es: "Más de 15 años desarrollando software a medida", en: "15+ years building custom software" },
-            { es: "Equipos en la Argentina y España", en: "Teams in Argentina and Spain" },
-            { es: "Proyectos en salud, producción, entretenimiento y sector público", en: "Projects in healthcare, production, entertainment and the public sector" },
-          ],
-          clientes: ["Grifols", "OPKO Health Europe", "Telecom", { es: "Hospital Garrahan", en: "Garrahan Children’s Hospital" }, "Boca Juniors", { es: "Municipalidad de Trenque Lauquen", en: "Municipality of Trenque Lauquen" }],
         },
       },
       {
