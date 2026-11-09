@@ -96,6 +96,16 @@ window.SMS_EDICIONES = [
         web: "https://www.tagonline.org/societies/international-business/",
         verificar: true,
       },
+      {
+        nombre: "Burr & Forman",
+        logo: "img/apoyos/burr-forman.png",
+        detalle: {
+          es: "Estudio jurídico corporativo de servicio completo, fundado en 1905, con más de 370 abogados y 22 oficinas en los EE.UU., entre ellas Atlanta. Asesora a empresas extranjeras que se expanden en el sudeste del país y fue sede del reverse pitch de la misión 2025.",
+          en: "Full-service corporate law firm founded in 1905, with more than 370 attorneys and 22 U.S. offices, including Atlanta. It advises foreign companies expanding into the Southeast and hosted the 2025 mission’s reverse pitch.",
+        },
+        web: "https://www.burr.com",
+        verificar: true,
+      },
     ],
     // Incentivo para quienes se registran en la sesión B2B (texto de Luma), con el logo del sponsor.
     incentivo: {
