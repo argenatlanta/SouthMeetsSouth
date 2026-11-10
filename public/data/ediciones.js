@@ -27,10 +27,10 @@ window.SMS_EDICIONES = [
       },
     ],
     cuentaRegresiva: { fecha: "2026-11-16", ciudad: "Atlanta" },
-    empresas: 16,
+    empresas: 15,
     resumen: {
-      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 16 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
-      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 16 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
+      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 15 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
+      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 15 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
     },
     sectores: [
       { es: "Inteligencia artificial", en: "Artificial intelligence" },
@@ -330,38 +330,6 @@ window.SMS_EDICIONES = [
             { es: "Billetera digital sobre la blockchain RSK y pagos en más de 50 criptomonedas para e-commerce", en: "A digital wallet on the RSK blockchain and payments in 50+ cryptocurrencies for e-commerce" },
           ],
           clientes: ["Wayni Móvil", "uPay", "Seguro Select", "BrushUpClub", "Zeppelin Solutions", "Gathr Films"],
-        },
-      },
-      {
-        nombre: "HIPCAM",
-        perfil: { ofrece: ["iot"], industrias: ["inmobiliario", "industria", "retail", "gobierno"] },
-        logo: "img/empresas/hipcam.png",
-        provincia: "Ciudad de Buenos Aires",
-        sector: { es: "PropTech y seguridad", en: "PropTech & security" },
-        detalle: {
-          es: "Control de accesos, portería virtual y seguridad para edificios como servicio, sobre una única plataforma y app con monitoreo 24/7.",
-          en: "Smart access as a service: access control, virtual concierge and building security on a single platform and app with 24/7 monitoring.",
-        },
-        web: "https://www.hipcam.com",
-        linkedin: "https://www.linkedin.com/company/hipcamlatam/",
-        ficha: {
-          resumen: {
-            es: "Proptech argentina especializada en Smart Access as a Service: control de accesos, portería virtual y seguridad para edificios, operados sobre una sola plataforma, una app y un centro de monitoreo 24/7.",
-            en: "Argentine proptech specialized in Smart Access as a Service: access control, virtual concierge and building security, run on a single platform, one app and a 24/7 monitoring center.",
-          },
-          servicios: [
-            { es: "App para residentes: credencial, intercomunicador y apertura remota", en: "Resident app: credential, intercom and remote door opening" },
-            { es: "Reconocimiento facial e invitaciones con QR o PIN", en: "Facial recognition and QR or PIN guest invitations" },
-            { es: "Portería virtual con centro de monitoreo 24/7", en: "Virtual concierge with a 24/7 monitoring center" },
-            { es: "Plataforma web para administradores", en: "Web platform for property managers" },
-            { es: "Hardware integrado: videoportero, control vehicular y cerraduras inteligentes", en: "Integrated hardware: video doorbell, vehicle access and smart locks" },
-            { es: "Soluciones para industria, retail y sector público", en: "Solutions for industry, retail and the public sector" },
-          ],
-          trayectoria: [
-            { es: "Más de 10 años en el mercado", en: "10+ years in the market" },
-            { es: "Más de 2.600 edificios y 400.000 usuarios activos", en: "2,600+ buildings and 400,000+ active users" },
-            { es: "Presencia en 16 países de Latinoamérica y alianza tecnológica con Hikvision", en: "A presence in 16 Latin American countries and a technology partnership with Hikvision" },
-          ],
         },
       },
       {
