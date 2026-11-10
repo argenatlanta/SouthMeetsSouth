@@ -27,10 +27,10 @@ window.SMS_EDICIONES = [
       },
     ],
     cuentaRegresiva: { fecha: "2026-11-16", ciudad: "Atlanta" },
-    empresas: 15,
+    empresas: 13,
     resumen: {
-      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 15 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
-      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 15 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
+      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 13 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
+      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 13 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
     },
     sectores: [
       { es: "Inteligencia artificial", en: "Artificial intelligence" },
@@ -500,36 +500,6 @@ window.SMS_EDICIONES = [
         },
       },
       {
-        nombre: "QuantyIA",
-        perfil: { ofrece: ["datos", "ia"], industrias: ["automotriz", "industria", "salud"] },
-        logo: "img/empresas/quantyia.png",
-        provincia: "Buenos Aires",
-        sector: { es: "Datos para IA", en: "Data for AI" },
-        detalle: {
-          es: "Etiquetado de datos con criterio humano para proyectos de IA en automotriz, industria, salud y sistemas de percepción.",
-          en: "Human-led data labeling for AI projects in automotive, industrial, healthcare and perception systems.",
-        },
-        web: "https://quantyia.ar",
-        linkedin: "https://www.linkedin.com/company/quantyia-srl/",
-        ficha: {
-          resumen: {
-            es: "Empresa argentina especializada en curaduría y validación de datos de alta precisión para sistemas de IA, en áreas donde la exactitud y el contexto son críticos: automotriz, control de calidad industrial y salud.",
-            en: "Argentine company specialized in high-precision data curation and validation for AI systems in areas where accuracy and context are critical: automotive, industrial quality control and healthcare.",
-          },
-          servicios: [
-            { es: "Anotación de datos para percepción automotriz y ADAS", en: "Data annotation for automotive perception and ADAS" },
-            { es: "Datasets para detección de defectos en manufactura", en: "Defect-detection datasets for manufacturing" },
-            { es: "Imágenes diagnósticas y datos clínicos", en: "Diagnostic imaging and clinical data" },
-            { es: "Control de calidad con supervisión humana (human-in-the-loop)", en: "Human-in-the-loop (HITL) quality assurance" },
-          ],
-          trayectoria: [
-            { es: "Socio de laboratorios de I+D y empresas tecnológicas que exigen estándares de calidad internacionales", en: "Partner to R&D labs and tech companies that demand export-grade quality standards" },
-            { es: "Procesos diseñados según GDPR, HIPAA y los criterios SOC 2 de AICPA", en: "Processes structured around GDPR, HIPAA and AICPA SOC 2 criteria" },
-          ],
-          eeuu: { es: "Trabaja para empresas de Europa y América del Norte.", en: "Serves companies in Europe and North America." },
-        },
-      },
-      {
         nombre: "Tecro",
         perfil: { ofrece: ["pagos", "software", "modernizacion", "consultoria", "cloud"], industrias: ["finanzas", "retail", "salud"] },
         logo: "img/empresas/tecro.png",
@@ -593,38 +563,6 @@ window.SMS_EDICIONES = [
             { es: "Exporta desde 2001", en: "Exporting since 2001" },
           ],
           eeuu: { es: "Ha desarrollado soluciones para instituciones financieras y empresas de remesas de EE.UU. y Puerto Rico, con equipos bilingües alineados al horario estadounidense.", en: "Has delivered solutions for financial institutions and money transfer companies in the U.S. and Puerto Rico, with bilingual teams aligned to U.S. business hours." },
-        },
-      },
-      {
-        nombre: "UNIQS",
-        perfil: { ofrece: ["ciberseguridad", "cloud", "software", "consultoria"], industrias: [] },
-        logo: "img/empresas/uniqs.png",
-        provincia: "Ciudad de Buenos Aires",
-        sector: { es: "Ciberseguridad", en: "Cybersecurity" },
-        detalle: {
-          es: "Más de 20 años en ciberseguridad y protección de datos, con presencia en Argentina, Europa y Latinoamérica.",
-          en: "20+ years in cybersecurity and data protection, operating in Argentina, Europe and Latin America.",
-        },
-        web: "https://uniqs.com.ar",
-        linkedin: "https://www.linkedin.com/company/uniqs/",
-        ficha: {
-          resumen: {
-            es: "Empresa con más de 20 años en ciberseguridad, protección de datos y servicios de infraestructura IT, con presencia en la Argentina, Europa y Latinoamérica.",
-            en: "Company with 20+ years in cybersecurity, data protection and IT infrastructure services, with a presence in Argentina, Europe and Latin America.",
-          },
-          servicios: [
-            { es: "Seguridad informática y protección de datos", en: "IT security and data protection" },
-            { es: "Respaldo, alta disponibilidad y recuperación ante desastres", en: "Backup, high availability and disaster recovery" },
-            { es: "Monitoreo de infraestructura", en: "Infrastructure monitoring" },
-            { es: "Gestión de riesgos y de proyectos", en: "Risk and project management" },
-            { es: "Capacitación y soporte", en: "Training and support" },
-            { es: "Desarrollo y outsourcing de software", en: "Software development and outsourcing" },
-          ],
-          trayectoria: [
-            { es: "Más de 20 años en el mercado", en: "20+ years in the market" },
-            { es: "Certificaciones de fabricantes: Dell, HP y Veeam", en: "Vendor certifications: Dell, HP and Veeam" },
-            { es: "Miembro del Córdoba Technology Cluster", en: "Member of the Córdoba Technology Cluster" },
-          ],
         },
       },
     ],
