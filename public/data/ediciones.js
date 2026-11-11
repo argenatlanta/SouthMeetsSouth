@@ -334,7 +334,7 @@ window.SMS_EDICIONES = [
       },
       {
         nombre: "I+DIoT Lab",
-        perfil: { ofrece: ["iot", "ia", "datos"], industrias: ["retail", "energia", "consumo"] },
+        perfil: { ofrece: ["software", "ia", "iot", "consultoria", "datos", "web"], industrias: ["salud", "retail", "consumo", "energia", "hoteleria"] },
         logo: "img/empresas/id-iot-lab.png",
         provincia: "Ciudad de Buenos Aires",
         sector: { es: "Retail tech, IoT e IA", en: "Retail tech, IoT & AI" },
