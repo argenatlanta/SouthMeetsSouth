@@ -27,10 +27,10 @@ window.SMS_EDICIONES = [
       },
     ],
     cuentaRegresiva: { fecha: "2026-11-16", ciudad: "Atlanta" },
-    empresas: 13,
+    empresas: 12,
     resumen: {
-      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 13 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
-      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 13 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
+      es: "South Meets South vuelve a Atlanta el 16 y 17 de noviembre con una delegación de 12 empresas argentinas de software y tecnología de cinco provincias y la Ciudad de Buenos Aires. El programa combina rondas de negocios B2B, un reverse pitch en el que empresas de Atlanta presentan sus necesidades tecnológicas, encuentros de networking, mesas de Soft Landing, una práctica de pitch y visitas a empresas locales.",
+      en: "South Meets South returns to Atlanta on November 16–17 with a delegation of 12 Argentine software and technology companies from five provinces and the City of Buenos Aires. The program combines B2B business meetings, a reverse pitch where Atlanta companies share their technology needs, networking events, Soft Landing roundtables, pitch practice and visits to local companies.",
     },
     sectores: [
       { es: "Inteligencia artificial", en: "Artificial intelligence" },
@@ -198,40 +198,6 @@ window.SMS_EDICIONES = [
             { es: "Miembro de la Cámara de la Industria Argentina del Software (CESSI)", en: "Member of the Argentine Software Industry Chamber (CESSI)" },
           ],
           eeuu: { es: "Opera desde Atlanta, con una cartera de clientes activos radicados mayormente en EE.UU.", en: "Operates from Atlanta, with an active client base located mostly in the U.S." },
-        },
-      },
-      {
-        nombre: "Clarika",
-        perfil: { ofrece: ["software", "apps", "ia", "modernizacion", "consultoria"], industrias: ["retail"] },
-        logo: "img/empresas/clarika.png",
-        logoFondo: "oscuro",
-        provincia: "Córdoba",
-        sector: { es: "Software a medida y staffing", en: "Custom software & tech staffing" },
-        detalle: {
-          es: "Desde 2007, desarrollo de software a medida y staffing tecnológico para clientes de Argentina, Latinoamérica y Norteamérica. Certificada ISO 9001:2015.",
-          en: "Since 2007, custom software development and tech staffing for clients in Argentina, Latin America and North America. ISO 9001:2015 certified.",
-        },
-        web: "https://www.clarikagroup.com",
-        linkedin: "https://www.linkedin.com/company/clarikagroup/",
-        ficha: {
-          resumen: {
-            es: "Empresa de ingeniería de software que construye sistemas con IA integrados a la operación de sus clientes, con la ingeniería, la seguridad y el soporte necesarios para sostenerlos en el tiempo.",
-            en: "Software engineering company that builds AI-powered systems integrated into its clients’ operations, with the engineering, security and support to keep them running over time.",
-          },
-          servicios: [
-            { es: "Software a medida, de la arquitectura a producción", en: "Custom software, from architecture to production" },
-            { es: "Apps web y móviles, y reemplazo de sistemas heredados", en: "Web and mobile apps, and legacy system replacement" },
-            { es: "Staff augmentation con desarrolladores senior", en: "Staff augmentation with senior developers" },
-            { es: "Agentes de IA y copilotos conectados a los datos (RAG)", en: "AI agents and copilots connected to data (RAG)" },
-            { es: "Automatización de flujos y procesamiento de documentos", en: "Workflow automation and document processing" },
-          ],
-          trayectoria: [
-            { es: "Fundada en 2007, con más de 100 clientes en el mundo", en: "Founded in 2007, with 100+ clients worldwide" },
-            { es: "Certificada ISO 9001:2015", en: "ISO 9001:2015 certified" },
-            { es: "Great Place to Work 2026: 4.º mejor lugar para trabajar en tecnología de la Argentina", en: "Great Place to Work 2026: #4 Best Workplace in Technology in Argentina" },
-          ],
-          eeuu: { es: "Trabaja con clientes de Norteamérica, con equipos en zona horaria compatible y nivel de inglés B2 garantizado.", en: "Works with North American clients, with teams in a compatible time zone and guaranteed B2-level English." },
-          clientes: ["McDonald's", "DAC Group", "Figmu"],
         },
       },
       {
